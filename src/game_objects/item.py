@@ -3,6 +3,7 @@ from game_objects.serializable import Serializable
 import logging
 
 from error_stuff import log_error
+from options import Options
 
 
 class Item(Serializable):
@@ -11,6 +12,7 @@ class Item(Serializable):
     # These will be needed by both the log reader and the serializer. They're set in ItemTracker.__init__
     # they shouldn't change after that.
     items_info = {}
+    abplus_items_info = {}
     custom_items_info = {}
 
     serialize = [('item_id', basestring),
@@ -20,7 +22,7 @@ class Item(Serializable):
     modded_item_id_prefix = "m"
 
     serialization_flags = {"blind":"b", "was_rerolled":"r", "starting_item":"s"}
-    def __init__(self, item_id, floor, starting_item=False, was_rerolled=False, blind=False, flagstr=None):
+    def __init__(self, item_id, floor, starting_item=False, was_rerolled=False, blind=False, flagstr=None, is_Jacob_item=False, is_Esau_item=False):
         # item_id is a string that identifies what kind of item it is.
         # If this is numeric, then it represents an item from the base game, an official expansion, or antibirth
         # If it's non-numeric, then it represents an item from a mod. numeric ids of modded items are unstable, so the
@@ -45,14 +47,29 @@ class Item(Serializable):
             self.blind = blind
             # Was this item rerolled ?
             self.was_rerolled = was_rerolled
+            # Does this item belong to Jacob ?
+            self.is_Jacob_item = is_Jacob_item
+            # Does this item belong to Esau ?
+            self.is_Esau_item = is_Esau_item
 
         # ItemInfo for the current item
         self.info = Item.get_item_info(item_id)
 
     def rerolled(self):
         """Mark the item as rerolled"""
-        # Spacebar items can't be re-rolled by a D4, dice room, etc.
-        if not self.info.space:
+
+        # Passive items that can't be rerolled such as Key pieces or Knife pieces
+        if Options().game_version != "Repentance":
+            exceptions = ("10", "81", "238", "239", "258", "327", "328", "474")
+        else:
+            exceptions = ("238", "239", "258", "327", "328", "626", "627")
+
+        trinket = False
+        if self.item_id.startswith("2") and len(self.item_id) == 4:
+            trinket = True
+
+        # Spacebar items and gulped trinkets can't be re-rolled by a D4, dice room, etc.
+        if not self.info.space and self.item_id not in exceptions and not trinket:
             self.was_rerolled = True
 
     @property
@@ -104,7 +121,7 @@ class Item(Serializable):
         if soul_hearts:
             desc += soul_hearts + " soul hearts, "
         if sin_hearts:
-            desc += sin_hearts + " sin hearts, "
+            desc += sin_hearts + " sin hearts, "  
         if text:
             desc += text
         if desc.endswith(", "):
@@ -131,16 +148,20 @@ class Item(Serializable):
         """look for its informations in the loaded dictionary"""
         if item_id[0] == Item.modded_item_id_prefix:
             return ItemInfo(Item.custom_items_info[item_id[1:]])
-        else:
+        elif Options().game_version == "Repentance":
             return ItemInfo(Item.items_info[item_id])
+        else:
+            return ItemInfo(Item.abplus_items_info[item_id])
 
     @staticmethod
     def contains_info(item_id):
         """ Return true if we know an item with this id """
         if item_id[0] == Item.modded_item_id_prefix:
             return item_id[1:] in Item.custom_items_info
-        else:
+        elif Options().game_version == "Repentance":
             return item_id in Item.items_info
+        else:
+            return item_id in Item.abplus_items_info
 
     @staticmethod
     def determine_custom_item_names():
@@ -224,7 +245,8 @@ class ItemInfo(dict):
         "space",
         "summary_condition",
         "summary_name",
-        "text"
+        "text",
+        "comment"
     ]
     valid_key_list.extend(stat_list)
     valid_key_list.extend(transform_list)

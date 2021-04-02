@@ -4,6 +4,12 @@
       "shown": true,
       "text": "Tracker doesn't know this item yet"
    },
+   "-1": {
+      "name": "Glitched item",
+      "shown": true,
+      "text": "Randomized effects",
+      "introduced_in": "Repentance"
+   },
    "1": {
       "name": "The Sad Onion",
       "shown": true,
@@ -13,8 +19,7 @@
    },
    "2": {
       "name": "The Inner Eye",
-      "delay": "3",
-      "delay_x": "2.1",
+      "delay_x": "1.95",
       "shown": true,
       "text": "Triple shot",
       "in_summary": true,
@@ -106,10 +111,10 @@
    },
    "13": {
       "name": "The Virus",
-      "speed": "-0.1",
+      "speed": "0.2",
       "shown": true,
       "spun": true,
-      "text": "Poison touch",
+      "text": "Poison touch, enemies take 12 dmg on contact",
       "introduced_in": "Rebirth"
    },
    "14": {
@@ -118,7 +123,7 @@
       "range": "5.25",
       "shown": true,
       "spun": true,
-      "speed": "0.6",
+      "speed": "0.3",
       "text": "",
       "introduced_in": "Rebirth"
    },
@@ -230,7 +235,7 @@
       "range": "5.25",
       "shown": true,
       "yesmother": true,
-      "text": "",
+      "text": "Spawn 3-6 blue flies on pickup",
       "introduced_in": "Rebirth"
    },
    "30": {
@@ -239,7 +244,7 @@
       "range": "5.25",
       "shown": true,
       "yesmother": true,
-      "text": "",
+      "text": "Deals 12 damage to enemies coming into contact with the player",
       "introduced_in": "Rebirth"
    },
    "31": {
@@ -248,7 +253,7 @@
       "range": "5.25",
       "shown": true,
       "yesmother": true,
-      "text": "",
+      "text": "Spawns a red heart on pickup",
       "introduced_in": "Rebirth"
    },
    "32": {
@@ -262,6 +267,7 @@
       "name": "The Bible",
       "shown": true,
       "seraphim": true,
+      "bookworm": true,
       "text": "Temporary flight, instantly kills Mom / It Lives!",
       "space": true,
       "introduced_in": "Rebirth"
@@ -277,6 +283,7 @@
    "35": {
       "name": "The Necronomicon",
       "shown": true,
+      "bookworm": true,
       "text": "Deals 40 dmg to the room",
       "space": true,
       "introduced_in": "Rebirth"
@@ -314,7 +321,7 @@
    "40": {
       "name": "Kamikaze",
       "shown": true,
-      "text": ".5 heart dmg to self, 40 dmg explosion",
+      "text": ".5 heart dmg to self, 185 dmg explosion",
       "space": true,
       "introduced_in": "Rebirth"
    },
@@ -330,7 +337,7 @@
       "name": "Bob's Rotten Head",
       "shown": true,
       "bob": true,
-      "text": "Shoots a poison bomb (50 dmg + 6-8 / tick)",
+      "text": "Shoots a poison bomb that leaves a poisoning gas cloud (185 dmg + 6-8 / tick)",
       "space": true,
       "introduced_in": "Rebirth"
    },
@@ -352,7 +359,7 @@
       "name": "Lucky Foot",
       "shown": true,
       "luck": "1",
-      "text": "Better gambling chances",
+      "text": "Better gambling chances, guarantee positive pills effects",
       "introduced_in": "Rebirth"
    },
    "47": {
@@ -393,7 +400,7 @@
    "52": {
       "name": "Dr. Fetus",
       "delay_x": "2.5",
-      "dmg_x": "3",
+      "dmg_x": "10",
       "shown": true,
       "text": "Bomb tears",
       "in_summary": true,
@@ -402,7 +409,7 @@
    "53": {
       "name": "Magneto",
       "shown": true,
-      "text": "Attracts pickups",
+      "text": "Attracts pickups, open chests at close range",
       "introduced_in": "Rebirth"
    },
    "54": {
@@ -451,6 +458,7 @@
    "62": {
       "name": "Charm of the Vampire",
       "shown": true,
+      "dmg": "0.3",
       "text": "Heals half heart every 13 enemy deaths",
       "introduced_in": "Rebirth"
    },
@@ -463,7 +471,7 @@
    "64": {
       "name": "Steam Sale",
       "shown": true,
-      "text": "All shop items are half price",
+      "text": "Reduce shop items price where price = 1/(2^number of Steam sales)",
       "introduced_in": "Rebirth"
    },
    "65": {
@@ -485,7 +493,7 @@
       "name": "Sister Maggy",
       "shown": true,
       "conjoined": true,
-      "text": "Familiar (3.5 dmg / tear)",
+      "text": "Familiar (5 dmg / tear)",
       "introduced_in": "Rebirth"
    },
    "68": {
@@ -507,7 +515,7 @@
       "dmg": "1",
       "shown": true,
       "spun": true,
-      "speed": "0.4",
+      "speed": "0.2",
       "text": "",
       "introduced_in": "Rebirth"
    },
@@ -525,6 +533,7 @@
       "name": "Rosary",
       "shown": true,
       "seraphim": true,
+      "tears": "0.5",
       "soul_hearts": "3",
       "text": "Puts the bible into most item pools",
       "introduced_in": "Rebirth"
@@ -546,7 +555,7 @@
    "75": {
       "name": "PhD",
       "shown": true,
-      "text": "Bad stat pills become good, free pill",
+      "text": "Bad stat pills become good, neutral pill",
       "introduced_in": "Rebirth"
    },
    "76": {
@@ -576,7 +585,7 @@
       "shown": true,
       "leviathan": true,
       "speed": "0.2",
-      "soul_hearts": "1",
+      "sin_hearts": "1",
       "introduced_in": "Rebirth"
    },
    "80": {
@@ -585,7 +594,7 @@
       "shown": true,
       "leviathan": true,
       "tears": "0.7",
-      "soul_hearts": "2",
+      "sin_hearts": "2",
       "introduced_in": "Rebirth"
    },
    "81": {
@@ -606,9 +615,8 @@
       "dmg": "0.7",
       "name": "The Nail",
       "shown": true,
-      "speed": "-0.18",
       "leviathan": true,
-      "text": "+1 soul heart, temporarily crush rocks",
+      "text": "On use: +1 half black heart, temporarily crush rocks, temporary -0.18 speed and dmg up",
       "space": true,
       "introduced_in": "Rebirth"
    },
@@ -692,6 +700,7 @@
    "95": {
       "name": "Robo-Baby",
       "shown": true,
+      "conjoined": true,
       "text": "Familiar (3.5 dmg / laser)",
       "introduced_in": "Rebirth"
    },
@@ -771,13 +780,13 @@
    "106": {
       "name": "Mr. Mega",
       "shown": true,
-      "text": "+5 bombs, bomb blast radius increased, bomb dmg increased from 50 to 110",
+      "text": "+5 bombs, bomb blast radius increased, bomb dmg increased from 100 to 185",
       "introduced_in": "Rebirth"
    },
    "107": {
       "name": "Pinking Shears",
       "shown": true,
-      "text": "Spawns a melee familiar (82.5 dmg / second)",
+      "text": "Spawns a melee familiar, speed of the body depends of player's speed",
       "space": true,
       "introduced_in": "Rebirth"
    },
@@ -818,6 +827,7 @@
    "113": {
       "name": "Demon Baby",
       "shown": true,
+      "conjoined": true,
       "text": "Familiar (3 dmg / tear)",
       "introduced_in": "Rebirth"
    },
@@ -853,7 +863,7 @@
       "delay_x": "3",
       "shown": true,
       "leviathan": true,
-      "text": "Tears become blood laser, hits 12 or 13 times",
+      "text": "Tears become blood laser, hits 9 times",
       "in_summary": true,
       "summary_name": "Brim",
       "introduced_in": "Rebirth"
@@ -877,12 +887,12 @@
    },
    "121": {
       "name": "Odd Mushroom (Thick)",
-      "dmg": "0.3",
+      "dmg": "1",
       "health": "1",
       "height": "0.5",
       "range": "0.25",
       "shown": true,
-      "speed": "-0.1",
+      "speed": "-0.2",
       "funguy": true,
       "text": "",
       "introduced_in": "Rebirth"
@@ -899,7 +909,7 @@
       "name": "Monster Manual",
       "shown": true,
       "bookworm": true,
-      "text": "Summons a random familiar",
+      "text": "Summons a random familiar that stays for the entire floor",
       "space": true,
       "introduced_in": "Rebirth"
    },
@@ -948,7 +958,7 @@
    "130": {
       "name": "A Pony",
       "shown": true,
-      "text": "flying, minimum speed 1.5",
+      "text": "flying, minimum speed 1.5, deals player's damage * 4 + 28 while charging enemies",
       "space": true,
       "introduced_in": "Rebirth"
    },
@@ -1012,14 +1022,14 @@
       "name": "Mom's Purse",
       "shown": true,
       "yesmother": true,
-      "text": "Can carry 2 trinkets instead of 1",
+      "text": "Spawns a trinket",
       "introduced_in": "Rebirth"
    },
    "140": {
       "name": "Bob's Curse",
       "shown": true,
       "bob": true,
-      "text": "+5 bombs, bombs deal poison dmg",
+      "text": "+5 bombs, bombs deal poison dmg and leave poisoning gas cloud behind them",
       "introduced_in": "Rebirth"
    },
    "141": {
@@ -1068,7 +1078,7 @@
    "147": {
       "name": "Notched Axe",
       "shown": true,
-      "text": "Breaks rocks and secret doors",
+      "text": "Melee weapon that damage enemies and break rocks",
       "space": true,
       "introduced_in": "Rebirth"
    },
@@ -1076,7 +1086,7 @@
       "name": "Infestation",
       "shown": true,
       "beelzebub": true,
-      "text": "Spawns blue flies when hit",
+      "text": "Spawns 2-6 blue flies when hit",
       "introduced_in": "Rebirth"
    },
    "149": {
@@ -1086,7 +1096,8 @@
       "height": "13",
       "shown": true,
       "bob": true,
-      "text": "Explosive tears, +40 dmg",
+      "text": "Explosive tears",
+      "dmg": "40",
       "in_summary": true,
       "summary_name": "Cac",
       "introduced_in": "Rebirth"
@@ -1106,8 +1117,8 @@
    },
    "152": {
       "name": "Technology 2",
-      "dmg_x": "0.65",
       "shown": true,
+      "delay_x": "2",
       "text": "Laser tears (piercing)",
       "introduced_in": "Rebirth"
    },
@@ -1143,7 +1154,7 @@
    "157": {
       "name": "Bloody Lust",
       "shown": true,
-      "text": "+dmg when hit (only for the current floor, max +6.5 dmg at 6 hits)",
+      "text": "+dmg when hit (only for the current floor, max +6 dmg at 6 hits)",
       "introduced_in": "Rebirth"
    },
    "158": {
@@ -1182,6 +1193,7 @@
    "163": {
       "name": "Ghost Baby",
       "shown": true,
+      "conjoined": true,
       "text": "Familiar (3.5 dmg / tear)",
       "introduced_in": "Rebirth"
    },
@@ -1236,6 +1248,7 @@
    },
    "170": {
       "name": "Daddy Longlegs",
+      "spiderbaby": true,
       "shown": true,
       "text": "Familiar (40 dmg / stomp)",
       "introduced_in": "Rebirth"
@@ -1244,7 +1257,7 @@
       "name": "Spider Butt",
       "shown": true,
       "spiderbaby": true,
-      "text": "Temporarily slows enemies and deals 10 dmg",
+      "text": "Temporarily slows enemies and deals 10 dmg, killed enemies by the item spawn blue spiders",
       "space": true,
       "introduced_in": "Rebirth"
    },
@@ -1260,12 +1273,13 @@
       "name": "Mitre",
       "shown": true,
       "seraphim": true,
-      "text": "Better chance of finding soul hearts",
+      "text": "33% to change red heart drop into soul heart",
       "introduced_in": "Rebirth"
    },
    "174": {
       "name": "Rainbow Baby",
       "shown": true,
+      "conjoined": true,
       "text": "Familiar (shoots random tears)",
       "introduced_in": "Rebirth"
    },
@@ -1281,7 +1295,7 @@
       "health": "1",
       "shot_speed": "0.16",
       "shown": true,
-      "text": "",
+      "text": "Heals 50% of your red hearts each floor if you have less than 50% of your red hearts fullfilled",
       "introduced_in": "Rebirth"
    },
    "177": {
@@ -1294,7 +1308,7 @@
    "178": {
       "name": "Holy Water",
       "shown": true,
-      "text": "Creates a pool when hit (8 dmg / tick)",
+      "text": "Can be thrown, creates a pool when broken (8 dmg / tick) that also freeze enemies",
       "introduced_in": "Rebirth"
    },
    "179": {
@@ -1312,7 +1326,7 @@
    "181": {
       "name": "White Pony",
       "shown": true,
-      "text": "Flying, minimum speed 1.5",
+      "text": "Flying, minimum speed 1.5, leaves trail of light beams that deals player's damage * 4 + 10",
       "space": true,
       "introduced_in": "Rebirth"
    },
@@ -1325,6 +1339,7 @@
       "shown": true,
       "tears": "-0.4",
       "text": "+1 flat dmg, full heal",
+      "seraphim": true,
       "in_summary": true,
       "introduced_in": "Rebirth"
    },
@@ -1368,7 +1383,7 @@
    "188": {
       "name": "Abel",
       "shown": true,
-      "text": "Familiar (3.5 dmg / tear)",
+      "text": "Familiar (3.5 dmg / tear, 5 dmg if picked by Cain)",
       "introduced_in": "Rebirth"
    },
    "189": {
@@ -1399,7 +1414,7 @@
       "name": "Telepathy for Dummies",
       "shown": true,
       "bookworm": true,
-      "text": "Temporary homing tears",
+      "text": "Temporary homing tears and range up",
       "space": true,
       "introduced_in": "Rebirth"
    },
@@ -1477,7 +1492,7 @@
    "203": {
       "name": "Humbling Bundle",
       "shown": true,
-      "text": "Doubles coin, key, bomb, and heart pickups",
+      "text": "Chance to double coin, key, bomb, and heart pickups",
       "introduced_in": "Rebirth"
    },
    "204": {
@@ -1489,7 +1504,7 @@
    "205": {
       "name": "Sharp Plug",
       "shown": true,
-      "text": "Deals 2 heart dmg to self, fully recharges item (only when at 0 charge)",
+      "text": "Deals half red heart dmg to self per charge missing, fully recharges item",
       "introduced_in": "Rebirth"
    },
    "206": {
@@ -1518,6 +1533,7 @@
    "209": {
       "name": "Butt Bombs",
       "shown": true,
+      "ohcrap": true,
       "text": "+5 bombs, bombs confuse all enemies, bombs deal 10 dmg to all enemies",
       "introduced_in": "Rebirth"
    },
@@ -1528,10 +1544,10 @@
       "introduced_in": "Rebirth"
    },
    "211": {
-      "name": "Spiderbaby",
+      "name": "Spider Baby",
       "shown": true,
       "spiderbaby": true,
-      "text": "Spawns 1-2 blue spiders when hit",
+      "text": "Spawns 2-5 blue spiders when hit",
       "introduced_in": "Rebirth"
    },
    "212": {
@@ -1615,7 +1631,7 @@
    "223": {
       "name": "Pyromaniac",
       "shown": true,
-      "text": "+5 bombs, explosions heal 1 red heart",
+      "text": "+5 bombs, explosions heal 1 half red heart, fire and bomb immunity",
       "in_summary": true,
       "introduced_in": "Rebirth"
    },
@@ -1668,13 +1684,13 @@
       "introduced_in": "Rebirth"
    },
    "230": {
-      "sin_hearts": "6",
+      "sin_hearts": "2",
       "dmg": "1.5",
       "name": "Abaddon",
       "leviathan": true,
       "shown": true,
       "speed": "0.2",
-      "text": "Removes all red hearts, chance to shoot fear tears",
+      "text": "Convert all red hearts to black hearts, chance to shoot fear tears",
       "introduced_in": "Rebirth"
    },
    "231": {
@@ -1687,7 +1703,7 @@
       "name": "Stop Watch",
       "shown": true,
       "speed": "0.3",
-      "text": "Slows enemies when hit",
+      "text": "Slows enemies",
       "introduced_in": "Rebirth"
    },
    "233": {
@@ -1701,6 +1717,7 @@
    "234": {
       "name": "Infestation 2",
       "shown": true,
+      "spiderbaby": true,
       "text": "Spawns a blue spider on enemy death",
       "introduced_in": "Rebirth"
    },
@@ -1767,6 +1784,7 @@
    },
    "245": {
       "name": "20/20",
+      "dmg_x": "0.75",
       "shown": true,
       "text": "Double shot",
       "in_summary": true,
@@ -1790,6 +1808,7 @@
       "name": "Hive Mind",
       "shown": true,
       "beelzebub": true,
+      "spiderbaby": true,
       "text": "Blue spiders and flies do 2x dmg",
       "in_summary": true,
       "summary_condition": "Guppy",
@@ -1844,7 +1863,7 @@
    "256": {
       "name": "Hot Bombs",
       "shown": true,
-      "text": "5 bombs, leaves fires that do 22 dmg",
+      "text": "+5 bombs, leaves fires that do 22 dmg, 16 dmg contact, fire immunity",
       "introduced_in": "Rebirth"
    },
    "257": {
@@ -1878,7 +1897,7 @@
    "261": {
       "name": "Proptosis",
       "shown": true,
-      "text": "Between x2 and x1.3 dmg based on range",
+      "text": "dmg up based on range",
       "in_summary": true,
       "summary_name": "Prop",
       "introduced_in": "Rebirth"
@@ -1887,8 +1906,15 @@
       "name": "Missing Page 2",
       "shown": true,
       "sin_hearts": "1",
-      "text": "Deals 40 dmg to enemies when hit if at 1 heart or lower",
+      "text": "Deals 80 dmg to enemies when hit if at 1 heart or lower and increase all kind of black heart dmg from 40 to 80",
       "introduced_in": "Rebirth"
+   },
+   "263": {
+      "name": "Clear Rune",
+      "shown": true,
+      "text": "Mimics the effect of the currently held rune",
+      "space": true,
+      "introduced_in": "Repentance"
    },
    "264": {
       "name": "Smart Fly",
@@ -1900,17 +1926,20 @@
    "265": {
       "name": "Dry Baby",
       "shown": true,
+      "conjoined": true,
       "text": "Blocks projectiles, chance to deal 40 dmg to the room on block",
       "introduced_in": "Rebirth"
    },
    "266": {
       "name": "Juicy Sack",
       "shown": true,
+      "spiderbaby": true,
       "text": "Spawns 1-2 blue spiders every room cleared, makes a trail of slowing creep",
       "introduced_in": "Rebirth"
    },
    "267": {
       "name": "Robo-Baby 2.0",
+      "conjoined": true,
       "shown": true,
       "text": "Familiar (3.5 dmg / laser)",
       "introduced_in": "Rebirth"
@@ -1952,20 +1981,21 @@
       "name": "Bob's Brain",
       "shown": true,
       "bob": true,
-      "text": "Familiar (60 dmg explosion + poison dmg)",
+      "text": "Familiar (100 dmg explosion + poison dmg)",
       "introduced_in": "Rebirth"
    },
    "274": {
       "name": "Best Bud",
       "shown": true,
       "beelzebub": true,
-      "text": "Spawns a fly orbital when hit (5 dmg / tick)",
+      "text": "Spawns a fly orbital when hit (10 dmg / tick)",
       "introduced_in": "Rebirth"
    },
    "275": {
       "name": "Lil' Brimstone",
       "shown": true,
-      "text": "Familiar (31.5 dmg / blood laser)",
+      "conjoined": true,
+      "text": "Familiar (20 dmg / blood laser)",
       "in_summary": true,
       "summary_name": "Lil' Brim",
       "introduced_in": "Rebirth"
@@ -1973,7 +2003,7 @@
    "276": {
       "name": "Isaac's Heart",
       "shown": true,
-      "text": "Invincibility (but heart familiar takes dmg)",
+      "text": "Player's hitbox is on the heart (doesn't prevent self damage), charge it and release it to repel enemies and shoot tears in 8 directions",
       "in_summary": true,
       "summary_name": "Heart",
       "introduced_in": "Rebirth"
@@ -1988,7 +2018,7 @@
       "name": "Dark Bum",
       "shown": true,
       "superbum": true,
-      "text": "Converts 1.5 red heart pickups to a soul heart or spider",
+      "text": "Converts 1.5 red heart pickups to a black heart, spider, pill, card or rune",
       "introduced_in": "Rebirth"
    },
    "279": {
@@ -2001,7 +2031,8 @@
    "280": {
       "name": "Sissy Long Legs",
       "shown": true,
-      "text": "Spawns blue spiders",
+      "spiderbaby": true,
+      "text": "Spawns blue spiders, charms enemies upon contact",
       "introduced_in": "Rebirth"
    },
    "281": {
@@ -2013,6 +2044,7 @@
    "282": {
       "name": "How To Jump",
       "shown": true,
+      "bookworm": true,
       "text": "Can jump over obstacles",
       "space": true,
       "introduced_in": "Rebirth"
@@ -2020,7 +2052,7 @@
    "283": {
       "name": "D100",
       "shown": true,
-      "text": "Rerolls current items and items + pickups in the room",
+      "text": "All dice effects at once",
       "space": true,
       "introduced_in": "Rebirth"
    },
@@ -2041,7 +2073,7 @@
    "286": {
       "name": "Blank Card",
       "shown": true,
-      "text": "Mimics the effect of the currently held card or rune",
+      "text": "Mimics the effect of the currently held card",
       "space": true,
       "introduced_in": "Rebirth"
    },
@@ -2057,14 +2089,14 @@
       "name": "Box of Spiders",
       "shown": true,
       "spiderbaby": true,
-      "text": "Spawns 2-4 blue spiders",
+      "text": "Spawns 4-8 blue spiders",
       "space": true,
       "introduced_in": "Rebirth"
    },
    "289": {
       "name": "Red Candle",
       "shown": true,
-      "text": "Shoots a flame (up to 125 dmg)",
+      "text": "Shoots a flame that times out after ten seconds",
       "space": true,
       "introduced_in": "Rebirth"
    },
@@ -2086,35 +2118,36 @@
    "292": {
       "name": "The Satanic Bible",
       "shown": true,
-      "text": "+1 black heart",
+      "bookworm": true,
+      "text": "On use: +1 black heart, transforms boss item into a devil deal",
       "space": true,
       "introduced_in": "Rebirth"
    },
    "293": {
       "name": "Head of Krampus",
       "shown": true,
-      "text": "Create 4 blood lasers (approx. 451 dmg / laser)",
+      "text": "Create 4 blood lasers (190 dmg / laser)",
       "space": true,
       "introduced_in": "Rebirth"
    },
    "294": {
       "name": "Butter Bean",
       "shown": true,
-      "text": "Knocks back enemies",
+      "text": "Knocks back enemies. If pushed enemies hit a wall, they take 10 dmg",
       "space": true,
       "introduced_in": "Rebirth"
    },
    "295": {
       "name": "Magic Fingers",
       "shown": true,
-      "text": "Deals 2x dmg to the room, takes 1 coin per use",
+      "text": "Deals 2x + 10 dmg to the room, takes 1 coin per use, ignore +40 dmg from ipecac",
       "space": true,
       "introduced_in": "Rebirth"
    },
    "296": {
       "name": "Converter",
       "shown": true,
-      "text": "+1 heart container, -2 soul/black hearts",
+      "text": "+1 heart container, -1 soul/black hearts",
       "space": true,
       "introduced_in": "Rebirth"
    },
@@ -2143,7 +2176,7 @@
       "name": "Aries",
       "shown": true,
       "speed": "0.25",
-      "text": "18 contact dmg if moving fast enough",
+      "text": "18 contact dmg + prevent dmg contact if moving fast enough",
       "introduced_in": "Rebirth"
    },
    "301": {
@@ -2199,7 +2232,7 @@
    "308": {
       "name": "Aquarius",
       "shown": true,
-      "text": "Makes a trail of creep",
+      "text": "Makes a trail of creep that inherit the player's tears effects and damage",
       "introduced_in": "Rebirth"
    },
    "309": {
@@ -2318,7 +2351,7 @@
    "325": {
       "name": "Scissors",
       "shown": true,
-      "text": "Spawns a shooting head familiar",
+      "text": "Spawns a shooting head familiar, body spews a constant stream of blood",
       "space": true,
       "introduced_in": "Rebirth"
    },
@@ -2338,6 +2371,7 @@
    "328": {
       "name": "The Negative",
       "shown": true,
+      "dmg": "1",
       "text": "Damage enemies when hit at 1/2 heart, can enter the Dark Room",
       "introduced_in": "Rebirth"
    },
@@ -2419,7 +2453,7 @@
    "338": {
       "name": "Boomerang",
       "shown": true,
-      "text": "2x dmg",
+      "text": "2x dmg and is piercing, can grab pickups",
       "space": true,
       "introduced_in": "Rebirth"
    },
@@ -2470,7 +2504,7 @@
       "name": "Match Book",
       "shown": true,
       "sin_hearts": "1",
-      "text": "+3 bombs",
+      "text": "+3 bombs and can spawn Match Stick",
       "introduced_in": "Rebirth"
    },
    "345": {
@@ -2525,10 +2559,9 @@
       "space": true,
       "introduced_in": "Afterbirth"
    },
-
    "352": {
       "name": "Glass Cannon",
-      "text": "Reduces red hearts to .5, shoots a big shot",
+      "text": "Shoots a big shot. On hit: inflict an extra 2 full heart dmg (non lethal) and leaves blood trail",
       "shown": true,
       "space": true,
       "introduced_in": "Afterbirth"
@@ -2554,6 +2587,7 @@
       "range": "1.25",
       "luck": "1",
       "height": "0.5",
+      "soul_hearts": "1",
       "introduced_in": "Afterbirth"
    },
    "356": {
@@ -2584,7 +2618,8 @@
    },
    "360": {
       "name": "Incubus",
-      "text": "Familiar (copies your tears)",
+      "text": "Familiar that copies your tears effect and deals 75% of your damage",
+      "conjoined": true,
       "shown": true,
       "introduced_in": "Afterbirth"
    },
@@ -2630,6 +2665,7 @@
    "367": {
       "name": "Sticky Bombs",
       "text": "+5 bombs, bombs stick to enemies, spawns 4 spiders if bombs kill an enemy",
+      "spiderbaby": true,
       "shown": true,
       "introduced_in": "Afterbirth"
    },
@@ -2688,19 +2724,21 @@
    },
    "376": {
       "name": "Restock",
-      "text": "Stores get more items when you buy things (like in Greed Mode)",
+      "text": "Purchased items in shop are renewed but the more you buy them, the more the price increases",
       "shown": true,
       "introduced_in": "Afterbirth"
    },
    "377": {
       "name": "Bursting Sack",
       "text": "Immunity to contact damage from spiders",
+      "spiderbaby": true,
       "shown": true,
       "introduced_in": "Afterbirth"
    },
    "378": {
-      "name": "Number 2",
+      "name": "No. 2",
       "text": "Spawns a butt bomb after 3 seconds of uninterrupted firing",
+      "ohcrap": true,
       "shown": true,
       "introduced_in": "Afterbirth"
    },
@@ -2778,6 +2816,7 @@
    "390": {
       "name": "Seraphim",
       "text": "Familiar (Sacred Heart tears)",
+      "conjoined": true,
       "shown": true,
       "introduced_in": "Afterbirth"
    },
@@ -2795,13 +2834,13 @@
    },
    "393": {
       "name": "Serpent's Kiss",
-      "text": "Change to shoot a poison tears, poison touch, poisoned enemies drop black hearts",
+      "text": "Change to shoot a poison tears, poison touch, poisoned enemies from contact drop black hearts",
       "shown": true,
       "introduced_in": "Afterbirth"
    },
    "394": {
       "name": "Marked",
-      "text": "Directed tears",
+      "text": "Directed tears (also synergize with familiars)",
       "shown": true,
       "height": "0.3",
       "range": "3.15",
@@ -2840,11 +2879,10 @@
    },
    "399": {
       "name": "Maw of the Void",
-      "text": "3 second charge for a black blood laser ring attack (which has 5% chance to drop a black heart per enemy killed)",
+      "text": "3 second charge for a black blood laser ring attack",
       "shown": true,
       "leviathan": true,
       "height": "0.5",
-      "dmg": "1",
       "introduced_in": "Afterbirth"
    },
    "400": {
@@ -2861,7 +2899,7 @@
    },
    "402": {
       "name": "Chaos",
-      "text": "All item pools are combined",
+      "text": "All item pools are combined, higher chance to spawn item from a big pool",
       "shown": true,
       "introduced_in": "Afterbirth"
    },
@@ -2875,12 +2913,13 @@
    "404": {
       "name": "Farting Baby",
       "text": "Familiar that blocks shots, 10% chance to poison/knockback/charm per block",
+      "conjoined": true,
       "shown": true,
       "introduced_in": "Afterbirth"
    },
    "405": {
       "name": "GB Bug",
-      "text": "Familiar that travels around the room, inflict random status effects to enemies that it touches",
+      "text": "Familiar that can be thrown to an enemy or a consumable to reroll it, once per room cleared",
       "shown": true,
       "introduced_in": "Afterbirth"
    },
@@ -2899,13 +2938,13 @@
    },
    "408": {
       "name": "Athame",
-      "text": "Black blood laser ring when hit (which has 15% chance to drop a black heart per enemy killed)",
+      "text": "Black blood laser ring when hit",
       "shown": true,
       "introduced_in": "Afterbirth"
    },
    "409": {
       "name": "Empty Vessel",
-      "text": "Does nothing if 1+ red heart containers, flight, procs a shield every minute",
+      "text": "Does nothing if 1+ red heart containers, flight, procs a shield after 40 seconds in a room",
       "shown": true,
       "sin_hearts": "2",
       "introduced_in": "Afterbirth"
@@ -2948,7 +2987,7 @@
    },
    "416": {
       "name": "Deep Pockets",
-      "text": "Can carry 2 cards/pills instead of 1",
+      "text": "Increase your money cap to 999, spawns 1-3 coins when no rewards on room clear",
       "shown": true,
       "introduced_in": "Afterbirth"
    },
@@ -3018,7 +3057,7 @@
    },
    "427": {
       "name": "Mine Crafter",
-      "text": "Spawns a TNT barrel",
+      "text": "Spawns a TNT barrel that can explode if you re-use it even if the active is not charged",
       "shown": true,
       "space": true,
       "introduced_in": "Afterbirth"
@@ -3046,6 +3085,7 @@
    "431": {
       "name": "Multidimensional Baby",
       "text": "Familiar, tears that pass through it get 2x dmg",
+      "conjoined": true,
       "shown": true,
       "introduced_in": "Afterbirth"
    },
@@ -3064,6 +3104,7 @@
    "434": {
       "name": "Jar of Flies",
       "text": "Creates flies when you kill enemies (max 20)",
+      "beelzebub": true,
       "shown": true,
       "space": true,
       "introduced_in": "Afterbirth"
@@ -3100,6 +3141,7 @@
       "text": "Spawns a random trinket, doubles trinket effects while held",
       "shown": true,
       "space": true,
+      "yesmother": true,
       "luck": "1",
       "introduced_in": "Afterbirth"
    },
@@ -3120,7 +3162,7 @@
    },
    "442": {
       "name": "Dark Prince's Crown",
-      "text": "+1.5 range, +0.7 tears, and 0.2 shot speed when at exactly 1 red heart",
+      "text": "+1.5 range, +2 tears, and 0.2 shot speed when at exactly 1 red heart, tears up can go beyond soft cap",
       "shown": true,
       "introduced_in": "Afterbirth+"
    },
@@ -3159,7 +3201,7 @@
    },
    "448": {
       "name": "Shard of Glass",
-      "text": "Chance to drop a red heart when hit, +5 range and makes a red creep trail when hit",
+      "text": "On hit: leaves red creep, spews blood and lose half a red heart until you pick a red heart or you run out of red hearts",
       "shown": true,
       "introduced_in": "Afterbirth+"
    },
@@ -3177,7 +3219,7 @@
    },
    "451": {
       "name": "Tarot Cloth",
-      "text": "Doubles the effect of cards, spawns a random card/rune on pickup",
+      "text": "Doubles the effect of tarot cards, spawns a random card/rune on pickup",
       "shown": true,
       "introduced_in": "Afterbirth+"
    },
@@ -3208,7 +3250,7 @@
       "introduced_in": "Afterbirth+"
    },
    "456": {
-      "name": "Moldy Bread",
+      "name": "Midnight Snack",
       "health": "1",
       "shown": true,
       "introduced_in": "Afterbirth+"
@@ -3241,6 +3283,8 @@
    "461": {
       "name": "Parasitoid",
       "text": "Chance to fire an egg tear (spawns creep + blue fly/spider)",
+      "beelzebub": true,
+      "spiderbaby": true,
       "shown": true,
       "introduced_in": "Afterbirth+"
    },
@@ -3259,7 +3303,7 @@
    },
    "464": {
       "name": "Glyph of Balance",
-      "text": "Modifies drops from champion enemies based on certain conditions",
+      "text": "Modifies drops from champion enemies and room clear",
       "soul_hearts": "2",
       "shown": true,
       "introduced_in": "Afterbirth+"
@@ -3308,7 +3352,8 @@
    },
    "472": {
       "name": "King Baby",
-      "text": "Familiar, all other familiars follow it",
+      "text": "Familiar, all other familiars follow it and aim enemies automatically",
+      "conjoined": true,
       "shown": true,
       "introduced_in": "Afterbirth+"
    },
@@ -3319,10 +3364,11 @@
       "introduced_in": "Afterbirth+"
    },
    "474": {
-      "name": "Tonsil",
-      "text": "Chance to spawn a tonsil familiar when hit",
+      "name": "Broken Glass Cannon",
+      "text": "No effect. Become Glass Cannon when fully charged",
       "shown": true,
-      "introduced_in": "Afterbirth+"
+      "space": true,
+      "introduced_in": "Repentance"
    },
    "475": {
       "name": "Plan C",
@@ -3403,7 +3449,7 @@
    },
    "486": {
       "name": "Dull Razor",
-      "text": "\"Hurts\" the player without doing damage",
+      "text": "Fake damaging you, triggering all the effects that should trigger on hit",
       "space": true,
       "shown": true,
       "introduced_in": "Afterbirth+"
@@ -3424,7 +3470,7 @@
    },
    "489": {
       "name": "D infinity",
-      "text": "Gives random dice on pickup, morphs to another dice on use",
+      "text": "Allow player to choose a dice, number of charges scaling depending of the chosen dice",
       "space": true,
       "shown": true,
       "introduced_in": "Afterbirth+"
@@ -3438,33 +3484,35 @@
    },
    "491": {
       "name": "Acid Baby",
-      "text": "Spawns a pill every few rooms cleared",
+      "text": "Spawns a pill every 6-7 rooms cleared, using pills deal 10 dmg and poison to enemies",
+      "conjoined": true,
       "shown": true,
       "introduced_in": "Afterbirth+"
    },
    "492": {
       "name": "YO LISTEN!",
       "text": "Familiar, travels to Secret Rooms / Super Secret Rooms / tinted rocks / crawlspaces",
+      "beelzebub": true,
       "luck": "1",
       "shown": true,
       "introduced_in": "Afterbirth+"
    },
    "493": {
       "name": "Adrenaline",
-      "text": "+0.2 dmg for every empty red heart container",
+      "text": "dmg up for every empty red heart container, higher dmg ups the more empty red hearts you have",
       "shown": true,
       "spun": true,
       "introduced_in": "Afterbirth+"
    },
    "494": {
       "name": "Jacob's Ladder",
-      "text": "Lightning tears (1-2 sparks in a random direction, each does 1/2 dmg)",
+      "text": "Lightning tears (sparks in a random direction, each does 1/2 dmg), can chain through enemies",
       "shown": true,
       "introduced_in": "Afterbirth+"
    },
    "495": {
       "name": "Ghost Pepper",
-      "text": "Chance to shoot a fire (up to 125 dmg)",
+      "text": "Chance to shoot a blue fire that scale with the player's damage",
       "shown": true,
       "introduced_in": "Afterbirth+"
    },
@@ -3513,13 +3561,13 @@
    },
    "503": {
       "name": "Little Horn",
-      "text": "Chance to shoot void tears (piercing, instantly kills non-boss enemies)",
+      "text": "Chance to shoot void tears that invokes a Big Horn hand and squish the enemy",
       "shown": true,
       "introduced_in": "Afterbirth+"
    },
    "504": {
       "name": "Brown Nugget",
-      "text": "Spawns a fly turret (2 dmg / shot)",
+      "text": "Spawns a fly turret (3.5 dmg / shot)",
       "space": true,
       "shown": true,
       "introduced_in": "Afterbirth+"
@@ -3538,7 +3586,7 @@
    },
    "507": {
       "name": "Sharp Straw",
-      "text": "Deals damage to all enemies in the room (1x dmg + 10% of enemy's max HP), enemies killed have a chance to drop a red/soul heart",
+      "text": "Deals damage to all enemies in the room (1x dmg + 10% of enemy's max HP), enemies killed have a chance to drop a red heart",
       "space": true,
       "shown": true,
       "introduced_in": "Afterbirth+"
@@ -3546,12 +3594,13 @@
    "508": {
       "name": "Mom's Razor",
       "text": "Orbital (non-blocking), deals 20% dmg / tick, adds bleed effect (kills after 50s of slow damage)",
+      "yesmother": true,
       "shown": true,
       "introduced_in": "Afterbirth+"
    },
    "509": {
       "name": "Bloodshot Eye",
-      "text": "Orbital, 2 dmg / tick, shoots every 2 seconds (3.5 dmg / tear)",
+      "text": "Orbital, 2 dmg / tick, shoots every 2 seconds (3.5 dmg / tear), blocks enemy shots",
       "shown": true,
       "introduced_in": "Afterbirth+"
    },
@@ -3565,6 +3614,7 @@
    "511": {
       "name": "Angry Fly",
       "text": "Familiar, orbits around enemies, 2 dmg / tick",
+      "beelzebub": true,
       "shown": true,
       "introduced_in": "Booster Pack #1"
    },
@@ -3612,6 +3662,7 @@
    "518": {
       "name": "Buddy in a Box",
       "text": "Familiar, random co-op baby (changes per floor)",
+      "conjoined": true,
       "shown": true,
       "introduced_in": "Booster Pack #1"
    },
@@ -3636,21 +3687,21 @@
    },
    "522": {
       "name": "Telekinesis",
-      "text": "Freezes and then reflects enemy tears",
+      "text": "Repel enemies and reflects enemy tears",
       "shown": true,
       "space": true,
       "introduced_in": "Booster Pack #2"
    },
    "523": {
       "name": "Moving Box",
-      "text": "Stores all pickups / pedestals in the room, then spawns them when used again",
+      "text": "Stores max 6 pickups / pedestals in the room, then spawns them when used again",
       "shown": true,
       "space": true,
       "introduced_in": "Booster Pack #2"
    },
    "524": {
       "name": "Technology Zero",
-      "text": "Electric tears (tears are connected by electricity that deals 1x dmg / tick)",
+      "text": "Electric tears (tears are connected by electricity that deals 0.3x dmg / tick)",
       "shown": true,
       "introduced_in": "Booster Pack #2"
    },
@@ -3667,7 +3718,7 @@
       "introduced_in": "Booster Pack #3"
    },
    "527": {
-      "name": "Mr Me!",
+      "name": "Mr. Me!",
       "text": "Summons a helper to interact with whatever you target",
       "shown": true,
       "space": true,
@@ -3769,7 +3820,8 @@
    },
    "543": {
       "name": "Hallowed Ground",
-      "text": "Familiar, spawns a white poop on hit (makes an aura that halves tear delay + chance to block damage)",
+      "text": "Spawns a white poop on hit (makes an aura that halves tear delay + 1.25 dmg multiplier + chance to block damage)",
+      "ohcrap": true,
       "shown": true,
       "introduced_in": "Booster Pack #5"
    },
@@ -3823,147 +3875,151 @@
       "name": "Broken Shovel",
       "text": "Used in the Booster Pack #5 quest",
       "shown": true,
-      "space": true,
       "introduced_in": "Booster Pack #5"
    },
    "552": {
       "name": "Mom's Shovel",
       "text": "Used in the Booster Pack #5 quest",
+      "yesmother": true,
       "shown": true,
       "space": true,
       "introduced_in": "Booster Pack #5"
    },
-   "1000": {
+   "553": {
       "name": "Mucormycosis",
-      "text": "Releases poison gas upon killing an enemy",
+      "text": "Chance to shoot spore tears that stick on enemies and can split into small spore tears",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1001": {
+   "554": {
       "name": "2Spooky",
       "text": "Aura that fears enemies",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1002": {
-      "name": "Schoolbag",
-      "text": "Can carry 2 active items instead of 1",
+   "555": {
+      "name": "Golden Razor",
+      "text": "Description coming later",
       "shown": true,
-      "introduced_in": "Antibirth"
+      "space": true,
+      "introduced_in": "Repentance"
    },
-   "1003": {
+   "556": {
       "name": "Sulfur",
       "text": "Gives temporary Brimstone",
       "shown": true,
       "space": true,
+      "leviathan": true,
       "introduced_in": "Antibirth"
    },
-   "1004": {
+   "557": {
       "name": "Fortune Cookie",
-      "text": "Spawns a soul heart / card / rune / trinket",
+      "text": "Spawns a soul heart / card / fortune teller",
       "shown": true,
       "space": true,
       "introduced_in": "Antibirth"
    },
-   "1005": {
+   "558": {
       "name": "Eye Sore",
       "text": "Extra tears are fired in random directions",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1006": {
+   "559": {
       "name": "120 Volt",
-      "text": "Zap tears (enemies zap other enemies)",
+      "text": "Auto fire lightning arcs at enemies in close proximity",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1007": {
+   "560": {
       "name": "It Hurts",
-      "text": "Ring of bloody tears + increases tears on hit",
+      "text": "Ring of bloody tears + temporary dmg up on hit",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1008": {
+   "561": {
       "name": "Almond Milk",
-      "text": "+tears, tears gain raindom movement effects",
+      "text": "Huge tears up, tears gain random worm effects",
       "dmg_x": "0.3",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1009": {
+   "562": {
       "name": "Rock Bottom",
-      "text": "Resets all of your stats",
+      "text": "Resets all of your stats, stats can't go down",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1010": {
-      "name": "Enigma Bombs",
+   "563": {
+      "name": "Nancy Bombs",
       "text": "+5 bombs, bombs explode with a random effect",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1011": {
+   "564": {
       "name": "A Bar of Soap",
-      "text": "+tears, +shot speed",
+      "shot_speed": "0.2",
       "shown": true,
+      "tears": "0.7",
+      "text": "",
       "introduced_in": "Antibirth"
    },
-   "1012": {
-      "name": "Book of Despair",
-      "text": "Temporarily halves tear delay",
+   "565": {
+      "name": "Blood Puppy",
+      "text": "Description coming later",
       "shown": true,
-      "space": true,
-      "introduced_in": "Antibirth"
+      "introduced_in": "Repentance"
    },
-   "1013": {
-      "name": "D12",
-      "text": "Rerolls obstacles (rocks, etc.)",
+   "566": {
+      "name": "Dream Catcher",
       "shown": true,
-      "space": true,
-      "introduced_in": "Antibirth"
+      "text": "Reveals next boss and treasure room items in level transitions + half soul heart every floor",
+      "introduced_in": "Repentance"
    },
-   "1014": {
+   "567": {
       "name": "Paschal Candle",
       "text": "-1 tear delay for each room cleared (max 6), resets on hit",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1015": {
-      "name": "Bowl of Tears",
-      "text": "Shoots a burst of tears, each tear shot grants a charge",
+   "568": {
+      "name": "Divine Intervention",
       "shown": true,
-      "space": true,
-      "introduced_in": "Antibirth"
+      "seraphim": true,
+      "text": "A shield that reflects bullets, brimstone lasers and knock back enemies",
+      "introduced_in": "Repentance"
    },
-   "1016": {
+   "569": {
       "name": "Blood Oath",
-      "text": "Familiar that trades extra red health for damage at the beginning of a floor",
+      "text": "Familiar that trades extra red health for damage and speed at the beginning of a floor",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1017": {
-      "name": "Playdoh Cookie",
-      "text": "Random status effect tears (normal/petrify/homing/poison/fear)",
+   "570": {
+      "name": "Playdough Cookie",
+      "text": "Random status effect tears (normal/petrify/homing/poison/fear) + random colors to tears",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1018": {
+   "571": {
       "name": "Orphan Socks",
       "text": "Immunity from spike and creep damage, can enter Curse Rooms without taking damage",
       "soul_hearts": "2",
+      "speed": "",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1019": {
+   "572": {
       "name": "Eye of the Occult",
       "text": "+height, tears can be controlled mid-flight",
       "dmg": "1",
       "range": "21",
       "shot_speed": "-0.16",
       "shown": true,
+      "leviathan": true,
       "introduced_in": "Antibirth"
    },
-   "1020": {
+   "573": {
       "name": "Immaculate Heart",
       "text": "Additional set of orbiting spectral tears",
       "health": "1",
@@ -3971,289 +4027,591 @@
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1021": {
+   "574": {
       "name": "Monstrance",
       "text": "Grants aura that damages enemies",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1022": {
+   "575": {
       "name": "The Intruder",
-      "text": "Additional set of slowing tears, chance to spawn blue spiders and release Intruder familiar on hit",
+      "text": "Add 4 slowing tears, chance to spawn blue spiders and release Intruder familiar on hit",
+      "spiderbaby": true,
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1023": {
+   "576": {
       "name": "Dirty Mind",
       "text": "Dips become friendly, spawns friendly Dips when destroying poop",
+      "ohcrap": true,
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1024": {
+   "577": {
       "name": "Damocles",
       "text": "Double item pedestals, chance of permanent death on hit",
       "shown": true,
       "space": true,
       "introduced_in": "Antibirth"
    },
-   "1025": {
+   "578": {
       "name": "Free Lemonade",
       "text": "Lemon Party effect",
       "shown": true,
       "space": true,
       "introduced_in": "Antibirth"
    },
-   "1026": {
+   "579": {
       "name": "Spirit Sword",
       "text": "Sword replaces tears",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1027": {
+   "580": {
       "name": "Red Key",
-      "text": "Unlocks the red outlines of a door",
+      "text": "Creates additional red rooms",
       "shown": true,
       "space": true,
       "introduced_in": "Antibirth"
    },
-   "1028": {
+   "581": {
       "name": "Psy Fly",
       "text": "Orbital, reflects enemy projectiles as homing tears",
+      "beelzebub": true,
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1029": {
-      "name": "Black Mushroom",
+   "582": {
+      "name": "Wavy Cap",
       "text": "Temporary +tears, -speed, distorts graphics/sound",
+      "funguy": true,
       "shown": true,
       "space": true,
       "introduced_in": "Antibirth"
    },
-   "1030": {
+   "583": {
       "name": "Rocket in a Jar",
       "text": "+5 bombs, bombs become rockets",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1031": {
+   "584": {
       "name": "Book of Virtues",
-      "text": "Spawns a wisp orbital (max 16)",
+      "text": "Spawn a wisp orbital that have the effect of the active item that is inside the book",
+      "bookworm": true,
       "shown": true,
       "space": true,
       "introduced_in": "Antibirth"
    },
-   "1032": {
+   "585": {
       "name": "Alabaster Box",
-      "text": "Converts soul/black/immortal hearts to Angel Room items + various rewards",
+      "text": "Converts soul/black hearts to Angel Room items + random number of soul hearts",
       "shown": true,
       "space": true,
       "introduced_in": "Antibirth"
    },
-   "1033": {
-      "name": "Jacob's Ladder",
-      "text": "Start of each floor has ladder to Angel Room",
+   "586": {
+      "name": "The Stairway",
+      "text": "Start of each floor has ladder to a special Angel Shop",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1034": {
-      "name": "Menorah",
-      "text": "Familiar, increases damage + tear delay on hit (max 7)",
-      "shown": true,
-      "introduced_in": "Antibirth"
-   },
-   "1035": {
+   "588": {
       "name": "Sol",
       "text": "Reveals location of the boss, Sun card effect + active item recharge + 2x dmg + +1 luck + removes curses upon killing the boss",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1036": {
+   "589": {
       "name": "Luna",
-      "text": "Generates an extra Secret Room and Super Secret Room per floor",
+      "text": "Extra secret and super secret rooms on each floor that contains a blue light beam that gives half a soul heart + tears up for current floor",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1037": {
+   "590": {
       "name": "Mercurius",
-      "text": "Doors stay open, +speed",
+      "text": "Non-special room doors stay open",
+      "speed": "0.3",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1038": {
+   "591": {
       "name": "Venus",
       "text": "Close enemies get charmed",
       "health": "1",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1039": {
+   "592": {
       "name": "Terra",
-      "text": "Rock tears (knockback, can destroy obstacles)",
+      "text": "Rock tears (knockback, can destroy obstacles), random slight dmg up/down on some tears",
+      "dmg": "1",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1040": {
+   "593": {
       "name": "Mars",
-      "text": "Double tap to dash",
+      "text": "Double tap to dash, invincible when dashing on enemies",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1042": {
+   "594": {
+      "name": "Jupiter",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "595": {
       "name": "Saturnus",
-      "text": "Grants orbiting tears aura, refreshes per room",
+      "text": "Grants orbiting tears aura refreshing per room, can transform enemy tears into friendly tears",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1043": {
+   "596": {
       "name": "Uranus",
-      "text": "Ice tears (enemies killed will become frozen)",
+      "text": "Ice tears (enemies killed will become frozen and can be kicked)",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1045": {
+   "597": {
+      "name": "Neptunus",
+      "shown": true,
+      "text": "Charge an attack that makes you shoot several tears with decreasing fire rate",
+      "introduced_in": "Repentance"
+   },
+   "598": {
       "name": "Pluto",
-      "text": "+tears, -range, size down, can pass between blocks",
+      "text": "-range, size down, can pass between blocks",
+      "tears": "0.7",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1046": {
+   "599": {
       "name": "Voodoo Head",
       "text": "Generates 2 Curse Rooms per floor",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1047": {
+   "600": {
       "name": "Eye Drops",
-      "text": "+tears (only on one eye)",
+      "text": "Tears up only on left eye",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1048": {
+   "601": {
       "name": "Act of Contrition",
-      "text": "+tears up, +immortal heart, allows Angel Rooms even if a devil deal has been taken",
+      "text": "+1 eternal heart, allows Angel Rooms even if a devil deal has been taken",
+      "tears": "0.7",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1049": {
+   "602": {
       "name": "Member Card",
       "text": "Every shop has a trapdoor to a special shop",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1050": {
+   "603": {
       "name": "Battery Pack",
-      "text": "Recharges active item, spawns 2-4 batteries on pickup",
+      "text": "Recharges active item, spawns 3 random batteries on pickup",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1051": {
+   "604": {
       "name": "Mom's Bracelet",
       "text": "Can throw obstacles",
+      "yesmother": true,
       "shown": true,
       "space": true,
       "introduced_in": "Antibirth"
    },
-   "1052": {
+   "605": {
       "name": "The Scooper",
       "text": "Spawns a temporary familiar similar to The Peeper",
       "shown": true,
       "space": true,
       "introduced_in": "Antibirth"
    },
-   "1053": {
-      "name": "Oculus Rift",
+   "606": {
+      "name": "Ocular Rift",
       "text": "Chance to shoot rift tears (summons rifts that attract + deal contact dmg)",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1054": {
+   "607": {
       "name": "Boiled Baby",
       "text": "Familiar, acts like a Boil",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1055": {
+   "608": {
       "name": "Freezer Baby",
       "text": "Familiar that fires freezing tears",
+      "conjoined": true,
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1056": {
+   "609": {
       "name": "Eternal D6",
       "text": "Like a D6, but has a chance to disappear",
       "shown": true,
       "space": true,
       "introduced_in": "Antibirth"
    },
-   "1057": {
+   "610": {
       "name": "Bird Cage",
-      "text": "Spawns bird familiar when hit (similar to Dead Bird)",
+      "text": "Spawns bird familiar when hit (similar to Dead Bird) that stomps enemies",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1058": {
-      "name": "Donkey Jawbone",
-      "text": "Spin attack on hit",
+   "611": {
+      "name": "Larynx",
+      "text": "Description coming later",
       "shown": true,
-      "introduced_in": "Antibirth"
+      "space": true,
+      "introduced_in": "Repentance"
    },
-   "1059": {
+   "612": {
       "name": "Lost Soul",
       "text": "Familiar, 1 hit per floor, if it survives it grants a random reward",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1061": {
+   "614": {
       "name": "Blood Bombs",
       "text": "Bombs leave behind red creep, can plant bombs for 1/2 heart, heals 4 hearts",
       "health": "1",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1062": {
+   "615": {
       "name": "Lil' Dumpy",
       "text": "Familiar, makes stun/poison farts on hit",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1063": {
+   "616": {
       "name": "Bird's Eye",
-      "text": "Chance to shoot a fire (similar to Ghost Pepper)",
+      "text": "Chance to shoot a big red fire",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1064": {
+   "617": {
       "name": "Lodestone",
       "text": "Chance to shoot magnetizing tears (attract enemies + tears + projectiles)",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1065": {
+   "618": {
       "name": "Rotten Tomato",
       "text": "Chance to shoot marked tears (other enemies will attack a marked enemy)",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1066": {
+   "619": {
       "name": "Birthright",
       "text": "Custom reward based on character",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1067": {
-      "name": "Voodoo Pin",
-      "text": "\"Hurts\" the player without doing damage (same as Dull Razor)",
-      "shown": true,
-      "space": true,
-      "introduced_in": "Antibirth"
-   },
-   "1068": {
+   "621": {
       "name": "Red Stew",
       "text": "Full heal, +dmg that wears off over time",
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1069": {
+   "622": {
+      "name": "Genesis",
+      "text": "Description coming later",
+      "shown": true,
+      "space": true,
+      "introduced_in": "Repentance"
+   },
+   "623": {
+      "name": "Sharp Key",
+      "text": "Consumes a key and throws it to deal damage / open doors, +5 keys on pickup. Killed enemies have a chance to spawn a chest",
+      "shown": true,
+      "space": true,
+      "introduced_in": "Antibirth"
+   },
+   "624": {
+      "name": "Booster Pack",
+      "text": "Spawns 5 random cards on pickup",
+      "shown": true,
+      "introduced_in": "Antibirth"
+   },
+   "625": {
+      "name": "Mega Mush",
+      "text": "Gigantify for a short duration (+damage, -tears, invulnerable, crush rocks/blocks/doors)",
+      "funguy": true,
+      "shown": true,
+      "space": true,
+      "introduced_in": "Antibirth"
+   },
+   "626": {
+      "name": "Knife Piece 1",
+      "text": "Collect the pieces to get a knife familiar",
+      "shown": true,
+      "introduced_in": "Antibirth"
+   },
+   "627": {
+      "name": "Knife Piece 2",
+      "text": "Collect the pieces to get a knife familiar",
+      "shown": true,
+      "introduced_in": "Antibirth"
+   },
+   "628": {
+      "name": "Death Certificate",
+      "text": "Description coming later",
+      "shown": true,
+      "space": true,
+      "introduced_in": "Repentance"
+   },
+   "629": {
+      "name": "Bot Fly",
+      "text": "Familiar, orbits and fires shielded tears",
+      "beelzebub": true,
+      "shown": true,
+      "introduced_in": "Antibirth"
+   },
+   "631": {
+      "name": "Meat Cleaver",
+      "text": "Splits all enemies in the room into 2 smaller versions",
+      "shown": true,
+      "space": true,
+      "introduced_in": "Antibirth"
+   },
+   "632": {
+      "name": "Evil Charm",
+      "text": "Fear immunity",
+      "luck": "3",
+      "soul_hearts": "2",
+      "shown": true,
+      "introduced_in": "Antibirth"
+   },
+   "633": {
+      "name": "Dogma",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "634": {
+      "name": "Purgatory",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "635": {
+      "name": "Stitches",
+      "text": "Spawns a temporary familiar, can swap positions with the familiar to deal damage",
+      "shown": true,
+      "space": true,
+      "introduced_in": "Antibirth"
+   },
+   "636": {
+      "name": "R Key",
+      "text": "Restarts the game to the first floor but keeps all items",
+      "shown": true,
+      "space": true,
+      "introduced_in": "Antibirth"
+   },
+   "637": {
+      "name": "Knockout Drops",
+      "text": "Chance to shoot fist tears (knockback + stun), knocking enemies into walls or other enemies damage them",
+      "shown": true,
+      "introduced_in": "Antibirth"
+   },
+   "638": {
+      "name": "Eraser",
+      "text": "Throw on an enemy to permanently remove that enemy type from the current run, recharge every floor",
+      "shown": true,
+      "space": true,
+      "introduced_in": "Antibirth"
+   },
+   "639": {
+      "name": "Yuck Heart",
+      "text": "+1 rotten heart on use",
+      "shown": true,
+      "space": true,
+      "introduced_in": "Antibirth"
+   },
+   "640": {
+      "name": "Urn of Souls",
+      "text": "A flamethrower weapon that collects one soul per enemy killed",
+      "shown": true,
+      "space": true,
+      "introduced_in": "Repentance"
+   },
+   "641": {
+      "name": "Akeldama",
+      "text": "Spawns bloody tears behind the player",
+      "shown": true,
+      "introduced_in": "Antibirth"
+   },
+   "642": {
+      "name": "Magic Skin",
+      "text": "Converts 1 red heart / 2 soul hearts to a broken heart, spawns a pedestal item",
+      "shown": true,
+      "space": true,
+      "introduced_in": "Antibirth"
+   },
+   "643": {
+      "name": "Revelation",
+      "text": "Grants flight and an addtional angelic brimstone attack",
+      "shot_speed": "0.38",
+      "soul_hearts": "2",
+      "seraphim": true,
+      "shown": true,
+      "introduced_in": "Antibirth"
+   },
+   "644": {
+      "name": "Consolation Prize",
+      "text": "+lowest stat, +3 coins or +1 bomb or +1 key (depending on lowest)",
+      "shown": true,
+      "introduced_in": "Antibirth"
+   },
+   "645": {
+      "name": "Tinytoma",
+      "text": "Orbital, splits into blue spiders on hit",
+      "shown": true,
+      "introduced_in": "Antibirth"
+   },
+   "646": {
+      "name": "Brimstone bombs",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "647": {
+      "name": "4.5 Volt",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "649": {
+      "name": "Fruity Plum",
+      "text": "Baby Plum familiar that propel itself diagonally by shooting tears",
+      "beelzebub": true,
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "650": {
+      "name": "Plum Flute",
+      "shown": true,
+      "beelzebub": true,
+      "text": "Spawns Baby Plum",
+      "space": true,
+      "introduced_in": "Repentance"
+   },
+   "651": {
+      "name": "Star of Bethlehem",
+      "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "652": {
+      "name": "Cube Baby",
+      "shown": true,
+      "conjoined": true,
+      "text": "A frozen baby familiar that can be kicked",
+      "introduced_in": "Repentance"
+   },
+   "653": {
+      "name": "Vade Retro",
+      "text": "Spawn a little red ghost for each enemy killed and explodes when another enemy touches it",
+      "shown": true,
+      "space": true,
+      "introduced_in": "Repentance"
+   },
+   "654": {
+      "name": "False PHD",
+      "sin_hearts": "1",
+      "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "655": {
+      "name": "Spin to Win",
+      "text": "A spinning familiar, holding use key increase player speed + orbitals spin faster and deal more dmg",
+      "shown": true,
+      "space": true,
+      "introduced_in": "Repentance"
+   },
+   "656": {
+      "name": "Damocles",
+      "text": "The passive version of Damocles",
+      "shown": true,
+      "introduced_in": "Antibirth"
+   },
+   "657": {
+      "name": "Vasculitis",
+      "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "658": {
+      "name": "Giant Cell",
+      "shown": true,
+      "text": "Spawn mini Isaacs that follow you when hit",
+      "introduced_in": "Repentance"
+   },
+   "659": {
+      "name": "Tropicamide",
+      "shown": true,
+      "text": "Tear size up + range up",
+      "introduced_in": "Repentance"
+   },
+   "660": {
+      "name": "Card Reading",
+      "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "661": {
+      "name": "Quints",
+      "shown": true,
+      "conjoined": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "662": {
+      "name": "Pacifist",
+      "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "663": {
+      "name": "Tooth and Nail",
+      "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "664": {
+      "name": "Binge Eater",
+      "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "665": {
+      "name": "Guppy's Eye",
+      "shown": true,
+      "guppy": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "667": {
+      "name": "Strawman",
+      "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "668": {
+      "name": "Dad's Note",
+      "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "669": {
       "name": "Sausage",
       "text": "Full heal",
       "health": "1",
@@ -4267,135 +4625,395 @@
       "shown": true,
       "introduced_in": "Antibirth"
    },
-   "1070": {
-      "name": "Sharp Key",
-      "text": "Consumes a key and throws it to deal damage / open doors, +5 keys on pickup",
+   "670": {
+      "name": "Options?",
       "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "671": {
+      "name": "Candy Heart",
+      "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "672": {
+      "name": "A Pound of Flesh",
+      "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "673": {
+      "name": "Redemption",
+      "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "674": {
+      "name": "Spirit Shackles",
+      "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "675": {
+      "name": "Cracked Orb",
+      "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "676": {
+      "name": "Empty Heart",
+      "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "677": {
+      "name": "Astral Projection",
+      "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "678": {
+      "name": "C Section",
+      "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "679": {
+      "name": "Lil Abaddon",
+      "shown": true,
+      "conjoined": true,
+      "text": "Familiar that fires a Maw of the Void ring",
+      "introduced_in": "Repentance"
+   },
+   "680": {
+      "name": "Montezuma's Revenge",
+      "shown": true,
+      "ohcrap": true,
+      "text": "Fires a short diarrhea Brimstone backwards",
+      "introduced_in": "Repentance"
+   },
+   "681": {
+      "name": "Lil Portal",
+      "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "682": {
+      "name": "Worm Friend",
+      "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "683": {
+      "name": "Bone Spurs",
+      "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "684": {
+      "name": "Hungry Soul",
+      "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "685": {
+      "name": "Jar of Wisps",
+      "shown": true,
+      "text": "Description coming later",
       "space": true,
-      "introduced_in": "Antibirth"
+      "introduced_in": "Repentance"
    },
-   "1071": {
-      "name": "Booster Pack",
-      "text": "Spawns 3 random cards on pickup",
+   "686": {
+      "name": "Soul Locket",
       "shown": true,
-      "introduced_in": "Antibirth"
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
    },
-   "1072": {
-      "name": "Mega Mush",
-      "text": "Gigantify for a short duration (+damage, -tears, invulnerable, crush rocks/blocks/doors)",
+   "687": {
+      "name": "Friend Finder",
       "shown": true,
+      "text": "Description coming later",
       "space": true,
-      "introduced_in": "Antibirth"
+      "introduced_in": "Repentance"
    },
-   "1073": {
-      "name": "Knife Piece 1",
-      "text": "Collect all 3 to get a knife familiar",
+   "688": {
+      "name": "Inner Child",
       "shown": true,
-      "introduced_in": "Antibirth"
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
    },
-   "1074": {
-      "name": "Knife Piece 2",
-      "text": "Collect all 3 to get a knife familiar",
+   "689": {
+      "name": "Glitched Crown",
       "shown": true,
-      "introduced_in": "Antibirth"
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
    },
-   "1075": {
-      "name": "Knife Piece 3",
-      "text": "Collect all 3 to get a knife familiar",
+   "690": {
+      "name": "Belly Jelly",
       "shown": true,
-      "introduced_in": "Antibirth"
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
    },
-   "1076": {
-      "name": "Bot Fly",
-      "text": "Familiar, orbits and fires shielded tears",
+   "691": {
+      "name": "Sacred Orb",
       "shown": true,
-      "introduced_in": "Antibirth"
+      "seraphim": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
    },
-   "1078": {
-      "name": "Meat Cleaver",
-      "text": "Splits all enemies in the room into 2 smaller versions",
+   "692": {
+      "name": "Sanguine Bond",
       "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "693": {
+      "name": "The Swarm",
+      "shown": true,
+      "beelzebub": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "694": {
+      "name": "Heartbreak",
+      "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "695": {
+      "name": "Bloody Gust",
+      "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "696": {
+      "name": "Salvation",
+      "shown": true,
+      "seraphim": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "697": {
+      "name": "Vanishing Twin",
+      "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "698": {
+      "name": "Twisted Pair",
+      "shown": true,
+      "conjoined": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "699": {
+      "name": "Azazel's Rage",
+      "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "700": {
+      "name": "Echo Chamber",
+      "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "701": {
+      "name": "Isaac's Tomb",
+      "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "702": {
+      "name": "Vengeful Spirit",
+      "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "703": {
+      "name": "Esau Jr.",
+      "shown": true,
+      "text": "Description coming later",
       "space": true,
-      "introduced_in": "Antibirth"
+      "introduced_in": "Repentance"
    },
-   "1079": {
-      "name": "Evil Charm",
+   "704": {
+      "name": "Berserk!",
+      "shown": true,
+      "text": "Description coming later",
+      "space": true,
+      "introduced_in": "Repentance"
+   },
+   "705": {
+      "name": "Dark Arts",
+      "shown": true,
+      "text": "Description coming later",
+      "space": true,
+      "introduced_in": "Repentance"
+   },
+   "706": {
+      "name": "Abyss",
+      "shown": true,
+      "text": "Description coming later",
+      "space": true,
+      "introduced_in": "Repentance"
+   },
+   "707": {
+      "name": "Supper",
+      "health":"1",
+      "shown": true,
+      "health_only": true,
       "text": "",
-      "luck": "3",
-      "shown": true,
-      "introduced_in": "Antibirth"
+      "introduced_in": "Repentance"
    },
-   "1080": {
-      "name": "Stone Bombs",
-      "text": "+5 bombs, bombs release rock waves",
+   "708": {
+      "name": "Stapler",
       "shown": true,
-      "introduced_in": "Antibirth"
+      "text": "Description coming later",
+      "dmg": "1",
+      "introduced_in": "Repentance"
    },
-   "1082": {
-      "name": "Stitches",
-      "text": "Spawns a temporary familiar, can swap positions with the familiar to deal damage",
+   "709": {
+      "name": "Suplex!",
+      "shown": true,
+      "text": "Dash into an enemy, grab it and slam it on the ground",
+      "space": true,
+      "introduced_in": "Repentance"
+   },
+   "710": {
+      "name": "Bag of Crafting",
+      "shown": true,
+      "text": "Description coming later",
+      "space": true,
+      "introduced_in": "Repentance"
+   },
+   "711": {
+      "name": "Flip",
+      "shown": true,
+      "text": "Description coming later",
+      "space": true,
+      "introduced_in": "Repentance"
+   },
+   "712": {
+      "name": "Lemegeton",
+      "shown": true,
+      "text": "Description coming later",
+      "space": true,
+      "bookworm": true,
+      "introduced_in": "Repentance"
+   },
+   "713": {
+      "name": "Sumptorium",
+      "shown": true,
+      "text": "Description coming later",
+      "space": true,
+      "introduced_in": "Repentance"
+   },
+   "714": {
+      "name": "Recall",
+      "shown": true,
+      "text": "Description coming later",
+      "space": true,
+      "introduced_in": "Repentance"
+   },
+   "715": {
+      "name": "Hold",
+      "shown": true,
+      "text": "Description coming later",
+      "space": true,
+      "introduced_in": "Repentance"
+   },
+   "716": {
+      "name": "Keeper's Sack",
+      "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "717": {
+      "name": "Keeper's Kin",
+      "shown": true,
+      "spiderbaby": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "718": {
+      "name": "Keeper's Rope",
+      "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "719": {
+      "name": "Keeper's Box",
+      "shown": true,
+      "text": "Description coming later",
+      "space": true,
+      "introduced_in": "Repentance"
+   },
+   "720": {
+      "name": "Everything Jar",
+      "shown": true,
+      "text": "Description coming later",
+      "space": true,
+      "introduced_in": "Repentance"
+   },
+   "721": {
+      "name": "TMTRAINER",
+      "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "722": {
+      "name": "Anima Sola",
+      "shown": true,
+      "text": "Description coming later",
+      "space": true,
+      "introduced_in": "Repentance"
+   },
+   "723": {
+      "name": "Spindown Dice",
+      "shown": true,
+      "text": "Description coming later",
+      "space": true,
+      "introduced_in": "Repentance"
+   },
+   "724": {
+      "name": "Hypercoagulation",
+      "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "725": {
+      "name": "IBS",
+      "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "726": {
+      "name": "Hemoptysis",
+      "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "727": {
+      "name": "Ghost Bombs",
+      "shown": true,
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
+   },
+   "728": {
+      "name": "Gello",
       "shown": true,
       "space": true,
-      "introduced_in": "Antibirth"
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
    },
-   "1083": {
-      "name": "R Key",
-      "text": "Restarts the game to the first floor but keeps all items",
+   "729": {
+      "name": "Decap Attack",
       "shown": true,
       "space": true,
-      "introduced_in": "Antibirth"
-   },
-   "1084": {
-      "name": "Knockout Drops",
-      "text": "Chance to shoot fist tears (knockback + stun)",
-      "shown": true,
-      "introduced_in": "Antibirth"
-   },
-   "1085": {
-      "name": "Eraser",
-      "text": "Throw on an enemy to permanently remove that enemy type from the current run",
-      "shown": true,
-      "space": true,
-      "introduced_in": "Antibirth"
-   },
-   "1086": {
-      "name": "Yuck Heart",
-      "text": "+1 rotton heart",
-      "shown": true,
-      "space": true,
-      "introduced_in": "Antibirth"
-   },
-   "1088": {
-      "name": "Akeldama",
-      "text": "Spawns bloody tears behind the player",
-      "shown": true,
-      "introduced_in": "Antibirth"
-   },
-   "1089": {
-      "name": "Magic Skin",
-      "text": "Converts 1 red heart / 2 soul hearts to a broken heart, spawns a pedestal item",
-      "shown": true,
-      "space": true,
-      "introduced_in": "Antibirth"
-   },
-   "1090": {
-      "name": "Revelation",
-      "text": "Flight, +2 immortal hearts, -range, spectral, homing",
-      "shot_speed": "0.38",
-      "shown": true,
-      "introduced_in": "Antibirth"
-   },
-   "1091": {
-      "name": "Consolation Prize",
-      "text": "+lowest stat, +3 coins or +1 bomb or +1 key (depending on lowest)",
-      "shown": true,
-      "introduced_in": "Antibirth"
-   },
-   "1092": {
-      "name": "Tinytoma",
-      "text": "Orbital, splits into blue spiders on hit",
-      "shown": true,
-      "introduced_in": "Antibirth"
+      "text": "Description coming later",
+      "introduced_in": "Repentance"
    },
    "2001": {
       "name": "Swallowed Penny",
@@ -4417,7 +5035,7 @@
    },
    "2004": {
       "name": "Broken Remote",
-      "text": "Teleport on active item use",
+      "text": "Teleport on active item use, can influence teleport direction based on player's direction",
       "shown": true,
       "introduced_in": "Rebirth"
    },
@@ -4453,13 +5071,14 @@
    },
    "2010": {
       "name": "Wiggle Worm",
-      "text": "Wave tears (only cosmetic)",
+      "text": "Wave + spectral tears",
+      "tears": "0.4",
       "shown": true,
       "introduced_in": "Rebirth"
    },
    "2011": {
       "name": "Ring Worm",
-      "text": "Ring tears (only cosmetic)",
+      "text": "Ring + spectral tears",
       "shown": true,
       "introduced_in": "Rebirth"
    },
@@ -4471,7 +5090,7 @@
    },
    "2013": {
       "name": "Store Credit",
-      "text": "Free store item",
+      "text": "First shop item you will take while holding the trinket will be free",
       "shown": true,
       "introduced_in": "Rebirth"
    },
@@ -4483,7 +5102,7 @@
    },
    "2015": {
       "name": "Lucky Rock",
-      "text": "Rocks drop coins when broken",
+      "text": "33% for rocks to drop coins when broken",
       "shown": true,
       "introduced_in": "Rebirth"
    },
@@ -4549,7 +5168,7 @@
    },
    "2026": {
       "name": "Hook Worm",
-      "text": "Hook tears (only cosmetic)",
+      "text": "Hook + spectral tears",
       "shown": true,
       "introduced_in": "Rebirth"
    },
@@ -4592,7 +5211,7 @@
    },
    "2033": {
       "name": "Umbilical Cord",
-      "text": "Gives Little Steven if damaged to 1/2 hearts",
+      "text": "Gives Little Steven if damaged to 1/2 hearts, high chance to proc a Gemini for the room when hit",
       "shown": true,
       "introduced_in": "Rebirth"
    },
@@ -4686,19 +5305,19 @@
    },
    "2049": {
       "name": "Bloody Penny",
-      "text": "50% chance to spawn a 1/2 red heart upon picking up a coin",
+      "text": "25% chance to spawn a 1/2 red heart upon picking up a coin",
       "shown": true,
       "introduced_in": "Rebirth"
    },
    "2050": {
       "name": "Burnt Penny",
-      "text": "50% chance to spawn a bomb upon picking up a coin",
+      "text": "25% chance to spawn a bomb upon picking up a coin",
       "shown": true,
       "introduced_in": "Rebirth"
    },
    "2051": {
       "name": "Flat Penny",
-      "text": "50% chance to spawns a key upon picking up a coin",
+      "text": "25% chance to spawns a key upon picking up a coin",
       "shown": true,
       "introduced_in": "Rebirth"
    },
@@ -4947,9 +5566,7 @@
    },
    "2092": {
       "name": "Cracked Crown",
-      "text": "Stat bonuses are increased by 33% (other than tears)",
-      "tears": "0.2",
-      "delay": "1",
+      "text": "Stat bonuses are increased by 20%",
       "shown": true,
       "introduced_in": "Afterbirth+"
    },
@@ -5166,8 +5783,375 @@
    },
    "2128": {
       "name": "Finger Bone",
-      "text": "Chance to gain a bone heart on hit",
+      "text": "5% chance to gain a bone heart on hit",
       "shown": true,
       "introduced_in": "Booster Pack #5"
+   },
+   "2129": {
+      "name": "Jawbreaker",
+      "text": "Tears can become a tooth",
+      "shown": true,
+      "introduced_in": "Antibirth"
+   },
+   "2130": {
+      "name": "Chewed Pen",
+      "text": "Tears have a chance to slow enemies",
+      "shown": true,
+      "introduced_in": "Antibirth"
+   },
+   "2131": {
+      "name": "Blessed Penny",
+      "text": "Chance to spawn half a soul heart when picking up a coin",
+      "shown": true,
+      "introduced_in": "Antibirth"
+   },
+   "2132": {
+      "name": "Broken Syringe",
+      "text": "Gives you a random syringe effect every room",
+      "shown": true,
+      "introduced_in": "Antibirth"
+   },
+   "2133": {
+      "name": "Short Fuse",
+      "text": "All bombs have a shorter fuse time",
+      "shown": true,
+      "introduced_in": "Antibirth"
+   },
+   "2134": {
+      "name": "Gigante Bean",
+      "text": "Farts from isaac and familars are larger",
+      "shown": true,
+      "introduced_in": "Antibirth"
+   },
+   "2135": {
+      "name": "A Lighter",
+      "text": "Chance for enemies to burn when entering a room",
+      "shown": true,
+      "introduced_in": "Antibirth"
+   },
+   "2136": {
+      "name": "Broken Padlock",
+      "text": "Explosions can open locked doors",
+      "shown": true,
+      "introduced_in": "Antibirth"
+   },
+   "2137": {
+      "name": "Myosotis",
+      "text": "Get max 8 pickups from the previous floor at the beginning of the new floor",
+      "shown": true,
+      "introduced_in": "Antibirth"
+   },
+   "2138": {
+      "name": "'M",
+      "text": "Reroll your active item upon use",
+      "shown": true,
+      "introduced_in": "Antibirth"
+   },
+   "2139": {
+      "name": "Teardrop Charm",
+      "text": "Tear-based effects have an extra chance of occurring",
+      "shown": true,
+      "introduced_in": "Antibirth"
+   },
+   "2140": {
+      "name": "Apple of Sodom",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2141": {
+      "name": "Forgotten Lullaby",
+      "text": "Increase tear rate of familiars",
+      "shown": true,
+      "introduced_in": "Antibirth"
+   },
+   "2142": {
+      "name": "Beth's Faith",
+      "text": "Spawn four wisps at the start of each floor",
+      "shown": true,
+      "introduced_in": "Antibirth"
+   },
+   "2143": {
+      "name": "Old Capacitor",
+      "text": "Your active item don't charge but you have a chance to spawn an extra battery drop on room clear",
+      "shown": true,
+      "introduced_in": "Antibirth"
+   },
+   "2144": {
+      "name": "Brain Worm",
+      "text": "Missed tears will redirect themselves toward enemies",
+      "shown": true,
+      "introduced_in": "Antibirth"
+   },
+   "2145": {
+      "name": "Perfection",
+      "text": "+10 luck but break when hit",
+      "shown": true,
+      "introduced_in": "Antibirth"
+   },
+   "2146": {
+      "name": "Devil's Crown",
+      "text": "Treasure rooms are replaced with Devil Deals",
+      "shown": true,
+      "introduced_in": "Antibirth"
+   },
+   "2147": {
+      "name": "Charged Penny",
+      "text": "Chance to replenish 1 bar of charge when picking up pennies",
+      "shown": true,
+      "introduced_in": "Antibirth"
+   },
+   "2148": {
+      "name": "Friendship Necklace",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2149": {
+      "name": "Panic Button",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2150": {
+      "name": "Blue Key",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2151": {
+      "name": "Flat File",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2152": {
+      "name": "Telescope Lens",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2153": {
+      "name": "Mom's Lock",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2154": {
+      "name": "Dice Bag",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2155": {
+      "name": "Holy Crown",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2156": {
+      "name": "Mother's Kiss",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2157": {
+      "name": "Torn Card",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2158": {
+      "name": "Torn Pocket",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2159": {
+      "name": "Gilded Key",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2160": {
+      "name": "Lucky Sack",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2161": {
+      "name": "Wicked Crown",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2162": {
+      "name": "Azazel's Stump",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2163": {
+      "name": "Dingle Berry",
+      "text": "Spawns a charmed Dip on room clear",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2164": {
+      "name": "Ring Cap",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2165": {
+      "name": "Nuh uh!",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2166": {
+      "name": "Modeling Clay",
+      "text": "Chance of giving you a random passive item each room until room clear",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2167": {
+      "name": "Polished Bone",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2168": {
+      "name": "Hollow Heart",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2169": {
+      "name": "Kid's Drawing",
+      "text": "Description coming later",
+      "shown": true,
+      "guppy": true,
+      "introduced_in": "Repentance"
+   },
+   "2170": {
+      "name": "Crystal Key",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2171": {
+      "name": "Keeper's Bargain",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2172": {
+      "name": "Cursed Penny",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2173": {
+      "name": "Your Soul",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2174": {
+      "name": "Number Magnet",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2175": {
+      "name": "Strange Key",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2176": {
+      "name": "Lil Clot",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2177": {
+      "name": "Temporary Tattoo",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2178": {
+      "name": "Swallowed M80",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2179": {
+      "name": "RC Remote",
+      "text": "Familiars are now controlled like Jacob&Esau",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2180": {
+      "name": "Found soul",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2181": {
+      "name": "Expansion Pack",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2182": {
+      "name": "Beth's Essence",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2183": {
+      "name": "The Twins",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2184": {
+      "name": "Adoption Papers",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2185": {
+      "name": "Cricket Leg",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2186": {
+      "name": "Apollyon's Best Friend",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2187": {
+      "name": "Broken Glasses",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2188": {
+      "name": "Ice Cube",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "2189": {
+      "name": "Sigil of Baphomet",
+      "text": "Description coming later",
+      "shown": true,
+      "introduced_in": "Repentance"
    }
 }

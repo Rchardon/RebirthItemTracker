@@ -34,6 +34,10 @@ class IsaacTracker(object):
         with open(wdir_prefix + "items.json", "r") as items_file:
             Item.items_info = json.load(items_file)
         ItemInfo.check_item_keys(Item.items_info, "items.json")
+
+        with open(wdir_prefix + "items_abplus.json", "r") as abplus_items_file:
+            Item.abplus_items_info = json.load(abplus_items_file)
+        ItemInfo.check_item_keys(Item.abplus_items_info, "items_abplus.json")    
         
         with open(wdir_prefix + "items_custom.json", "r") as custom_items_file:
             Item.custom_items_info = json.load(custom_items_file)
@@ -174,7 +178,7 @@ class IsaacTracker(object):
                 else:
                     force_draw = state and state.modified
                     state = parser.parse()
-                    if force_draw:
+                    if force_draw and state is not None:
                         state.modified = True
                     if write_to_server and not opt.trackerserver_authkey:
                         screen_error_message = "Your authkey is blank. Get a new authkey in the options menu and paste it into the authkey text field."
@@ -221,7 +225,7 @@ class IsaacTracker(object):
                 drawing_tool.write_error_message(screen_error_message)
             else:
                 # We got a state, now we draw it
-                drawing_tool.draw_state(state)
+                drawing_tool.draw_state(state,framecount)
 
             # if we're watching someone and they change their game version, it can require us to reset
             if state and last_game_version != state.game_version:

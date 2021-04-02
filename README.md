@@ -1,7 +1,7 @@
 RebirthItemTracker
 ==================
 
-This uses the `log.txt` file to track item pickups in The Binding of Isaac: Rebirth, Afterbirth, Afterbirth+, and Antibirth.
+This uses the `log.txt` file to track item pickups in The Binding of Isaac: Rebirth, Afterbirth, Afterbirth+, Repentance and Antibirth.
 
 The game's built-in item tracker only shows 10 items and the pause screen items are hard to read, so this program offers
 a more powerful alternative. This is particularly useful for streamers, so their viewers can see their items, but can
@@ -19,8 +19,8 @@ Additionally, the tracker...
 
 ![](http://i.imgur.com/zG3eV8V.png)
 
-Download it [here](https://github.com/Hyphen-ated/RebirthItemTracker/releases) (get the latest file that doesn't have
-"source code" in the name).
+Download it [here](https://github.com/rchardon/RebirthItemTracker/releases) or [here](https://github.com/Hyphen-ated/RebirthItemTracker/releases) for version 3.0.0 and downwards 
+(get the latest file that doesn't have "source code" in the name).
 
 To use it, first extract that zip file and then run the exe inside. Don't put it inside the same folder as any file
 \named log.txt.
@@ -83,6 +83,7 @@ Ctrl-up and ctrl-down are shortcuts to change the delay, which is also shown in 
 
 * When using the _Glowing Hour Glass_ right after taking any object, this object will remains in the tracker even if the
 character doesn't have it anymore.
+
 * If you want to make a shortcut to the tracker, and you want automatic updates to work, make the shortcut to the file
 "Rebirth Item Tracker.exe" and not "item_tracker.exe".
 
@@ -90,3 +91,7 @@ character doesn't have it anymore.
 
 * If you ever save & quit and close the game, the tracker will forget anything that happened during that run when you
 relaunch the game.
+
+* Transparent mode only works on Windows.
+
+* You can't see rerolled items with D4 in Repentance.
