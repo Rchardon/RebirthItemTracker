@@ -1,9 +1,10 @@
 RebirthItemTracker
 ==================
+This tracker is following Hyphen-ated's work as he doesn't have time anymore to work on it.
 
 This uses the `log.txt` file to track item pickups in The Binding of Isaac: Rebirth, Afterbirth, Afterbirth+, Repentance and Antibirth.
 
-The game's built-in item tracker only shows 10 items and the pause screen items are hard to read, so this program offers
+The game's built-in item tracker only shows 10 items (on AB+ and downwards) and the pause screen items are hard to read, so this program offers
 a more powerful alternative. This is particularly useful for streamers, so their viewers can see their items, but can
 be used by anyone.
 
@@ -19,7 +20,7 @@ Additionally, the tracker...
 
 ![](http://i.imgur.com/zG3eV8V.png)
 
-Download it [here](https://github.com/rchardon/RebirthItemTracker/releases) or [here](https://github.com/Hyphen-ated/RebirthItemTracker/releases) for version 3.0.0 and downwards 
+Download it [here](https://github.com/rchardon/RebirthItemTracker/releases) or [here](https://github.com/Hyphen-ated/RebirthItemTracker/releases) for version 2.1.0 
 (get the latest file that doesn't have "source code" in the name).
 
 To use it, first extract that zip file and then run the exe inside. Don't put it inside the same folder as any file
@@ -52,7 +53,7 @@ The tracker displays a line of text at the top of its window. This text can be a
 different pieces of information.
 
 By default, it shows:
-"Seed: {seed} / Guppy: {guppy} / Leviathan: {leviathan} / Spun: {spun} / {version_number} / Room: {room_id}"
+"Seed: {seed} / Guppy: {guppy} / Leviathan: {leviathan} / Spun: {spun} / Bookworm: {bookworm} /{version_number} / Room: {room_id}"
 
 Where there's a word inside curly braces, it substitutes the value of that variable.
 Variables that you can use here include:
