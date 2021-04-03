@@ -15,13 +15,13 @@ class Item(Serializable):
     abplus_items_info = {}
     custom_items_info = {}
 
-    serialize = [('item_id', basestring),
-                 ('floor_id', basestring),
-                 ('flags', basestring)]
+    serialize = [('item_id', str),
+                 ('floor_id', str),
+                 ('flags', str)]
 
     modded_item_id_prefix = "m"
 
-    serialization_flags = {"blind":"b", "was_rerolled":"r", "starting_item":"s"}
+    serialization_flags = {"blind":"b", "was_rerolled":"r", "starting_item":"s", "is_Jacob_item":"j", "is_Esau_item":"e"}
     def __init__(self, item_id, floor, starting_item=False, was_rerolled=False, blind=False, flagstr=None, is_Jacob_item=False, is_Esau_item=False):
         # item_id is a string that identifies what kind of item it is.
         # If this is numeric, then it represents an item from the base game, an official expansion, or antibirth
@@ -38,7 +38,7 @@ class Item(Serializable):
 
         # If we get a flag string, use that to determine the values of those other variables
         if flagstr is not None:
-            for varname,flag in Item.serialization_flags.iteritems():
+            for varname,flag in Item.serialization_flags.items():
                 setattr(self, varname, flag in flagstr)
         else:
             # Is this an item the player has at the start of a run? like isaac's D6 or eden's things.
@@ -166,7 +166,7 @@ class Item(Serializable):
     @staticmethod
     def determine_custom_item_names():
         """ For custom items that don't have a specific display name set, make the display name the same as the name id"""
-        for k,v in Item.custom_items_info.iteritems():
+        for k,v in Item.custom_items_info.items():
             if "name" not in v:
                 v["name"] = k
 
@@ -174,7 +174,7 @@ class Item(Serializable):
     def flags(self):
         """ Create a string containing single characters representing certain boolean member variables """
         flagstr = ""
-        for varname,flag in Item.serialization_flags.iteritems():
+        for varname,flag in Item.serialization_flags.items():
             if getattr(self, varname):
                 flagstr += flag
         return flagstr

@@ -2,12 +2,12 @@
 import json
 import os, shutil
 import threading
-import urllib2
+import urllib.request, urllib.error, urllib.parse
 import logging
 import webbrowser
 import zipfile
-from StringIO import StringIO
-from Tkinter import *
+from io import StringIO
+from tkinter import *
 import errno
 import traceback
 
@@ -99,7 +99,7 @@ class Updater(object):
             if update_option_name not in self.options or self.options[update_option_name]:
                 # check if github has a newer version than us
                 latest = "https://api.github.com/repos/rchardon/RebirthItemTracker/releases/latest"
-                github_info_json = urllib2.urlopen(latest).read()
+                github_info_json = urllib.request.urlopen(latest).read()
                 info = json.loads(github_info_json)
                 self.latest_version = info["name"]
                 if self.latest_version != self.current_version:
@@ -195,7 +195,7 @@ class Updater(object):
             try:
                 self.update_step = UpdateStep.DOWNLOAD
                 url = 'https://github.com/rchardon/RebirthItemTracker/releases/download/' + self.latest_version + '/Rebirth.Item.Tracker-' + self.latest_version + ".zip"
-                urlstream = urllib2.urlopen(url)
+                urlstream = urllib.request.urlopen(url)
                 myzip = zipfile.ZipFile(StringIO(urlstream.read()))
                 self.update_step = UpdateStep.EXTRACT
                 myzip.extractall(scratch)
@@ -213,7 +213,7 @@ class Updater(object):
             with open(innerdir + "tracker-lib/options_default.json", "r") as new_defaults_json:
                 new_defaults = json.load(new_defaults_json)
 
-            for k,v in old_defaults.iteritems():
+            for k,v in old_defaults.items():
                 # for each default option they left unchanged, if the default changed in the new version, give them the new default
                 if k in self.options and self.options[k] == v and new_defaults[k] != v:
                     self.options[k] = new_defaults[k]

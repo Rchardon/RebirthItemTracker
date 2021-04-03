@@ -9,7 +9,7 @@ from options import Options
 
 class LogParser(object):
     """
-    This class load Isaac's log file, and incrementally modify a state representing this log
+    This class loads Isaac's log file, and incrementally modify a state representing this log
     """
     def __init__(self, prefix, tracker_version, log_finder):
         self.state = TrackerState("", tracker_version, Options().game_version)
@@ -336,14 +336,14 @@ class LogParser(object):
             return False
 
         if self.log_file_handle is None:
-            self.log_file_handle = open(self.log_file_path, 'rb')
+            self.log_file_handle = open(self.log_file_path, 'r')
 
         cached_length = len(self.content)
         file_size = os.path.getsize(self.log_file_path)
 
         if cached_length > file_size or cached_length == 0: # New log file or first time loading the log
             self.reset()
-            self.content = open(self.log_file_path, 'rb').read()
+            self.content = open(self.log_file_path, 'r').read()
         elif cached_length < file_size:  # Append existing content
             self.log_file_handle.seek(cached_length + 1)
             self.content += self.log_file_handle.read()

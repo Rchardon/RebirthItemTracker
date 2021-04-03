@@ -12,7 +12,7 @@ import random # For glitched items
 import pygame   # This is the main graphics library used for the item tracker
 import webbrowser
 import string
-from Tkinter import Tk # For clipboard functionality
+from tkinter import Tk # For clipboard functionality
 from ctypes import windll # For transparent mode
 from collections import defaultdict
 from options import Options
@@ -57,7 +57,7 @@ class DrawingTool(object):
         self.item_position_index = []
         self.drawn_items = []
         self._image_library = {}
-        self.glitched_item = "1"
+        self.glitched_item = 1
         self.blind_icon = None
         self.roll_icon = None
         self.jacob_icon = None
@@ -419,7 +419,7 @@ class DrawingTool(object):
         w = opt.width
         h = opt.height
         # 2d array of size h, w
-        self.item_position_index = [[None for x in xrange(w)] for y in xrange(h)]
+        self.item_position_index = [[None for x in range(w)] for y in range(h)]
         num_displayed_items = 0
         size_multiplier = 64 * opt.size_multiplier
         for item in self.drawn_items:
@@ -487,7 +487,7 @@ class DrawingTool(object):
             try:
                 image = pygame.image.load(path)
             except:
-                image = pygame.image.load("..\collectibles\questionmark.png")
+                image = pygame.image.load("/collectibles/questionmark.png")
 
             size_multiplier = Options().size_multiplier
             scaled_image = image
@@ -697,7 +697,7 @@ class DrawingTool(object):
         hwnd = pygame.display.get_wm_info()["window"]
         win32gui.SetWindowLong(hwnd, win32con.GWL_EXSTYLE, win32gui.GetWindowLong(hwnd, win32con.GWL_EXSTYLE) | win32con.WS_EX_LAYERED)
         win32gui.SetLayeredWindowAttributes(hwnd, win32api.RGB(44, 44, 0), 0, win32con.LWA_COLORKEY) # RGB(44, 44, 0) = #2C2C00
-        SetWindowPos(hwnd, win32con.HWND_TOPMOST, opt.x_position, opt.y_position, opt.width, opt.height, win32con.SWP_NOMOVE + win32con.SWP_NOSIZE) # Always set it on the top, useful when playing in fullscreen 
+        win32gui.SetWindowPos(hwnd, win32con.HWND_TOPMOST, opt.x_position, opt.y_position, opt.width, opt.height, win32con.SWP_NOMOVE + win32con.SWP_NOSIZE) # Always set it on the top, useful when playing in fullscreen 
 
         self.screen.fill(DrawingTool.color("#2C2C00")) # This color is a good comprise between readability and performances. Somehow, using black or white make the tracker not responding.
 

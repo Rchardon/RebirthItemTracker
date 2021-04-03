@@ -15,4 +15,4 @@ for f in os.listdir(incoming_files_directory):
             finalname = 'collectibles_2' + itemid + '.png' # trinkets get a special 2000+ range in the tracker
             finalpath = os.path.join(outgoing_files_directory, finalname)
             shutil.copy(file, finalpath)
-            print(f + " copied to " + finalpath)
+            print((f + " copied to " + finalpath))

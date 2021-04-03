@@ -3,7 +3,7 @@ import json     # For importing the items and options
 import os
 import shutil
 import time     # For referencing the "state" timestamp that we get from the server
-import urllib2  # For checking for updates to the item tracker
+import urllib.request, urllib.error, urllib.parse  # For checking for updates to the item tracker
 import traceback
 
 # Import item tracker specific code
@@ -152,11 +152,12 @@ class IsaacTracker(object):
                     base_url = opt.trackerserver_url + "/tracker/api/user/" + opt.twitch_name
                     json_dict = None
                     try:
-                        json_version = urllib2.urlopen(base_url + "/version").read()
+                        json_version = urllib.request.urlopen(base_url + "/version").read()
                         if int(json_version) > state_version:
                             # FIXME better handling of 404 error ?
-                            json_state = urllib2.urlopen(base_url).read()
-                            json_dict = json.loads(json_state, "utf-8")
+                            json_state = urllib.request.urlopen(base_url).read()
+                            json_dict = json.loads(json_state)
+                            print(json_dict)
                             new_state = TrackerState.from_json(json_dict)
                             if new_state is None:
                                 raise Exception("server gave us empty state")
@@ -183,10 +184,10 @@ class IsaacTracker(object):
                     if write_to_server and not opt.trackerserver_authkey:
                         screen_error_message = "Your authkey is blank. Get a new authkey in the options menu and paste it into the authkey text field."
                     if state is not None and write_to_server and state.modified and screen_error_message is None:
-                        opener = urllib2.build_opener(urllib2.HTTPHandler)
+                        opener = urllib.request.build_opener(urllib.request.HTTPHandler)
                         put_url = opt.trackerserver_url + "/tracker/api/update/" + opt.trackerserver_authkey
-                        json_string = json.dumps(state, cls=TrackerStateEncoder, sort_keys=True)
-                        request = urllib2.Request(put_url,
+                        json_string = json.dumps(state, cls=TrackerStateEncoder, sort_keys=True).encode("utf-8")
+                        request = urllib.request.Request(put_url,
                                                   data=json_string)
                         request.add_header('Content-Type', 'application/json')
                         request.get_method = lambda: 'PUT'

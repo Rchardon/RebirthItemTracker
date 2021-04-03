@@ -1,15 +1,14 @@
 import traceback
-from Tkinter import *
+from tkinter import *
 from multiprocessing import Queue
-from tkColorChooser import askcolor
+from tkinter.colorchooser import askcolor
 import json
-from string import maketrans, lower
 import re
-import ttk
+import tkinter.ttk
 import pygame.sysfont
 from options import Options
 import logging
-import urllib2
+import urllib.request, urllib.error, urllib.parse
 import webbrowser
 import platform
 import threading
@@ -36,7 +35,7 @@ class OptionsMenu(object):
 
         # Check if the system has the fonts installed, and remove them from the list if it doesn't
         try:
-            valid_pygame_fonts = [lower(x.replace(" ", "")) for x in self.fonts]
+            valid_pygame_fonts = [str.lower(x.replace(" ", "")) for x in self.fonts]
             system_fonts = pygame.sysfont.get_fonts()
             to_delete = []
             for index, font in enumerate(valid_pygame_fonts):
@@ -65,7 +64,7 @@ class OptionsMenu(object):
 
     def pretty_name(self, s):
         # Change from a var name to something you'd show the users
-        if self.pretty_name_map.has_key(s):
+        if s in self.pretty_name_map:
             return self.pretty_name_map.get(s)
         return " ".join(s.split("_")).title()
 
@@ -142,7 +141,7 @@ class OptionsMenu(object):
 
     def save_callback(self):
         # Callback for the "save" option -- rejiggers options and saves to options.json, then quits
-        for key, value in self.entries.iteritems():
+        for key, value in self.entries.items():
             if key in self.integer_keys:
                 # Cast this as a float first to avoid errors if the user puts a value of 1.0 in an options, for example
                 setattr(self.options, key, int(float(value.get())))
@@ -151,7 +150,7 @@ class OptionsMenu(object):
                 setattr(self.options, key, val)
             elif hasattr(value, "get"):
                 setattr(self.options, key, value.get())
-        for key, value in self.checks.iteritems():
+        for key, value in self.checks.items():
             setattr(self.options, key, True if value.get() else False)
         self.root.destroy()
 
@@ -170,7 +169,7 @@ class OptionsMenu(object):
     def get_server_userlist_and_enqueue(self):
         try:
             url = self.entries['trackerserver_url'].get() + "/tracker/api/userlist/"
-            json_state = urllib2.urlopen(url).read()
+            json_state = urllib.request.urlopen(url).read()
             users = json.loads(json_state)
             success = True
         except Exception:
@@ -183,7 +182,7 @@ class OptionsMenu(object):
     def get_server_twitch_client_id(self):
         try:
             url = self.entries['trackerserver_url'].get() + "/tracker/api/twitchclientid/"
-            return urllib2.urlopen(url).read()
+            return urllib.request.urlopen(url).read()
         except Exception:
             log_error("Couldn't get twitch client id from tracker server\n" + traceback.format_exc())
             return None
@@ -216,7 +215,7 @@ class OptionsMenu(object):
     def opposite_color(self, color):
         # Get the opposite color of a hex color, just to make text on buttons readable
         color = color.lower()
-        table = maketrans('0123456789abcdef', 'fedcba9876543210')
+        table = str.maketrans('0123456789abcdef', 'fedcba9876543210')
         return str(color).translate(table).upper()
 
     # From: http://stackoverflow.com/questions/4140437/interactively-validating-entry-widget-content-in-tkinter
@@ -264,7 +263,7 @@ class OptionsMenu(object):
             Label(text_options_frame, text=self.pretty_name(opt)).grid(row=next_row)
             initialfont = StringVar()
             initialfont.set(getattr(self.options, opt))
-            self.entries[opt] = ttk.Combobox(text_options_frame, values=sorted(self.fonts), textvariable=initialfont, state='readonly')
+            self.entries[opt] = tkinter.ttk.Combobox(text_options_frame, values=sorted(self.fonts), textvariable=initialfont, state='readonly')
             self.entries[opt].grid(row=next_row, column=1)
 
         for index, opt in enumerate(["bold_font"]):
@@ -286,7 +285,7 @@ class OptionsMenu(object):
         for index, opt in enumerate(text_checkboxes):
             self.checks[opt] = IntVar()
             c = Checkbutton(text_options_frame, text=self.pretty_name(opt), variable=self.checks[opt])
-            c.grid(row=len(text_checkboxes) + 1 + index / 2, column=index % 2)  # 2 checkboxes per row
+            c.grid(row=int(len(text_checkboxes) + 1 + index / 2), column=index % 2)  # 2 checkboxes per row
             if getattr(self.options, opt):
                 c.select()
 
@@ -303,7 +302,7 @@ class OptionsMenu(object):
             Label(display_options_frame, text=self.pretty_name(opt)).grid(row=next_row)
             initialversion = StringVar()
             initialversion.set(getattr(self.options, opt))
-            self.entries[opt] = ttk.Combobox(display_options_frame, values=self.game_versions, textvariable=initialversion, state='readonly')
+            self.entries[opt] = tkinter.ttk.Combobox(display_options_frame, values=self.game_versions, textvariable=initialversion, state='readonly')
             self.entries[opt].grid(row=next_row, column=1)
             next_row += 1
 
@@ -342,12 +341,12 @@ class OptionsMenu(object):
                  "check_for_updates", "custom_title_enabled"]):
             self.checks[opt] = IntVar()
             c = Checkbutton(display_options_frame, text=self.pretty_name(opt), variable=self.checks[opt])
-            c.grid(row=len(self.entries) + 1 + index / 2, column=index % 2) # 2 checkboxes per row
+            c.grid(row=int(len(self.entries) + 1 + index / 2), column=index % 2) # 2 checkboxes per row
             if getattr(self.options, opt):
                 c.select()
             if opt == "custom_title_enabled":
                 c.configure(command=self.checkbox_callback)
-            next_row += len(self.entries) / 2 + 1
+            next_row += int(len(self.entries) / 2 + 1)
 
         # Generate label for custom title
         Label(display_options_frame, text=self.pretty_name("custom_title")).grid(row=next_row)
@@ -398,7 +397,7 @@ class OptionsMenu(object):
         for index, opt in enumerate(["twitch_name"]):
             self.labels[opt] = Label(tournament_settings_frame, text=self.pretty_name(opt))
             self.labels[opt].grid(row=next_row, pady=2)
-            self.entries[opt] = ttk.Combobox(tournament_settings_frame, width=40)
+            self.entries[opt] = tkinter.ttk.Combobox(tournament_settings_frame, width=40)
             self.entries[opt].set(getattr(self.options, opt, ""))
             self.entries[opt].bind("<<ComboboxSelected>>", self.trim_name)
             self.entries[opt].grid(row=next_row, column=1)

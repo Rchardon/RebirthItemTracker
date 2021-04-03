@@ -15,4 +15,4 @@ for f in os.listdir(incoming_files_directory):
             finalname = 'collectibles_1' + itemid + '.png'
             finalpath = os.path.join(outgoing_files_directory, finalname)
             shutil.copy(file, finalpath)
-            print(file + " copied to " + finalpath)
+            print((file + " copied to " + finalpath))

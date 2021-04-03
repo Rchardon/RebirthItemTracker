@@ -17,7 +17,7 @@ incoming_files_directory = 'renamed_images'
 outgoing_files_directory = 'resized_images'
 
 if not os.path.isdir(incoming_files_directory):
-    print('The incoming files directory of "' + incoming_files_directory + '" does not exist.')
+    print(('The incoming files directory of "' + incoming_files_directory + '" does not exist.'))
     sys.exit(1)
 
 if not os.path.isdir(outgoing_files_directory):

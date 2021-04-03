@@ -36,5 +36,5 @@ paths_to_add = [
   os.path.join('..', 'collectibles', 'custom'),
 ]
 for path in paths_to_add:
-    print('Scanning directory: ' + path)
+    print(('Scanning directory: ' + path))
     add_glow_to_dir(path)
