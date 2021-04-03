@@ -6,7 +6,7 @@ import urllib.request, urllib.error, urllib.parse
 import logging
 import webbrowser
 import zipfile
-from io import StringIO
+from io import BytesIO
 from tkinter import *
 import errno
 import traceback
@@ -178,7 +178,7 @@ class Updater(object):
     def do_update(self):
         try:
             tasklist = subprocess.check_output('tasklist', shell=True)
-            if "item_tracker.exe" in tasklist:
+            if "item_tracker.exe" in str(tasklist):
                 self.update_step = UpdateStep.ERROR
                 self.update_error = UpdateError.TRACKER_RUNNING
                 return
@@ -195,10 +195,10 @@ class Updater(object):
             try:
                 self.update_step = UpdateStep.DOWNLOAD
                 url = 'https://github.com/rchardon/RebirthItemTracker/releases/download/' + self.latest_version + '/Rebirth.Item.Tracker-' + self.latest_version + ".zip"
-                urlstream = urllib.request.urlopen(url)
-                myzip = zipfile.ZipFile(StringIO(urlstream.read()))
-                self.update_step = UpdateStep.EXTRACT
-                myzip.extractall(scratch)
+                with urllib.request.urlopen(url) as urlstream:
+                    with zipfile.ZipFile(BytesIO(urlstream.read())) as zfile:
+                        self.update_step = UpdateStep.EXTRACT
+                        zfile.extractall(scratch)
             except Exception as e:
                 log_error("Failed to download and extract latest version from GitHub ( url was :" + url + " )\n" + traceback.format_exc())
                 self.update_step = UpdateStep.ERROR
