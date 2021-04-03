@@ -42,6 +42,7 @@ class LogParser(object):
         self.greedmode = 0
         self.first_floor = None
         self.first_line = ""
+        self.curse_first_floor = ""
         # Avoid tracker resetting on B1 for Backasswards challenge
         self.backasswards = False
 
@@ -96,7 +97,7 @@ class LogParser(object):
             self.__parse_floor(line, line_number)   
         if line.startswith('Room'):
             self.__parse_room(line)
-            # Detect Greed mode floor on Repentance
+            # Detect if we're in Greed mode or not in Repentance. We must do a ton of hacky things to show the first floor with curses because we can't detect greed mode in one line anymore
             if self.opt.game_version == "Repentance":
                 greed_mode_starting_rooms = ('1.1000','1.1010','1.1011','1.1012','1.1013','1.1014','1.1015','1.1016','1.1017','1.1018','1.2000','1.2001','1.2002','1.2003','1.2004','1.2005','1.2006','1.2007','1.2008','1.2009','1.3000','1.3001','1.3002','1.3003','1.3004','1.3005','1.3006','1.3007','1.3008','1.3009','1.3010','1.4000','1.4001','1.4002','1.4003','1.4004','1.4005','1.4006','1.4007','1.4008','1.4009','1.4010','1.5000','1.5001','1.5002','1.5003','1.5004','1.5005','1.5006','1.5007','1.5008','1.5009','1.5010','1.6000','1.6001','1.6002','1.6003','1.6004','1.6005','1.6006','1.6007','1.6008','1.6009')
                 match = re.search(r"Room (.+?)\(", line)
@@ -105,7 +106,8 @@ class LogParser(object):
                     self.state.item_list = []
                 elif room_id in greed_mode_starting_rooms and self.greedmode == 0:
                     self.greedmode = 2
-                    self.__parse_floor(self.first_line, line_number)    
+                    self.__parse_floor(self.first_line, line_number)
+                    self.__parse_curse(self.curse_first_floor)
                 elif self.greedmode == 0 or room_id == '5.50000': # 5.5000 is Mega Satan's Room in Challenge #31
                     if line.startswith('Room 5.5000'):
                         self.backasswards = True
@@ -113,6 +115,7 @@ class LogParser(object):
                         self.backasswards = False
                     self.greedmode = 1
                     self.__parse_floor(self.first_line, line_number)
+                    self.__parse_curse(self.curse_first_floor)
         if line.endswith('Subtype 8'): # This is to detect if we play as Lazarus to avoid showing two Anemics in the tracker
             self.lazarus = True
         else: # To reset self.lazarus if we don't play it because it would never add Anemic again unless you close/re-open the game
@@ -232,9 +235,13 @@ class LogParser(object):
 
     def __parse_curse(self, line):
         """ Parse the curse and add it to the last floor """
-        if line.startswith("Curse of the Labyrinth!"):
+        if self.curse_first_floor == "":
+            self.curse_first_floor = line
+        elif self.greedmode != 0:
+            self.curse_first_floor = ""
+        if line.startswith("Curse of the Labyrinth!") or self.curse_first_floor == "Curse of the Labyrinth!":
             self.state.add_curse(Curse.Labyrinth)
-        if line.startswith("Curse of Blind"):
+        if line.startswith("Curse of Blind") or self.curse_first_floor == "Curse of Blind":
             self.state.add_curse(Curse.Blind)
         if line.startswith("Curse of the Lost!"):
             self.state.add_curse(Curse.Lost)
