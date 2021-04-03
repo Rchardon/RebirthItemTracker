@@ -26,6 +26,7 @@ class LogParser(object):
         self.reseeding_floor = False
         self.current_room = ""
         self.current_seed = ""
+        self.seedline = ""
         # Cached contents of log
         self.content = ""
         # Log split into lines
@@ -86,7 +87,7 @@ class LogParser(object):
         # AB and AB+ version messages both start with this text (AB+ has a + at the end)
         if line.startswith('Binding of Isaac: Repentance') or line.startswith('Binding of Isaac: Afterbirth') or line.startswith('Binding of Isaac: Rebirth'):
             self.__parse_version_number(line)
-        if line.startswith('RNG Start Seed:'):
+        if line.startswith('RNG Start Seed:') and line != self.seedline:
             self.__parse_seed(line, line_number)
             self.greedmode = 0
         if self.opt.game_version == "Repentance" and line.startswith('Level::Init') and self.greedmode == 0: # Store the line of the first floor in Repentance because we can detect if we are in greed mode only after this line in the log
@@ -150,6 +151,7 @@ class LogParser(object):
         """ Parse a seed line """
         # This assumes a fixed width, but from what I see it seems safe
         self.current_seed = line[16:25]
+        self.seedline = line # In Repentance if you Save&Quit, the RNG Start Seed line will happen again so we need to store the whole line to not trigger the function if this line is duplicated
         self.__trigger_new_run(line_number)
 
         # Antibirth doesn't have a proper way to detect run resets
