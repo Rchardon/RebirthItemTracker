@@ -57,7 +57,7 @@ class DrawingTool(object):
         self.item_position_index = []
         self.drawn_items = []
         self._image_library = {}
-        self.glitched_item = 1
+        self.glitched_item = str(random.randint(1,30))
         self.blind_icon = None
         self.roll_icon = None
         self.jacob_icon = None
@@ -707,6 +707,7 @@ class DrawableItem(Drawable):
     def __init__(self, item, x, y, tool):
         super(DrawableItem, self).__init__(x, y, tool)
         self.item = item
+        self.glitched_item = str(random.randint(1,30))
         self.is_drawn = False
 
     def show_blind_icon(self):

@@ -345,14 +345,14 @@ class LogParser(object):
             return False
 
         if self.log_file_handle is None:
-            self.log_file_handle = open(self.log_file_path, 'r')
+            self.log_file_handle = open(self.log_file_path, 'r', encoding='Latin-1', errors='remplace')
 
         cached_length = len(self.content)
         file_size = os.path.getsize(self.log_file_path)
 
         if cached_length > file_size or cached_length == 0: # New log file or first time loading the log
             self.reset()
-            self.content = open(self.log_file_path, 'r').read()
+            self.content = open(self.log_file_path, 'r', encoding='Latin-1', errors='remplace').read()
         elif cached_length < file_size:  # Append existing content
             self.log_file_handle.seek(cached_length + 1)
             self.content += self.log_file_handle.read()
