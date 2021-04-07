@@ -33,6 +33,7 @@ class TrackerState(Serializable):
         self.floor_list = []
         self.room_id = "none"
         self.item_list = []
+        self.player = None
         self.player_stats = {}
         self.player_transforms = {}
         for stat in ItemInfo.stat_list:
@@ -61,6 +62,7 @@ class TrackerState(Serializable):
         Return a boolean.
         The boolean is true if the item has been added, false otherwise.
         """
+        print(self.player)
         # Ignore repeated pickups of space bar items
         if not (item.info.space and item in self.item_list):
             self.item_list.append(item)
