@@ -41,6 +41,7 @@
        "name": "My Reflection",
        "height": "1",
        "range": "1.5",
+       "shot_speed": "0.6",
        "shown": true,
        "text": "Boomerang tears",
        "introduced_in": "Rebirth"
@@ -600,15 +601,14 @@
        "name": "Lord of the Pit",
        "speed": "0.3",
        "shown": true,
-       "text": "Flying",
+       "text": "Grants fly",
        "introduced_in": "Rebirth"
     },
     "83": {
-       "dmg": "0.7",
        "name": "The Nail",
        "shown": true,
        "leviathan": true,
-       "text": "On use: +1 soul heart, temporarily crush rocks, temporary -0.18 speed and dmg up",
+       "text": "On use: +1 soul heart, temporarily crush rocks, temporary -0.18 speed and 0.7 dmg up",
        "space": true,
        "introduced_in": "Rebirth"
     },
@@ -1319,6 +1319,7 @@
     "182": {
        "name": "Sacred Heart",
        "dmg_x": "2.3",
+       "dmg": "1",
        "height": "0.75",
        "range": "0.375",
        "shot_speed": "-0.25",
@@ -1426,10 +1427,11 @@
        "introduced_in": "Rebirth"
     },
     "196": {
-       "name": "Mr. Squeezy",
+       "name": "Squeezy",
        "shown": true,
        "tears": "0.4",
-       "text": "Spawns 2 soul hearts on pickup",
+       "soul_hearts": "2",
+       "text": "",
        "introduced_in": "Rebirth"
     },
     "197": {
@@ -1663,6 +1665,7 @@
        "name": "Monstro's Lung",
        "shown": true,
        "text": "Charged tear spray",
+       "delay_x": "4.3",
        "in_summary": true,
        "summary_name": "Lung",
        "introduced_in": "Rebirth"
@@ -2651,7 +2654,7 @@
     },
     "370": {
        "name": "Mr. Dolly",
-       "text": "",
+       "text": "Spawn 3 red/soul/black hearts at random",
        "shown": true,
        "tears": "0.7",
        "range": "5.25",
@@ -2945,6 +2948,7 @@
     "415": {
        "name": "Crown of Light",
        "text": "2x dmg when you have no empty red hearts",
+       "soul_hearts": "2",
        "shown": true,
        "introduced_in": "Afterbirth"
     },
@@ -3124,7 +3128,7 @@
     },
     "442": {
        "name": "Dark Prince's Crown",
-       "text": "+1.5 range, +0.7 tears, and 0.2 shot speed when at exactly 1 red heart",
+       "text": "+1.5 range, +0.7 tears and 0.2 shot speed when at exactly 1 red heart",
        "shown": true,
        "introduced_in": "Afterbirth+"
     },

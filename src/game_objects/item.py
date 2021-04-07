@@ -96,6 +96,7 @@ class Item(Serializable):
         tear_range = self.info.range
         height = self.info.height
         tears = self.info.tears
+        tears_x = self.info.tears_x
         soul_hearts = self.info.soul_hearts
         sin_hearts = self.info.sin_hearts
         if dmg:
@@ -104,6 +105,8 @@ class Item(Serializable):
             desc += "x" + dmg_x + " dmg, "
         if tears:
             desc += tears + " tears, "
+        if tears_x:
+            desc += tears_x + " tear rate multiplier, "
         if delay:
             desc += delay + " tear delay, "
         if delay_x:
@@ -231,6 +234,7 @@ class ItemInfo(dict):
     valid_key_list = [
         "delay_x",
         "dmg_x",
+        "tears_x",
         "graphics_id",
         "health",
         "health_only",
