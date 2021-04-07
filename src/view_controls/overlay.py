@@ -49,9 +49,14 @@ class Overlay(object):
         if transform_list is None:
             transform_list = ItemInfo.transform_list
         for transform in transform_list:
-            display = Overlay.format_transform(self.state.player_transforms[transform])
-            with open(self.prefix + "overlay text/" + transform + ".txt", "w+") as sfile:
-                sfile.write(display + "/3")
+            if self.state.player == 20:
+                display = Overlay.format_transform(self.state.player_transforms[transform]) + " - " + Overlay.format_transform(self.state.player2_transforms[transform])
+                with open(self.prefix + "overlay text/" + transform + ".txt", "w+") as sfile:
+                    sfile.write(display + "/3")
+            else:    
+                display = Overlay.format_transform(self.state.player_transforms[transform])
+                with open(self.prefix + "overlay text/" + transform + ".txt", "w+") as sfile:
+                    sfile.write(display + "/3")
 
     def update_last_item_description(self):
         """Update the overlay file for item pickup description"""

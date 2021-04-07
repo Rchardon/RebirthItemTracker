@@ -36,10 +36,12 @@ class TrackerState(Serializable):
         self.player = None
         self.player_stats = {}
         self.player_transforms = {}
+        self.player2_transforms = {} # For Esau
         for stat in ItemInfo.stat_list:
             self.player_stats[stat] = 0.0
         for transform in ItemInfo.transform_list:
             self.player_transforms[transform] = set()
+            self.player2_transforms[transform] = set()
 
     def add_floor(self, floor):
         """ Add a floor to the current run """
@@ -62,7 +64,6 @@ class TrackerState(Serializable):
         Return a boolean.
         The boolean is true if the item has been added, false otherwise.
         """
-        print(self.player)
         # Ignore repeated pickups of space bar items
         if not (item.info.space and item in self.item_list):
             self.item_list.append(item)
@@ -160,7 +161,10 @@ class TrackerState(Serializable):
         for transform in ItemInfo.transform_list:
             if not item_info[transform]:
                 continue
-            self.player_transforms[transform].add(item)
+            if item.is_Esau_item:
+                self.player2_transforms[transform].add(item)
+            else:    
+                self.player_transforms[transform].add(item)
 
     def __remove_stats_for_item(self, item):
         """
@@ -176,7 +180,9 @@ class TrackerState(Serializable):
         for transform in ItemInfo.transform_list:
             if not item_info[transform]:
                 continue
-            if not item.info.space and Options().game_version == "Repentance":
+            if not item.info.space and Options().game_version == "Repentance" and item.info.is_Esau_item:
+                self.player2_transforms[transform].discard(item)
+            elif not item.info.space and Options().game_version == "Repentance":
                 self.player_transforms[transform].discard(item)
 
             

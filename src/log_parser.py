@@ -253,6 +253,9 @@ class LogParser(object):
             return False
         is_Jacob_item = line.endswith("(Jacob)") and self.opt.game_version == "Repentance" and self.state.player != 37 and self.state.player != 39 # The second part of the condition is to avoid showing Jacob's Head if you play on a modded char in AB+ or if we play tainted Jacob
         is_Esau_item = line.endswith("(Esau)") and self.opt.game_version == "Repentance" # The second part of the condition is to avoid showing Esau's Head if you play on a modded char in AB+  
+        if self.state.player == 20 and not is_Esau_item and not is_Jacob_item:
+            print("test")
+            self.state.player = 8 # Put it on Lazarus by default just in case we got another Anemic
         end_name = -15 if is_Jacob_item or is_Esau_item else -1
         space_split = line.split(" ")
         numeric_id = space_split[2] # When you pick up an item, this has the form: "Adding collectible 105 (The D6)"

@@ -264,7 +264,10 @@ class DrawingTool(object):
             for stat in ItemInfo.stat_list:
                 dic[stat] = Overlay.format_value(self.state.player_stats[stat])
             for transform in ItemInfo.transform_list:
-                dic[transform] = Overlay.format_transform(self.state.player_transforms[transform])
+                if self.state.player == 20:
+                    dic[transform] = Overlay.format_transform(self.state.player_transforms[transform]) + " - " + Overlay.format_transform(self.state.player2_transforms[transform])
+                else:
+                    dic[transform] = Overlay.format_transform(self.state.player_transforms[transform])
 
             # Use vformat to handle the case where the user adds an
             # undefined placeholder in default_message
