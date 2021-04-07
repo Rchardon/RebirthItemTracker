@@ -96,5 +96,3 @@ relaunch the game.
 * Transparent mode only works on Windows.
 
 * You can't see rerolled items with D4 in Repentance.
-
-* Transformations may not be counted correctly when you play as Jacob&Esau.
