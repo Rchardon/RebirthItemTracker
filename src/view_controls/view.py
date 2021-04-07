@@ -42,7 +42,7 @@ class Drawable(object):
     def draw(self, selected=False):
         raise NotImplementedError("This object needs to implement draw()")
 
-class Clicakble(object):
+class Clickable(object):
     def on_click(self):
         pass
 
