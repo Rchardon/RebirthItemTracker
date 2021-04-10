@@ -823,6 +823,7 @@
       "name": "Guardian Angel",
       "shown": true,
       "seraphim": true,
+      "conjoined": true,
       "text": "Orbital (7 dmg / tick)",
       "introduced_in": "Rebirth"
    },
@@ -1386,6 +1387,7 @@
       "name": "Abel",
       "shown": true,
       "text": "Familiar (3.5 dmg / tear, 5 dmg if picked by Cain)",
+      "conjoined": true,
       "introduced_in": "Rebirth"
    },
    "189": {
@@ -2406,6 +2408,7 @@
       "shown": true,
       "tears": "-0.6",
       "text": "Damaging aura around tears",
+      "seraphim": true,
       "in_summary": true,
       "introduced_in": "Rebirth"
    },
@@ -2716,6 +2719,7 @@
    "374": {
       "name": "Holy Light",
       "text": "Chance to shoot tears that spawn beams of light (3x dmg)",
+      "seraphim": true,
       "shown": true,
       "introduced_in": "Afterbirth"
    },
@@ -4248,6 +4252,7 @@
    "607": {
       "name": "Boiled Baby",
       "text": "Familiar, acts like a Boil",
+      "conjoined": true,
       "shown": true,
       "introduced_in": "Antibirth"
    },
