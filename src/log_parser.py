@@ -158,9 +158,9 @@ class LogParser(object):
             self.__trigger_new_run(line_number)
 
     def __parse_player(self, line):
-        regexp_str = r"Initialized player with Variant 0 and Subtype (\d+)"
+        regexp_str = r"Initialized player with Variant (\d+) and Subtype (\d+)"
         search_result = re.search(regexp_str, line)
-        self.state.player = int(search_result.group(1))        
+        self.state.player = int(search_result.group(2)) if search_result is not None else 8 # Put it on Lazarus by default
 
     def __parse_room(self, line):
         """ Parse a room line """
@@ -253,13 +253,15 @@ class LogParser(object):
             return False
         is_Jacob_item = line.endswith("(Jacob)") and self.opt.game_version == "Repentance" and self.state.player != 37 and self.state.player != 39 # The second part of the condition is to avoid showing Jacob's Head if you play on a modded char in AB+ or if we play tainted Jacob
         is_Esau_item = line.endswith("(Esau)") and self.opt.game_version == "Repentance" # The second part of the condition is to avoid showing Esau's Head if you play on a modded char in AB+  
-        if self.state.player == 20 and not is_Esau_item and not is_Jacob_item:
-            print("test")
+        if self.state.player == 20 and not is_Esau_item and not is_Jacob_item: # This is when J&E transform into another character
             self.state.player = 8 # Put it on Lazarus by default just in case we got another Anemic
-        end_name = -15 if is_Jacob_item or is_Esau_item else -1
+        end_name = -1
         space_split = line.split(" ")
-        numeric_id = space_split[2] # When you pick up an item, this has the form: "Adding collectible 105 (The D6)"
-        item_name = " ".join(space_split[3:])[1:end_name]
+        numeric_id = space_split[2] # When you pick up an item, this has the form: "Adding collectible 105 (The D6)" or "Adding collectible 105 (The D6) to Player 0 (Isaac)" in Repentance
+        if self.opt.game_version == "Repentance":
+            item_name = " ".join(space_split[3:-4])[1:end_name]
+        else:
+            item_name = " ".join(space_split[3:])[1:end_name]  
         item_id = ""
 
         if int(numeric_id) < 0:

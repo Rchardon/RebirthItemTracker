@@ -157,7 +157,6 @@ class IsaacTracker(object):
                             # FIXME better handling of 404 error ?
                             json_state = urllib.request.urlopen(base_url).read()
                             json_dict = json.loads(json_state)
-                            print(json_dict)
                             new_state = TrackerState.from_json(json_dict)
                             if new_state is None:
                                 raise Exception("server gave us empty state")
