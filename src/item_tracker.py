@@ -1,6 +1,7 @@
 """ This module handles everything related to the tracker behaviour. """
 import json     # For importing the items and options
 import os
+import re
 import shutil
 import time     # For referencing the "state" timestamp that we get from the server
 import urllib.request, urllib.error, urllib.parse  # For checking for updates to the item tracker
@@ -239,6 +240,11 @@ class IsaacTracker(object):
         drawing_tool.save_window_position()
         Options().save_options(wdir_prefix + "options.json")
 
+    def filter_excepthook(self):
+        lines = traceback.format_exc().split("\n")
+        lines = [line.replace('C:\\Users\\Rémy Chardon\\Documents\\GitHub\\RebirthItemTracker\\src\\', '') for line in lines]
+        return '\n'.join(lines)
+
 def main():
     """ Main """
     try:
@@ -246,7 +252,8 @@ def main():
         rt = IsaacTracker()
         rt.run()
     except Exception:
-        log_error(traceback.format_exc())
+        excepthook = rt.filter_excepthook()
+        log_error(excepthook)
 
 if __name__ == "__main__":
     main()
