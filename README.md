@@ -2,6 +2,8 @@ RebirthItemTracker
 ==================
 This tracker is following Hyphen-ated's work as he doesn't have time anymore to work on it.
 
+/!\ This program isn't compatible with Windows 7 anymore /!\
+
 This uses the `log.txt` file to track item pickups in The Binding of Isaac: Rebirth, Afterbirth, Afterbirth+, Repentance and Antibirth.
 
 The game's built-in item tracker only shows 10 items (on AB+ and downwards) and the pause screen items are hard to read, so this program offers
@@ -96,3 +98,5 @@ relaunch the game.
 * Transparent mode only works on Windows.
 
 * You can't see rerolled items with D4 in Repentance.
+
+* Tracker doesn't work perfectly with co-op mode, transformation counts will most likely be wrong
