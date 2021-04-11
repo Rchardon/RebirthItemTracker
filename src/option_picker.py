@@ -417,8 +417,7 @@ class OptionsMenu(object):
             self.entries["trackerserver_authkey"].delete(0, last=END)
             twitch_client_id = self.get_server_twitch_client_id()
             if twitch_client_id is not None:
-                webbrowser.open("https://api.twitch.tv/kraken/oauth2/authorize?response_type=token&client_id=" + twitch_client_id + "&redirect_uri=" +
-                                self.entries['trackerserver_url'].get() + "/tracker/setup&scope=", autoraise=True)
+                webbrowser.open("https://api.twitch.tv/kraken/oauth2/authorize?response_type=token&client_id=" + twitch_client_id.decode('utf-8') + "&redirect_uri=" + self.entries['trackerserver_url'].get() + "/tracker/setup&scope=", autoraise=True)
             else:
                 # TODO: show an error
                 pass
