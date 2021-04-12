@@ -65,7 +65,7 @@ class TrackerState(Serializable):
         The boolean is true if the item has been added, false otherwise.
         """
         # Ignore repeated pickups of space bar items
-        if not (item.info.space and item in self.item_list):
+        if not (item.info.space and item in self.item_list) and item.info['shown']:
             self.item_list.append(item)
             self.__add_stats_for_item(item)
             self.modified = True

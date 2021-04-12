@@ -3298,6 +3298,7 @@
    "462": {
       "name": "Eye of Belial",
       "text": "Piercing, after a tear hits it gets 2x dmg + homing",
+      "range": "0.38",
       "shown": true,
       "introduced_in": "Afterbirth+"
    },
@@ -4552,7 +4553,7 @@
    "656": {
       "name": "Damocles",
       "text": "The passive version of Damocles",
-      "shown": true,
+      "shown": false,
       "introduced_in": "Antibirth"
    },
    "657": {
