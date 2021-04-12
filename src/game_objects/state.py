@@ -182,7 +182,7 @@ class TrackerState(Serializable):
                 continue
             if not item.info.space and Options().game_version == "Repentance" and item.info.is_Esau_item:
                 self.player2_transforms[transform].discard(item)
-            elif not item.info.space and Options().game_version == "Repentance":
+            elif not item.info.space and Options().game_version == "Repentance" and self.player != 21:
                 self.player_transforms[transform].discard(item)
 
             
