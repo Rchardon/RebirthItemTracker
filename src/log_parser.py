@@ -38,12 +38,10 @@ class LogParser(object):
         # if they switched between rebirth and afterbirth, the log file we use could change
         self.log_file_path = self.log_finder.find_log_file(self.wdir_prefix)
         self.state.reset(self.current_seed, Options().game_version)
-        self.greedmode = 0
+        self.greed_mode_starting_rooms = ('1.1000','1.1010','1.1011','1.1012','1.1013','1.1014','1.1015','1.1016','1.1017','1.1018','1.2000','1.2001','1.2002','1.2003','1.2004','1.2005','1.2006','1.2007','1.2008','1.2009','1.3000','1.3001','1.3002','1.3003','1.3004','1.3005','1.3006','1.3007','1.3008','1.3009','1.3010','1.4000','1.4001','1.4002','1.4003','1.4004','1.4005','1.4006','1.4007','1.4008','1.4009','1.4010','1.5000','1.5001','1.5002','1.5003','1.5004','1.5005','1.5006','1.5007','1.5008','1.5009','1.5010','1.6000','1.6001','1.6002','1.6003','1.6004','1.6005','1.6006','1.6007','1.6008','1.6009')
         self.first_floor = None
         self.first_line = ""
         self.curse_first_floor = ""
-        # Avoid tracker resetting on B1 for Backasswards challenge
-        self.backasswards = False
 
     def parse(self):
         """
@@ -89,36 +87,16 @@ class LogParser(object):
             self.__parse_version_number(line)
         if line.startswith('RNG Start Seed:') and line != self.seedline:
             self.__parse_seed(line, line_number)
-            self.greedmode = 0
         if line.startswith('Initialized player with Variant'):
             self.__parse_player(line)
-        if self.opt.game_version == "Repentance" and line.startswith('Level::Init') and self.greedmode == 0: # Store the line of the first floor in Repentance because we can detect if we are in greed mode only after this line in the log
+        if self.opt.game_version == "Repentance" and line.startswith('Level::Init') and self.state.greedmode is None: # Store the line of the first floor in Repentance because we can detect if we are in greed mode only after this line in the log
             self.first_line = line
         elif line.startswith('Level::Init'):
             self.__parse_floor(line, line_number)   
         if line.startswith('Room'):
             self.__parse_room(line)
-            # Detect if we're in Greed mode or not in Repentance. We must do a ton of hacky things to show the first floor with curses because we can't detect greed mode in one line anymore
             if self.opt.game_version == "Repentance":
-                greed_mode_starting_rooms = ('1.1000','1.1010','1.1011','1.1012','1.1013','1.1014','1.1015','1.1016','1.1017','1.1018','1.2000','1.2001','1.2002','1.2003','1.2004','1.2005','1.2006','1.2007','1.2008','1.2009','1.3000','1.3001','1.3002','1.3003','1.3004','1.3005','1.3006','1.3007','1.3008','1.3009','1.3010','1.4000','1.4001','1.4002','1.4003','1.4004','1.4005','1.4006','1.4007','1.4008','1.4009','1.4010','1.5000','1.5001','1.5002','1.5003','1.5004','1.5005','1.5006','1.5007','1.5008','1.5009','1.5010','1.6000','1.6001','1.6002','1.6003','1.6004','1.6005','1.6006','1.6007','1.6008','1.6009')
-                match = re.search(r"Room (.+?)\(", line)
-                if match is None:
-                    return
-                room_id = match.group(1)
-                if room_id == '18.1000':
-                    self.state.item_list = []
-                elif room_id in greed_mode_starting_rooms and self.greedmode == 0:
-                    self.greedmode = 2
-                    self.__parse_floor(self.first_line, line_number)
-                    self.__parse_curse(self.curse_first_floor)
-                elif self.greedmode == 0 or room_id == '5.50000': # 5.5000 is Mega Satan's Room in Challenge #31
-                    if line.startswith('Room 5.5000'):
-                        self.backasswards = True
-                    else:
-                        self.backasswards = False
-                    self.greedmode = 1
-                    self.__parse_floor(self.first_line, line_number)
-                    self.__parse_curse(self.curse_first_floor)
+                self.detect_greed_mode(line, line_number)
         if line.startswith("Curse"):
             self.__parse_curse(line)
         if line.startswith("Spawn co-player!"):
@@ -174,6 +152,19 @@ class LogParser(object):
             room_id = match.group(1)
             self.state.change_room(room_id)
 
+    def detect_greed_mode(self, line, line_number):
+        # Detect if we're in Greed mode or not in Repentance. We must do a ton of hacky things to show the first floor with curses because we can't detect greed mode in one line anymore
+        match = re.search(r"Room (.+?)\(", line)
+        if match is None:
+            return
+        room_id = match.group(1)
+        if room_id == '18.1000': # Genesis room
+            self.state.item_list = []
+        elif self.state.greedmode is None:
+            self.state.greedmode = room_id in self.greed_mode_starting_rooms
+        self.__parse_floor(self.first_line, line_number)
+        self.__parse_curse(self.curse_first_floor)
+
     def __parse_floor(self, line, line_number):
         """ Parse the floor in line and push it to the state """
         # Create a floor tuple with the floor id and the alternate id
@@ -201,7 +192,7 @@ class LogParser(object):
         # In Repentance, don't trigger a new run on floor 1 because of the R Key item
         if self.reseeding_floor:
             self.reseeding_floor = False
-        elif floor == 1 and self.opt.game_version != "Antibirth" and self.opt.game_version != "Repentance" and self.backasswards == False:
+        elif floor == 1 and self.opt.game_version != "Antibirth" and self.opt.game_version != "Repentance":
             self.__trigger_new_run(line_number)
 
         # Special handling for the Cathedral and The Chest and Afterbirth
@@ -229,7 +220,7 @@ class LogParser(object):
         floor_id = 'f' + str(floor)
 
         # Greed mode
-        if (alt == '3' and self.opt.game_version != "Repentance") or (self.opt.game_version == "Repentance" and self.greedmode == 2):
+        if (alt == '3' and self.opt.game_version != "Repentance") or (self.opt.game_version == "Repentance" and self.state.greedmode):
             floor_id += 'g'
 
         self.state.add_floor(Floor(floor_id))
@@ -239,7 +230,7 @@ class LogParser(object):
         """ Parse the curse and add it to the last floor """
         if self.curse_first_floor == "":
             self.curse_first_floor = line
-        elif self.greedmode != 0:
+        elif self.state.greedmode is not None:
             self.curse_first_floor = ""
         if line.startswith("Curse of the Labyrinth!") or self.curse_first_floor == "Curse of the Labyrinth!":
             self.state.add_curse(Curse.Labyrinth)

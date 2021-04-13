@@ -1190,6 +1190,7 @@
       "name": "Celtic Cross",
       "shown": true,
       "text": "Chance for shield when hit (based on luck)",
+      "seraphim": true,
       "introduced_in": "Rebirth"
    },
    "163": {
@@ -1549,7 +1550,7 @@
       "introduced_in": "Rebirth"
    },
    "211": {
-      "name": "Spider Baby",
+      "name": "Spiderbaby",
       "shown": true,
       "spiderbaby": true,
       "text": "Spawns 2-5 blue spiders when hit",
@@ -4035,6 +4036,7 @@
       "text": "Additional set of orbiting spectral tears",
       "health": "1",
       "dmg_x": "1.2",
+      "seraphim": true,
       "shown": true,
       "introduced_in": "Antibirth"
    },
