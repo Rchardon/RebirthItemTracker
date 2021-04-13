@@ -95,6 +95,8 @@ character doesn't have it anymore.
 * If you ever save & quit and close the game, the tracker will forget anything that happened during that run when you
 relaunch the game.
 
+* On Repentance, if you save&quit then replay the same seed, the tracker will not reset.
+
 * Transparent mode only works on Windows.
 
 * You can't see rerolled items with D4 in Repentance.
