@@ -155,15 +155,14 @@ class LogParser(object):
     def detect_greed_mode(self, line, line_number):
         # Detect if we're in Greed mode or not in Repentance. We must do a ton of hacky things to show the first floor with curses because we can't detect greed mode in one line anymore
         match = re.search(r"Room (.+?)\(", line)
-        if match is None:
-            return
-        room_id = match.group(1)
-        if room_id == '18.1000': # Genesis room
-            self.state.item_list = []
-        elif self.state.greedmode is None:
-            self.state.greedmode = room_id in self.greed_mode_starting_rooms
-        self.__parse_floor(self.first_line, line_number)
-        self.__parse_curse(self.curse_first_floor)
+        if match:
+            room_id = match.group(1)
+            if room_id == '18.1000': # Genesis room
+                self.state.item_list = []
+            elif self.state.greedmode is None:
+                self.state.greedmode = room_id in self.greed_mode_starting_rooms
+                self.__parse_floor(self.first_line, line_number)
+                self.__parse_curse(self.curse_first_floor)
 
     def __parse_floor(self, line, line_number):
         """ Parse the floor in line and push it to the state """
