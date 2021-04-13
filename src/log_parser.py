@@ -85,7 +85,9 @@ class LogParser(object):
         # AB and AB+ version messages both start with this text (AB+ has a + at the end)
         if line.startswith('Binding of Isaac: Repentance') or line.startswith('Binding of Isaac: Afterbirth') or line.startswith('Binding of Isaac: Rebirth'):
             self.__parse_version_number(line)
-        if line.startswith('RNG Start Seed:') and line != self.seedline:
+        if line.startswith('Menu Save Init'):
+            self.state.savequit = True
+        if line.startswith('RNG Start Seed:'):
             self.__parse_seed(line, line_number)
         if line.startswith('Initialized player with Variant'):
             self.__parse_player(line)
@@ -129,8 +131,9 @@ class LogParser(object):
         """ Parse a seed line """
         # This assumes a fixed width, but from what I see it seems safe
         self.current_seed = line[16:25]
-        self.seedline = line # In Repentance if you Save&Quit, the RNG Start Seed line will happen again so we need to store the whole line to not trigger the function if this line is duplicated
-        self.__trigger_new_run(line_number)
+        if not (line == self.seedline and self.state.savequit):
+            self.__trigger_new_run(line_number)
+        self.seedline = line # In Repentance if you Save&Quit, the RNG Start Seed line will happen again so we need to store the whole line to not trigger the function if this line is duplicated    
 
         # Antibirth doesn't have a proper way to detect run resets
         # it will wipe the tracker when doing a "continue"
@@ -231,9 +234,9 @@ class LogParser(object):
             self.curse_first_floor = line
         elif self.state.greedmode is not None:
             self.curse_first_floor = ""
-        if line.startswith("Curse of the Labyrinth!") or self.curse_first_floor == "Curse of the Labyrinth!":
+        if line.startswith("Curse of the Labyrinth!") or (self.curse_first_floor == "Curse of the Labyrinth!" and self.opt.game_version == "Repentance"):
             self.state.add_curse(Curse.Labyrinth)
-        if line.startswith("Curse of Blind") or self.curse_first_floor == "Curse of Blind":
+        if line.startswith("Curse of Blind") or (self.curse_first_floor == "Curse of Blind" and self.opt.game_version == "Repentance"):
             self.state.add_curse(Curse.Blind)
         if line.startswith("Curse of the Lost!"):
             self.state.add_curse(Curse.Lost)

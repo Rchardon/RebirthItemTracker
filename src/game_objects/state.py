@@ -38,6 +38,7 @@ class TrackerState(Serializable):
         self.player_stats = {}
         self.player_transforms = {}
         self.player2_transforms = {} # For Esau
+        self.savequit = False
         for stat in ItemInfo.stat_list:
             self.player_stats[stat] = 0.0
         for transform in ItemInfo.transform_list:
