@@ -721,8 +721,7 @@ class DrawableItem(Drawable):
         """
         return Options().show_blind_icon and \
                not Options().blck_cndl_mode and \
-               self.item.blind and \
-               not self.item.starting_item
+               self.item.blind
 
     def draw(self, selected=False, framecount=0):
         graphics_id = self.item.info.graphics_id
