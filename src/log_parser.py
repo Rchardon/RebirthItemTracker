@@ -297,7 +297,7 @@ class LogParser(object):
             numeric_id = str(int(space_split[3]) + 2000) # the tracker hackily maps trinkets to items 2000 and up.
         else:
             numeric_id = str(int(space_split[2]) + 2000) # the tracker hackily maps trinkets to items 2000 and up.
-        is_Jacob_item = line.endswith("(Jacob)") and self.opt.game_version == "Repentance"
+        is_Jacob_item = line.endswith("(Jacob)") and self.opt.game_version == "Repentance" and self.state.player != 37 and self.state.player != 39
         is_Esau_item = line.endswith("(Esau)") and self.opt.game_version == "Repentance"
 
         # Check if we recognize the numeric id
