@@ -1,6 +1,7 @@
 *.pyc
 .idea/
 .vscode/
+.vs/
 dist/
 src/dist/
 target/
