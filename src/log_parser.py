@@ -293,7 +293,9 @@ class LogParser(object):
         space_split = line.split(" ")
         # When using a mod like racing+ on AB+, a trinket gulp has the form: "Gulping trinket 10"
         # In Repentance, a gulped trinket has the form : "Adding smelted trinket 10"
-        if self.opt.game_version == "Repentance":
+        if self.opt.game_version == "Repentance" and int(space_split[3]) > 30000:
+            numeric_id = str(int(space_split[3]))
+        elif self.opt.game_version == "Repentance":
             numeric_id = str(int(space_split[3]) + 2000) # the tracker hackily maps trinkets to items 2000 and up.
         else:
             numeric_id = str(int(space_split[2]) + 2000) # the tracker hackily maps trinkets to items 2000 and up.
@@ -319,7 +321,9 @@ class LogParser(object):
         # When you lose an item, this has the form: "Removing collectible 105 (The D6)" or "Removing voided collectible 105 (The D6)"
         if self.opt.game_version == "Repentance":
             item_id = space_split[3]
-            if space_split[2] == "trinket":
+            if space_split[2] == "trinket" and int(space_split[3]) > 30000:
+                item_id = space_split[3]
+            elif space_split[2] == "trinket":
                 item_id = str(int(space_split[3]) + 2000)
         else:
             item_id = space_split[2]

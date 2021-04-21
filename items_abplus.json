@@ -4525,7 +4525,7 @@
     },
     "2020": {
        "name": "Monkey Paw",
-       "text": "Spawns black hearts when half a heart is remaining",
+       "text": "Spawns a black heart when half a heart is remaining (3 times max)",
        "shown": true,
        "introduced_in": "Rebirth"
     },
@@ -4537,7 +4537,7 @@
     },
     "2022": {
        "name": "Daemon's Tail",
-       "text": "Heart drops are rerolled into either nothing or a black heart",
+       "text": "Heart drops are rerolled into a black heart, 80% to replace a heart drop with a key",
        "shown": true,
        "introduced_in": "Rebirth"
     },
@@ -4561,7 +4561,8 @@
     },
     "2026": {
        "name": "Hook Worm",
-       "text": "Hook tears (only cosmetic)",
+       "text": "Hook tears",
+       "range": "10",
        "shown": true,
        "introduced_in": "Rebirth"
     },
@@ -4668,7 +4669,7 @@
     },
     "2043": {
        "name": "Cursed Skull",
-       "text": "Teleported to previous room if damaged to 1/2 hearts",
+       "text": "Teleported to a random room if damaged to 1/2 heart",
        "shown": true,
        "introduced_in": "Rebirth"
     },
@@ -4692,7 +4693,7 @@
     },
     "2048": {
        "name": "A Missing Page",
-       "text": "Chance to do Necronomicon effect on hit",
+       "text": "Chance to do Necronomicon effect (40 dmg) on hit",
        "shown": true,
        "introduced_in": "Rebirth"
     },
@@ -4746,7 +4747,7 @@
     },
     "2057": {
        "name": "???'s Soul",
-       "text": "Familiar",
+       "text": "Familiar that moves like DVD logo",
        "shown": true,
        "introduced_in": "Rebirth"
     },
@@ -4827,7 +4828,7 @@
     },
     "2070": {
        "name": "Louse",
-       "text": "Change to spawn a blue spider when in a room with enemies",
+       "text": "Chance to spawn a blue spider when in a room with enemies",
        "shown": true,
        "introduced_in": "Afterbirth"
     },
@@ -5112,7 +5113,7 @@
     },
     "2117": {
        "name": "Locust of Conquest",
-       "text": "Spawns 2-5 White Locusts upon entering a room",
+       "text": "Spawns 1-4 White Locusts upon entering a room",
        "shown": true,
        "introduced_in": "Afterbirth+"
     },

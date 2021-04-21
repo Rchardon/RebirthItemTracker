@@ -346,7 +346,7 @@
    "44": {
       "name": "Teleport",
       "shown": true,
-      "text": "",
+      "text": "Can influence teleport direction based on player's direction",
       "space": true,
       "introduced_in": "Rebirth"
    },
@@ -2251,7 +2251,7 @@
    },
    "310": {
       "name": "Eve's Mascara",
-      "tears_x": "0.5",
+      "tears_x": "0.66",
       "dmg_x": "2",
       "shot_speed": "-0.5",
       "shown": true,
@@ -5039,7 +5039,7 @@
    },
    "2004": {
       "name": "Broken Remote",
-      "text": "Teleport on active item use, can influence teleport direction based on player's direction",
+      "text": "Teleport on active item use",
       "shown": true,
       "introduced_in": "Rebirth"
    },
@@ -5136,7 +5136,7 @@
    },
    "2020": {
       "name": "Monkey Paw",
-      "text": "Spawns black hearts when half a heart is remaining",
+      "text": "Spawns a black heart when half a heart is remaining (3 times max)",
       "shown": true,
       "introduced_in": "Rebirth"
    },
@@ -5148,7 +5148,7 @@
    },
    "2022": {
       "name": "Daemon's Tail",
-      "text": "Heart drops are rerolled into either nothing or a black heart",
+      "text": "Heart drops are rerolled into a black heart, 80% to replace a heart drop with a key",
       "shown": true,
       "introduced_in": "Rebirth"
    },
@@ -5173,6 +5173,7 @@
    "2026": {
       "name": "Hook Worm",
       "text": "Hook + spectral tears",
+      "range": "1.5",
       "shown": true,
       "introduced_in": "Rebirth"
    },
@@ -5191,7 +5192,7 @@
    },
    "2029": {
       "name": "Fish Head",
-      "text": "Spawns a blue fly on hit",
+      "text": "Spawns 1-2 blue flies on hit",
       "shown": true,
       "introduced_in": "Rebirth"
    },
@@ -5279,7 +5280,7 @@
    },
    "2043": {
       "name": "Cursed Skull",
-      "text": "Teleported to previous room if damaged to 1/2 hearts",
+      "text": "Teleported to a random room if damaged to 1/2 heart",
       "shown": true,
       "introduced_in": "Rebirth"
    },
@@ -5303,7 +5304,7 @@
    },
    "2048": {
       "name": "A Missing Page",
-      "text": "Chance to do Necronomicon effect on hit",
+      "text": "Chance to do Necronomicon effect (80 dmg) on hit",
       "shown": true,
       "introduced_in": "Rebirth"
    },
@@ -5405,14 +5406,15 @@
    },
    "2065": {
       "name": "Tape Worm",
-      "text": "Doubles range, halves tear height",
+      "text": "Halves tear height",
+      "range": "3",
       "shown": true,
       "introduced_in": "Afterbirth"
    },
    "2066": {
       "name": "Lazy Worm",
       "text": "",
-      "shot_speed": "-0.4",
+      "shot_speed": "-0.5",
       "height": "2",
       "shown": true,
       "introduced_in": "Afterbirth"
@@ -5437,7 +5439,7 @@
    },
    "2070": {
       "name": "Louse",
-      "text": "Change to spawn a blue spider when in a room with enemies",
+      "text": "Chance to spawn a blue spider when in a room with enemies",
       "shown": true,
       "introduced_in": "Afterbirth"
    },
@@ -5497,7 +5499,7 @@
    },
    "2080": {
       "name": "Black Feather",
-      "text": "+0.2 dmg per \"evil\" item",
+      "text": "+0.5 dmg per \"evil\" item",
       "shown": true,
       "introduced_in": "Afterbirth"
    },
@@ -5624,7 +5626,7 @@
    },
    "2101": {
       "name": "Dim Bulb",
-      "text": "+0.5 speed, +1.5 range, +0.3 shot speed, +0.4 tears, +1.5 damage when active item is completely uncharged",
+      "text": "+0.5 speed, +1.5 range, +0.3 shot speed, +0.5 tears, +1.5 damage, +2 luck when active item is completely uncharged",
       "shown": true,
       "introduced_in": "Afterbirth+"
    },
@@ -5840,7 +5842,7 @@
    },
    "2137": {
       "name": "Myosotis",
-      "text": "Get max 8 pickups from the previous floor at the beginning of the new floor",
+      "text": "Get max 4 pickups from the previous floor at the beginning of the new floor",
       "shown": true,
       "introduced_in": "Antibirth"
    },
@@ -5930,7 +5932,7 @@
    },
    "2152": {
       "name": "Telescope Lens",
-      "text": "Increases the chances of finding a Planetarium",
+      "text": "+9% chance of finding Planetarium + allows them to appear in chapter 4",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -5972,7 +5974,7 @@
    },
    "2159": {
       "name": "Gilded Key",
-      "text": "+1 key, all chests become locked chests containing mixed pickups (including cards/pills/runes/batteries)",
+      "text": "All chests become locked chests containing mixed pickups (including cards/pills/runes/batteries)",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6153,6 +6155,1146 @@
    },
    "2189": {
       "name": "Sigil of Baphomet",
+      "text": "Grants a 2 seconds shield every time you kill an enemy",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32769": {
+      "name": "(G) Swallowed Penny",
+      "text": "Spawn 2 pennies on hit",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32770": {
+      "name": "(G) Petrified Poop",
+      "text": "Higher chance for rewards from poops",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32771": {
+      "name": "(G) AAA Battery",
+      "text": "Quicker charge",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32772": {
+      "name": "(G) Broken Remote",
+      "text": "Teleport on active item use",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32773": {
+      "name": "(G) Purple Heart",
+      "text": "Higher chance for champions",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32774": {
+      "name": "(G) Broken Magnet",
+      "text": "Pulls coins toward you",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32775": {
+      "name": "(G) Rosary Bead",
+      "text": "Increases Angel Room chance to 75%/25% (from 50%/50%)",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32776": {
+      "name": "(G) Cartridge",
+      "text": "Chance to get The Gamekid effect on hit",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32777": {
+      "name": "(G) Pulse Worm",
+      "text": "Pulsing tears (only cosmetic)",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32778": {
+      "name": "(G) Wiggle Worm",
+      "text": "Wave + spectral tears",
+      "tears": "0.4",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32779": {
+      "name": "(G) Ring Worm",
+      "text": "Ring + spectral tears",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32780": {
+      "name": "(G) Flat Worm",
+      "text": "Flat tears (only cosmetic)",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32781": {
+      "name": "(G) Store Credit",
+      "text": "First shop item you will take while holding the trinket will be free",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32782": {
+      "name": "(G) Callus",
+      "text": "Immunity from spike and creep damage",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32783": {
+      "name": "(G) Lucky Rock",
+      "text": "33% for rocks to drop coins when broken",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32784": {
+      "name": "(G) Mom's Toenail",
+      "text": "Mom stomps every 60 seconds (300 dmg)",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32785": {
+      "name": "(G) Black Lipstick",
+      "text": "Higher chance for black hearts",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32786": {
+      "name": "(G) Bible Tract",
+      "text": "Higher chance for eternal hearts",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32787": {
+      "name": "(G) Paper Clip",
+      "text": "Can open Golden Chests without using a key",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32788": {
+      "name": "(G) Monkey Paw",
+      "text": "Spawns 2 black hearts when half a heart is remaining (3 times max)",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32789": {
+      "name": "(G) Mysterious Paper",
+      "text": "Copies effect of either A Missing Page, The Polaroid, The Negative, or Missing Poster",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32790": {
+      "name": "(G) Daemon's Tail",
+      "text": "Heart drops are rerolled into a black heart, 80% to replace a heart drop with a key",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32791": {
+      "name": "(G) Missing Poster",
+      "text": "+1 life (will respawn as The Lost)",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32792": {
+      "name": "(G) Butt Penny",
+      "text": "Farts upon picking up a coin",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32793": {
+      "name": "(G) Mysterious Candy",
+      "text": "Chance to randomly poop",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32794": {
+      "name": "(G) Hook Worm",
+      "text": "Hook + spectral tears",
+      "range": "3",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32795": {
+      "name": "(G) Whip Worm",
+      "text": "",
+      "shot_speed": "1",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32796": {
+      "name": "(G) Broken Ankh",
+      "text": "20% chance to respawn as Blue Baby on death",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32797": {
+      "name": "(G) Fish Head",
+      "text": "Spawns 2-4 blue flies on hit",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32798": {
+      "name": "(G) Pinky Eye",
+      "text": "Chance to shoot poison tears",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32799": {
+      "name": "(G) Push Pin",
+      "text": "Chance to shoot spectral + piercing tears",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32800": {
+      "name": "(G) Liberty Cap",
+      "text": "Gives a random mushroom effect each room",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32801": {
+      "name": "(G) Umbilical Cord",
+      "text": "Gives Little Steven if damaged to 1/2 hearts, high chance to proc a Gemini for the room when hit",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32802": {
+      "name": "(G) Child's Heart",
+      "text": "Higher chance to find red hearts",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32803": {
+      "name": "(G) Curved Horn",
+      "dmg": "4",
+      "text": "",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32804": {
+      "name": "(G) Rusted Key",
+      "text": "Higher chance to find keys and chests",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32805": {
+      "name": "(G) Goat Hoof",
+      "text": "",
+      "speed": "0.3",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32806": {
+      "name": "(G) Mom's Pearl",
+      "text": "Higher chance to find soul hearts",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32807": {
+      "name": "(G) Cancer (Trinket)",
+      "text": "",
+      "tears": "2",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32808": {
+      "name": "(G) Red Patch",
+      "text": "Chance to temporarily gain 2.72 dmg on hit",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32809": {
+      "name": "(G) Match Stick",
+      "text": "Higher chance to find bombs",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32810": {
+      "name": "(G) Lucky Toe",
+      "text": "",
+      "luck": "2",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32811": {
+      "name": "(G) Cursed Skull",
+      "text": "Teleported to a random room if damaged to 1/2 heart",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32812": {
+      "name": "(G) Safety Cap",
+      "text": "Higher chance to find pills",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32813": {
+      "name": "(G) Ace of Spades",
+      "text": "Higher chance to find cards",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32814": {
+      "name": "(G) Isaac's Fork",
+      "text": "Chance to heal for a full heart after clearing a room",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32816": {
+      "name": "(G) A Missing Page",
+      "text": "Chance to do Necronomicon effect (120 dmg) on hit",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32817": {
+      "name": "(G) Bloody Penny",
+      "text": "25% chance to spawn a 1/2 red heart upon picking up a coin",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32818": {
+      "name": "(G) Burnt Penny",
+      "text": "25% chance to spawn a bomb upon picking up a coin",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32819": {
+      "name": "(G) Flat Penny",
+      "text": "25% chance to spawns a key upon picking up a coin",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32820": {
+      "name": "(G) Counterfeit Penny",
+      "text": "50% chance to gain an extra cent upon picking up a coin",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32821": {
+      "name": "(G) Tick",
+      "text": "Automatically deals 30% damage to each boss, heals 1 red heart, cannot drop",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32822": {
+      "name": "(G) Isaac's Head",
+      "text": "Familiar (3.5 dmg / tear, piercing)",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32823": {
+      "name": "(G) Maggy's Faith",
+      "text": "Gives two eternal hearts at the beginning of every floor",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32824": {
+      "name": "(G) Judas' Tongue",
+      "text": "Devil deal items that cost 2 hearts are reduced to 1 heart",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32825": {
+      "name": "(G) ???'s Soul",
+      "text": "Familiar that moves like DVD logo",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32826": {
+      "name": "(G) Samson's Lock",
+      "text": "Chance to temporarily gain 0.5 dmg when killing an enemy",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32827": {
+      "name": "(G) Cain's Eye",
+      "text": "25% chance to gain The Compass effect at the beginning of every floor",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32828": {
+      "name": "(G) Eve's Bird Foot",
+      "text": "Chance to spawn a Dead Bird familiar when killing an enemy (2 dmg / tick)",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32829": {
+      "name": "(G) The Left Hand",
+      "text": "All chests become Red Chests",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32830": {
+      "name": "(G) Shiny Rock",
+      "text": "Tinted rocks and crawlspace rocks will flash white every 10 seconds",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32831": {
+      "text": "(G) Turns all troll bombs into bomb pickups",
+      "shown": true,
+      "name": "Safety Scissors",
+      "introduced_in": "Repentance"
+   },
+   "32832": {
+      "name": "(G) Rainbow Worm",
+      "text": "Rainbow worm tears (a random worm effect every 5 seconds)",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32833": {
+      "name": "(G) Tape Worm",
+      "text": "Halves tear height",
+      "range": "6",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32834": {
+      "name": "(G) Lazy Worm",
+      "text": "",
+      "shot_speed": "-1",
+      "height": "2",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32835": {
+      "name": "(G) Cracked Dice",
+      "text": "Randomly D6, D20, D8, or D12 on hit",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32836": {
+      "name": "(G) Super Magnet",
+      "text": "Pickups and enemies move towards you",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32837": {
+      "name": "(G) Faded Polaroid",
+      "text": "Chnace to gain camouflage for a few seconds (confuses all enemies)",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32838": {
+      "name": "(G) Louse",
+      "text": "Chance to spawn 2 blue spiders when in a room with enemies",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32839": {
+      "name": "(G) Bob's Bladder",
+      "text": "Bombs make green creep",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32840": {
+      "name": "(G) Watch Battery",
+      "text": "Increased chance to find batteries, chance to add an extra charge after clearing a room",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32841": {
+      "name": "(G) Blasting Cap",
+      "text": "Exploding bombs have a chance to drop another bomb pickup",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32842": {
+      "name": "(G) Stud Finder",
+      "text": "Increased chance to find crawlspaces when breaking rocks",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32843": {
+      "name": "(G) Error",
+      "text": "Gives a random trinket effect per room",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32844": {
+      "name": "(G) Poker Chip",
+      "text": "Chests now have a 50/50 chance to give extra pickups or have nothing",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32845": {
+      "name": "(G) Blister",
+      "text": "Tears have extra knockback",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32846": {
+      "name": "(G) Second Hand",
+      "text": "Increases the time that status effects stay on enemies",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32847": {
+      "name": "(G) Endless Nameless",
+      "text": "Chance to drop an extra copy of a card/pill upon use",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32848": {
+      "name": "(G) Black Feather",
+      "text": "+1 dmg per \"evil\" item",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32849": {
+      "name": "(G) Blind Rage",
+      "text": "Extra invulerability frames on hit",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32850": {
+      "name": "(G) Golden Horse Shoe",
+      "text": "+30% chance to get a double Treasure Room",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32851": {
+      "name": "(G) Store Key",
+      "text": "Shops do not require keys",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32852": {
+      "name": "(G) Rib of Greed",
+      "text": "Greed and Super Greed can no longer appear",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32853": {
+      "name": "(G) Karma",
+      "text": "Chance to heal a red heart or spawn a Beggar when using a Donation Machine",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32854": {
+      "name": "(G) Lil Larva",
+      "text": "Gives 2 blue flies upon destroying a poop",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32855": {
+      "name": "(G) Mom's Locket",
+      "text": "Changes all 1/2 red hearts into full hearts, heals 1/2 heart when a key is used",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32856": {
+      "name": "(G) NO!",
+      "text": "Prevents active items from appearing",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32857": {
+      "name": "(G) Child Leash",
+      "text": "Familiars stay closer to you",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32858": {
+      "name": "(G) Brown Cap",
+      "text": "Poop explodes when destroyed",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32859": {
+      "name": "(G) Meconium",
+      "text": "Increased chance for Black Poops",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32860": {
+      "name": "(G) Cracked Crown",
+      "text": "Stat bonuses are increased by 40%",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32861": {
+      "name": "(G) Used Diaper",
+      "text": "Gives Skatole effect in certain rooms",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32862": {
+      "name": "(G) Fish Tail",
+      "text": "2x blue fly/spider generation",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32863": {
+      "name": "(G) Black Tooth",
+      "text": "Chance to shoot black tooth tears (2x dmg + poison)",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32864": {
+      "name": "(G) Ouroboros Worm",
+      "text": "Spiral tears",
+      "range": "3",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32865": {
+      "name": "(G) Tonsil",
+      "text": "Chance to spawn tonsil familiar on hit",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32866": {
+      "name": "(G) Nose Goblin",
+      "text": "Chance to shoot booger tears (dmg over time for 60 seconds)",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32867": {
+      "name": "(G) Super Ball",
+      "text": "Chance to shoot bouncy tears (tears bounce off rocks/walls)",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32868": {
+      "name": "(G) Vibrant Bulb",
+      "text": "+0.25 speed, +0.75 range, +0.1 shot speed, +0.2 tears, +0.5 damage, +1 luck when active item is fully charged",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32869": {
+      "name": "(G) Dim Bulb",
+      "text": "+0.5 speed, +1.5 range, +0.3 shot speed, +0.5 tears, +1.5 damage, +2 luck when active item is completely uncharged",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32870": {
+      "name": "(G) Fragmented Card",
+      "text": "Generates 2 Secret Rooms per floor",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32871": {
+      "name": "(G) Equality!",
+      "text": "Half pickups turn into doubled pickups when same # of coins + bombs + keys",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32872": {
+      "name": "(G) Wish Bone",
+      "text": "Chance to spawn pedestal item on hit",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32873": {
+      "name": "(G) Bag Lunch",
+      "text": "Chance to spawn Lunch on hit",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32874": {
+      "name": "(G) Lost Cork",
+      "text": "Increases radius of friendly creep",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32875": {
+      "name": "(G) Crow Heart",
+      "text": "Red heart containers are depleted first",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32876": {
+      "name": "(G) Walnut",
+      "text": "Chance to break and drop random coin/heart/key/trinket on hit from explosion",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32877": {
+      "name": "(G) Duct Tape",
+      "text": "Orbitals and familiars stop moving",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32878": {
+      "name": "(G) Silver Dollar",
+      "text": "Shops will appear on the Womb",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32879": {
+      "name": "(G) Bloody Crown",
+      "text": "Treasure Rooms will appear on the Womb",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32880": {
+      "name": "(G) Pay To Win",
+      "text": "Restock Machines will always spawn in Treasure Rooms",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32881": {
+      "name": "(G) Locust of Wrath",
+      "text": "Spawns a Red (exploding) Locust upon entering a room",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32882": {
+      "name": "(G) Locust of Pestilence",
+      "text": "Spawns a Green (poison) Locust upon entering a room",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32883": {
+      "name": "(G) Locust of Famine",
+      "text": "Spawns a Yellow (slowing) Locust upon entering a room",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32884": {
+      "name": "(G) Locust of Death",
+      "text": "Spawns a Black (4x dmg) Locust upon entering a room",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32885": {
+      "name": "(G) Locust of Conquest",
+      "text": "Spawns 1-4 White Locusts upon entering a room",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32886": {
+      "name": "(G) Bat Wing",
+      "text": "Chance to gain flight when killing an enemy",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32887": {
+      "name": "(G) Stem Cell",
+      "text": "Heals for 1/2 heart when travelling to the next floor",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32888": {
+      "name": "(G) Hairpin",
+      "text": "Fully recharges active item at the start of each boss",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32889": {
+      "name": "(G) Wooden Cross",
+      "text": "Gives 1-hit shield at the start of each floor",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32890": {
+      "name": "(G) Butter!",
+      "text": "Using active items drops them on the ground, chance to drop passive items on hit",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32891": {
+      "name": "(G) Filigree Feather",
+      "text": "Angels will drop Angel Room items instead of key pieces",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32892": {
+      "name": "(G) Door Stop",
+      "text": "Doors that you go through stay open",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32893": {
+      "name": "(G) Extension Cord",
+      "text": "Yellow laser chain flows through familiars",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32894": {
+      "name": "(G) Rotten Penny",
+      "text": "+1 blue fly upon picking up a coin",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32895": {
+      "name": "(G) Baby-Bender",
+      "text": "Familiars have homing shots",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32896": {
+      "name": "(G) Finger Bone",
+      "text": "5% chance to gain a bone heart on hit",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32897": {
+      "name": "(G) Jawbreaker",
+      "text": "Tears can become a tooth",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32898": {
+      "name": "(G) Chewed Pen",
+      "text": "Tears have a chance to slow enemies",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32899": {
+      "name": "(G) Blessed Penny",
+      "text": "Chance to spawn half a soul heart when picking up a coin",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32900": {
+      "name": "(G) Broken Syringe",
+      "text": "Gives you a random syringe effect every room",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32901": {
+      "name": "(G) Short Fuse",
+      "text": "All bombs have a shorter fuse time",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32902": {
+      "name": "(G) Gigante Bean",
+      "text": "Farts from isaac and familars are larger",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32903": {
+      "name": "(G) A Lighter",
+      "text": "Chance for enemies to burn when entering a room",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32904": {
+      "name": "(G) Broken Padlock",
+      "text": "Explosions can open locked doors",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32905": {
+      "name": "(G) Myosotis",
+      "text": "Get max 4 pickups from the previous floor at the beginning of the new floor",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32906": {
+      "name": "(G) 'M",
+      "text": "Reroll your active item upon use",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32907": {
+      "name": "(G) Teardrop Charm",
+      "text": "Tear-based effects have an extra chance of occurring",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32908": {
+      "name": "(G) Apple of Sodom",
+      "text": "Red hearts have a chance to burst into blue spiders when touched",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32909": {
+      "name": "(G) Forgotten Lullaby",
+      "text": "Increase tear rate of familiars",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32910": {
+      "name": "(G) Beth's Faith",
+      "text": "Spawn 8 wisps at the start of each floor",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32911": {
+      "name": "(G) Old Capacitor",
+      "text": "Your active item don't charge but you have a chance to spawn an extra battery drop on room clear",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32912": {
+      "name": "(G) Brain Worm",
+      "text": "Missed tears will redirect themselves toward enemies",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32913": {
+      "name": "(G) Perfection",
+      "text": "+20 luck but break when hit",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32914": {
+      "name": "(G) Devil's Crown",
+      "text": "Treasure rooms are replaced with Devil Deals",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32915": {
+      "name": "(G) Charged Penny",
+      "text": "Chance to replenish 1 bar of charge when picking up pennies",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32916": {
+      "name": "(G) Friendship Necklace",
+      "text": "Turns follower familiars into orbitals",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32917": {
+      "name": "(G) Panic Button",
+      "text": "Automatically uses active item when the player is about to be hit by a projectile or an enemy",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32918": {
+      "name": "(G) Blue Key",
+      "text": "Locked doors can be opened for free but you have to go through a Blue Womb room with enemies",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32919": {
+      "name": "(G) Flat File",
+      "text": "Removes all spikes (spiked rocks, spiked chests, curse room included)",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32920": {
+      "name": "(G) Telescope Lens",
+      "text": "+9% chance of finding Planetarium + allows them to appear in chapter 4",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32921": {
+      "name": "(G) Mom's Lock",
+      "text": "Chance of triggering a Mom item effect every room",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32922": {
+      "name": "(G) Dice Bag",
+      "text": "Chance to obtain a single use dice item in your card slot that only lasts for the current room",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32923": {
+      "name": "(G) Holy Crown",
+      "text": "Treasure rooms and shops will appear in the Cathedral",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32924": {
+      "name": "(G) Mother's Kiss",
+      "text": "Gives one empty heart container",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32925": {
+      "name": "(G) Torn Card",
+      "text": "Chance to shoot Ipecac + My Reflection shots",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32926": {
+      "name": "(G) Torn Pocket",
+      "text": "Spawns 2 pickups you have on the ground when damaged",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32927": {
+      "name": "(G) Gilded Key",
+      "text": "All chests become locked chests containing mixed pickups (including cards/pills/runes/batteries)",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32928": {
+      "name": "(G) Lucky Sack",
+      "text": "2 sacks spawns in every starting room",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32929": {
+      "name": "(G) Wicked Crown",
+      "text": "Treasure rooms and shops will appear in Sheol",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32930": {
+      "name": "(G) Azazel's Stump",
+      "text": "Chance to become Azazel on room clear until the next room clear",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32931": {
+      "name": "(G) Dingle Berry",
+      "text": "Spawns two charmed Dips on room clear",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32932": {
+      "name": "(G) Ring Cap",
+      "text": "2 bombs spawn each time you drop 1 bomb",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32933": {
+      "name": "(G) Nuh uh!",
+      "text": "Prevents coins and keys from spawning after the Depths",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32934": {
+      "name": "(G) Modeling Clay",
+      "text": "Chance of giving you a random passive item each room until room clear",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32935": {
+      "name": "(G) Polished Bone",
+      "text": "Chance of spawning a charmed bony on room clear",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32936": {
+      "name": "(G) Hollow Heart",
+      "text": "Gain 2 empty bone hearts at the start of each floor",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32937": {
+      "name": "(G) Kid's Drawing",
+      "text": "Counts as two Guppy items, does nothing else",
+      "shown": true,
+      "guppy": true,
+      "introduced_in": "Repentance"
+   },
+   "32938": {
+      "name": "(G) Crystal Key",
+      "text": "33% chance of Red Key effect on room clear",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32939": {
+      "name": "(G) Keeper's Bargain",
+      "text": "50% chance each devil deal will cost coins",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32940": {
+      "name": "(G) Cursed Penny",
+      "text": "Teleports you every time you pick up a coin",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32941": {
+      "name": "(G) Your Soul",
+      "text": "First devil deal item you will take while holding the trinket will be free",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32942": {
+      "name": "(G) Number Magnet",
+      "text": "Devil rooms always have at least a black heart and 2 enemies inside",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32943": {
+      "name": "(G) Strange Key",
+      "text": "Removes the time limit for Blue Womb. If Pandora's box is used, this trinket is consumed and spawns 6 random items",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32944": {
+      "name": "(G) Lil Clot",
+      "text": "Spawns two of Alt Eve's babies which respawns in the next room if killed",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32945": {
+      "name": "(G) Temporary Tattoo",
+      "text": "Challenge rooms drop 2 extra chests on clear, boss challenge rooms require 2 full hearts or less to enter",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32946": {
+      "name": "(G) Swallowed M80",
+      "text": "50% chance to trigger Kamikaze effect on hit",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32947": {
+      "name": "(G) RC Remote",
+      "text": "Familiars are now controlled like Jacob&Esau",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32948": {
+      "name": "(G) Found soul",
+      "text": "Spawns a controllable baby Lost at the start of each floor that acts like a co-op baby",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32949": {
+      "name": "(G) Expansion Pack",
+      "text": "Using an active item will also trigger the effect of a random 1-2 charge item",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32950": {
+      "name": "(G) Beth's Essence",
+      "text": "Enter an angel room = 5 wisps, donate to a beggar = 1 wisp",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32951": {
+      "name": "(G) The Twins",
+      "text": "Chance of doubling one of your familiars each room, get Brother Bobby or Sister Maggy if no familiars",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32952": {
+      "name": "(G) Adoption Papers",
+      "text": "Familiars now replace items in shops and are on sale",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32953": {
+      "name": "(G) Cricket Leg",
+      "text": "10% chance of spawning a random locust per enemy killed",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32954": {
+      "name": "(G) Apollyon's Best Friend",
+      "text": "Spawns two of Alt Apollyon's red locusts",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32955": {
+      "name": "(G) Broken Glasses",
+      "text": "33% chance of extra blind item option on main path, reveals blind item on alt path",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32956": {
+      "name": "(G) Ice Cube",
+      "text": "Chance of enemies being frozen when you enter the room",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "32957": {
+      "name": "(G) Sigil of Baphomet",
       "text": "Grants a 2 seconds shield every time you kill an enemy",
       "shown": true,
       "introduced_in": "Repentance"

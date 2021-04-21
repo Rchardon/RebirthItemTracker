@@ -490,7 +490,7 @@ class DrawingTool(object):
             try:
                 image = pygame.image.load(path)
             except:
-                image = pygame.image.load("/collectibles/questionmark.png")
+                image = pygame.image.load("../collectibles/questionmark.png")
 
             size_multiplier = Options().size_multiplier
             scaled_image = image
@@ -534,6 +534,10 @@ class DrawingTool(object):
                 item.item_id = item.item_id.replace("2", "t", 1)
                 self.text_height = self.write_message("%s%s%s" % ("("+item.item_id+") ", item.name, desc))
                 item.item_id = item.item_id.replace("t", "2", 1) #revert it to avoid showing a question mark
+            elif item.item_id.startswith("3") and len(item.item_id) == 5: # Golden trinkets
+                item.item_id = "t" + item.item_id
+                self.text_height = self.write_message("%s%s%s" % ("("+item.item_id+") ", item.name, desc))
+                item.item_id = item.item_id.replace("t", "", 1) #revert it to avoid showing a question mark
             else:
                 self.text_height = self.write_message("%s%s%s" % ("("+item.item_id+") ", item.name, desc))
         else:  
