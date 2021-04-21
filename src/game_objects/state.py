@@ -41,9 +41,12 @@ class TrackerState(Serializable):
         self.savequit = False
         for stat in ItemInfo.stat_list:
             self.player_stats[stat] = 0.0
+        self.set_transformations()    
+
+    def set_transformations(self):
         for transform in ItemInfo.transform_list:
             self.player_transforms[transform] = set()
-            self.player2_transforms[transform] = set()
+            self.player2_transforms[transform] = set()    
 
     def add_floor(self, floor):
         """ Add a floor to the current run """

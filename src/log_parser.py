@@ -163,6 +163,7 @@ class LogParser(object):
             room_id = match.group(1)
             if room_id == '18.1000': # Genesis room
                 self.state.item_list = []
+                self.state.set_transformations()
             elif self.state.greedmode is None:
                 self.state.greedmode = room_id in self.greed_mode_starting_rooms
                 self.__parse_floor(self.first_line, line_number)
