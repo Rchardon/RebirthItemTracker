@@ -41,12 +41,16 @@ class TrackerState(Serializable):
         self.savequit = False
         for stat in ItemInfo.stat_list:
             self.player_stats[stat] = 0.0
-        self.set_transformations()    
+
+        if Options().game_version == "Repentance":  # Repentance allows multiple occurence of the same item to count in transformations so transformation counts must be arrays instead of objects
+            self.set_transformations()
+        else:
+            self.player_transforms[transform] = set()
 
     def set_transformations(self):
         for transform in ItemInfo.transform_list:
-            self.player_transforms[transform] = set()
-            self.player2_transforms[transform] = set()    
+            self.player_transforms[transform] = []
+            self.player2_transforms[transform] = []    
 
     def add_floor(self, floor):
         """ Add a floor to the current run """
@@ -76,7 +80,7 @@ class TrackerState(Serializable):
             self.modified = True
             return True
         else:
-            return False
+            return False    
 
     def remove_item(self, item_id):
         """
@@ -166,9 +170,16 @@ class TrackerState(Serializable):
         for transform in ItemInfo.transform_list:
             if not item_info[transform]:
                 continue
-            if item.is_Esau_item:
-                self.player2_transforms[transform].add(item)
-            else:    
+            if Options().game_version == "Repentance": # Repentance allows multiple occurence of the same item to count in transformations
+                if item.is_Esau_item:
+                    self.player2_transforms[transform].append(item)
+                    if item.item_id == "32937":
+                        self.player2_transforms[transform].append(1)
+                else:
+                    self.player_transforms[transform].append(item)
+                    if item.item_id == "32937":
+                        self.player_transforms[transform].append(1)
+            else:
                 self.player_transforms[transform].add(item)
 
     def __remove_stats_for_item(self, item):
@@ -186,9 +197,9 @@ class TrackerState(Serializable):
             if not item_info[transform]:
                 continue
             if not item.info.space and Options().game_version == "Repentance" and item.info.is_Esau_item:
-                self.player2_transforms[transform].discard(item)
+                self.player2_transforms[transform].remove(item)
             elif not item.info.space and Options().game_version == "Repentance" and self.player != 21:
-                self.player_transforms[transform].discard(item)
+                self.player_transforms[transform].remove(item)
 
             
 
