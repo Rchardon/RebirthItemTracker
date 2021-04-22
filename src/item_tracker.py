@@ -252,7 +252,7 @@ def main():
         rt = IsaacTracker()
         rt.run()
     except Exception:
-        excepthook = rt.filter_excepthook()
+        excepthook = IsaacTracker.filter_excepthook()
         log_error(excepthook)
 
 if __name__ == "__main__":

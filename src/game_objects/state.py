@@ -173,11 +173,11 @@ class TrackerState(Serializable):
             if Options().game_version == "Repentance": # Repentance allows multiple occurence of the same item to count in transformations
                 if item.is_Esau_item:
                     self.player2_transforms[transform].append(item)
-                    if item.item_id == "32937":
+                    if item.item_id == "32937": # Golden Kid's Drawing
                         self.player2_transforms[transform].append(1)
                 else:
                     self.player_transforms[transform].append(item)
-                    if item.item_id == "32937":
+                    if item.item_id == "32937": # Golden Kid's Drawing
                         self.player_transforms[transform].append(1)
             else:
                 self.player_transforms[transform].add(item)
