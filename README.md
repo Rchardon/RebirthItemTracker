@@ -101,4 +101,6 @@ relaunch the game.
 
 * You can't see rerolled items with D4 in Repentance.
 
-* Tracker doesn't work perfectly with co-op mode, transformation counts will most likely be wrong
+* Tracker doesn't work perfectly with co-op mode, transformation counts will most likely be wrong.
+
+* Duplicated active items that should count in transformations will not be counted properly in Repentance.
