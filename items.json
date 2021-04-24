@@ -4113,7 +4113,6 @@
       "text": "Spawn a wisp orbital that have the effect of the active item that is inside the book",
       "bookworm": true,
       "shown": true,
-      "space": true,
       "introduced_in": "Antibirth"
    },
    "585": {
