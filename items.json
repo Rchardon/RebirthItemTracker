@@ -3644,7 +3644,7 @@
    },
    "514": {
       "name": "Broken Modem",
-      "text": "Chance for all enemies and enemy projectiles to become frozen (based on luck)",
+      "text": "Chance for all enemies and enemy projectiles to lag and double your drop (based on luck)",
       "shown": true,
       "introduced_in": "Booster Pack #1"
    },
