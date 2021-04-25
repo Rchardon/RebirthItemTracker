@@ -49,7 +49,7 @@ class Overlay(object):
         if transform_list is None:
             transform_list = ItemInfo.transform_list
         for transform in transform_list:
-            if self.state.player == 20:
+            if self.state.player == 19:
                 display = Overlay.format_transform(self.state.player_transforms[transform]) + " - " + Overlay.format_transform(self.state.player2_transforms[transform])
                 with open(self.prefix + "overlay text/" + transform + ".txt", "w+") as sfile:
                     sfile.write(display + "/3")

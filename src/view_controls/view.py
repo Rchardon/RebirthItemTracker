@@ -264,7 +264,7 @@ class DrawingTool(object):
             for stat in ItemInfo.stat_list:
                 dic[stat] = Overlay.format_value(self.state.player_stats[stat])
             for transform in ItemInfo.transform_list:
-                if self.state.player == 20:
+                if self.state.player == 19:
                     dic[transform] = Overlay.format_transform(self.state.player_transforms[transform]) + " - " + Overlay.format_transform(self.state.player2_transforms[transform])
                 else:
                     dic[transform] = Overlay.format_transform(self.state.player_transforms[transform])

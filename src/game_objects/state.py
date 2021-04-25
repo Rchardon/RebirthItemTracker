@@ -39,6 +39,7 @@ class TrackerState(Serializable):
         self.player_transforms = {}
         self.player2_transforms = {} # For Esau
         self.savequit = False
+        self.removed_Esau_items = []
         for stat in ItemInfo.stat_list:
             self.player_stats[stat] = 0.0
 
@@ -105,6 +106,18 @@ class TrackerState(Serializable):
         self.__remove_stats_for_item(item)
         self.modified = True
         return True
+
+    def remove_item_from_soul(self):
+        """
+        Remove every item from the extra Esau spawned by the Soul of Jacob&Esau
+        """
+
+        for item in reversed(self.state.item_list):
+            if item.is_Esau_item and item.name not in self.state.removed_Esau_items:
+                self.state.remove_item(item.item_id)
+                self.state.removed_Esau_items.append(item.name)
+            else:
+                item.is_Esau_item = False    
 
     @property
     def last_item(self):
@@ -196,9 +209,9 @@ class TrackerState(Serializable):
         for transform in ItemInfo.transform_list:
             if not item_info[transform]:
                 continue
-            if not item.info.space and Options().game_version == "Repentance" and item.info.is_Esau_item:
+            if not item.info.space and Options().game_version == "Repentance" and item.is_Esau_item and item in self.player2_transforms[transform]:
                 self.player2_transforms[transform].remove(item)
-            elif not item.info.space and Options().game_version == "Repentance" and self.player != 21:
+            elif not item.info.space and Options().game_version == "Repentance" and self.player != 21 and item in self.player_transforms[transform] and not item.is_Esau_item:
                 self.player_transforms[transform].remove(item)
 
             

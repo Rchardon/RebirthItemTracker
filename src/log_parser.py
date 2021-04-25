@@ -89,7 +89,7 @@ class LogParser(object):
             self.state.savequit = True
         if line.startswith('RNG Start Seed:'):
             self.__parse_seed(line, line_number)
-        if line.startswith('Initialized player with Variant'):
+        if line.startswith('Initialized player with Variant') and self.state.player is None:
             self.__parse_player(line)
         if self.opt.game_version == "Repentance" and line.startswith('Level::Init') and self.state.greedmode is None: # Store the line of the first floor in Repentance because we can detect if we are in greed mode only after this line in the log
             self.first_line = line
@@ -99,6 +99,8 @@ class LogParser(object):
             self.__parse_room(line)
             if self.opt.game_version == "Repentance":
                 self.detect_greed_mode(line, line_number)
+                if self.state.player != 19:
+                    self.state.remove_item_from_soul()
         if line.startswith("Curse"):
             self.__parse_curse(line)
         if line.startswith("Spawn co-player!"):
@@ -248,10 +250,12 @@ class LogParser(object):
         if len(self.splitfile) > 1 and self.splitfile[line_number + self.seek - 1] == line:
             self.log.debug("Skipped duplicate item line from baby presence")
             return False
-        is_Jacob_item = line.endswith("(Jacob)") and self.opt.game_version == "Repentance" and self.state.player != 37 and self.state.player != 39 # The second part of the condition is to avoid showing Jacob's Head if you play on a modded char in AB+ or if we play tainted Jacob
+        is_Jacob_item = line.endswith("(Jacob)") and self.opt.game_version == "Repentance" and self.state.player == 19
         is_Esau_item = line.endswith("(Esau)") and self.opt.game_version == "Repentance" # The second part of the condition is to avoid showing Esau's Head if you play on a modded char in AB+  
-        if self.state.player == 20 and not is_Esau_item and not is_Jacob_item: # This is when J&E transform into another character
+        if self.state.player == 19 and not is_Esau_item and not is_Jacob_item: # This is when J&E transform into another character
             self.state.player = 8 # Put it on Lazarus by default just in case we got another Anemic
+        elif self.state.player != 19 and is_Jacob_item:
+            self.state.player = 19
         end_name = -1
         space_split = line.split(" ")
         numeric_id = space_split[2] # When you pick up an item, this has the form: "Adding collectible 105 (The D6)" or "Adding collectible 105 (The D6) to Player 0 (Isaac)" in Repentance

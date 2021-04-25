@@ -54,7 +54,7 @@ class OptionsMenu(object):
                        "blck_cndl_mode": "BLCK CNDL Mode",
                        "custom_title_enabled": "Change Window Title",
                        "log_file_check_seconds": "Check log file every",
-                       "show_jacob_esau_items": "Show Jacob&Esau Items"}
+                       "show_jacob_esau_items": "Show Jacob&Esau Icons"}
     label_after_text = {"message_duration":"second(s)",
                         "framerate_limit":"fps",
                         "log_file_check_seconds": "second(s)"}
