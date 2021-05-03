@@ -291,7 +291,33 @@ class LogParser(object):
                 self.log.debug("Skipped adding item %s to avoid space-bar duplicate", item_id)
         else:
             self.log.debug("Skipped adding Anemic from Lazarus Rags because we already have Anemic")
+
+        if item_id in ("144", "238", "239", "278", "388", "550", "552", "626", "627"):
+            self.__parse_add_multi_items()
+
         return True
+
+    def __parse_add_multi_items(self):
+        """Add custom sprites for multi-segmented items like Super Bum, key pieces or knife pieces"""
+        if self.state.contains_item('238') and self.state.contains_item('239') and not self.state.contains_item('3000'):
+            for item in reversed(self.state.item_list):
+                if item.item_id in ("238", "239"):
+                    item.info.shown = False
+            self.state.add_item(Item("3000", self.state.last_floor))
+        elif self.state.contains_item('550') and self.state.contains_item('552'):
+            for item in reversed(self.state.item_list):
+                if item.item_id == "550":
+                    item.info.shown = False
+        elif self.state.contains_item('144') and self.state.contains_item('278') and self.state.contains_item('388') and not self.state.contains_item('3001') and self.opt.game_version != "Rebirth" and self.opt.game_version != "Antibirth":
+            for item in reversed(self.state.item_list):
+                if item.item_id in ("144", "278", "388"):
+                    item.info.shown = False
+            self.state.add_item(Item("3001", self.state.last_floor))
+        elif self.state.contains_item('626') and self.state.contains_item('627') and not self.state.contains_item('3002'):
+            for item in reversed(self.state.item_list):
+                if item.item_id in ("626", "627"):
+                    item.info.shown = False
+            self.state.add_item(Item("3002", self.state.last_floor))    
 
     def __parse_trinket_gulp(self, line):
         """ Parse a (modded) trinket gulp and push it to the state """
@@ -342,10 +368,30 @@ class LogParser(object):
 
         self.log.debug("Removed item. id: %s", removal_id)
 
+        if item_id in ("144", "238", "239", "278", "388", "626", "627"):
+            self.__parse_remove_multi_items(item_id=item_id)
+
         # A check will be made inside the remove_item function
         # to see if this item is actually in our inventory or not.
         return self.state.remove_item(removal_id)
 
+    def __parse_remove_multi_items(self, item_id):
+        """Remove custom sprites for multi-segmented items like Super Bum, key pieces or knife pieces"""
+        if item_id in ("238", "239"):
+            for item in reversed(self.state.item_list):
+                if item.item_id in ("238", "239"):
+                    item.info.shown = True
+            self.state.remove_item("3000")
+        elif item_id in ("144", "278", "388"):
+            for item in reversed(self.state.item_list):
+                if item.item_id in ("144", "278", "388"):
+                    item.info.shown = True
+            self.state.remove_item("3001")
+        elif item_id in ("626", "627"):
+            for item in reversed(self.state.item_list):
+                if item.item_id in ("626", "627"):
+                    item.info.shown = True
+            self.state.remove_item("3002")       
 
 
     def __load_log_file(self):

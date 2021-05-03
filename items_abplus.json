@@ -3837,7 +3837,7 @@
     },
     "552": {
        "name": "Mom's Shovel",
-       "text": "Used in the Booster Pack #5 quest",
+       "text": "Used in the Booster Pack #5 quest, spawns a trapdoor (10% chance for crawlspace)",
        "yesmother": true,
        "shown": true,
        "space": true,
@@ -5182,6 +5182,18 @@
        "text": "2% chance to gain a bone heart on hit",
        "shown": true,
        "introduced_in": "Booster Pack #5"
+    },
+    "3000": {
+       "name": "Mega Satan's Key",
+       "text": "Opens Mega Satan's Door",
+       "shown": true,
+       "introduced_in": "Rebirth"
+    },
+    "3001": {
+       "name": "Super Bum",
+       "text": "Collects coins, red hearts and keys and drops twice as many rewards as the regular bums",
+       "shown": true,
+       "introduced_in": "Afterbirth"
     }
  }
  

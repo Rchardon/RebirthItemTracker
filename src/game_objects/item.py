@@ -60,9 +60,9 @@ class Item(Serializable):
 
         # Passive items that can't be rerolled such as Key pieces or Knife pieces
         if Options().game_version != "Repentance":
-            exceptions = ("10", "81", "238", "239", "258", "327", "328", "474")
+            exceptions = ("10", "81", "238", "239", "258", "327", "328", "474", "3000")
         else:
-            exceptions = ("238", "239", "258", "327", "328", "626", "627", "668")
+            exceptions = ("238", "239", "258", "327", "328", "626", "627", "668", "3000", "3002")
 
         trinket = False
         if self.item_id.startswith("2") and len(self.item_id) == 4:

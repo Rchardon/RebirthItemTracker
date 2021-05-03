@@ -538,6 +538,18 @@ class DrawingTool(object):
                 item.item_id = "t" + item.item_id
                 self.text_height = self.write_message("%s%s%s" % ("("+item.item_id+") ", item.name, desc))
                 item.item_id = item.item_id.replace("t", "", 1) #revert it to avoid showing a question mark
+            elif item.item_id == "3000":
+                item.item_id = "238+239"
+                self.text_height = self.write_message("%s%s%s" % ("("+item.item_id+") ", item.name, desc))
+                item.item_id = "3000" #revert it to avoid showing a question mark
+            elif item.item_id == "3001":
+                item.item_id = "144+278+388"
+                self.text_height = self.write_message("%s%s%s" % ("("+item.item_id+") ", item.name, desc))
+                item.item_id = "3001" #revert it to avoid showing a question mark
+            elif item.item_id == "3002":
+                item.item_id = "626+627"
+                self.text_height = self.write_message("%s%s%s" % ("("+item.item_id+") ", item.name, desc))
+                item.item_id = "3002" #revert it to avoid showing a question mark    
             else:
                 self.text_height = self.write_message("%s%s%s" % ("("+item.item_id+") ", item.name, desc))
         else:  

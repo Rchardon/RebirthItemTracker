@@ -2568,7 +2568,7 @@
    },
    "352": {
       "name": "Glass Cannon",
-      "text": "Shoots a big shot. On hit: inflict an extra 2 full heart dmg (non lethal) and leaves blood trail",
+      "text": "Shoots a big shot. On hit: inflict an extra 2 full heart dmg (non lethal), leaves blood trail and gain 1.5 range",
       "shown": true,
       "space": true,
       "introduced_in": "Afterbirth"
@@ -3891,7 +3891,7 @@
    },
    "552": {
       "name": "Mom's Shovel",
-      "text": "Used in the Booster Pack #5 quest",
+      "text": "Used in the Booster Pack #5 quest, spawns a trapdoor (10% chance for crawlspace)",
       "yesmother": true,
       "shown": true,
       "space": true,
@@ -6155,6 +6155,24 @@
    "2189": {
       "name": "Sigil of Baphomet",
       "text": "Grants a 2 seconds shield every time you kill an enemy",
+      "shown": true,
+      "introduced_in": "Repentance"
+   },
+   "3000": {
+      "name": "Mega Satan's Key",
+      "text": "Opens Mega Satan's Door",
+      "shown": true,
+      "introduced_in": "Rebirth"
+   },
+   "3001": {
+      "name": "Super Bum",
+      "text": "Collects coins, red hearts and keys and drops twice as many rewards as the regular bums",
+      "shown": true,
+      "introduced_in": "Afterbirth"
+   },
+   "3002": {
+      "name": "Knife",
+      "text": "Opens door to corpse",
       "shown": true,
       "introduced_in": "Repentance"
    },
