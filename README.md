@@ -39,10 +39,17 @@ folder with your log.txt and it will force it to use the specific one it finds t
 between different isaac games by using the tracker option, and you'd have to have multiple tracker installs to use for
 Antibirth vs Afterbirth+, for example. Normally this should not have to happen.)
 
+The tracker can remember your runs if you save&quit but it works differently for each dlc:
+- For Rebirth, Antibirth and Afterbirth : It remembers the last paused run you did and you have to reload run informations
+by pressing CTRL + N when you reload your run.
+- For Afterbirth+ : It remembers the paused runs on the 3 saves and you have to press CTRL + N to reload run informations.
+- For Repentance : It remembers the paused runs on the 3 saves and it reloads automatically run informations when you reload
+your run. 
+
 The tracker checks for updates each time you launch it, and will update itself if you allow it. This only works on Windows.
 You can toggle this in the options window.
 
-The tracker can be used on Linux, but you have to run it from source, and it can't autoupdate.
+The tracker can be used on Linux until version 2.1.0, but you have to run it from source, and it can't autoupdate.
 Read "HOW TO BUILD.txt" for instructions.
 
 The tracker doesn't work properly on a Mac: it will crash when you open the options menu. If you're okay with manually
@@ -91,11 +98,6 @@ character doesn't have it anymore.
 "Rebirth Item Tracker.exe" and not "item_tracker.exe".
 
 * When playing Antibirth, it doesn't display detailed item information, nor can it keep track of what floor you're on.
-
-* If you ever save & quit and close the game, the tracker will forget anything that happened during that run when you
-relaunch the game.
-
-* On Repentance, if you save&quit then replay the same seed, the tracker will not reset.
 
 * Transparent mode only works on Windows.
 

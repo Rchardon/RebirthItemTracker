@@ -85,6 +85,8 @@ class LogParser(object):
         # AB and AB+ version messages both start with this text (AB+ has a + at the end)
         if line.startswith('Binding of Isaac: Repentance') or line.startswith('Binding of Isaac: Afterbirth') or line.startswith('Binding of Isaac: Rebirth'):
             self.__parse_version_number(line)
+        if line.startswith('Loading PersistentData'):
+            self.__parse_save(line)
         if line.startswith('Menu Save Init'):
             self.state.savequit = True
         if line.startswith('RNG Start Seed:'):
@@ -128,6 +130,11 @@ class LogParser(object):
     def __parse_version_number(self, line):
         words = line.split()
         self.state.version_number = words[-1]
+
+    def __parse_save(self,line):
+        regexp_str = r"Loading PersistentData (\d+)"
+        search_result = re.search(regexp_str, line)
+        self.state.save = int(search_result.group(1)) if search_result is not None else 0
 
     def __parse_seed(self, line, line_number):
         """ Parse a seed line """
@@ -230,6 +237,7 @@ class LogParser(object):
             floor_id += 'g'
 
         self.state.add_floor(Floor(floor_id))
+        self.state.export_state()
         return True
 
     def __parse_curse(self, line):
@@ -294,7 +302,7 @@ class LogParser(object):
 
         if item_id in ("144", "238", "239", "278", "388", "550", "552", "626", "627"):
             self.__parse_add_multi_items()
-
+        self.state.export_state()
         return True
 
     def __parse_add_multi_items(self):
@@ -344,6 +352,7 @@ class LogParser(object):
         added = self.state.add_item(Item(item_id, self.state.last_floor, self.getting_start_items, is_Jacob_item=is_Jacob_item, is_Esau_item=is_Esau_item))
         if not added:
             self.log.debug("Skipped adding item %s to avoid space-bar duplicate", item_id)
+        self.state.export_state()
         return True
 
     def __parse_item_remove(self, line):

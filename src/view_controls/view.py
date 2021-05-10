@@ -160,9 +160,7 @@ class DrawingTool(object):
                 elif event.key == K_F4 and pygame.key.get_mods() & KMOD_ALT:
                     return Event.DONE
                 elif event.key == K_c and pygame.key.get_mods() & KMOD_CTRL:
-                    # Debug function to write the state to a json file
-                    #with open("../export_state.json", "w") as state_file:
-                    #    state_file.write(json.dumps(self.state, cls=TrackerStateEncoder, sort_keys=True))
+                    self.state.export_state()
 
                     # Write the seed to the clipboard
                     # (from http://stackoverflow.com/questions/579687/how-do-i-copy-a-string-to-the-clipboard-on-windows-using-python)
@@ -171,8 +169,8 @@ class DrawingTool(object):
                     r.clipboard_clear()
                     r.clipboard_append(self.state.seed)
                     r.destroy()
-
-                #self.generate_run_summary() # This is commented out because run summaries are broken with the new "state" model rewrite of the item tracker
+                elif event.key == K_n and pygame.key.get_mods() & KMOD_CTRL:
+                    self.state.load_from_export_state()
 
             elif event.type == MOUSEBUTTONDOWN:
                 if event.button == 1:
