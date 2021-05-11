@@ -140,7 +140,7 @@ class LogParser(object):
         """ Parse a seed line """
         # This assumes a fixed width, but from what I see it seems safe
         self.current_seed = line[16:25]
-        if not (line == self.seedline and self.state.savequit):
+        if not (line == self.seedline and self.state.savequit) and self.opt.game_version == "Repentance":
             self.__trigger_new_run(line_number)
         self.seedline = line # In Repentance if you Save&Quit, the RNG Start Seed line will happen again so we need to store the whole line to not trigger the function if this line is duplicated
         self.state.savequit = False

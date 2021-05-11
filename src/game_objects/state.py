@@ -16,7 +16,8 @@ class TrackerState(Serializable):
                  ('tracker_version', str),
                  ('player', str),
                  ('player_transforms', list),
-                 ('player2_transforms', list)]
+                 ('player2_transforms', list),
+                 ('greedmode', bool)]
     def __init__(self, seed, tracker_version, game_version):
         self.reset(seed, game_version)
         self.tracker_version = tracker_version
@@ -250,6 +251,7 @@ class TrackerState(Serializable):
                     data = data[self.game_version]
                 self.seed = data['seed']
                 self.player = data['player']
+                self.greedmode = data['greedmode']
                 for floor in data['floor_list']:
                     new_floor = Floor(floor["floor_id"], floor["curse"])
                     new_floor_list.append(new_floor)

@@ -865,7 +865,6 @@
       "name": "Brimstone",
       "tears_x": "0.33",
       "shown": true,
-      "leviathan": true,
       "text": "Tears become blood laser, hits 9 times",
       "in_summary": true,
       "summary_name": "Brim",
