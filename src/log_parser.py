@@ -86,8 +86,6 @@ class LogParser(object):
             self.__parse_version_number(line)
         if line.startswith('Loading PersistentData'):
             self.__parse_save(line)
-        if line.startswith('Menu Save Init'):
-            self.state.savequit = True
         if line.startswith('RNG Start Seed:'):
             self.__parse_seed(line, line_number)
         if line.startswith('Initialized player with Variant') and self.state.player is None:
