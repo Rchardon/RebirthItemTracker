@@ -43,7 +43,7 @@ The tracker can remember your runs if you save&quit but it works differently for
 - For Rebirth, Antibirth and Afterbirth : It remembers the last paused run you did and you have to reload run informations
 by pressing CTRL + N when you reload your run.
 - For Afterbirth+ : It remembers the paused runs on the 3 saves and you have to press CTRL + N to reload run informations.
-- For Repentance : It remembers the paused runs on the 3 saves and it reloads automatically run informations when you reload
+- For Repentance : It remembers the paused runs on the 3 saves and it reloads automatically run informations when you continue
 your run. 
 
 The tracker checks for updates each time you launch it, and will update itself if you allow it. This only works on Windows.
