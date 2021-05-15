@@ -26,7 +26,6 @@ class LogParser(object):
         self.reseeding_floor = False
         self.current_room = ""
         self.current_seed = ""
-        self.seedline = ""
         # Cached contents of log
         self.content = ""
         # Log split into lines
@@ -140,15 +139,14 @@ class LogParser(object):
         """ Parse a seed line """
         # This assumes a fixed width, but from what I see it seems safe
         self.current_seed = line[16:25]
-        if not (line == self.seedline and self.state.savequit) and self.opt.game_version == "Repentance":
-            self.__trigger_new_run(line_number)
-        self.seedline = line # In Repentance if you Save&Quit, the RNG Start Seed line will happen again so we need to store the whole line to not trigger the function if this line is duplicated
-        self.state.savequit = False
+        space_split = line.split(" ")
 
         # Antibirth doesn't have a proper way to detect run resets
         # it will wipe the tracker when doing a "continue"
-        if self.opt.game_version == "Antibirth":
+        if (space_split[6] == '[New,' and self.opt.game_version == "Repentance") or self.opt.game_version == "Antibirth":
             self.__trigger_new_run(line_number)
+        elif (space_split[6] == '[Continue,' and self.opt.game_version == "Repentance"):
+            self.state.load_from_export_state()
 
     def __parse_player(self, line):
         regexp_str = r"Initialized player with Variant (\d+) and Subtype (\d+)"
