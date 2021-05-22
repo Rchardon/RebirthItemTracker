@@ -23,10 +23,9 @@ def add_glow_to_dir(dirname):
                 cmd = 'convert "' + file_path + '" ' +\
                       '( +clone -channel A -blur 0x2.5 -level 0,80% +channel +level-colors white ) ' +\
                       '-compose DstOver ' +\
-                      '-composite "' + file_glow_path + '"'
+                      '-composite png32:"' + file_glow_path + '"' # png32 is to set the sprite to 32-bit depth
                 print(cmd)
                 os.system(cmd)
-                shutil.copy(file_glow_path, 'copy_of_new_glow_images/')
 
 paths_to_add = [
   os.path.join('..', 'collectibles'),
