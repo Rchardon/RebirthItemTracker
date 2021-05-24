@@ -1297,7 +1297,7 @@
       "health": "1",
       "shot_speed": "0.16",
       "shown": true,
-      "text": "Heals 50% of your red hearts each floor if you have less than 50% of your red hearts fullfilled",
+      "text": "",
       "introduced_in": "Rebirth"
    },
    "177": {
