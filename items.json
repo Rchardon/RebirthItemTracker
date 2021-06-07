@@ -2,7 +2,8 @@
    "NEW": {
       "name": "Unknown Item",
       "shown": true,
-      "text": "Tracker doesn't know this item yet"
+      "text": "Tracker doesn't know this item yet",
+      "introduced_in": "Unknown"
    },
    "-1": {
       "name": "Glitched item",
