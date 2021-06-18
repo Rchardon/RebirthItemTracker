@@ -57,7 +57,7 @@ class OptionsMenu(object):
                        "show_jacob_esau_items": "Show Jacob&Esau Icons"}
     label_after_text = {"message_duration":"second(s)",
                         "framerate_limit":"fps",
-                        "log_file_check_seconds": "second(s)"}
+                        "log_file_check_seconds": "second(s) "}
     connection_labels = {"starting":"Connecting to server for player list...",
                          "done": "Connecting to server for player list... Done",
                          "fail": "Connecting to server for player list... Failed"}
@@ -294,7 +294,7 @@ class OptionsMenu(object):
                 c.configure(command=self.checkbox_callback)
 
         # Draw the other options box
-        display_options_frame = LabelFrame(self.root, text="", padx=22, pady=20)
+        display_options_frame = LabelFrame(self.root, text="", padx=21, pady=20)
         display_options_frame.grid(row=1, column=0, padx=5, pady=2)
         next_row = 0
 
