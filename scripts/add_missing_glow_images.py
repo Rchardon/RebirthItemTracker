@@ -5,7 +5,7 @@
 # You must use an old version of ImageMagick for the convert command to work properly.
 # Version 6.9.3-7 Q16 x64 is confirmed to work
 
-import os, shutil
+import os
 
 def add_glow_to_dir(dirname):
     glows = {}

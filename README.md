@@ -49,7 +49,7 @@ your run.
 The tracker checks for updates each time you launch it, and will update itself if you allow it. This only works on Windows.
 You can toggle this in the options window.
 
-The tracker can be used on Linux until version 2.1.0, but you have to run it from source, and it can't autoupdate.
+The tracker can be used on Linux until version 2.1.0, but you have to run it from source, and it can't auto-update.
 Read "HOW TO BUILD.txt" for instructions.
 
 The tracker doesn't work properly on a Mac: it will crash when you open the options menu. If you're okay with manually

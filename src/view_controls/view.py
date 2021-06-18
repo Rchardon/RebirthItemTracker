@@ -1,6 +1,4 @@
 """ This module handles everything related to the tracker's window """
-import json
-import logging
 import os
 import platform # For determining what operating system the script is being run on
 import traceback
@@ -41,10 +39,6 @@ class Drawable(object):
 
     def draw(self, selected=False):
         raise NotImplementedError("This object needs to implement draw()")
-
-class Clickable(object):
-    def on_click(self):
-        pass
 
 class Event(object):
     DONE = 1

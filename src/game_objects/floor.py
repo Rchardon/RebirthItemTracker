@@ -1,6 +1,5 @@
 """ This module handles everything that is floor-related"""
 from game_objects.serializable import Serializable
-import logging
 
 from error_stuff import log_error
 

@@ -1,5 +1,4 @@
 """This module handles anything related to the item tracker's state"""
-import logging
 import json
 from game_objects.item  import Item, ItemInfo
 from game_objects.floor import Floor

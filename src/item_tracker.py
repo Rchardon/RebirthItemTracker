@@ -1,7 +1,6 @@
 """ This module handles everything related to the tracker behaviour. """
 import json     # For importing the items and options
 import os
-import re
 import shutil
 import time     # For referencing the "state" timestamp that we get from the server
 import urllib.request, urllib.error, urllib.parse  # For checking for updates to the item tracker

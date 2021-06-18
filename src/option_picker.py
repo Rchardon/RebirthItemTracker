@@ -7,7 +7,6 @@ import re
 import tkinter.ttk
 import pygame.sysfont
 from options import Options
-import logging
 import urllib.request, urllib.error, urllib.parse
 import webbrowser
 import platform
