@@ -306,21 +306,21 @@ class LogParser(object):
         if self.state.contains_item('238') and self.state.contains_item('239') and not self.state.contains_item('3000'):
             for item in reversed(self.state.item_list):
                 if item.item_id in ("238", "239"):
-                    item.info.shown = False
+                    item.shown = False
             self.state.add_item(Item("3000", self.state.last_floor))
         elif self.state.contains_item('550') and self.state.contains_item('552'):
             for item in reversed(self.state.item_list):
                 if item.item_id == "550":
-                    item.info.shown = False
+                    item.shown = False
         elif self.state.contains_item('144') and self.state.contains_item('278') and self.state.contains_item('388') and not self.state.contains_item('3001') and self.opt.game_version != "Rebirth" and self.opt.game_version != "Antibirth":
             for item in reversed(self.state.item_list):
                 if item.item_id in ("144", "278", "388"):
-                    item.info.shown = False
+                    item.shown = False
             self.state.add_item(Item("3001", self.state.last_floor))
         elif self.state.contains_item('626') and self.state.contains_item('627') and not self.state.contains_item('3002'):
             for item in reversed(self.state.item_list):
                 if item.item_id in ("626", "627"):
-                    item.info.shown = False
+                    item.shown = False
             self.state.add_item(Item("3002", self.state.last_floor))    
 
     def __parse_trinket_gulp(self, line):

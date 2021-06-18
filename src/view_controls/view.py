@@ -681,7 +681,7 @@ class DrawingTool(object):
 
     def show_item(self, item):
         """
-            The highest priority is info.shown, because that way a user can override our logic and stop from seeing an
+            The highest priority is item.shown, because that way a user can override our logic and stop from seeing an
             item they don't want to see.
 
             Next is: we always show guppy items. Even if it's a space guppy item and space items are turned off. Because
@@ -691,7 +691,11 @@ class DrawingTool(object):
             showing it if none of those are met.
         """
         opt = Options()
-        if not item.info.shown:
+        if item.item_id == "656" and not opt.show_space_items:
+            return True
+        elif item.item_id == "656" and opt.show_space_items:
+            return False
+        elif not item.shown:
             return False
         elif item.info.guppy:
             return True
