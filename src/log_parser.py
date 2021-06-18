@@ -99,7 +99,7 @@ class LogParser(object):
             if self.opt.game_version == "Repentance":
                 self.detect_greed_mode(line, line_number)
                 if self.state.player != 19:
-                    self.state.remove_item_from_soul()
+                    self.state.remove_additional_char_items()
         if line.startswith("Curse"):
             self.__parse_curse(line)
         if line.startswith("Spawn co-player!"):
@@ -255,10 +255,14 @@ class LogParser(object):
             self.log.debug("Skipped duplicate item line from baby presence")
             return False
         is_Jacob_item = line.endswith("(Jacob)") and self.opt.game_version == "Repentance" and self.state.player == 19
-        is_Esau_item = line.endswith("(Esau)") and self.opt.game_version == "Repentance" # The second part of the condition is to avoid showing Esau's Head if you play on a modded char in AB+  
-        if self.state.player == 19 and not is_Esau_item and not is_Jacob_item: # This is when J&E transform into another character
+        is_Esau_item = line.endswith("(Esau)") and self.opt.game_version == "Repentance" # The second part of the condition is to avoid showing Esau's Head if you play on a modded char in AB+
+        if self.state.player in (14, 33): # Don't show keeper head on keeper and tainted keeper 
+            is_Strawman_item = (line.endswith("1 (Keeper)") or line.endswith("2 (Keeper)")) and self.state.contains_item('667') # line.endswith("2 (Keeper)") is here in case you used a soul of Jacob&Esau before picking Strawman
+        else:
+            is_Strawman_item = line.endswith("(Keeper)") and self.state.contains_item('667')
+        if self.state.player == 19 and not is_Esau_item and not is_Jacob_item and not is_Strawman_item: # This is when J&E transform into another character
             self.state.player = 8 # Put it on Lazarus by default just in case we got another Anemic
-        elif self.state.player != 19 and is_Jacob_item:
+        elif self.state.player not in (19, 37) and is_Jacob_item:
             self.state.player = 19
         end_name = -1
         space_split = line.split(" ")
@@ -290,7 +294,7 @@ class LogParser(object):
         # It's a blind pickup if we're on a blind floor and we don't have the Black Candle
         blind_pickup = self.state.last_floor.floor_has_curse(Curse.Blind) and not self.state.contains_item('260')
         if not (numeric_id == "214" and ((self.state.contains_item('214') and self.state.contains_item('332')) or (self.state.player == 8 and self.state.contains_item('214')))):
-            added = self.state.add_item(Item(item_id, self.state.last_floor, self.getting_start_items, blind=blind_pickup, is_Jacob_item=is_Jacob_item, is_Esau_item=is_Esau_item, shown=Item.get_item_info(item_id).shown))
+            added = self.state.add_item(Item(item_id, self.state.last_floor, self.getting_start_items, blind=blind_pickup, is_Jacob_item=is_Jacob_item, is_Esau_item=is_Esau_item, is_Strawman_item=is_Strawman_item, shown=Item.get_item_info(item_id).shown))
             if not added:
                 self.log.debug("Skipped adding item %s to avoid space-bar duplicate", item_id)
         else:
@@ -381,6 +385,9 @@ class LogParser(object):
 
         if item_id in ("144", "238", "239", "278", "388", "626", "627"):
             self.__parse_remove_multi_items(item_id=item_id)
+
+        if item_id == "667":
+            self.state.remove_additional_char_items(strawman=True)
 
         # A check will be made inside the remove_item function
         # to see if this item is actually in our inventory or not.

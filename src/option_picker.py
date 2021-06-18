@@ -54,7 +54,7 @@ class OptionsMenu(object):
                        "blck_cndl_mode": "BLCK CNDL Mode",
                        "custom_title_enabled": "Change Window Title",
                        "log_file_check_seconds": "Check log file every",
-                       "show_jacob_esau_items": "Show Jacob&Esau Icons"}
+                       "show_jacob_esau_items": "Show Multi-Char Icons"}
     label_after_text = {"message_duration":"second(s)",
                         "framerate_limit":"fps",
                         "log_file_check_seconds": "second(s) "}
@@ -246,7 +246,7 @@ class OptionsMenu(object):
         self.buttons = {}
 
         # Draw the "Text Options" box
-        text_options_frame = LabelFrame(self.root, text="Text Options", padx=40, pady=20)
+        text_options_frame = LabelFrame(self.root, text="Text Options", padx=37, pady=20)
         text_options_frame.grid(row=0, column=0, padx=5, pady=2)
         validate_numeric_field = (self.root.register(self.ValidateNumeric), '%d', '%i', '%P', '%s', '%S', '%v', '%V', '%W')
         next_row = 0
@@ -313,14 +313,6 @@ class OptionsMenu(object):
             self.entries[opt].insert(0, getattr(self.options, opt))
             if opt in self.label_after_text:
                 Label(display_options_frame, text=self.label_after_text[opt]).grid(row=next_row, column=2)
-            next_row += 1
-
-        # Generate text options by looping over option types
-        for index, opt in enumerate(["item_details_link"]):
-            Label(display_options_frame, text=self.pretty_name(opt)).grid(row=next_row)
-            self.entries[opt] = Entry(display_options_frame)
-            self.entries[opt].grid(row=next_row, column=1)
-            self.entries[opt].insert(0, getattr(self.options, opt))
             next_row += 1
 
         # Generate buttons by looping over option types

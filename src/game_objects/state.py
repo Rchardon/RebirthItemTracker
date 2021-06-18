@@ -81,7 +81,8 @@ class TrackerState(Serializable):
         # Ignore repeated pickups of space bar items
         if not (item.info.space and item in self.item_list) and item.shown:
             self.item_list.append(item)
-            self.__add_stats_for_item(item)
+            if not item.is_Strawman_item:
+                self.__add_stats_for_item(item)
             self.modified = True
             return True
         else:
@@ -112,15 +113,21 @@ class TrackerState(Serializable):
         self.export_state()
         return True
 
-    def remove_item_from_soul(self):
+    def remove_additional_char_items(self, strawman=False):
         """
-        Remove every item from the extra Esau spawned by the Soul of Jacob&Esau
+        Remove every item from the extra Esau spawned by the Soul of Jacob&Esau or from Strawman
         """
-
-        for item in reversed(self.item_list):
-            if item.is_Esau_item and item.shown:
-                item.info.shown = False
-                self.modified = True
+        if strawman:
+            for item in reversed(self.item_list):
+                if item.is_Strawman_item:
+                    item.info.shown = False
+                    item.shown = False
+        else:
+            for item in reversed(self.item_list):
+                if item.is_Esau_item and item.shown:
+                    item.info.shown = False
+                    item.shown = False
+        self.modified = True
 
         return True
 
