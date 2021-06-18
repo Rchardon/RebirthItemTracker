@@ -17,11 +17,12 @@ class Item(Serializable):
 
     serialize = [('item_id', str),
                  ('floor_id', str),
-                 ('flags', str)]
+                 ('flags', str),
+                 ('shown', bool)]
 
     modded_item_id_prefix = "m"
 
-    serialization_flags = {"blind":"b", "was_rerolled":"r", "starting_item":"s", "is_Jacob_item":"j", "is_Esau_item":"e", "shown":"v"}
+    serialization_flags = {"blind":"b", "was_rerolled":"r", "starting_item":"s", "is_Jacob_item":"j", "is_Esau_item":"e"}
     def __init__(self, item_id, floor, starting_item=False, was_rerolled=False, blind=False, flagstr=None, is_Jacob_item=False, is_Esau_item=False, shown=True):
         # item_id is a string that identifies what kind of item it is.
         # If this is numeric, then it represents an item from the base game, an official expansion, or antibirth
@@ -36,6 +37,9 @@ class Item(Serializable):
         # The floor the item was found on
         self.floor = floor
 
+        # Is this item shown ?
+        self.shown = shown
+
         # If we get a flag string, use that to determine the values of those other variables
         if flagstr is not None:
             for varname,flag in Item.serialization_flags.items():
@@ -43,8 +47,6 @@ class Item(Serializable):
         else:
             # Is this an item the player has at the start of a run? like isaac's D6 or eden's things.
             self.starting_item = starting_item
-            # Is this item shown ?
-            self.shown = shown
             # Was it picked up while under the effect of curse of the blind?
             self.blind = blind
             # Was this item rerolled ?

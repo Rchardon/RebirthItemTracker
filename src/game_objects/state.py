@@ -257,6 +257,7 @@ class TrackerState(Serializable):
                 self.floor_list = new_floor_list
                 for item in data['item_list']:
                     new_item = Item(flagstr=item["flags"], item_id=item['item_id'], floor=Floor(floor_id=item['floor_id']))
+                    new_item.info.shown = item["shown"]
                     new_item_list.append(new_item)
                 self.item_list = new_item_list
                 self.player_transforms = data['player_transforms']

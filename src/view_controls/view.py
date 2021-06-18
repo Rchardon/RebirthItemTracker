@@ -695,7 +695,7 @@ class DrawingTool(object):
             return True
         elif item.item_id == "656" and opt.show_space_items:
             return False
-        elif not item.shown:
+        elif not item.info.shown:
             return False
         elif item.info.guppy:
             return True

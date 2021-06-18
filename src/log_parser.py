@@ -290,7 +290,7 @@ class LogParser(object):
         # It's a blind pickup if we're on a blind floor and we don't have the Black Candle
         blind_pickup = self.state.last_floor.floor_has_curse(Curse.Blind) and not self.state.contains_item('260')
         if not (numeric_id == "214" and ((self.state.contains_item('214') and self.state.contains_item('332')) or (self.state.player == 8 and self.state.contains_item('214')))):
-            added = self.state.add_item(Item(item_id, self.state.last_floor, self.getting_start_items, blind=blind_pickup, is_Jacob_item=is_Jacob_item, is_Esau_item=is_Esau_item))
+            added = self.state.add_item(Item(item_id, self.state.last_floor, self.getting_start_items, blind=blind_pickup, is_Jacob_item=is_Jacob_item, is_Esau_item=is_Esau_item, shown=Item.get_item_info(item_id).shown))
             if not added:
                 self.log.debug("Skipped adding item %s to avoid space-bar duplicate", item_id)
         else:
@@ -303,23 +303,29 @@ class LogParser(object):
 
     def __parse_add_multi_items(self):
         """Add custom sprites for multi-segmented items like Super Bum, key pieces or knife pieces"""
+        # item.info.shown = False is for not showing the item on the tracker
+        # item.shown = False is for the export_state function to store the actual shown value instead of the initial value item.info.shown
         if self.state.contains_item('238') and self.state.contains_item('239') and not self.state.contains_item('3000'):
             for item in reversed(self.state.item_list):
                 if item.item_id in ("238", "239"):
+                    item.info.shown = False
                     item.shown = False
             self.state.add_item(Item("3000", self.state.last_floor))
         elif self.state.contains_item('550') and self.state.contains_item('552'):
             for item in reversed(self.state.item_list):
                 if item.item_id == "550":
+                    item.info.shown = False
                     item.shown = False
         elif self.state.contains_item('144') and self.state.contains_item('278') and self.state.contains_item('388') and not self.state.contains_item('3001') and self.opt.game_version != "Rebirth" and self.opt.game_version != "Antibirth":
             for item in reversed(self.state.item_list):
                 if item.item_id in ("144", "278", "388"):
+                    item.info.shown = False
                     item.shown = False
             self.state.add_item(Item("3001", self.state.last_floor))
         elif self.state.contains_item('626') and self.state.contains_item('627') and not self.state.contains_item('3002'):
             for item in reversed(self.state.item_list):
                 if item.item_id in ("626", "627"):
+                    item.info.shown = False
                     item.shown = False
             self.state.add_item(Item("3002", self.state.last_floor))    
 
