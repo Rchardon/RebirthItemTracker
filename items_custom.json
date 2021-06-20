@@ -35,6 +35,12 @@
     "luck": "13",
     "introduced_in": "Racing+"
   },
+  "15 Luck": {
+    "text": "",
+    "shown": true,
+    "luck": "15",
+    "introduced_in": "Racing+"
+  },
   "Mutant Spider's Inner Eye": {
     "shown": false,
     "text": "7 shot",

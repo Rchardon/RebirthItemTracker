@@ -181,7 +181,6 @@ class DrawingTool(object):
                         opt.transparent_mode = True
                 if event.button == 3:
                     self.save_window_position()
-                    import option_picker
                     # For unknown reason, setting a NOFRAME window after a RESIZABLE one puts the window's header on top inside the window, hiding the "Editing options..." text
                     self.screen = pygame.display.set_mode((opt.width, opt.height), RESIZABLE)
                     if opt.transparent_mode: # To keep the window on top of the other no matter what

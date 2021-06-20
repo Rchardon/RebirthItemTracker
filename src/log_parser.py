@@ -246,8 +246,6 @@ class LogParser(object):
             self.state.add_curse(Curse.Labyrinth)
         if line.startswith("Curse of Blind") or (self.curse_first_floor == "Curse of Blind" and self.opt.game_version == "Repentance"):
             self.state.add_curse(Curse.Blind)
-        if line.startswith("Curse of the Lost!"):
-            self.state.add_curse(Curse.Lost)
 
     def __parse_item_add(self, line_number, line):
         """ Parse an item and push it to the state """
