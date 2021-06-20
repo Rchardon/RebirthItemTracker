@@ -150,8 +150,6 @@ class DrawingTool(object):
                 elif event.key == K_DOWN and pygame.key.get_mods() & KMOD_CTRL and opt.read_from_server:
                     opt.read_delay = max(0, opt.read_delay - 1)
                     self.update_window_title()
-                elif event.key == K_RETURN:
-                    self.load_selected_detail_page()
                 elif event.key == K_F4 and pygame.key.get_mods() & KMOD_ALT:
                     return Event.DONE
                 elif event.key == K_c and pygame.key.get_mods() & KMOD_CTRL:
@@ -168,8 +166,6 @@ class DrawingTool(object):
                     self.state.load_from_export_state()
 
             elif event.type == MOUSEBUTTONDOWN:
-                if event.button == 1:
-                    self.load_selected_detail_page()
                 if event.button == 2:
                     if opt.transparent_mode:
                         self.screen = pygame.display.set_mode((opt.width, opt.height), RESIZABLE)
@@ -441,11 +437,6 @@ class DrawingTool(object):
                 if self.selected_item_index is not None \
                 and self.selected_item_index < len(self.drawn_items):
                     self.item_message_start_time = self.framecount
-
-    def load_selected_detail_page(self):
-        if self.selected_item_index is None or self.selected_item_index < len(self.drawn_items):
-            return
-        self.drawn_items[self.selected_item_index].load_detail_page()
 
     def get_scaled_icon(self, path, scale):
         return pygame.transform.scale(self.get_image(path), (scale, scale))
@@ -795,13 +786,6 @@ class DrawableItem(Drawable):
         # If we're selected, draw a box to highlight us
         if selected:
             self.tool.draw_selected_box(self.x, self.y)
-
-    def load_detail_page(self):
-        url = Options().item_details_link
-        if not url:
-            return
-        url = url.replace("$ID", self.item.item_id)
-        webbrowser.open(url, autoraise=True)
 
 class WindowTitleInfo:
     def __init__(self, uploading, watching, update_notifier, watching_player, updates_queued):
