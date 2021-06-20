@@ -1387,7 +1387,7 @@
    "188": {
       "name": "Abel",
       "shown": true,
-      "text": "Familiar (3.5 dmg / tear, 5 dmg if picked by Cain)",
+      "text": "Familiar (3.5 dmg / tear, 7.5 dmg if picked by Cain)",
       "conjoined": true,
       "introduced_in": "Rebirth"
    },
@@ -4015,7 +4015,7 @@
    },
    "571": {
       "name": "Orphan Socks",
-      "text": "Immunity from spike and creep damage, can enter Curse Rooms without taking damage",
+      "text": "Immunity from spike and creep damage",
       "soul_hearts": "2",
       "speed": "0.3",
       "shown": true,
@@ -4553,7 +4553,7 @@
    },
    "656": {
       "name": "Damocles",
-      "text": "The passive version of Damocles",
+      "text": "Double item pedestals, chance of permanent death on hit",
       "shown": false,
       "introduced_in": "Antibirth"
    },
