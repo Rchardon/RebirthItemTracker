@@ -4267,7 +4267,7 @@
    },
    "609": {
       "name": "Eternal D6",
-      "text": "Like a D6, but has a chance to disappear",
+      "text": "Like a D6, but has a chance to make the item disappear",
       "shown": true,
       "space": true,
       "introduced_in": "Antibirth"
