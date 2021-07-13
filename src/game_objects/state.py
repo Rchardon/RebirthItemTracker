@@ -199,7 +199,7 @@ class TrackerState(Serializable):
                     self.player2_transforms[transform].append(item)
                     if item.item_id == "32937": # Golden Kid's Drawing
                         self.player2_transforms[transform].append(1)
-                else:
+                elif not item.is_Strawman_item and not item.is_EsauSoul_item:
                     self.player_transforms[transform].append(item)
                     if item.item_id == "32937": # Golden Kid's Drawing
                         self.player_transforms[transform].append(1)
