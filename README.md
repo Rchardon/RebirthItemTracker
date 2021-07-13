@@ -106,5 +106,3 @@ character doesn't have it anymore.
 * Tracker doesn't work perfectly with co-op mode, transformation counts will most likely be wrong.
 
 * Duplicated active items that should count in transformations will not be counted properly in Repentance.
-
-* Items spawned from the extra Esau from the Soul of Jacob&Esau will not be removed when you play as Jacob&Esau.

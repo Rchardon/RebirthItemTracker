@@ -14,7 +14,7 @@ def add_glow_to_dir(dirname):
             glows[file] = True
 
     for file in os.listdir(dirname):
-        if file.endswith('grey.png') or file.endswith('without_glow.png') or file.endswith('Head.png'):
+        if file.endswith('grey.png') or file.endswith('without_glow.png') or file.endswith('Head.png') or file.startswith('soul'):
             continue
         elif file not in glows:
             if file.endswith('.png'):

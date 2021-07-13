@@ -123,7 +123,7 @@ class TrackerState(Serializable):
                     item.shown = False
         else:
             for item in reversed(self.item_list):
-                if item.is_Esau_item and item.shown:
+                if item.is_EsauSoul_item and item.shown:
                     item.info.shown = False
                     item.shown = False
         self.modified = True

@@ -57,6 +57,7 @@ class DrawingTool(object):
         self.jacob_icon = None
         self.esau_icon = None
         self.keeper_icon = None
+        self.esausoul_icon = None
         self.font = None
         self.text_margin_size = None
         self.framecount = 0
@@ -621,6 +622,7 @@ class DrawingTool(object):
         self.jacob_icon = self.get_scaled_icon("JacobHead.png", font_size * 2)
         self.esau_icon = self.get_scaled_icon("EsauHead.png", font_size * 2)
         self.keeper_icon = self.get_scaled_icon("KeeperHead.png", font_size * 2)
+        self.esausoul_icon = self.get_scaled_icon("soul_of_jacob.png", font_size * 2)
         if opt.show_description or opt.show_status_message:
             self.text_height = self.write_message(" ")
         else:
@@ -780,6 +782,11 @@ class DrawableItem(Drawable):
         if self.item.is_Strawman_item and Options().show_jacob_esau_items:
             self.tool.screen.blit(
                 self.tool.keeper_icon,
+                (self.x + Options().size_multiplier * 32, self.y)
+            )
+        if self.item.is_EsauSoul_item and Options().show_jacob_esau_items:
+            self.tool.screen.blit(
+                self.tool.esausoul_icon,
                 (self.x + Options().size_multiplier * 32, self.y)
             )      
 
