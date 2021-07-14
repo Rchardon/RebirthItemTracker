@@ -252,16 +252,16 @@ class LogParser(object):
             self.log.debug("Skipped duplicate item line from baby presence")
             return False
         is_Jacob_item = line.endswith("(Jacob)") and self.opt.game_version == "Repentance" and self.state.player == 19
-        is_Esau_item = line.endswith("1 (Esau)") and self.opt.game_version == "Repentance" and self.state.player == 19 # The second part of the condition is to avoid showing Esau's Head if you play on a modded char in AB+
+        is_Esau_item = line.endswith(" 1 (Esau)") and self.opt.game_version == "Repentance" and self.state.player == 19 # The second part of the condition is to avoid showing Esau's Head if you play on a modded char in AB+
         if self.state.player in (14, 33): # Don't show keeper head on keeper and tainted keeper 
-            is_Strawman_item = (line.endswith("1 (Keeper)") or line.endswith("2 (Keeper)")) and self.state.contains_item('667') # line.endswith("2 (Keeper)") is here in case you used a soul of Jacob&Esau before picking Strawman
-            is_EsauSoul_item = line.endswith("1 (Esau)") or line.endswith("2 (Esau)") # line.endswith("2 (Esau)") is here in case you have Strawman or an additionnal Forgotten from the Soul of Forgotten
+            is_Strawman_item = "player 0" not in line and line.endswith("(Keeper)") and self.state.contains_item('667')
+            is_EsauSoul_item = "player 0" not in line and line.endswith("(Esau)")
         elif self.state.player == 19:
             is_Strawman_item = line.endswith("(Keeper)") and self.state.contains_item('667')
-            is_EsauSoul_item = line.endswith("2 (Esau)") or line.endswith("3 (Esau)") # line.endswith("3 (Esau)") is here in case you have Strawman or an additionnal Forgotten from the Soul of Forgotten
+            is_EsauSoul_item = "player 0" not in line and "player 1 " not in line and line.endswith("(Esau)")
         else:
             is_Strawman_item = line.endswith("(Keeper)") and self.state.contains_item('667')
-            is_EsauSoul_item = line.endswith("1 (Esau)") or line.endswith("2 (Esau)") # line.endswith("2 (Esau)") is here in case you have Strawman or an additionnal Forgotten from the Soul of Forgotten
+            is_EsauSoul_item = "player 0" not in line and line.endswith("(Esau)")
             
         if self.state.player == 19 and not is_Esau_item and not is_Jacob_item and not is_Strawman_item and not is_EsauSoul_item: # This is when J&E transform into another character
             self.state.player = 8 # Put it on Lazarus by default just in case we got another Anemic
