@@ -1088,7 +1088,6 @@
    "148": {
       "name": "Infestation",
       "shown": true,
-      "beelzebub": true,
       "text": "Spawns 2-6 blue flies when hit",
       "introduced_in": "Rebirth"
    },

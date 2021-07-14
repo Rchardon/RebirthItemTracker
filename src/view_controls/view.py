@@ -8,18 +8,15 @@ import win32gui # For transparent mode
 import random # For glitched items
 
 import pygame   # This is the main graphics library used for the item tracker
-import webbrowser
 import string
 from tkinter import Tk # For clipboard functionality
 from ctypes import windll # For transparent mode
 from collections import defaultdict
 from options import Options
 from option_picker import OptionsMenu
-from game_objects.floor import Curse
 from game_objects.item import ItemInfo
 from view_controls.overlay import Overlay
 from pygame.locals import RESIZABLE
-from game_objects.state import TrackerState, TrackerStateEncoder
 from math import floor
 #import pygame._view # Uncomment this if you are trying to run release.py and you get: "ImportError: No module named _view"
 

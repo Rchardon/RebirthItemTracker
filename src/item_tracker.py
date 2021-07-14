@@ -81,7 +81,6 @@ class IsaacTracker(object):
         new_states_queue = []
         screen_error_message = None
         retry_in = 0
-        update_timer = opt.log_file_check_seconds
         last_game_version = None
 
         while event_result != Event.DONE:

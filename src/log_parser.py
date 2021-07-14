@@ -267,13 +267,10 @@ class LogParser(object):
             self.state.player = 8 # Put it on Lazarus by default just in case we got another Anemic
         elif self.state.player not in (19, 37) and is_Jacob_item:
             self.state.player = 19
-        end_name = -1
+
         space_split = line.split(" ")
         numeric_id = space_split[2] # When you pick up an item, this has the form: "Adding collectible 105 (The D6)" or "Adding collectible 105 (The D6) to Player 0 (Isaac)" in Repentance
-        if self.opt.game_version == "Repentance":
-            item_name = " ".join(space_split[3:-4])[1:end_name]
-        else:
-            item_name = " ".join(space_split[3:])[1:end_name]  
+        item_name = " ".join(space_split[3:-4])[1:-1] if self.opt.game_version == "Repentance" else " ".join(space_split[3:])[1:-1] 
         item_id = ""
 
         if int(numeric_id) < 0:
@@ -347,7 +344,7 @@ class LogParser(object):
             numeric_id = str(int(space_split[3]) + 2000) # the tracker hackily maps trinkets to items 2000 and up.
         else:
             numeric_id = str(int(space_split[2]) + 2000) # the tracker hackily maps trinkets to items 2000 and up.
-        is_Jacob_item = line.endswith("(Jacob)") and self.opt.game_version == "Repentance" and self.state.player != 37 and self.state.player != 39
+        is_Jacob_item = line.endswith("(Jacob)") and self.opt.game_version == "Repentance" and self.state.player == 19
         is_Esau_item = line.endswith("(Esau)") and self.opt.game_version == "Repentance"
 
         # Check if we recognize the numeric id
@@ -370,9 +367,7 @@ class LogParser(object):
         # When you lose an item, this has the form: "Removing collectible 105 (The D6)" or "Removing voided collectible 105 (The D6)"
         if self.opt.game_version == "Repentance":
             item_id = space_split[3]
-            if space_split[2] == "trinket" and int(space_split[3]) > 30000:
-                item_id = space_split[3]
-            elif space_split[2] == "trinket":
+            if space_split[2] == "trinket" and int(space_split[3]) < 30000:
                 item_id = str(int(space_split[3]) + 2000)
         else:
             item_id = space_split[2]
