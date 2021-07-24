@@ -196,7 +196,7 @@ class LogParser(object):
         # in antibirth, this doesn't work at all; instead we have to use the seed being printed as our trigger.
         # that means if you s+q in antibirth, it resets the tracker.
         # In Repentance, Downpour 1 and Dross 1 are considered Stage 1.
-        # So we need to add a condition to avoid tracker reseting when entering those floors.
+        # So we need to add a condition to avoid tracker resetting when entering those floors.
         # In Repentance, don't trigger a new run on floor 1 because of the R Key item
         if self.reseeding_floor:
             self.reseeding_floor = False

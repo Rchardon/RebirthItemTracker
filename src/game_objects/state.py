@@ -116,17 +116,22 @@ class TrackerState(Serializable):
         """
         Remove every item from the extra Esau spawned by the Soul of Jacob&Esau or from Strawman
         """
+        items_removed = 0
         if strawman:
             for item in reversed(self.item_list):
                 if item.is_Strawman_item:
                     item.info.shown = False
                     item.shown = False
+                    items_removed += 1
         else:
             for item in reversed(self.item_list):
                 if item.is_EsauSoul_item and item.shown:
                     item.info.shown = False
                     item.shown = False
-        self.modified = True
+                    items_removed += 1
+
+        if items_removed != 0: # Only change tracker state if we removed at least one item because this function is called at every room change
+            self.modified = True
 
         return True
 
