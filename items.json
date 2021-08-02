@@ -823,7 +823,6 @@
    "112": {
       "name": "Guardian Angel",
       "shown": true,
-      "seraphim": true,
       "conjoined": true,
       "text": "Orbital (7 dmg / tick)",
       "introduced_in": "Rebirth"
@@ -2644,7 +2643,6 @@
    "363": {
       "name": "Sworn Protector",
       "text": "Orbital (7 dmg / tick)",
-      "seraphim": true,
       "shown": true,
       "introduced_in": "Afterbirth"
    },
