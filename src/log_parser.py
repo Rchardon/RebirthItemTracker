@@ -84,6 +84,8 @@ class LogParser(object):
         # AB and AB+ version messages both start with this text (AB+ has a + at the end)
         if line.startswith('Binding of Isaac: Repentance') or line.startswith('Binding of Isaac: Afterbirth') or line.startswith('Binding of Isaac: Rebirth'):
             self.__parse_version_number(line)
+        if line.startswith('| Racing+ '):
+            self.__parse_version_number(line, True)
         if line.startswith('Loading PersistentData'):
             self.__parse_save(line)
         if line.startswith('RNG Start Seed:'):
@@ -123,9 +125,12 @@ class LogParser(object):
         self.run_start_line = line_number + self.seek
         self.state.reset(self.current_seed, Options().game_version)
 
-    def __parse_version_number(self, line):
+    def __parse_version_number(self, line, racingplus=False):
         words = line.split()
-        self.state.version_number = words[-1]
+        if not racingplus:
+            self.state.version_number = words[-1]
+        else:
+            self.state.racing_plus_version = words[2]
 
     def __parse_save(self,line):
         regexp_str = r"Loading PersistentData (\d+)"
