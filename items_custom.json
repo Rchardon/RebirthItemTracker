@@ -243,5 +243,10 @@
     "text": "Everything that costs a coin is free",
     "shown": true,
     "introduced_in": "Racing+ Rebalanced"
-  }
+  },
+  "Sawblade": {
+     "shown": true,
+     "text": "Orbital (11 dmg / tick)",
+     "introduced_in": "Racing+"
+  },
 }
