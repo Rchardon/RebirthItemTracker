@@ -17,14 +17,14 @@ class TrackerState(Serializable):
                  ('player_transforms', list),
                  ('player2_transforms', list),
                  ('greedmode', bool)]
-    def __init__(self, seed, tracker_version, game_version):
-        self.reset(seed, game_version)
+    def __init__(self, seed, tracker_version, game_version, racing_plus_version):
+        self.reset(seed, game_version, racing_plus_version)
         self.tracker_version = tracker_version
         self.version_number = ''
-        self.racing_plus_version = ''
+        self.racing_plus_version = racing_plus_version
         self.save = 0
 
-    def reset(self, seed, game_version):
+    def reset(self, seed, game_version, racing_plus_version):
         """
         Reset a run to a given string
         This should be enough to enable the GC to clean everything from the previous run
@@ -34,6 +34,7 @@ class TrackerState(Serializable):
         self.modified = True
         self.seed = seed
         self.game_version = game_version
+        self.racing_plus_version = racing_plus_version
         self.greedmode = None
         self.floor_list = []
         self.room_id = "none"
