@@ -54,7 +54,11 @@
   "Checkpoint": {
     "shown": false,
     "text": "Given at the end of a run",
-    "space": false,
+    "introduced_in": "Racing+"
+  },
+  "Reset": {
+    "shown": false,
+    "text": "Used for Livesplit in Racing+",
     "introduced_in": "Racing+"
   },
   "Debug": {
@@ -63,6 +67,11 @@
     "space": true,
     "introduced_in": "Racing+"
   },
+  "Sawblade": {
+    "shown": true,
+    "text": "Orbital (10 dmg / tick)",
+    "introduced_in": "Racing+"
+ },
 
   "Samael Dr. Fetus": {
     "shown": true,
@@ -214,7 +223,7 @@
   },
   "Catalog": {
     "shown": true,
-    "text": "Spawns a shop item; can't be used in certain rooms",
+    "text": "Spawns a shop item, can't be used in certain rooms",
     "space": true,
     "introduced_in": "Racing+ Rebalanced"
   },
@@ -244,11 +253,7 @@
     "shown": true,
     "introduced_in": "Racing+ Rebalanced"
   },
-  "Sawblade": {
-     "shown": true,
-     "text": "Orbital (11 dmg / tick)",
-     "introduced_in": "Racing+"
-  },
+
   "Friendly Fire": {
     "shown": true,
     "text": "Spawns 2-5 friendly fires when extinguishing fires",
