@@ -20,7 +20,8 @@ def add_glow_to_dir(dirname):
             if file.endswith('.png'):
                 file_path = os.path.join(dirname, file)
                 file_glow_path = os.path.join(dirname, 'glow', file)
-                cmd = 'convert "' + file_path + '" ' +\
+                # 'convert' is also a windows command so indicate the full path to convert.exe
+                cmd = 'C:\\ImageMagick\\bin\\convert.exe "' + file_path + '" ' +\
                       '( +clone -channel A -blur 0x2.5 -level 0,80% +channel +level-colors white ) ' +\
                       '-compose DstOver ' +\
                       '-composite png32:"' + file_glow_path + '"' # png32 is to set the sprite to 32-bit depth
