@@ -84,7 +84,7 @@ class LogParser(object):
         # AB and AB+ version messages both start with this text (AB+ has a + at the end)
         if line.startswith('Binding of Isaac: Repentance') or line.startswith('Binding of Isaac: Afterbirth') or line.startswith('Binding of Isaac: Rebirth'):
             self.__parse_version_number(line)
-        if line.startswith('| Racing+ '):
+        if line.startswith('welcomeBanner:'):
             self.__parse_version_number(line, True)
         if line.startswith('Loading PersistentData'):
             self.__parse_save(line)
@@ -130,7 +130,11 @@ class LogParser(object):
         if not racingplus:
             self.state.version_number = words[-1]
         else:
-            self.state.racing_plus_version = words[2]
+            regexp_str = r"welcomeBanner:(\d+) - [|] Racing[+] (\d+).(\d+).(\d+) initialized."
+            search_result = re.search(regexp_str, line)
+            if search_result is None:
+                return False
+            self.state.racing_plus_version = str(int(search_result.group(2))) + "." + str(int(search_result.group(3))) + "." + str(int(search_result.group(4))) if search_result is not None else ""
 
     def __parse_save(self,line):
         regexp_str = r"Loading PersistentData (\d+)"
@@ -275,7 +279,15 @@ class LogParser(object):
 
         space_split = line.split(" ")
         numeric_id = space_split[2] # When you pick up an item, this has the form: "Adding collectible 105 (The D6)" or "Adding collectible 105 (The D6) to Player 0 (Isaac)" in Repentance
-        item_name = " ".join(space_split[3:-4])[1:-1] if self.opt.game_version == "Repentance" else " ".join(space_split[3:])[1:-1] 
+        if self.opt.game_version == "Repentance" and (line.endswith("(The Lost)") or line.endswith("(The Forgotten)")):
+            item_name = " ".join(space_split[3:-4])[1:-4]
+        elif self.opt.game_version == "Repentance":
+            item_name = " ".join(space_split[3:-4])[1:-1]
+        else:
+            item_name = " ".join(space_split[3:])[1:-1]
+
+        if self.check_modded_items_to_not_add(item_name):
+            return True
         item_id = ""
 
         if int(numeric_id) < 0:
@@ -309,6 +321,9 @@ class LogParser(object):
             self.__parse_add_multi_items()
         self.state.export_state()
         return True
+
+    def check_modded_items_to_not_add(self, name):
+        return name in ["Reset", "Checkpoint"]
 
     def __parse_add_multi_items(self):
         """Add custom sprites for multi-segmented items like Super Bum, key pieces or knife pieces"""
