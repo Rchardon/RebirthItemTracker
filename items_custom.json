@@ -248,5 +248,40 @@
      "shown": true,
      "text": "Orbital (11 dmg / tick)",
      "introduced_in": "Racing+"
+  },
+  "Friendly Fire": {
+    "shown": true,
+    "text": "Spawns 2-5 friendly fires when extinguishing fires",
+    "introduced_in": "Friendly Fire mod"
+  },
+  "Malakh Mot": {
+    "shown": true,
+    "space": true,
+    "text": "Invulnerability and increased attack speed + speed up, gains charge by hitting enemies",
+    "introduced_in": "Samael"
+  },
+  "Mei's Broken Heart": {
+    "shown": true,
+    "space": true,
+    "text": "Spawns rain temporarily",
+    "introduced_in": "Mei"
+  },
+  "Mini-Min": {
+    "shown": true,
+    "text": "A Min-Min familiar",
+    "conjoined": true,
+    "introduced_in": "Mini-Min"
+  },
+  "Spindown D4": {
+    "shown": true,
+    "space": true,
+    "text": "Rerolls each item you have into the item before it in numerical ID order",
+    "introduced_in": "Spindown D4"
+  },
+  "The receipt": {
+    "shown": true,
+    "space": true,
+    "text": "Transforms each item in the room into a nickel",
+    "introduced_in": "The stranger"
   }
 }
