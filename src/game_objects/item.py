@@ -22,8 +22,8 @@ class Item(Serializable):
 
     modded_item_id_prefix = "m"
 
-    serialization_flags = {"blind":"b", "was_rerolled":"r", "starting_item":"s", "is_Jacob_item":"j", "is_Esau_item":"e", "is_Strawman_item":"k", "is_EsauSoul_item": "z"}
-    def __init__(self, item_id, floor, starting_item=False, was_rerolled=False, blind=False, flagstr=None, is_Jacob_item=False, is_Esau_item=False, is_Strawman_item=False, is_EsauSoul_item=False, shown=True):
+    serialization_flags = {"blind":"b", "was_rerolled":"r", "starting_item":"s", "is_Jacob_item":"j", "is_Esau_item":"e", "is_Strawman_item":"k", "is_EsauSoul_item": "z", "is_TDLaz_item": "t"}
+    def __init__(self, item_id, floor, starting_item=False, was_rerolled=False, blind=False, flagstr=None, is_Jacob_item=False, is_Esau_item=False, is_Strawman_item=False, is_EsauSoul_item=False, is_TDLaz_item=False, shown=True, numeric_id=""):
         # item_id is a string that identifies what kind of item it is.
         # If this is numeric, then it represents an item from the base game, an official expansion, or antibirth
         # If it's non-numeric, then it represents an item from a mod. numeric ids of modded items are unstable, so the
@@ -59,6 +59,10 @@ class Item(Serializable):
             self.is_Strawman_item = is_Strawman_item
             # Does this item belong to Esau from Soul of Jacob&Esau ?
             self.is_EsauSoul_item = is_EsauSoul_item
+            # Does this item belong to Tainted Dead Lazarus ?
+            self.is_TDLaz_item = is_TDLaz_item
+            # To store the numerical id of a modded item
+            self.numeric_id = numeric_id
 
         # ItemInfo for the current item
         self.info = Item.get_item_info(item_id)
@@ -105,6 +109,7 @@ class Item(Serializable):
         height = self.info.height
         tears = self.info.tears
         tears_x = self.info.tears_x
+        bone_hearts = self.info.bone_hearts
         soul_hearts = self.info.soul_hearts
         sin_hearts = self.info.sin_hearts
         if dmg:
@@ -129,6 +134,8 @@ class Item(Serializable):
             desc += speed + " speed, "
         if health:
             desc += health + " health, "
+        if bone_hearts:
+            desc += bone_hearts + " bone hearts, "
         if soul_hearts:
             desc += soul_hearts + " soul hearts, "
         if sin_hearts:
@@ -240,13 +247,13 @@ class ItemInfo(dict):
         "tears"
     ]
     valid_key_list = [
+        "bone_hearts",
+        "comment",
         "delay_x",
         "dmg_x",
-        "tears_x",
         "graphics_id",
         "health",
         "health_only",
-        "in_summary",
         "introduced_in",
         "luck",
         "name",
@@ -255,10 +262,8 @@ class ItemInfo(dict):
         "sin_hearts",
         "soul_hearts",
         "space",
-        "summary_condition",
-        "summary_name",
+        "tears_x",
         "text",
-        "comment"
     ]
     valid_key_list.extend(stat_list)
     valid_key_list.extend(transform_list)

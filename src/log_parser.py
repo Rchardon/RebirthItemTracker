@@ -311,7 +311,7 @@ class LogParser(object):
         # It's a blind pickup if we're on a blind floor and we don't have the Black Candle
         blind_pickup = self.state.last_floor.floor_has_curse(Curse.Blind) and not self.state.contains_item('260')
         if not (numeric_id == "214" and ((self.state.contains_item('214') and self.state.contains_item('332')) or (self.state.player == 8 and self.state.contains_item('214')))):
-            added = self.state.add_item(Item(item_id, self.state.last_floor, self.getting_start_items, blind=blind_pickup, is_Jacob_item=is_Jacob_item, is_Esau_item=is_Esau_item, is_Strawman_item=is_Strawman_item, is_EsauSoul_item=is_EsauSoul_item, shown=Item.get_item_info(item_id).shown))
+            added = self.state.add_item(Item(item_id, self.state.last_floor, self.getting_start_items, blind=blind_pickup, is_Jacob_item=is_Jacob_item, is_Esau_item=is_Esau_item, is_Strawman_item=is_Strawman_item, is_EsauSoul_item=is_EsauSoul_item, shown=Item.get_item_info(item_id).shown, numeric_id=numeric_id))
             if not added:
                 self.log.debug("Skipped adding item %s to avoid space-bar duplicate", item_id)
         else:
@@ -372,10 +372,12 @@ class LogParser(object):
             item_id = numeric_id
         else:
             item_id = "NEW"
+        
+        numeric_id = "t" + str(numeric_id) if item_id == "NEW" else item_id
 
         self.log.debug("Gulped trinket: %s", item_id)
 
-        added = self.state.add_item(Item(item_id, self.state.last_floor, self.getting_start_items, is_Jacob_item=is_Jacob_item, is_Esau_item=is_Esau_item))
+        added = self.state.add_item(Item(item_id, self.state.last_floor, self.getting_start_items, is_Jacob_item=is_Jacob_item, is_Esau_item=is_Esau_item, numeric_id=numeric_id))
         if not added:
             self.log.debug("Skipped adding item %s to avoid space-bar duplicate", item_id)
         self.state.export_state()

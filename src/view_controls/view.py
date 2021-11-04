@@ -55,6 +55,7 @@ class DrawingTool(object):
         self.esau_icon = None
         self.keeper_icon = None
         self.esausoul_icon = None
+        self.tdlaz_icon = None
         self.font = None
         self.text_margin_size = None
         self.framecount = 0
@@ -531,6 +532,10 @@ class DrawingTool(object):
                 item.item_id = "626+627"
                 self.text_height = self.write_message("%s%s%s" % ("("+item.item_id+") ", item.name, desc))
                 item.item_id = "3002" #revert it to avoid showing a question mark    
+            elif item.item_id == "NEW":
+                item.item_id = item.numeric_id
+                self.text_height = self.write_message("%s%s%s" % ("("+item.item_id+") ", item.name, desc))
+                item.item_id = "NEW" #revert it to avoid showing a question mark    
             else:
                 self.text_height = self.write_message("%s%s%s" % ("("+item.item_id+") ", item.name, desc))
         else:  
@@ -620,6 +625,7 @@ class DrawingTool(object):
         self.esau_icon = self.get_scaled_icon("EsauHead.png", font_size * 2)
         self.keeper_icon = self.get_scaled_icon("KeeperHead.png", font_size * 2)
         self.esausoul_icon = self.get_scaled_icon("soul_of_jacob.png", font_size * 2)
+        self.tdlaz_icon = self.get_scaled_icon("TDLazHead.png", font_size * 2)
         if opt.show_description or opt.show_status_message:
             self.text_height = self.write_message(" ")
         else:
@@ -676,9 +682,9 @@ class DrawingTool(object):
             showing it if none of those are met.
         """
         opt = Options()
-        if item.item_id == "656" and not opt.show_space_items:
+        if item.item_id == "656" and not opt.show_space_items: # Show the passive version of Damocles only
             return True
-        elif item.item_id == "656" and opt.show_space_items:
+        elif item.item_id == "656" and opt.show_space_items: # Show the active version of Damocles only
             return False
         elif not item.info.shown:
             return False
