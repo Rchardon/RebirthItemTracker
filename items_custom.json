@@ -1,4 +1,9 @@
-{
+{ "Magic 8 Ball (Seeded)": {
+    "shown": true,
+    "text": "Passive laser ring",
+    "introduced_in": "Racing+",
+    "graphics_id": "194"
+  },
   "3 Dollar Bill (Seeded)": {
     "shown": false,
     "text": "Rainbow tears",
@@ -71,7 +76,7 @@
     "shown": true,
     "text": "Orbital (10 dmg / tick)",
     "introduced_in": "Racing+"
- },
+  },
 
   "Samael Dr. Fetus": {
     "shown": true,
@@ -185,7 +190,6 @@
     "shown": true,
     "text": "Gives 1-hit shield at the start of each floor",
     "seraphim": true,
-    "summary_name": "Mantle",
     "introduced_in": "Racing+ Rebalanced",
     "graphics_id": "313",
     "comment": "Replacing 313"
@@ -257,7 +261,7 @@
   "Friendly Fire": {
     "shown": true,
     "text": "Spawns 2-5 friendly fires when extinguishing fires",
-    "introduced_in": "Friendly Fire mod"
+    "introduced_in": "Friendly Fire"
   },
   "Malakh Mot": {
     "shown": true,
@@ -268,7 +272,7 @@
   "Mei's Broken Heart": {
     "shown": true,
     "space": true,
-    "text": "Spawns rain temporarily",
+    "text": "Spawns temporarily rain that damage enemies",
     "introduced_in": "Mei"
   },
   "Mini-Min": {
