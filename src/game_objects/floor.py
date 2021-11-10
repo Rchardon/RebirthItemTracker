@@ -5,7 +5,7 @@ from error_stuff import log_error
 
 
 class Curse(object):
-    """Curse enumaration"""
+    """Curse enumeration"""
     No_Curse, Blind, Darkness, Lost, Maze, Unknown, Labyrinth, Cursed = list(range(8))
 
 class Floor(Serializable):

@@ -94,6 +94,7 @@ class LogParser(object):
             self.__parse_player(line)
         if self.opt.game_version == "Repentance" and line.startswith('Level::Init') and self.state.greedmode is None: # Store the line of the first floor in Repentance because we can detect if we are in greed mode only after this line in the log
             self.first_line = line
+            self.curse_first_floor = ""
         elif line.startswith('Level::Init'):
             self.__parse_floor(line, line_number)   
         if line.startswith('Room'):

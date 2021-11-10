@@ -46,7 +46,7 @@ class TrackerState(Serializable):
         for stat in ItemInfo.stat_list:
             self.player_stats[stat] = 0.0
 
-        if Options().game_version == "Repentance":  # Repentance allows multiple occurence of the same item to count in transformations so transformation counts must be arrays instead of objects
+        if Options().game_version == "Repentance":  # Repentance allows multiple occurrence of the same item to count in transformations so transformation counts must be arrays instead of objects
             self.set_transformations()
         else:
             for transform in ItemInfo.transform_list:
@@ -56,7 +56,7 @@ class TrackerState(Serializable):
         """ Reset transformation dicts, also used when Genesis is used """
         for transform in ItemInfo.transform_list:
             self.player_transforms[transform] = []
-            self.player2_transforms[transform] = []    
+            self.player2_transforms[transform] = []
 
     def add_floor(self, floor):
         """ Add a floor to the current run """
