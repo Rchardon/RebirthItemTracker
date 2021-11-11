@@ -388,10 +388,8 @@ class LogParser(object):
         """ Parse an item and remove it from the state """
         space_split = line.split(" ") # Hacky string manipulation
         # When you lose an item, this has the form: "Removing collectible 105 (The D6)" or "Removing voided collectible 105 (The D6)"
-        if self.opt.game_version == "Repentance":
-            item_id = space_split[3]
-            if space_split[2] == "trinket" and int(space_split[3]) < 30000:
-                item_id = str(int(space_split[3]) + 2000)
+        if self.opt.game_version == "Repentance" and space_split[2] == "trinket" and int(space_split[3]) < 30000:
+            item_id = str(int(space_split[3]) + 2000)
         else:
             item_id = space_split[2]
         item_name = " ".join(space_split[3:])[1:-1]
