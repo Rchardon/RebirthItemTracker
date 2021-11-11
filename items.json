@@ -847,6 +847,7 @@
       "name": "Brimstone",
       "tears_x": "0.33",
       "shown": true,
+      "leviathan": true,
       "text": "Tears become blood laser, hits 9 times",
       "introduced_in": "Rebirth"
    },
@@ -4951,6 +4952,27 @@
       "shown": true,
       "space": true,
       "text": "Throw your head to deal 24 damage",
+      "introduced_in": "Repentance"
+   },
+   "730": {
+      "name": "Glass Eye",
+      "shown": true,
+      "dmg": "0.75",
+      "luck": "1",
+      "introduced_in": "Repentance"
+   },
+   "731": {
+      "name": "Stye",
+      "shown": true,
+      "text": "Damage up on the right eye",
+      "introduced_in": "Repentance"
+   },
+   "732": {
+      "name": "Mom's Ring",
+      "shown": true,
+      "dmg": "1",
+      "yesmother": true,
+      "text": "Gives a random rune",
       "introduced_in": "Repentance"
    },
    "2001": {
