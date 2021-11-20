@@ -13,9 +13,11 @@ class TrackerState(Serializable):
                  ('floor_list', list),
                  ('item_list', list),
                  ('tracker_version', str),
-                 ('player', str),
-                 ('player_transforms', list),
-                 ('player2_transforms', list),
+                 ('game_version', str),
+                 ('racing_plus_version', str),
+                 ('player', int),
+                 ('player_transforms', dict),
+                 ('player2_transforms', dict),
                  ('greedmode', bool)]
     def __init__(self, seed, tracker_version, game_version, racing_plus_version):
         self.reset(seed, game_version, racing_plus_version)
@@ -172,7 +174,7 @@ class TrackerState(Serializable):
     @staticmethod
     def from_valid_json(json_dic, *args):
         """ Create a state from a type-checked dic """
-        state = TrackerState(json_dic['seed'], json_dic['tracker_version'], json_dic['game_version'])
+        state = TrackerState(json_dic['seed'], json_dic['tracker_version'], json_dic['game_version'], json_dic['racing_plus_version'])
         # The order is important, we want a list of legal floors the item can
         # be picked up on before parsing items
         for floor_dic in json_dic['floor_list']:
