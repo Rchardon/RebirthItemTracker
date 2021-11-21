@@ -12,7 +12,7 @@ class LogParser(object):
     This class loads Isaac's log file, and incrementally modify a state representing this log
     """
     def __init__(self, prefix, tracker_version, log_finder):
-        self.state = TrackerState("", tracker_version, Options().game_version, "")
+        self.state = TrackerState("", tracker_version, Options().game_version, "", "", -1)
         self.log = logging.getLogger("tracker")
         self.wdir_prefix = prefix
         self.log_finder = log_finder
