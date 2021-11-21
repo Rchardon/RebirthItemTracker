@@ -41,7 +41,7 @@ class TrackerState(Serializable):
         self.floor_list = []
         self.room_id = "none"
         self.item_list = []
-        self.player = None
+        self.player = -1
         self.player_stats = {}
         self.player_transforms = {}
         self.player2_transforms = {} # For Esau

@@ -280,7 +280,7 @@ class LogParser(object):
 
         space_split = line.split(" ")
         numeric_id = space_split[2] # When you pick up an item, this has the form: "Adding collectible 105 (The D6)" or "Adding collectible 105 (The D6) to Player 0 (Isaac)" in Repentance
-        if self.opt.game_version == "Repentance" and (line.endswith("(The Lost)") or line.endswith("(The Forgotten)")):
+        if self.opt.game_version == "Repentance" and (line.endswith("(The Lost)") or line.endswith("(The Forgotten)") or line.endswith("(Black Judas)")):
             item_name = " ".join(space_split[3:-4])[1:-4]
         elif self.opt.game_version == "Repentance":
             item_name = " ".join(space_split[3:-4])[1:-1]
