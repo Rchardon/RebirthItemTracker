@@ -533,9 +533,10 @@ class DrawingTool(object):
                 self.text_height = self.write_message("%s%s%s" % ("("+item.item_id+") ", item.name, desc))
                 item.item_id = "3002" #revert it to avoid showing a question mark    
             elif item.item_id == "NEW" or item.item_id.startswith("m"):
+                temp_item_id = item.item_id
                 item.item_id = item.numeric_id
                 self.text_height = self.write_message("%s%s%s" % ("("+item.item_id+") ", item.name, desc))
-                item.item_id = "NEW" #revert it to avoid showing a question mark    
+                item.item_id = temp_item_id #revert it to avoid showing a question mark    
             else:
                 self.text_height = self.write_message("%s%s%s" % ("("+item.item_id+") ", item.name, desc))
         else:  
