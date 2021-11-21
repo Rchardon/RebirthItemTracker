@@ -90,7 +90,7 @@ class LogParser(object):
             self.__parse_save(line)
         if line.startswith('RNG Start Seed:'):
             self.__parse_seed(line, line_number)
-        if line.startswith('Initialized player with Variant') and self.state.player is None:
+        if line.startswith('Initialized player with Variant') and self.state.player == -1:
             self.__parse_player(line)
         if self.opt.game_version == "Repentance" and line.startswith('Level::Init') and self.state.greedmode is None: # Store the line of the first floor in Repentance because we can detect if we are in greed mode only after this line in the log
             self.first_line = line
@@ -335,7 +335,7 @@ class LogParser(object):
                 if item.item_id in ("238", "239"):
                     item.info.shown = False
                     item.shown = False
-            self.state.add_item(Item("3000", "3000", self.state.last_floor))
+            self.state.add_item(Item("3000", "3000", floor=self.state.last_floor))
         elif self.state.contains_item('550') and self.state.contains_item('552'):
             for item in reversed(self.state.item_list):
                 if item.item_id == "550":
@@ -346,13 +346,13 @@ class LogParser(object):
                 if item.item_id in ("144", "278", "388"):
                     item.info.shown = False
                     item.shown = False
-            self.state.add_item(Item("3001", "3001", self.state.last_floor))
+            self.state.add_item(Item("3001", "3001", floor=self.state.last_floor))
         elif self.state.contains_item('626') and self.state.contains_item('627') and not self.state.contains_item('3002'):
             for item in reversed(self.state.item_list):
                 if item.item_id in ("626", "627"):
                     item.info.shown = False
                     item.shown = False
-            self.state.add_item(Item("3002", "3002", self.state.last_floor))    
+            self.state.add_item(Item("3002", "3002", floor=self.state.last_floor))    
 
     def __parse_trinket_gulp(self, line):
         """ Parse a (modded) trinket gulp and push it to the state """
