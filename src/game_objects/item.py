@@ -18,12 +18,13 @@ class Item(Serializable):
     serialize = [('item_id', str),
                  ('floor_id', str),
                  ('flags', str),
-                 ('shown', bool)]
+                 ('shown', bool),
+                 ('numeric_id', str)]
 
     modded_item_id_prefix = "m"
 
     serialization_flags = {"blind":"b", "was_rerolled":"r", "starting_item":"s", "is_Jacob_item":"j", "is_Esau_item":"e", "is_Strawman_item":"k", "is_EsauSoul_item": "z", "is_TDLaz_item": "t"}
-    def __init__(self, item_id, floor, starting_item=False, was_rerolled=False, blind=False, flagstr=None, is_Jacob_item=False, is_Esau_item=False, is_Strawman_item=False, is_EsauSoul_item=False, is_TDLaz_item=False, shown=True, numeric_id=""):
+    def __init__(self, item_id, numeric_id, floor, starting_item=False, was_rerolled=False, blind=False, flagstr=None, is_Jacob_item=False, is_Esau_item=False, is_Strawman_item=False, is_EsauSoul_item=False, is_TDLaz_item=False, shown=True):
         # item_id is a string that identifies what kind of item it is.
         # If this is numeric, then it represents an item from the base game, an official expansion, or antibirth
         # If it's non-numeric, then it represents an item from a mod. numeric ids of modded items are unstable, so the
@@ -33,6 +34,8 @@ class Item(Serializable):
         # [INFO] - Adding collectible 512 (Betrayal)
         # and the value of item_id would be "mBetrayal"
         self.item_id = item_id
+        # To store the numerical id of a modded item
+        self.numeric_id = numeric_id
 
         # The floor the item was found on
         self.floor = floor
@@ -61,8 +64,6 @@ class Item(Serializable):
             self.is_EsauSoul_item = is_EsauSoul_item
             # Does this item belong to Tainted Dead Lazarus ?
             self.is_TDLaz_item = is_TDLaz_item
-            # To store the numerical id of a modded item
-            self.numeric_id = numeric_id
 
         # ItemInfo for the current item
         self.info = Item.get_item_info(item_id)
@@ -208,12 +209,13 @@ class Item(Serializable):
             return None
 
         item_id = json_dic['item_id']
+        numeric_id = json_dic['numeric_id']
         if not Item.contains_info(item_id):
             item_id = "NEW"
 
         flagstr = json_dic['flags']
 
-        return Item(item_id, floor, flagstr=flagstr)
+        return Item(item_id, numeric_id, floor, flagstr=flagstr)
 
 
 class ItemInfo(dict):
