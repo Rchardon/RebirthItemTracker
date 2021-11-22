@@ -91,7 +91,7 @@ class TrackerState(Serializable):
             self.modified = True
             return True
         else:
-            return False    
+            return False
 
     def remove_item(self, item_id):
         """
@@ -141,6 +141,31 @@ class TrackerState(Serializable):
 
         return True
 
+    def multi_items(self):
+        """Remove multi-segmented items when quest items are completed and you watch someone else"""
+        # item.info.shown = False is for not showing the item on the tracker
+        # item.shown = False is for the export_state function to store the actual shown value instead of the initial value item.info.shown
+        if self.contains_item('238') and self.contains_item('239') and not self.contains_item('3000'):
+            for item in reversed(self.item_list):
+                if item.item_id in ("238", "239"):
+                    item.info.shown = False
+                    item.shown = False
+        elif self.contains_item('550') and self.contains_item('552'):
+            for item in reversed(self.item_list):
+                if item.item_id == "550":
+                    item.info.shown = False
+                    item.shown = False
+        elif self.contains_item('144') and self.contains_item('278') and self.contains_item('388') and not self.contains_item('3001'):
+            for item in reversed(self.item_list):
+                if item.item_id in ("144", "278", "388"):
+                    item.info.shown = False
+                    item.shown = False
+        elif self.contains_item('626') and self.contains_item('627') and not self.contains_item('3002'):
+            for item in reversed(self.item_list):
+                if item.item_id in ("626", "627"):
+                    item.info.shown = False
+                    item.shown = False
+
     @property
     def last_item(self):
         """
@@ -189,6 +214,7 @@ class TrackerState(Serializable):
             if not item:
                 return None
             state.add_item(item)
+            state.multi_items()
 
         return state
 
