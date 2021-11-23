@@ -659,7 +659,7 @@
    "91": {
       "name": "Spelunker Hat",
       "shown": true,
-      "text": "See adjacent special rooms on the map",
+      "text": "Reveal all rooms that are in a 2 tiles radius and special rooms nearby on the map",
       "introduced_in": "Rebirth"
    },
    "92": {
@@ -2655,7 +2655,7 @@
    },
    "375": {
       "name": "Host Hat",
-      "text": "Explosion immunity, chance to deflect enemy projectiles",
+      "text": "Explosion immunity and block projectiles from above, chance to deflect enemy projectiles",
       "shown": true,
       "introduced_in": "Afterbirth"
    },
@@ -4038,7 +4038,7 @@
    },
    "583": {
       "name": "Rocket in a Jar",
-      "text": "+5 bombs, bombs become rockets when you shoot",
+      "text": "+5 bombs, allow to shoot a rocket in the direction where you shoot",
       "shown": true,
       "introduced_in": "Antibirth"
    },
@@ -4540,7 +4540,7 @@
       "name": "Guppy's Eye",
       "shown": true,
       "guppy": true,
-      "text": "Shows the content of chests and fires",
+      "text": "Shows the content of chests, fires and shopkeepers",
       "introduced_in": "Repentance"
    },
    "667": {
@@ -4822,7 +4822,7 @@
    "709": {
       "name": "Suplex!",
       "shown": true,
-      "text": "Dash into an enemy, grab it and slam it on the ground",
+      "text": "Dash into an enemy, grab it and slam it on the ground. Dmg scales on player's size",
       "space": true,
       "introduced_in": "Repentance"
    },
@@ -4836,7 +4836,7 @@
    "711": {
       "name": "Flip",
       "shown": true,
-      "text": "Switch between tainted Lazarus and dead Lazarus, they both have their own inventory and stats",
+      "text": "Each pedestal that is part of the room layout will have 2 items. Use Flip to have the second item",
       "space": true,
       "introduced_in": "Repentance"
    },
@@ -4851,7 +4851,7 @@
    "713": {
       "name": "Sumptorium",
       "shown": true,
-      "text": "Convert back Lil Clots into hearts",
+      "text": "Spawn a lil clot for half a heart. On T. Eve : convert clots to health",
       "space": true,
       "introduced_in": "Repentance"
    },
@@ -4964,7 +4964,7 @@
    "731": {
       "name": "Stye",
       "shown": true,
-      "text": "Damage up on the right eye",
+      "text": "Damage up/range up/shot speed down on the right eye",
       "introduced_in": "Repentance"
    },
    "732": {
