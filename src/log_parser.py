@@ -280,7 +280,7 @@ class LogParser(object):
 
         space_split = line.split(" ")
         numeric_id = space_split[2] # When you pick up an item, this has the form: "Adding collectible 105 (The D6)" or "Adding collectible 105 (The D6) to Player 0 (Isaac)" in Repentance
-        if self.opt.game_version == "Repentance" and (line.endswith("(The Lost)") or line.endswith("(The Forgotten)") or line.endswith("(Black Judas)")):
+        if self.opt.game_version == "Repentance" and (line.endswith("(The Lost)") or line.endswith("(The Forgotten)") or line.endswith("(Black Judas)") or line.endswith("(Random Baby)")):
             item_name = " ".join(space_split[3:-4])[1:-4]
         elif self.opt.game_version == "Repentance":
             item_name = " ".join(space_split[3:-4])[1:-1]
@@ -387,7 +387,7 @@ class LogParser(object):
     def __parse_item_remove(self, line):
         """ Parse an item and remove it from the state """
         space_split = line.split(" ") # Hacky string manipulation
-        double_word_char = line.endswith("(The Lost)") or line.endswith("(The Forgotten)") or line.endswith("(Black Judas)")
+        double_word_char = line.endswith("(The Lost)") or line.endswith("(The Forgotten)") or line.endswith("(Black Judas)") or line.endswith("(Random Baby)")
         # When you lose an item, this has the form: "Removing collectible 105 (The D6)"
         if self.opt.game_version == "Repentance" and space_split[2] == "trinket" and int(space_split[3]) < 30000:
             item_id = str(int(space_split[3]) + 2000)
