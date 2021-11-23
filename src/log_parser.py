@@ -113,8 +113,8 @@ class LogParser(object):
             self.__parse_item_add(line_number, line)
         if line.startswith('Gulping trinket ') or line.startswith('Adding smelted trinket '):
             self.__parse_trinket_gulp(line)
-        if line.startswith('Removing collectible ') or line.startswith('Removing voided collectible ') or line.startswith('Removing smelted trinket '):
-            self.__parse_item_remove(line)            
+        if line.startswith('Removing collectible ') or line.startswith('Removing smelted trinket '):
+            self.__parse_item_remove(line)
         if line.startswith('Executing command: reseed'):
             # racing+ re-generates floors if they contain duplicate rooms. we need to track that this is happening
             # so we don't erroneously think the entire run is being restarted when it happens on b1.
@@ -387,12 +387,15 @@ class LogParser(object):
     def __parse_item_remove(self, line):
         """ Parse an item and remove it from the state """
         space_split = line.split(" ") # Hacky string manipulation
-        # When you lose an item, this has the form: "Removing collectible 105 (The D6)" or "Removing voided collectible 105 (The D6)"
+        double_word_char = line.endswith("(The Lost)") or line.endswith("(The Forgotten)") or line.endswith("(Black Judas)")
+        # When you lose an item, this has the form: "Removing collectible 105 (The D6)"
         if self.opt.game_version == "Repentance" and space_split[2] == "trinket" and int(space_split[3]) < 30000:
             item_id = str(int(space_split[3]) + 2000)
+            item_name = " ".join(space_split[3:-5])[3:-1] if double_word_char else " ".join(space_split[3:-4])[3:-1]
         else:
             item_id = space_split[2]
-        item_name = " ".join(space_split[3:])[1:-1]
+            item_name = " ".join(space_split[3:-5])[1:-1] if double_word_char else " ".join(space_split[3:-4])[1:-1]
+
         # Check if the item ID exists
         if Item.contains_info(item_id):
             removal_id = item_id
