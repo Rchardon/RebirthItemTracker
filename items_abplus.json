@@ -1703,7 +1703,7 @@
     "241": {
        "name": "Contract From Below",
        "shown": true,
-       "text": "Doubles pickups, increased chance of Double Trouble boss fights",
+       "text": "Doubles pickups",
        "introduced_in": "Rebirth"
     },
     "242": {
