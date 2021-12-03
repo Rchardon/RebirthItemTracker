@@ -3316,7 +3316,7 @@
    },
    "476": {
       "name": "D1",
-      "text": "Duplicates a random pickup in the room",
+      "text": "Makes a random pickup in the room but of a different type",
       "space": true,
       "shown": true,
       "introduced_in": "Afterbirth+"
@@ -4761,7 +4761,7 @@
    "700": {
       "name": "Echo Chamber",
       "shown": true,
-      "text": "Every time a card/pill is used, it also trigger all previous pill/cards used",
+      "text": "Every time a card/pill is used, it also trigger the 3 previous pill/cards used",
       "introduced_in": "Repentance"
    },
    "701": {
@@ -5039,12 +5039,14 @@
    "2011": {
       "name": "Ring Worm",
       "text": "Ring + spectral tears",
+      "tears": "0.4",
       "shown": true,
       "introduced_in": "Rebirth"
    },
    "2012": {
       "name": "Flat Worm",
       "text": "Flat tears (only cosmetic)",
+      "tears": "0.4",
       "shown": true,
       "introduced_in": "Rebirth"
    },
@@ -5552,6 +5554,7 @@
    "2096": {
       "name": "Ouroboros Worm",
       "text": "Spiral tears",
+      "tears": "0.4",
       "range": "1.5",
       "shown": true,
       "introduced_in": "Afterbirth+"
@@ -6190,13 +6193,14 @@
    "32778": {
       "name": "(G) Wiggle Worm",
       "text": "Wave + spectral tears",
-      "tears": "0.4",
+      "tears": "0.83",
       "shown": true,
       "introduced_in": "Repentance"
    },
    "32779": {
       "name": "(G) Ring Worm",
       "text": "Ring + spectral tears",
+      "tears": "0.83",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6710,6 +6714,7 @@
    "32864": {
       "name": "(G) Ouroboros Worm",
       "text": "Spiral tears",
+      "tears": "0.83",
       "range": "3",
       "shown": true,
       "introduced_in": "Repentance"
