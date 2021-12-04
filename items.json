@@ -440,6 +440,13 @@
       "space": true,
       "introduced_in": "Rebirth"
    },
+   "59": {
+      "name": "Book of Belial",
+      "shown": false,
+      "text": "The Book of Belial from Judas Birthright",
+      "space": true,
+      "introduced_in": "Repentance"
+   },
    "60": {
       "name": "The Ladder",
       "shown": true,
