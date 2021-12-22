@@ -1033,6 +1033,7 @@
    "142": {
       "name": "Scapular",
       "shown": true,
+      "seraphim": true,
       "text": "+1 soul heart if hit to half a red heart (once per room)",
       "introduced_in": "Rebirth"
    },
