@@ -706,7 +706,6 @@ class DrawingTool(object):
     def transparent_mode(self):
         opt = Options()
 
-        SetWindowPos = windll.user32.SetWindowPos
         hwnd = pygame.display.get_wm_info()["window"]
         win32gui.SetWindowLong(hwnd, win32con.GWL_EXSTYLE, win32gui.GetWindowLong(hwnd, win32con.GWL_EXSTYLE) | win32con.WS_EX_LAYERED)
         win32gui.SetLayeredWindowAttributes(hwnd, win32api.RGB(44, 44, 0), 0, win32con.LWA_COLORKEY) # RGB(44, 44, 0) = #2C2C00
@@ -730,8 +729,8 @@ class DrawableItem(Drawable):
             it's not one of our starting items
         """
         return Options().show_blind_icon and \
-               not Options().blck_cndl_mode and \
-               self.item.blind
+                not Options().blck_cndl_mode and \
+                self.item.blind
 
     def draw(self, selected=False, framecount=0):
         graphics_id = self.item.info.graphics_id

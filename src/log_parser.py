@@ -24,7 +24,6 @@ class LogParser(object):
         # Variables describing the parser state
         self.getting_start_items = False
         self.reseeding_floor = False
-        self.current_room = ""
         self.current_seed = ""
         # Cached contents of log
         self.content = ""
@@ -247,6 +246,8 @@ class LogParser(object):
 
     def __parse_curse(self, line):
         """ Parse the curse and add it to the last floor """
+        if self.state.racing_plus_version != "":
+            return
         if self.curse_first_floor == "":
             self.curse_first_floor = line
         elif self.state.greedmode is not None:
@@ -262,7 +263,7 @@ class LogParser(object):
             self.log.debug("Skipped duplicate item line from baby presence")
             return False
         is_Jacob_item = line.endswith("(Jacob)") and self.opt.game_version == "Repentance" and self.state.player == 19
-        is_Esau_item = line.endswith(" 1 (Esau)") and self.opt.game_version == "Repentance" and self.state.player == 19 # The second part of the condition is to avoid showing Esau's Head if you play on a modded char in AB+
+        is_Esau_item = line.endswith(" 1 (Esau)") and self.opt.game_version == "Repentance" and self.state.player == 19
         if self.state.player in (14, 33): # Don't show keeper head on keeper and tainted keeper 
             is_Strawman_item = "player 0" not in line and line.endswith("(Keeper)") and self.state.contains_item('667')
             is_EsauSoul_item = "player 0" not in line and line.endswith("(Esau)")
