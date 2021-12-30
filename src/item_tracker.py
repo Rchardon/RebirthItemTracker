@@ -1,4 +1,4 @@
-""" This module handles everything related to the tracker behaviour. """
+""" This module handles everything related to the tracker behavior. """
 import json     # For importing the items and options
 import os
 import shutil

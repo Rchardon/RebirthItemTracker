@@ -362,7 +362,7 @@ class DrawingTool(object):
         if n_items_to_flow > max_col or chosen_icon_footprint != icon_size:
             unused_pixels = available_width % chosen_icon_footprint
 
-        # Compute the strech needed per item, and the possible stretch remaining
+        # Compute the stretch needed per item, and the possible stretch remaining
         # We use max_col - 1 because we want the first item to be left-aligned
         stretch_per_item = 0
         stretch_remaining = 0

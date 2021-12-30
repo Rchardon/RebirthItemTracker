@@ -22,12 +22,12 @@ class OptionsMenu(object):
         self.root = Tk()
         self.root.destroy()
         # Our 'safe' list of fonts that should work in pygame
-        self.fonts = ['Andalus', 'Angsana New', 'AngsanaUPC', 'Arial', 'Arial Black', 'Browallia New', 'BrowalliaUPC',
-                      'Comic Sans MS', 'Cordia New', 'CordiaUPC', 'Courier New', 'DFKai-SB', 'David', 'DilleniaUPC',
-                      'Estrangelo Edessa', 'FrankRuehl', 'Franklin Gothic Medium', 'Gautami', 'Georgia', 'Impact',
-                      'IrisUPC', 'JasmineUPC', 'KodchiangUPC', 'Latha', 'LilyUPC', 'Lucida Console', 'MV Boli',
-                      'Mangal', 'Microsoft Sans Serif', 'Miriam', 'Miriam Fixed', 'Narkisim', 'Raavi', 'Rod', 'Shruti',
-                      'SimHei', 'Simplified Arabic', 'Simplified Arabic Fixed', 'Sylfaen', 'Tahoma', 'Times New Roman',
+        self.fonts = ['Andalus', 'Angsana New', 'AngsanaUPC', 'Arial', 'Arial Black', 'Bahnschrift', 'Calibri', 'Cambria', 
+                      'Candara', 'Comic Sans MS', 'Consolas', 'Constantia', 'Courier New', 'DFKai-SB', 'David', 'DilleniaUPC',
+                      'Estrangelo Edessa', 'FrankRuehl', 'Franklin Gothic Medium', 'Garamond', 'Gautami', 'Georgia', 'Impact',
+                      'IrisUPC', 'JasmineUPC', 'KodchiangUPC', 'Latha', 'LilyUPC', 'Lucida Console', 'Malgun Gothic', 'Microsoft Sans Serif',
+                      'Miriam', 'Miriam Fixed', 'MV Boli', 'Myanmar Text', 'Narkisim', 'Palatino Linotype', 'Raavi', 'Rockwell', 'Rod', 
+                      'Segoe UI', 'Shruti', 'SimHei', 'Simplified Arabic', 'Simplified Arabic Fixed', 'Sylfaen', 'Tahoma', 'Times New Roman',
                       'Traditional Arabic', 'Trebuchet MS', 'Tunga', 'Verdana']
         self.game_versions = ['Rebirth', 'Afterbirth', 'Afterbirth+', 'Repentance', 'Antibirth']
         self.network_queue = Queue()
@@ -76,7 +76,7 @@ class OptionsMenu(object):
             self.buttons[source].configure(bg=hex_color, fg=opposite)
 
     def checkbox_callback(self):
-        # Just for the "show decription" checkbox -- to disable the message duration entry
+        # Just for the "show description" checkbox -- to disable the message duration entry
         if not self.checks.get("show_description").get():
             self.entries["message_duration"].configure(state=DISABLED)
         else:
@@ -188,7 +188,7 @@ class OptionsMenu(object):
 
 
     def process_network_results(self):
-        # OSX qSize is not emplemented use empty rather.
+        # OSX qSize is not implemented use empty rather.
         while not self.network_queue.empty():
             try:
                 network_result = self.network_queue.get(0)
@@ -219,7 +219,7 @@ class OptionsMenu(object):
 
     # From: http://stackoverflow.com/questions/4140437/interactively-validating-entry-widget-content-in-tkinter
     def ValidateNumeric(self, d, i, P, s, S, v, V, W):
-        # This validation is a biiit janky, just some crazy regex that checks P (value of entry after modification)
+        # This validation is a bit janky, just some crazy regex that checks P (value of entry after modification)
         return P == "" or re.search("^\d+(\.\d*)?$", P) is not None
 
     def run(self):
