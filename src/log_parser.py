@@ -289,10 +289,6 @@ class LogParser(object):
         else:
             item_name = " ".join(space_split[3:])[1:-1]
 
-        if self.check_modded_items_to_not_add(item_name):
-            return False
-        if self.check_helpers_to_not_add(item_name):
-            return False
         item_id = ""
 
         if int(numeric_id) < 0:
@@ -326,13 +322,6 @@ class LogParser(object):
             self.__parse_add_multi_items()
         self.state.export_state()
         return True
-
-    def check_modded_items_to_not_add(self, name):
-        return name in ["Reset", "Checkpoint", "Flip (Custom)"]
-    
-    def check_helpers_to_not_add(self, name):
-        space_split = name.split(" ")
-        return space_split[-1:] == ['Helper']
 
     def __parse_add_multi_items(self):
         """Add custom sprites for multi-segmented items like Super Bum, key pieces or knife pieces"""

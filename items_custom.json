@@ -5,7 +5,7 @@
     "graphics_id": "194"
   },
   "3 Dollar Bill (Seeded)": {
-    "shown": false,
+    "shown": true,
     "text": "Rainbow tears",
     "introduced_in": "Racing+",
     "graphics_id": "191",
@@ -51,6 +51,19 @@
     "text": "7 shot",
     "introduced_in": "Racing+"
   },
+  "Sawblade": {
+    "shown": true,
+    "text": "Orbital (10 dmg / tick)",
+    "introduced_in": "Racing+"
+  },
+  "Flip (Custom)": {
+    "shown": false,
+    "space": true,
+    "text": "Each pedestal that is part of the room layout will have 2 items. Use Flip to have the second item",
+    "introduced_in": "Racing+",
+    "graphics_id": "711",
+    "comment": "Replacing 711"
+  },
   "Off Limits": {
     "shown": true,
     "text": "Given to filthy cheaters",
@@ -72,9 +85,109 @@
     "space": true,
     "introduced_in": "Racing+"
   },
-  "Sawblade": {
-    "shown": true,
-    "text": "Orbital (10 dmg / tick)",
+  "Magic Mushroom Placeholder": {
+    "shown": false,
+    "text": "Racing+ item placeholder",
+    "introduced_in": "Racing+"
+  },
+  "Sacred Heart Placeholder": {
+    "shown": false,
+    "text": "Racing+ item placeholder",
+    "introduced_in": "Racing+"
+  },
+  "Death's Touch Placeholder": {
+    "shown": false,
+    "text": "Racing+ item placeholder",
+    "introduced_in": "Racing+"
+  },
+  "Judas' Shadow Placeholder": {
+    "shown": false,
+    "text": "Racing+ item placeholder",
+    "introduced_in": "Racing+"
+  },
+  "Godhead Placeholder": {
+    "shown": false,
+    "text": "Racing+ item placeholder",
+    "introduced_in": "Racing+"
+  },
+  "Incubus Placeholder": {
+    "shown": false,
+    "text": "Racing+ item placeholder",
+    "introduced_in": "Racing+"
+  },
+  "Maw of the Void Placeholder": {
+    "shown": false,
+    "text": "Racing+ item placeholder",
+    "introduced_in": "Racing+"
+  },
+  "Crown of Light Placeholder": {
+    "shown": false,
+    "text": "Racing+ item placeholder",
+    "introduced_in": "Racing+"
+  },
+  "Twisted Pair Placeholder": {
+    "shown": false,
+    "text": "Racing+ item placeholder",
+    "introduced_in": "Racing+"
+  },
+  "Guppy Transformation Helper": {
+    "shown": false,
+    "text": "Racing+ item helper",
+    "introduced_in": "Racing+"
+  },
+  "Beelzebub Transformation Helper": {
+    "shown": false,
+    "text": "Racing+ item helper",
+    "introduced_in": "Racing+"
+  },
+  "Fun Guy Transformation Helper": {
+    "shown": false,
+    "text": "Racing+ item helper",
+    "introduced_in": "Racing+"
+  },
+  "Seraphim Transformation Helper": {
+    "shown": false,
+    "text": "Racing+ item helper",
+    "introduced_in": "Racing+"
+  },
+  "Bob Transformation Helper": {
+    "shown": false,
+    "text": "Racing+ item helper",
+    "introduced_in": "Racing+"
+  },
+  "Spun Transformation Helper": {
+    "shown": false,
+    "text": "Racing+ item helper",
+    "introduced_in": "Racing+"
+  },
+  "Yes Mother Transformation Helper": {
+    "shown": false,
+    "text": "Racing+ item helper",
+    "introduced_in": "Racing+"
+  },
+  "Conjoined Transformation Helper": {
+    "shown": false,
+    "text": "Racing+ item helper",
+    "introduced_in": "Racing+"
+  },
+  "Leviathan Transformation Helper": {
+    "shown": false,
+    "text": "Racing+ item helper",
+    "introduced_in": "Racing+"
+  },
+  "Oh Crap Transformation Helper": {
+    "shown": false,
+    "text": "Racing+ item helper",
+    "introduced_in": "Racing+"
+  },
+  "Bookworm Transformation Helper": {
+    "shown": false,
+    "text": "Racing+ item helper",
+    "introduced_in": "Racing+"
+  },
+  "Spider Baby Transformation Helper": {
+    "shown": false,
+    "text": "Racing+ item helper",
     "introduced_in": "Racing+"
   },
 
@@ -117,19 +230,89 @@
     "shown": true,
     "text": "Spawns a Restock Machine",
     "space": true,
-    "introduced_in": "Single Player Co-op Babies"
+    "introduced_in": "Babies Mod"
   },
   "Flock of Succubi": {
     "shown": true,
     "text": "Spawns 10 Succubi",
     "space": true,
-    "introduced_in": "Single Player Co-op Babies"
+    "introduced_in": "Babies Mod"
   },
   "Charging Station": {
     "shown": true,
     "text": "Uses a coin to charge the Schoolbag item",
     "space": true,
-    "introduced_in": "Single Player Co-op Babies"
+    "introduced_in": "Babies Mod"
+  },
+  "Shop Teleport": {
+    "shown": false,
+    "text": "Special room teleport item",
+    "introduced_in": "Babies Mod"
+  },
+  "Treasure Room Teleport": {
+    "shown": false,
+    "text": "Special room teleport item",
+    "introduced_in": "Babies Mod"
+  },
+  "Mini-Boss Room Teleport": {
+    "shown": false,
+    "text": "Special room teleport item",
+    "introduced_in": "Babies Mod"
+  },
+  "Arcade Teleport": {
+    "shown": false,
+    "text": "Special room teleport item",
+    "introduced_in": "Babies Mod"
+  },
+  "Curse Room Teleport": {
+    "shown": false,
+    "text": "Special room teleport item",
+    "introduced_in": "Babies Mod"
+  },
+  "Challenge Room Teleport": {
+    "shown": false,
+    "text": "Special room teleport item",
+    "introduced_in": "Babies Mod"
+  },
+  "Boss Challenge Room Teleport": {
+    "shown": false,
+    "text": "Special room teleport item",
+    "introduced_in": "Babies Mod"
+  },
+  "Library Teleport": {
+    "shown": false,
+    "text": "Special room teleport item",
+    "introduced_in": "Babies Mod"
+  },
+  "Sacrifice Room Teleport": {
+    "shown": false,
+    "text": "Special room teleport item",
+    "introduced_in": "Babies Mod"
+  },
+  "Bedroom (Clean) Teleport": {
+    "shown": false,
+    "text": "Special room teleport item",
+    "introduced_in": "Babies Mod"
+  },
+  "Bedroom (Dirty) Teleport": {
+    "shown": false,
+    "text": "Special room teleport item",
+    "introduced_in": "Babies Mod"
+  },
+  "Treasure Chest Room Teleport": {
+    "shown": false,
+    "text": "Special room teleport item",
+    "introduced_in": "Babies Mod"
+  },
+  "Dice Room Teleport": {
+    "shown": false,
+    "text": "Special room teleport item",
+    "introduced_in": "Babies Mod"
+  },
+  "Planetarium Teleport": {
+    "shown": false,
+    "text": "Special room teleport item",
+    "introduced_in": "Babies Mod"
   },
 
   "Holy Poop": {
