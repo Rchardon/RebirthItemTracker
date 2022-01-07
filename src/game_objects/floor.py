@@ -49,6 +49,10 @@ class Floor(Serializable):
         "f5g": "SHEOL",
         "f6g": "SHOP",
         "f7g": "GREED",
+        "f16g": "Do",
+        "f17g": "Mi",
+        "f18g": "Ma",
+        "f19g": "Co",
         }
     serialize = [('floor_id', str), ('curse', int)]
     def __init__(self, floor_id, curse=Curse.No_Curse):

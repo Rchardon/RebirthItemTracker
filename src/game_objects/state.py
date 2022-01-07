@@ -39,7 +39,7 @@ class TrackerState(Serializable):
         self.seed = seed
         self.game_version = game_version
         self.racing_plus_version = racing_plus_version
-        self.greedmode = False
+        self.greedmode = None
         self.floor_list = []
         self.room_id = "none"
         self.item_list = []
