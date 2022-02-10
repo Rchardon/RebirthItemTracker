@@ -183,7 +183,10 @@ class TrackerState(Serializable):
 
     def reroll(self):
         """ Tag every (non-spacebar) items as rerolled """
-        [item.rerolled() for item in self.item_list]
+        for item in self.item_list:
+            # D6 can't be rolled in rep r+ since it's a pocket item
+            if not (self.racing_plus_version != "" and item.item_id == "105"):
+                item.rerolled(self.player)
         [self.__remove_stats_for_item(item) for item in self.item_list]
 
     # Add curse to last floor
