@@ -1,3 +1,4 @@
+import math
 import traceback
 from tkinter import *
 from multiprocessing import Queue
@@ -11,6 +12,7 @@ import urllib.request, urllib.error, urllib.parse
 import webbrowser
 import platform
 import threading
+import datetime
 from error_stuff import log_error
 
 class OptionsMenu(object):
@@ -154,16 +156,24 @@ class OptionsMenu(object):
         self.root.destroy()
 
     def seconds_to_text(self, seconds):
-        if seconds < 60:
-            return str(seconds) + " second" + ("s" if seconds > 1 else "")
-        minutes = seconds / 60
-        if minutes < 60:
-            return str(minutes) + " minute" + ("s" if minutes > 1 else "")
-        hours = minutes / 60
-        if hours < 24:
-            return str(hours) + " hour" + ("s" if hours > 1 else "")
-        days = hours / 24
-        return str(days) + " day" + ("s" if days > 1 else "")
+        d=datetime.timedelta(seconds=seconds)
+        seconds = str(math.trunc(d.seconds%60))+(" seconds" if d.seconds > 1 else " second")if d.seconds < 60 else str(math.trunc(d.seconds%60)).zfill(2)+"s"
+        minutes = str(math.trunc((d.seconds/60)%60)).zfill(2)+"m"
+        hours = str(math.trunc((d.seconds/3600)%24))+"h"
+        if hours == "0h" and math.trunc((d.seconds/60)%60) < 10:
+            minutes = str(math.trunc((d.seconds/60)%60))+"m"
+        days = str(d.days)+"d"
+
+        t=""
+        if days != "0d":
+            t = t + days
+        if hours != "0h":
+            t = t + hours
+        if (minutes != "00m" and minutes != "0m") or (hours != "0h" and minutes == "00m"):
+            t = t + minutes
+        t = t + seconds
+
+        return t
 
     def get_server_userlist_and_enqueue(self):
         try:
