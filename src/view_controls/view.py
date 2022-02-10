@@ -382,7 +382,7 @@ class DrawingTool(object):
             # Deal with drawable items
             self.drawn_items.append(DrawableItem(item, xpos, ypos, self))
             cur_col += 1
-            if (cur_col%max_col == 0):
+            if max_col != 0 and (cur_col%max_col == 0):
                 cur_col = 0
                 cur_row += 1
                 xpos = 0
