@@ -157,7 +157,7 @@ class OptionsMenu(object):
 
     def seconds_to_text(self, seconds):
         d=datetime.timedelta(seconds=seconds)
-        seconds = str(math.trunc(d.seconds%60))+(" seconds" if d.seconds > 1 else " second")if d.seconds < 60 else str(math.trunc(d.seconds%60)).zfill(2)+"s"
+        seconds = str(math.trunc(d.seconds%60))+(" seconds" if d.seconds > 1 else " second") if d.seconds < 60 else str(math.trunc(d.seconds%60)).zfill(2)+"s"
         minutes = str(math.trunc((d.seconds/60)%60)).zfill(2)+"m"
         hours = str(math.trunc((d.seconds/3600)%24))+"h"
         if hours == "0h" and math.trunc((d.seconds/60)%60) < 10:
