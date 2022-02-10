@@ -1,8 +1,5 @@
 """This module handles anything related to items and their characteristics"""
 from game_objects.serializable import Serializable
-
-
-from error_stuff import log_error
 from options import Options
 
 
@@ -68,7 +65,7 @@ class Item(Serializable):
         # ItemInfo for the current item
         self.info = Item.get_item_info(item_id)
 
-    def rerolled(self):
+    def rerolled(self, player):
         """Mark the item as rerolled"""
 
         # Passive items that can't be rerolled such as Key pieces or Knife pieces
@@ -82,7 +79,7 @@ class Item(Serializable):
             trinket = True
 
         # Spacebar items and gulped trinkets can't be re-rolled by a D4, dice room, etc.
-        if not self.info.space and self.item_id not in exceptions and not trinket:
+        if not (self.info.space and player != 30) and self.item_id not in exceptions and not trinket:
             self.was_rerolled = True
 
     @property
