@@ -2,15 +2,11 @@
 import os
 import platform # For determining what operating system the script is being run on
 import traceback
-import win32api # For transparent mode
-import win32con # For transparent mode
-import win32gui # For transparent mode
 import random # For glitched items
 
 import pygame   # This is the main graphics library used for the item tracker
 import string
 from tkinter import Tk # For clipboard functionality
-from ctypes import windll # For transparent mode
 from collections import defaultdict
 from options import Options
 from option_picker import OptionsMenu
@@ -22,9 +18,13 @@ from math import floor
 
 from error_stuff import log_error
 
-# Additional pygame imports
+# Additional windows imports
 if platform.system() == "Windows":
     import pygameWindowInfo
+    import win32api # For transparent mode
+    import win32con # For transparent mode
+    import win32gui # For transparent mode
+    from ctypes import windll # For transparent mode
 from pygame.locals import *
 
 class Drawable(object):
