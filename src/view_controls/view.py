@@ -170,7 +170,7 @@ class DrawingTool(object):
                         self.screen = pygame.display.set_mode((opt.width, opt.height), RESIZABLE)
                         self.screen.fill(DrawingTool.color(opt.background_color))
                         opt.transparent_mode = False
-                    else:
+                    elif platform.system() == "Windows":
                         self.screen = pygame.display.set_mode((opt.width, opt.height), NOFRAME)
                         self.transparent_mode()
                         opt.transparent_mode = True
