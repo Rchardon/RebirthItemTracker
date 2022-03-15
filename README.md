@@ -49,8 +49,13 @@ your run.
 The tracker checks for updates each time you launch it, and will update itself if you allow it. This only works on Windows.
 You can toggle this in the options window.
 
-The tracker can be used on Linux until version 2.1.0, but you have to run it from source, and it can't auto-update.
+The tracker can be used on Linux, but you have to run it from source, and it can't auto-update.
 Read "HOW TO BUILD.txt" for instructions.
+If playing Repentance through Proton, the folder with 'log.txt' is inside the wine prefix that is created by Steam.
+Its path is usually
+` ~/.steam/steam/steamapps/compatdata/250900/pfx/drive_c/users/steamuser/Documents/My Games/Binding of Isaac Repentance/`.
+The tracker folder has to be put there as mentioned above.
+
 
 The tracker doesn't work properly on a Mac: it will crash when you open the options menu. If you're okay with manually
 editing your options.json file instead of using the gui to change your options, you might be able to run it on a Mac in
