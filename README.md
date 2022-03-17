@@ -67,12 +67,14 @@ The tracker displays a line of text at the top of its window. This text can be a
 different pieces of information.
 
 By default, it shows:
-"Seed: {seed} / Guppy: {guppy} / Leviathan: {leviathan} / Spun: {spun} / Bookworm: {bookworm} /{version_number} / Room: {room_id}"
+"Seed: {seed} / Guppy: {guppy} / Leviathan: {leviathan} / Spun: {spun} / Bookworm: {bookworm} / {version_number} / Room: {room_id} {racing_plus_version}"
 
 Where there's a word inside curly braces, it substitutes the value of that variable.
 Variables that you can use here include:
 
 * General game info: {seed}, {version_number}, {room_id}
+{racing_plus_version} will show nothing if you don't play on R+ and if you are, it will show "/ R+: 0.XX.XX" so no need to put a slash 
+before that variable
 
 * Transformations: {guppy}, {bob}, {conjoined}, {funguy}, {leviathan}, {ohcrap}, {seraphim}, {spun}, {yesmother}, {superbum}, {beelzebub}, {bookworm}, {spiderbaby}
 

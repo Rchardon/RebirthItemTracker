@@ -134,7 +134,7 @@ class LogParser(object):
             search_result = re.search(regexp_str, line)
             if search_result is None:
                 return False
-            self.state.racing_plus_version = str(int(search_result.group(2))) + "." + str(int(search_result.group(3))) + "." + str(int(search_result.group(4))) if search_result is not None else ""
+            self.state.racing_plus_version = "/ R+: "+ str(int(search_result.group(2))) + "." + str(int(search_result.group(3))) + "." + str(int(search_result.group(4))) if search_result is not None else ""
 
     def __parse_save(self,line):
         regexp_str = r"Loading PersistentData (\d+)"
