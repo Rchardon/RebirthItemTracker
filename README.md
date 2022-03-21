@@ -20,7 +20,7 @@ Additionally, the tracker...
 - displays the current seed.
 - allows tournament hosts to receive players' item data through a server, so they can fit nicely in a restream layout.
 
-![](https://imgur.com/6kXiYpj)
+![](https://imgur.com/a/mbIuMkx)
 
 Download it [here](https://github.com/rchardon/RebirthItemTracker/releases) or [here](https://github.com/Hyphen-ated/RebirthItemTracker/releases) for version 2.1.0 
 (get the latest file that doesn't have "source code" in the name).
