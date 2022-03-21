@@ -2,6 +2,8 @@
 import re       # For parsing the log file (regular expressions)
 import os       # For working with files on the operating system
 import logging  # For logging
+import shutil   # For backing logs
+from datetime import datetime
 from game_objects.item  import Item
 from game_objects.floor import Floor, Curse
 from game_objects.state  import TrackerState
@@ -118,6 +120,10 @@ class LogParser(object):
             # racing+ re-generates floors if they contain duplicate rooms. we need to track that this is happening
             # so we don't erroneously think the entire run is being restarted when it happens on b1.
             self.reseeding_floor = True
+        if line.startswith('Caught exception,'):
+            self.__backup_log(crash=True)
+        if line.startswith('Isaac has shut down'):
+            self.__backup_log()
 
 
     def __trigger_new_run(self, line_number):
@@ -448,3 +454,40 @@ class LogParser(object):
             self.log_file_handle.seek(cached_length + 1)
             self.content += self.log_file_handle.read()
         return True
+    
+
+    def __backup_log(self, crash=False):
+        if self.log_file_path is None:
+            return False
+        print(self.log_file_path)
+
+        logsTarget = '/backup logs'
+        if not os.path.exists(self.wdir_prefix + logsTarget):
+            os.mkdir(self.wdir_prefix + logsTarget)
+
+        target = self.wdir_prefix + logsTarget
+
+        if self.state.racing_plus_version != "":
+            racingPlusLogsTarget = '/Racing+ logs'
+
+            if not os.path.exists(target + racingPlusLogsTarget):
+                os.mkdir(target + racingPlusLogsTarget)
+            target += racingPlusLogsTarget
+
+        if crash:
+            crashLogsTarget = '/Crash logs'
+            if not os.path.exists(target + crashLogsTarget):
+                os.mkdir(target + crashLogsTarget)
+            target += crashLogsTarget
+
+        now = datetime.now()
+        logTime = now.strftime("%d-%m-%Y %H-%M-%S")
+        
+        target += '/' + logTime
+        if self.state.racing_plus_version != "":
+            racingPlusVersion = self.state.racing_plus_version.replace("/ R+: ", "")
+            target = target + " - " + racingPlusVersion
+        versionNumber = self.state.version_number.replace("v1", "1").replace(".0000", "")
+        target = target + " - " + versionNumber + ".txt"
+
+        shutil.copy(self.log_file_path, target)
