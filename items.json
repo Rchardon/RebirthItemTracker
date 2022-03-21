@@ -3470,7 +3470,7 @@
    },
    "497": {
       "name": "Camo Undies",
-      "text": "+0.5 speed while cloaked, when the player moves, all nearby enemies take damage, temporary tears + dmg up",
+      "text": "+0.5 speed while cloaked. When the player moves, all nearby enemies take damage, temporary tears + dmg up",
       "shown": true,
       "introduced_in": "Afterbirth+"
    },
