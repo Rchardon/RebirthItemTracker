@@ -2595,7 +2595,7 @@
    },
    "365": {
       "name": "Lost Fly",
-      "text": "Familiar that hugs walls (7 dmg / tick)",
+      "text": "Familiar that hugs walls (7 dmg / 7 frames) and forces nearby enemies to target it",
       "beelzebub": true,
       "shown": true,
       "introduced_in": "Afterbirth"
@@ -2695,7 +2695,7 @@
    },
    "380": {
       "name": "Pay To Play",
-      "text": "+5 coins, doors that take keys take coins instead",
+      "text": "+5 coins, doors that need a key/locked chests/key blocks need coins instead",
       "shown": true,
       "introduced_in": "Afterbirth"
    },
@@ -3470,7 +3470,7 @@
    },
    "497": {
       "name": "Camo Undies",
-      "text": "Invisible to enemies in each room until you shoot",
+      "text": "+0.5 speed while cloaked, when the player moves, all nearby enemies take damage, temporary tears + dmg up",
       "shown": true,
       "introduced_in": "Afterbirth+"
    },
@@ -3539,7 +3539,7 @@
    },
    "508": {
       "name": "Mom's Razor",
-      "text": "Orbital (non-blocking), deals 20% dmg / tick, adds bleed effect (kills after 50s of slow damage)",
+      "text": "Orbital, deals 20% dmg / tick, adds bleed effect (more damage depending on enemy speed)",
       "yesmother": true,
       "shown": true,
       "introduced_in": "Afterbirth+"
@@ -4143,7 +4143,7 @@
    },
    "599": {
       "name": "Voodoo Head",
-      "text": "Generates 2 Curse Rooms per floor",
+      "text": "Generates 2 Curse Rooms per floor, improved curse room layouts/rewards",
       "shown": true,
       "introduced_in": "Antibirth"
    },
@@ -4241,8 +4241,8 @@
       "introduced_in": "Antibirth"
    },
    "615": {
-      "name": "Lil' Dumpy",
-      "text": "Familiar, makes stun/poison farts on hit",
+      "name": "Lil Dumpy",
+      "text": "Familiar, makes stun/poison farts when an enemy or projectile is about to hit the player",
       "shown": true,
       "introduced_in": "Antibirth"
    },
