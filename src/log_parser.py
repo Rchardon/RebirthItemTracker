@@ -454,40 +454,54 @@ class LogParser(object):
             self.log_file_handle.seek(cached_length + 1)
             self.content += self.log_file_handle.read()
         return True
-    
+
 
     def __backup_log(self, crash=False):
         if self.log_file_path is None:
             return False
-        print(self.log_file_path)
 
         logsTarget = '/backup logs'
         if not os.path.exists(self.wdir_prefix + logsTarget):
             os.mkdir(self.wdir_prefix + logsTarget)
 
         target = self.wdir_prefix + logsTarget
+        racingPlusLogsTarget = '/Racing+ logs'
 
         if self.state.racing_plus_version != "":
-            racingPlusLogsTarget = '/Racing+ logs'
-
             if not os.path.exists(target + racingPlusLogsTarget):
                 os.mkdir(target + racingPlusLogsTarget)
             target += racingPlusLogsTarget
 
-        if crash:
-            crashLogsTarget = '/Crash logs'
-            if not os.path.exists(target + crashLogsTarget):
-                os.mkdir(target + crashLogsTarget)
-            target += crashLogsTarget
-
         now = datetime.now()
         logTime = now.strftime("%d-%m-%Y %H-%M-%S")
-        
+
         target += '/' + logTime
+        if crash:
+            target = target + " [crash]"
+
         if self.state.racing_plus_version != "":
             racingPlusVersion = self.state.racing_plus_version.replace("/ R+: ", "")
             target = target + " - " + racingPlusVersion
+
         versionNumber = self.state.version_number.replace("v1", "1").replace(".0000", "")
         target = target + " - " + versionNumber + ".txt"
 
         shutil.copy(self.log_file_path, target)
+
+        if os.path.exists(self.wdir_prefix + logsTarget + racingPlusLogsTarget):
+            self.__delete_last_logs("backup logs/", 1)
+            self.__delete_last_logs("backup logs/Racing+ logs/", 0)
+        else:
+            self.__delete_last_logs("backup logs/", 0)
+
+
+
+    def __delete_last_logs(self, folder, numFolders):
+        path = self.wdir_prefix + folder
+        mtime = lambda f: os.stat(os.path.join(path, f)).st_mtime
+        sorted_ls = list(sorted(os.listdir(path), key=mtime))
+        if len(sorted_ls) >= 200:
+            del_list = sorted_ls[numFolders:(len(sorted_ls)-200)]
+            for file in del_list:
+                os.remove(path + file)
+
