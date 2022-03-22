@@ -11,6 +11,7 @@
   "framerate_limit": 30,
   "game_version": "Repentance",
   "height": 100,
+  "item_details_link": "",
   "log_file_check_seconds": 0.0,
   "make_items_glow": true,
   "message_duration": 7,
