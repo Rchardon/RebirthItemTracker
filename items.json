@@ -3057,6 +3057,7 @@
    "435": {
       "name": "Lil Loki",
       "text": "Familiar, shoots cross tears",
+      "conjoined": true,
       "shown": true,
       "introduced_in": "Afterbirth"
    },
