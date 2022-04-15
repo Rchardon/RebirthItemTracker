@@ -226,6 +226,7 @@ class DrawingTool(object):
             self.item_picked_up()
             overlay = Overlay(self.wdir_prefix, self.state)
             overlay.update_seed()
+            overlay.update_game_version_number()
             if len(self.drawn_items) > 0:
                 overlay.update_stats()
                 overlay.update_last_item_description()
