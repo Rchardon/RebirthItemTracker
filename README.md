@@ -18,6 +18,7 @@ Additionally, the tracker...
 - shows what floor items were picked up on.
 - shows the floor the player is currently on.
 - displays the current seed.
+- write current run data (seed, transformations, stats, version...) into text files in _overlay text/_ directory.
 - allows tournament hosts to receive players' item data through a server, so they can fit nicely in a restream layout.
 
 ![](https://i.imgur.com/6kXiYpj.png)

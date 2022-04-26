@@ -70,6 +70,11 @@ class Overlay(object):
             sfile.write(desc)
 
     def update_seed(self):
-        """Update the overlay file the seed"""
+        """Update the overlay file for the seed"""
         with open(self.prefix + "overlay text/seed.txt", "w+") as sfile:
             sfile.write(self.state.seed)
+
+    def update_game_version_number(self):
+        """Update the overlay file for the game version number"""
+        with open(self.prefix + "overlay text/game_version_number.txt", "w+") as sfile:
+            sfile.write(self.state.version_number)
