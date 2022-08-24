@@ -1,4 +1,5 @@
-{ "Magic 8 Ball (Seeded)": {
+{
+  "Magic 8 Ball (Seeded)": {
     "shown": true,
     "text": "Passive laser ring",
     "introduced_in": "Racing+",
@@ -55,6 +56,14 @@
     "shown": true,
     "text": "Orbital (10 dmg / tick)",
     "introduced_in": "Racing+"
+  },
+  "Sol (Custom)": {
+    "shown": true,
+    "space": false,
+    "text": "Reveals location of the boss, Sun card effect + active item recharge + 2x dmg + +1 luck + removes curses upon killing the boss",
+    "introduced_in": "Racing+",
+    "graphics_id": "588",
+    "comment": "Replacing 588"
   },
   "Flip (Custom)": {
     "shown": false,
