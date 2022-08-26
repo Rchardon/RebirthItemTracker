@@ -17,26 +17,17 @@ os.mkdir('target/')
 
 localpy = sys.executable
 
-os.chdir("src_bootstrapper")
-subprocess.call(localpy + " cxfreeze.py bootstrapper.py --base-name=Win32GUI --target-dir dist --icon ../mind.ico", shell=False, stdout=sys.stdout, stderr=sys.stderr)
-os.chdir("..")
-
+subprocess.run(localpy + " src_bootstrapper/cxfreeze.py", shell=False, stdout=sys.stdout, stderr=sys.stderr)
 shutil.move('src_bootstrapper/dist/bootstrapper.exe', 'src_bootstrapper/dist/Rebirth Item Tracker.exe') # Move the dist files to our target directory
 shutil.move('src_bootstrapper/dist/', installDir)
 
 # Run the tracker build script. The results are placed in ./dist/
-os.chdir("src_updater")
-subprocess.call(localpy + " cxfreeze.py updater.py --base-name=Win32GUI --target-dir dist --icon ../mind.ico", shell=False, stdout=sys.stdout, stderr=sys.stderr)
-os.chdir("..")
+subprocess.run(localpy + " src_updater/cxfreeze.py", shell=False, stdout=sys.stdout, stderr=sys.stderr)
 shutil.move('src_updater/dist/', installDir + "updater-lib/")
 
-os.chdir("src")
-subprocess.call(localpy + " cxfreeze.py item_tracker.py --base-name=Win32GUI --target-dir dist --icon ../mind.ico", shell=False, stdout=sys.stdout, stderr=sys.stderr)
-os.chdir("..")
+subprocess.run(localpy + " src/cxfreeze.py", shell=False, stdout=sys.stdout, stderr=sys.stderr)
 shutil.copy('src/options.ico', 'src/dist/options.ico')
 shutil.move('src/dist/', installDir + 'tracker-lib/')
-
-
 
 # Then copy over all the data files
 shutil.copytree('collectibles/', installDir + 'collectibles/')
