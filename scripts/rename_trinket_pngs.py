@@ -4,6 +4,7 @@
 
 import os, re, shutil
 
+os.chdir("scripts")
 incoming_files_directory = 'brand_new_images'
 outgoing_files_directory = 'renamed_images'
 for f in os.listdir(incoming_files_directory):

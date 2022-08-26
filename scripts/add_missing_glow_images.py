@@ -29,11 +29,11 @@ def add_glow_to_dir(dirname):
                 os.system(cmd)
 
 paths_to_add = [
-  os.path.join('..', 'collectibles'),
-  os.path.join('..', 'collectibles', 'antibirth'),
-  os.path.join('..', 'collectibles', 'afterbirth+'),
-  os.path.join('..', 'collectibles', 'glitch'),
-  os.path.join('..', 'collectibles', 'custom'),
+  os.path.join('.', 'collectibles'),
+  os.path.join('.', 'collectibles', 'antibirth'),
+  os.path.join('.', 'collectibles', 'afterbirth+'),
+  os.path.join('.', 'collectibles', 'glitch'),
+  os.path.join('.', 'collectibles', 'custom'),
 ]
 for path in paths_to_add:
     print(('Scanning directory: ' + path))

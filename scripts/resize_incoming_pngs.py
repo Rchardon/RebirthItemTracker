@@ -13,6 +13,7 @@
 import os
 import sys
 
+os.chdir("scripts")
 incoming_files_directory = 'renamed_images'
 outgoing_files_directory = 'resized_images'
 
