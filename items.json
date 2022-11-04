@@ -11,6 +11,12 @@
       "text": "Randomized effects",
       "introduced_in": "Repentance"
    },
+   "0": {
+      "name": "G FUEL!",
+      "shown": true,
+      "text": "Randomized effects",
+      "introduced_in": "Repentance"
+   },
    "1": {
       "name": "The Sad Onion",
       "shown": true,
@@ -42,8 +48,10 @@
    "5": {
       "name": "My Reflection",
       "height": "1",
+      "dmg": "1.5",
       "range": "5.4",
       "shot_speed": "0.6",
+      "luck": "-1",
       "shown": true,
       "text": "Boomerang tears",
       "introduced_in": "Rebirth"
@@ -323,7 +331,7 @@
       "name": "Mom's Pad",
       "shown": true,
       "yesmother": true,
-      "text": "Temporarily fears enemies",
+      "text": "Temporarily fears enemies and spawns a blue fly on use",
       "space": true,
       "introduced_in": "Rebirth"
    },
@@ -835,6 +843,7 @@
    "115": {
       "name": "Ouija Board",
       "shown": true,
+      "tears": "0.5",
       "text": "Spectral tears",
       "introduced_in": "Rebirth"
    },
@@ -921,7 +930,7 @@
    "126": {
       "name": "Razor Blade",
       "shown": true,
-      "text": "Deals 1 heart dmg to yourself, gives a temporary dmg up per use",
+      "text": "Deals 1 heart dmg (on first hit/room) and then 0.5 dmg to yourself, gives a temporary dmg up per use",
       "space": true,
       "introduced_in": "Rebirth"
    },
@@ -1050,7 +1059,7 @@
       "name": "Bum Friend",
       "shown": true,
       "superbum": true,
-      "text": "Turns coins into other pickups",
+      "text": "Turns coins into other pickups or items from the beggar pool",
       "introduced_in": "Rebirth"
    },
    "145": {
@@ -1300,7 +1309,7 @@
    "180": {
       "name": "The Black Bean",
       "shown": true,
-      "text": "Farts when hit (26 dmg)",
+      "text": "Release multiple farts and poisonous gas when hit",
       "introduced_in": "Rebirth"
    },
    "181": {
@@ -1349,7 +1358,7 @@
    "186": {
       "name": "Blood Rights",
       "shown": true,
-      "text": "Deals 1 heart dmg to yourself, deals 40 dmg to all enemies",
+      "text": "Deals 1 heart dmg (on first hit/room) and then 0.5 dmg to yourself, deals 40 dmg to all enemies",
       "space": true,
       "introduced_in": "Rebirth"
    },
@@ -1753,7 +1762,7 @@
    },
    "245": {
       "name": "20/20",
-      "dmg_x": "0.75",
+      "dmg_x": "0.8",
       "shown": true,
       "text": "Double shot",
       "introduced_in": "Rebirth"
@@ -1956,7 +1965,7 @@
       "name": "Lil' Brimstone",
       "shown": true,
       "conjoined": true,
-      "text": "Familiar (20 dmg / blood laser)",
+      "text": "Familiar (24 dmg / blood laser)",
       "introduced_in": "Rebirth"
    },
    "276": {
@@ -2023,7 +2032,7 @@
    "285": {
       "name": "D10",
       "shown": true,
-      "text": "Rerolls enemies in the room",
+      "text": "Devolves enemies in the room",
       "space": true,
       "introduced_in": "Rebirth"
    },
@@ -2262,7 +2271,7 @@
    "319": {
       "name": "Cain's Other Eye",
       "shown": true,
-      "text": "Familiar (3.5 dmg / tear)",
+      "text": "Familiar that shoots in random directions and deals 75% of your damage",
       "introduced_in": "Rebirth"
    },
    "320": {
@@ -2288,7 +2297,7 @@
    "323": {
       "name": "Isaac's Tears",
       "shown": true,
-      "text": "Fires 8 tears",
+      "text": "Fires 8 tears that have a bonus of +5 dmg",
       "space": true,
       "introduced_in": "Rebirth"
    },
@@ -2309,7 +2318,7 @@
    "326": {
       "name": "Breath of Life",
       "shown": true,
-      "text": "Invincibility when charge bar hits zero, spawns a lightbeam on an enemy if you touch it while invincible",
+      "text": "Invincibility when charge bar hits zero, spawns holy beams in 4 directions on an enemy if you touch it while invincible",
       "space": true,
       "introduced_in": "Rebirth"
    },
@@ -2608,7 +2617,7 @@
    },
    "367": {
       "name": "Sticky Bombs",
-      "text": "+5 bombs, bombs stick to enemies, spawns 4 spiders if the bomb kills an enemy",
+      "text": "+5 bombs, bombs stick to enemies, leaves a white slowing creep, spawns 4 spiders if the bomb kills an enemy",
       "spiderbaby": true,
       "shown": true,
       "introduced_in": "Afterbirth"
@@ -2767,7 +2776,7 @@
    },
    "391": {
       "name": "Betrayal",
-      "text": "Charms all enemies when hit",
+      "text": "Enemies hit by other enemies projectiles will try to target them",
       "shown": true,
       "introduced_in": "Afterbirth"
    },
@@ -2882,7 +2891,7 @@
    },
    "408": {
       "name": "Athame",
-      "text": "Black blood laser ring when hit",
+      "text": "Chance to proc a black blood laser ring on the enemy killed",
       "shown": true,
       "introduced_in": "Afterbirth"
    },
@@ -2925,7 +2934,7 @@
    },
    "415": {
       "name": "Crown of Light",
-      "text": "2x dmg when you have no empty red hearts",
+      "text": "2x dmg and -0.3 shot speed when you have no empty red hearts",
       "soul_hearts": "2",
       "shown": true,
       "introduced_in": "Afterbirth"
@@ -2970,7 +2979,7 @@
    },
    "422": {
       "name": "Glowing Hour Glass",
-      "text": "Rewinds the game state to the previous room",
+      "text": "Rewinds the game state to the previous room (3 uses per floor, after it become The Hourglass)",
       "shown": true,
       "space": true,
       "introduced_in": "Afterbirth"
@@ -3042,7 +3051,7 @@
    },
    "433": {
       "name": "My Shadow",
-      "text": "Spawns a friendly Charger when hit",
+      "text": "Spawns friendly dark chargers when an enemy is close to the player",
       "shown": true,
       "introduced_in": "Afterbirth"
    },
@@ -3274,7 +3283,7 @@
    },
    "468": {
       "name": "Shade",
-      "text": "Familiar, copies your movement, does contact damage",
+      "text": "Familiar, copies your movement, does contact damage (5 dmg/tick)",
       "shown": true,
       "introduced_in": "Afterbirth+"
    },
@@ -5079,7 +5088,7 @@
    },
    "2016": {
       "name": "Mom's Toenail",
-      "text": "Mom stomps every 60 seconds (300 dmg)",
+      "text": "Mom stomps every 20 seconds (300 dmg)",
       "shown": true,
       "introduced_in": "Rebirth"
    },
@@ -5127,7 +5136,7 @@
    },
    "2024": {
       "name": "Butt Penny",
-      "text": "Farts upon picking up a coin",
+      "text": "Farts upon picking up a coin, 20% to find a coin in a poop",
       "shown": true,
       "introduced_in": "Rebirth"
    },
@@ -5183,7 +5192,7 @@
    },
    "2033": {
       "name": "Umbilical Cord",
-      "text": "Gives Little Steven if damaged to 1/2 hearts, high chance to proc a Gemini for the room when hit",
+      "text": "High chance to proc a Gemini for the room when hit",
       "shown": true,
       "introduced_in": "Rebirth"
    },
@@ -5388,7 +5397,7 @@
    },
    "2067": {
       "name": "Cracked Dice",
-      "text": "Randomly D6, D20, D8, or D12 on hit",
+      "text": "Randomly D6, D10, D20, D8, or D12 on hit",
       "shown": true,
       "introduced_in": "Afterbirth"
    },
@@ -5606,7 +5615,7 @@
    },
    "2103": {
       "name": "Equality!",
-      "text": "Half pickups turn into doubled pickups when same # of coins + bombs + keys",
+      "text": "Half pickups turn into doubled pickups when same number of coins + bombs + keys",
       "shown": true,
       "introduced_in": "Afterbirth+"
    },
@@ -6165,7 +6174,7 @@
    },
    "32772": {
       "name": "(G) Broken Remote",
-      "text": "Teleport on active item use",
+      "text": "Teleport 2.0 on active item use",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6177,13 +6186,13 @@
    },
    "32774": {
       "name": "(G) Broken Magnet",
-      "text": "Pulls coins toward you",
+      "text": "Pulls all pickups toward you",
       "shown": true,
       "introduced_in": "Repentance"
    },
    "32775": {
       "name": "(G) Rosary Bead",
-      "text": "Increases Angel Room chance to 75%/25% (from 50%/50%)",
+      "text": "Increases Angel Room chance to 75%/25% (from 50%/50%) and adds Rosary to every pools",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6221,7 +6230,7 @@
    },
    "32781": {
       "name": "(G) Store Credit",
-      "text": "First shop item you will take while holding the trinket will be free",
+      "text": "First two shop items you will take while holding the trinket will be free",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6239,7 +6248,7 @@
    },
    "32784": {
       "name": "(G) Mom's Toenail",
-      "text": "Mom stomps every 60 seconds (300 dmg)",
+      "text": "Mom stomps every 10 seconds (300 dmg)",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6287,7 +6296,7 @@
    },
    "32792": {
       "name": "(G) Butt Penny",
-      "text": "Farts upon picking up a coin",
+      "text": "Farts upon picking up a coin, 20% to find a coin in a poop",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6343,7 +6352,7 @@
    },
    "32801": {
       "name": "(G) Umbilical Cord",
-      "text": "Gives Little Steven if damaged to 1/2 hearts, high chance to proc a Gemini for the room when hit",
+      "text": "High chance to proc a Gemini for the room when hit",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6520,14 +6529,14 @@
       "introduced_in": "Repentance"
    },
    "32831": {
+      "name": "Safety Scissors",
       "text": "(G) Turns all troll bombs into bomb pickups",
       "shown": true,
-      "name": "Safety Scissors",
       "introduced_in": "Repentance"
    },
    "32832": {
       "name": "(G) Rainbow Worm",
-      "text": "Rainbow worm tears (a random worm effect every 5 seconds)",
+      "text": "Rainbow worm tears (a random worm effect every 2.5 seconds)",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6548,7 +6557,7 @@
    },
    "32835": {
       "name": "(G) Cracked Dice",
-      "text": "Randomly D6, D20, D8, or D12 on hit",
+      "text": "Randomly D6, D10, D20, D8, or D12 on hit",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6766,7 +6775,7 @@
    },
    "32871": {
       "name": "(G) Equality!",
-      "text": "Half pickups turn into doubled pickups when same # of coins + bombs + keys",
+      "text": "Half pickups turn into doubled pickups when same number of coins + bombs + keys",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -7084,7 +7093,7 @@
    },
    "32924": {
       "name": "(G) Mother's Kiss",
-      "text": "Gives one empty heart container",
+      "text": "Gives two empty heart containers",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -7247,7 +7256,7 @@
    },
    "32951": {
       "name": "(G) The Twins",
-      "text": "Chance of doubling one of your familiars each room, get Brother Bobby or Sister Maggy if no familiars",
+      "text": "Chance of tripling one of your familiars each room, get Brother Bobby and/or Sister Maggy if no familiars",
       "shown": true,
       "introduced_in": "Repentance"
    },

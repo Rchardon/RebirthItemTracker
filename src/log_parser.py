@@ -279,7 +279,7 @@ class LogParser(object):
         else:
             is_Strawman_item = line.endswith("(Keeper)") and self.state.contains_item('667')
             is_EsauSoul_item = "player 0" not in line and line.endswith("(Esau)")
-            
+
         if self.state.player == 19 and not is_Esau_item and not is_Jacob_item and not is_Strawman_item and not is_EsauSoul_item: # This is when J&E transform into another character
             self.state.player = 8 # Put it on Lazarus by default just in case we got another Anemic
         elif self.state.player not in (19, 37) and is_Jacob_item:
@@ -298,7 +298,7 @@ class LogParser(object):
         item_id = ""
 
         if int(numeric_id) < 0:
-            numeric_id = "-1"
+                numeric_id = "0" if item_name == "G FUEL!" else "-1"
 
         # Check if we recognize the numeric id
         if Item.contains_info(numeric_id):
