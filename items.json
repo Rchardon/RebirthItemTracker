@@ -2978,7 +2978,7 @@
       "introduced_in": "Afterbirth"
    },
    "422": {
-      "name": "Glowing Hour Glass",
+      "name": "Glowing Hourglass",
       "text": "Rewinds the game state to the previous room (3 uses per floor, after it become The Hourglass)",
       "shown": true,
       "space": true,
