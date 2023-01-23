@@ -14,5 +14,6 @@ build/
 .pydevproject
 .settings
 /tracker_log.txt
+/mod_text.txt
 /export_state.json
 options.json

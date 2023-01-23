@@ -131,6 +131,8 @@ class LogParser(object):
             self.__backup_log(crash=True)
         if line.startswith('Isaac has shut down'):
             self.__backup_log()
+        if line.startswith('REBIRTH_ITEM_TRACKER_WRITE_TO_FILE'):
+            self.__parse_mod_text(line)
 
 
     def __trigger_new_run(self, line_number):
@@ -446,6 +448,11 @@ class LogParser(object):
                     item.info.shown = True
             self.state.remove_item("3002")       
 
+    def __parse_mod_text(self, line):
+        line = line.replace("REBIRTH_ITEM_TRACKER_WRITE_TO_FILE ","")
+        f = open("../mod_text.txt", "w")
+        f.write(line)
+        f.close()
 
     def __load_log_file(self):
         if self.log_file_path is None:
