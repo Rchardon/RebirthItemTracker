@@ -4,9 +4,9 @@ import os       # For working with files on the operating system
 import logging  # For logging
 import shutil   # For backing logs
 from datetime import datetime
-from game_objects.item  import Item
+from game_objects.item import Item
 from game_objects.floor import Floor, Curse
-from game_objects.state  import TrackerState
+from game_objects.state import TrackerState
 from options import Options
 
 class LogParser(object):
@@ -42,6 +42,13 @@ class LogParser(object):
         self.first_floor = None
         self.first_line = ""
         self.curse_first_floor = ""
+        
+        self.jacob_names = ("(Jacob)", "(Иаков)", "(雅各)", "(ヤコブ)", "(Jakob)", "(야곱)")
+        self.esau_names = ("(Esau)", "(Ésaü)", "(Исав)", "(以扫)", "(エサウ)", "(Esaú)", "(에사우)")
+        self.esau1_names = (" 1 (Esau)", " 1 (Ésaü)", " 1 (Исав)", " 1 (以扫)", " 1 (エサウ)", " 1 (Esaú)", " 1 (에사우)")
+        self.keeper_names = ("(Keeper)", "(Le Gardien)", "(Хранитель)", "(店主)", "(キーパー)", "(Hüter)", "(키퍼)")
+        self.double_words_chars = ("(The Lost)", "(The Forgotten)", "(The Soul)", "(Black Judas)", "(Random Baby)", "(The Deleted)", "(The Stranger)", "(Le Gardien)", "(Le Délaissé)", "(Темный Иуда)", "(ダーク ユダ)", "(ザ フォーガットン)", "(ザ ソウル)", "(ザ ロスト)", "(El Olvidado)", "(El alma)", "(El perdido)", "(Judas oscuro)", "(Der Vergessene)", "(Die Seele)", "(Schwarzer Judas)", "(Der Verlorene)", "(더 포가튼)", "(더 소울)", "(블랙 유다)", "(더 로스트)")
+        self.triple_words_chars = ("(Judas des Ombres)")
 
     def parse(self):
         """
@@ -268,17 +275,17 @@ class LogParser(object):
         if len(self.splitfile) > 1 and self.splitfile[line_number + self.seek - 1] == line:
             self.log.debug("Skipped duplicate item line from baby presence")
             return False
-        is_Jacob_item = line.endswith("(Jacob)") and self.opt.game_version == "Repentance" and self.state.player == 19
-        is_Esau_item = line.endswith(" 1 (Esau)") and self.opt.game_version == "Repentance" and self.state.player == 19
+        is_Jacob_item = line.endswith(self.jacob_names) and self.opt.game_version == "Repentance" and self.state.player == 19
+        is_Esau_item = line.endswith(self.esau1_names) and self.opt.game_version == "Repentance" and self.state.player == 19
         if self.state.player in (14, 33): # Don't show keeper head on keeper and tainted keeper 
-            is_Strawman_item = "player 0" not in line and line.endswith("(Keeper)") and self.state.contains_item('667')
-            is_EsauSoul_item = "player 0" not in line and line.endswith("(Esau)")
+            is_Strawman_item = "player 0" not in line and line.endswith(self.keeper_names) and self.state.contains_item('667')
+            is_EsauSoul_item = "player 0" not in line and line.endswith(self.esau_names)
         elif self.state.player == 19:
-            is_Strawman_item = line.endswith("(Keeper)") and self.state.contains_item('667')
-            is_EsauSoul_item = "player 0" not in line and "player 1 " not in line and line.endswith("(Esau)")
+            is_Strawman_item = line.endswith(self.keeper_names) and self.state.contains_item('667')
+            is_EsauSoul_item = "player 0" not in line and "player 1 " not in line and line.endswith(self.esau_names)
         else:
-            is_Strawman_item = line.endswith("(Keeper)") and self.state.contains_item('667')
-            is_EsauSoul_item = "player 0" not in line and line.endswith("(Esau)")
+            is_Strawman_item = line.endswith(self.keeper_names) and self.state.contains_item('667')
+            is_EsauSoul_item = "player 0" not in line and line.endswith(self.esau_names)
 
         if self.state.player == 19 and not is_Esau_item and not is_Jacob_item and not is_Strawman_item and not is_EsauSoul_item: # This is when J&E transform into another character
             self.state.player = 8 # Put it on Lazarus by default just in case we got another Anemic
@@ -287,8 +294,11 @@ class LogParser(object):
 
         space_split = line.split(" ")
         numeric_id = space_split[2] # When you pick up an item, this has the form: "Adding collectible 105 (The D6)" or "Adding collectible 105 (The D6) to Player 0 (Isaac)" in Repentance
-        double_word_char = line.endswith("(The Lost)") or line.endswith("(The Forgotten)") or line.endswith("(The Soul)") or line.endswith("(Black Judas)") or line.endswith("(Random Baby)")
-        if self.opt.game_version == "Repentance" and double_word_char:
+        double_word_char = line.endswith(self.double_words_chars)
+        triple_word_char = line.endswith(self.triple_words_chars)
+        if self.opt.game_version == "Repentance" and triple_word_char:
+            item_name = " ".join(space_split[3:-4])[1:-11]
+        elif self.opt.game_version == "Repentance" and double_word_char:
             item_name = " ".join(space_split[3:-4])[1:-4]
         elif self.opt.game_version == "Repentance":
             item_name = " ".join(space_split[3:-4])[1:-1]
@@ -368,8 +378,8 @@ class LogParser(object):
             numeric_id = str(int(space_split[3]) + 2000) # the tracker hackily maps trinkets to items 2000 and up.
         else:
             numeric_id = str(int(space_split[2]) + 2000) # the tracker hackily maps trinkets to items 2000 and up.
-        is_Jacob_item = line.endswith("(Jacob)") and self.opt.game_version == "Repentance" and self.state.player == 19
-        is_Esau_item = line.endswith("(Esau)") and self.opt.game_version == "Repentance"
+        is_Jacob_item = line.endswith(self.jacob_names) and self.opt.game_version == "Repentance" and self.state.player == 19
+        is_Esau_item = line.endswith(self.esau1_names) and self.opt.game_version == "Repentance" and self.state.player == 19
 
         # Check if we recognize the numeric id
         if Item.contains_info(numeric_id):
@@ -442,14 +452,14 @@ class LogParser(object):
             return False
 
         if self.log_file_handle is None:
-            self.log_file_handle = open(self.log_file_path, 'r', encoding='Latin-1', errors='remplace')
+            self.log_file_handle = open(self.log_file_path, 'r', encoding='utf-8', errors='replace')
 
         cached_length = len(self.content)
         file_size = os.path.getsize(self.log_file_path)
 
         if cached_length > file_size or cached_length == 0: # New log file or first time loading the log
             self.reset()
-            self.content = open(self.log_file_path, 'r', encoding='Latin-1', errors='remplace').read()
+            self.content = open(self.log_file_path, 'r', encoding='utf-8', errors='replace').read()
         elif cached_length < file_size:  # Append existing content
             self.log_file_handle.seek(cached_length + 1)
             self.content += self.log_file_handle.read()
