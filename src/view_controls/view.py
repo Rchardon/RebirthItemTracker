@@ -739,7 +739,7 @@ class DrawableItem(Drawable):
             graphics_id = self.item.item_id
 
         imagename = ""
-        # For glitched items, put a random glitch sprite that will only change every two hours to not trigger people watching streams
+        # For glitched items, put a random glitch sprite that will change every minute
         if Options().make_items_glow and Options().transparent_mode is False and graphics_id == "-1":
             if framecount % 1800 == 0:
                 self.glitched_item = str(random.randint(1,40))
