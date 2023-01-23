@@ -48,7 +48,7 @@ class DrawingTool(object):
         self.item_position_index = []
         self.drawn_items = []
         self._image_library = {}
-        self.glitched_item = str(random.randint(1,30))
+        self.glitched_item = str(random.randint(1,40))
         self.blind_icon = None
         self.roll_icon = None
         self.jacob_icon = None
@@ -720,7 +720,7 @@ class DrawableItem(Drawable):
     def __init__(self, item, x, y, tool):
         super(DrawableItem, self).__init__(x, y, tool)
         self.item = item
-        self.glitched_item = str(random.randint(1,30))
+        self.glitched_item = str(random.randint(1,40))
         self.is_drawn = False
 
     def show_blind_icon(self):
@@ -741,12 +741,12 @@ class DrawableItem(Drawable):
         imagename = ""
         # For glitched items, put a random glitch sprite that will only change every two hours to not trigger people watching streams
         if Options().make_items_glow and Options().transparent_mode is False and graphics_id == "-1":
-            if framecount % 216000 == 0:
-                self.glitched_item = str(random.randint(1,30))
+            if framecount % 1800 == 0:
+                self.glitched_item = str(random.randint(1,40))
             imagename = "glitch/glow/"+ self.glitched_item +".png"
         elif graphics_id == "-1":
-            if framecount % 216000 == 0:
-                self.glitched_item = str(random.randint(1,30))
+            if framecount % 1800 == 0:
+                self.glitched_item = str(random.randint(1,40))
             imagename = "glitch/"+ self.glitched_item +".png"
         else:
             if graphics_id[0] == 'm':
