@@ -106,7 +106,7 @@
       "dmg_x": "1.5",
       "health": "1",
       "height": "0.5",
-      "range": "1.5",
+      "range": "2.5",
       "shown": true,
       "speed": "0.3",
       "text": "Size up, full heal",
@@ -124,7 +124,7 @@
    "14": {
       "name": "Roid Rage",
       "height": "0.5",
-      "range": "1.5",
+      "range": "2.5",
       "shown": true,
       "spun": true,
       "speed": "0.3",
@@ -234,7 +234,7 @@
    "29": {
       "name": "Mom's Underwear",
       "height": "0.5",
-      "range": "1.5",
+      "range": "2.5",
       "shown": true,
       "yesmother": true,
       "text": "Spawn 3-6 blue flies on pickup",
@@ -243,7 +243,7 @@
    "30": {
       "name": "Mom's Heels",
       "height": "0.5",
-      "range": "1.5",
+      "range": "2.5",
       "shown": true,
       "yesmother": true,
       "text": "Deals 12 damage to enemies coming into contact with the player",
@@ -252,7 +252,7 @@
    "31": {
       "name": "Mom's Lipstick",
       "height": "0.5",
-      "range": "2.25",
+      "range": "3.75",
       "shown": true,
       "yesmother": true,
       "text": "Spawns a red heart on pickup",
@@ -526,7 +526,7 @@
    "71": {
       "name": "Mini Mush",
       "height": "1.5",
-      "range": "1.5",
+      "range": "2.5",
       "shown": true,
       "funguy": true,
       "speed": "0.3",
@@ -744,7 +744,7 @@
       "dmg": "0.3",
       "health": "1",
       "height": "0.5",
-      "range": "0.38",
+      "range": "1.5",
       "shown": true,
       "seraphim": true,
       "speed": "0.3",
@@ -806,7 +806,7 @@
    },
    "110": {
       "name": "Mom's Contacts",
-      "range": "0.38",
+      "range": "1.5",
       "shown": true,
       "yesmother": true,
       "text": "Chance to shoot petrifying tears",
@@ -891,7 +891,7 @@
       "dmg": "1",
       "health": "1",
       "height": "0.5",
-      "range": "0.38",
+      "range": "1.5",
       "shown": true,
       "speed": "-0.2",
       "funguy": true,
@@ -1381,7 +1381,7 @@
       "dmg": "0.3",
       "health": "1",
       "height": "1",
-      "range": "1.5",
+      "range": "2.5",
       "shown": true,
       "speed": "0.2",
       "tears": "0.2",
@@ -1442,7 +1442,7 @@
       "name": "Jesus Juice",
       "dmg": "0.5",
       "height": "0.5",
-      "range": "0.38",
+      "range": "1.5",
       "shown": true,
       "text": "",
       "introduced_in": "Rebirth"
@@ -2413,7 +2413,7 @@
    "339": {
       "name": "Safety Pin",
       "height": "0.5",
-      "range": "1.5",
+      "range": "2.5",
       "shot_speed": "0.16",
       "shown": true,
       "sin_hearts": "1",
@@ -2464,7 +2464,7 @@
       "name": "Synthoil",
       "dmg": "1",
       "height": "0.5",
-      "range": "1.5",
+      "range": "2.5",
       "shown": true,
       "spun": true,
       "text": "",
@@ -2537,7 +2537,7 @@
       "text": "",
       "shown": true,
       "yesmother": true,
-      "range": "0.38",
+      "range": "2.5",
       "luck": "1",
       "height": "0.5",
       "soul_hearts": "1",
@@ -2641,7 +2641,7 @@
       "text": "Spawn 3 red/soul/black hearts at random",
       "shown": true,
       "tears": "0.72",
-      "range": "1.5",
+      "range": "2.5",
       "height": "0.5",
       "introduced_in": "Afterbirth"
    },
@@ -2820,7 +2820,7 @@
       "shown": true,
       "height": "0.5",
       "shot_speed": "0.16",
-      "range": "1.5",
+      "range": "2.5",
       "tears": "1",
       "introduced_in": "Afterbirth"
    },
@@ -3186,7 +3186,7 @@
    "453": {
       "name": "Compound Fracture",
       "text": "Tears split into 2 bone shards, each does 1/2 dmg",
-      "range": "0.38",
+      "range": "1.5",
       "shown": true,
       "introduced_in": "Afterbirth+"
    },
@@ -3199,7 +3199,7 @@
    "455": {
       "name": "Dad's Lost Coin",
       "text": "Spawns a lucky penny on pickup",
-      "range": "0.38",
+      "range": "2.5",
       "shown": true,
       "introduced_in": "Afterbirth+"
    },
@@ -3245,7 +3245,7 @@
    "462": {
       "name": "Eye of Belial",
       "text": "Piercing, after a tear hits it gets 2x dmg + homing",
-      "range": "0.38",
+      "range": "1.5",
       "shown": true,
       "introduced_in": "Afterbirth+"
    },
@@ -4308,7 +4308,7 @@
    },
    "625": {
       "name": "Mega Mush",
-      "text": "Gigantify for a short duration (+damage, -tears, invulnerable, crush rocks/blocks/doors)",
+      "text": "Gigantify for a short duration (+damage, +2 range, -tears, invulnerable, crush rocks/blocks/doors)",
       "funguy": true,
       "shown": true,
       "space": true,
@@ -4524,7 +4524,7 @@
    "659": {
       "name": "Tropicamide",
       "shown": true,
-      "range": "1.5",
+      "range": "2.5",
       "text": "Tear size up",
       "introduced_in": "Repentance"
    },
