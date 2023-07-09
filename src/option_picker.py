@@ -337,20 +337,26 @@ class OptionsMenu(object):
 
         # Generate checkboxes, with special exception for show_description for message duration
         for index, opt in enumerate(
-                ["show_jacob_esau_items", "show_item_ids", "enable_mouseover", "show_floors", "show_rerolled_items", "show_health_ups",
+                ["show_jacob_esau_items", "show_item_ids", "enable_mouseover", "show_floors", "show_rerolled_items",
                  "show_space_items", "show_blind_icon", "make_items_glow", "blck_cndl_mode",
-                 "check_for_updates", "custom_title_enabled"]):
+                 "check_for_updates"]):
             self.checks[opt] = IntVar()
             c = Checkbutton(display_options_frame, text=self.pretty_name(opt), variable=self.checks[opt])
             c.grid(row=int(len(self.entries) + 1 + index / 2), column=index % 2) # 2 checkboxes per row
             if getattr(self.options, opt):
                 c.select()
-            if opt == "custom_title_enabled":
-                c.configure(command=self.checkbox_callback)
             next_row += int(len(self.entries) / 2 + 1)
+        
+        # Generate checkbox for custom title
+        for index, opt in enumerate(["custom_title_enabled"]):
+            self.checks[opt] = IntVar()
+            c = Checkbutton(display_options_frame, text=self.pretty_name(opt), variable=self.checks[opt])
+            c.grid(row=next_row, column=index)
+            if getattr(self.options, opt):
+                c.select()
+            c.configure(command=self.checkbox_callback)
 
-        # Generate label for custom title
-        Label(display_options_frame, text=self.pretty_name("custom_title")).grid(row=next_row)
+        # Generate textarea for custom title
         self.entries["custom_title"] = Entry(display_options_frame)
         self.entries["custom_title"].grid(row=next_row, column=1)
         self.entries["custom_title"].insert(0, getattr(self.options, "custom_title"))

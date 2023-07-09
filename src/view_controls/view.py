@@ -692,9 +692,6 @@ class DrawingTool(object):
             return False
         elif item.info.guppy:
             return True
-        elif item.info.health_only and \
-                not opt.show_health_ups:
-            return False
         elif item.info.space and \
                 not opt.show_space_items:
             return False

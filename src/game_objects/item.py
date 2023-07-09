@@ -252,7 +252,6 @@ class ItemInfo(dict):
         "dmg_x",
         "graphics_id",
         "health",
-        "health_only",
         "introduced_in",
         "luck",
         "name",

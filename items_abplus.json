@@ -121,7 +121,6 @@
        "name": "<3",
        "health": "1",
        "shown": true,
-       "health_only": true,
        "text": "Full heal",
        "introduced_in": "Rebirth"
     },
@@ -129,7 +128,6 @@
        "name": "Raw Liver",
        "health": "2",
        "shown": true,
-       "health_only": true,
        "text": "Full heal",
        "introduced_in": "Rebirth"
     },
@@ -167,7 +165,6 @@
        "name": "Lunch",
        "health": "1",
        "shown": true,
-       "health_only": true,
        "text": "",
        "introduced_in": "Rebirth"
     },
@@ -175,7 +172,6 @@
        "name": "Dinner",
        "health": "1",
        "shown": true,
-       "health_only": true,
        "text": "",
        "introduced_in": "Rebirth"
     },
@@ -183,7 +179,6 @@
        "name": "Dessert",
        "health": "1",
        "shown": true,
-       "health_only": true,
        "text": "",
        "introduced_in": "Rebirth"
     },
@@ -191,7 +186,6 @@
        "name": "Breakfast",
        "health": "1",
        "shown": true,
-       "health_only": true,
        "text": "",
        "introduced_in": "Rebirth"
     },
@@ -199,7 +193,6 @@
        "name": "Rotten Meat",
        "health": "1",
        "shown": true,
-       "health_only": true,
        "text": "",
        "introduced_in": "Rebirth"
     },
@@ -656,7 +649,6 @@
        "name": "Super Bandage",
        "health": "1",
        "shown": true,
-       "health_only": true,
        "soul_hearts": "2",
        "text": "",
        "introduced_in": "Rebirth"
@@ -1605,7 +1597,6 @@
        "soul_hearts": "1",
        "sin_hearts": "1",
        "shown": true,
-       "health_only": true,
        "text": "",
        "introduced_in": "Rebirth"
     },
@@ -2326,7 +2317,6 @@
        "name": "The Body",
        "health": "3",
        "shown": true,
-       "health_only": true,
        "text": "+3 heart containers",
        "introduced_in": "Rebirth"
     },
@@ -2423,7 +2413,6 @@
        "name": "A Snack",
        "health": "1",
        "shown": true,
-       "health_only": true,
        "text": "",
        "introduced_in": "Rebirth"
     },
