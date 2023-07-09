@@ -215,7 +215,7 @@ class Updater(object):
 
             for k,v in old_defaults.items():
                 # for each default option they left unchanged, if the default changed in the new version, give them the new default
-                if k in self.options and self.options[k] == v and new_defaults[k] != v:
+                if k in self.options and k in new_defaults and self.options[k] == v and new_defaults[k] != v:
                     self.options[k] = new_defaults[k]
 
             self.write_options()
