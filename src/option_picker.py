@@ -215,7 +215,7 @@ class OptionsMenu(object):
         self.root.after(100, self.process_network_results)
 
 
-    def trim_name(self, event):
+    def trim_name(self):
         name = self.entries['twitch_name'].get()
         name = name.partition(" (")[0]
         self.entries['twitch_name'].set(name)
@@ -363,7 +363,7 @@ class OptionsMenu(object):
 
         for index, opt in enumerate(["change_server"]):
             self.checks[opt] = IntVar()
-            c = Checkbutton(tournament_settings_frame, text=self.pretty_name(opt), variable=self.checks[opt], indicatoron=False)
+            c = Checkbutton(tournament_settings_frame, text=self.pretty_name(opt), variable=self.checks[opt], indicatoron=False, width=16)
             c.grid(row=next_row, column=0, pady=2)
             c.configure(command=self.checkbox_callback)
             if getattr(self.options, opt, False):
@@ -374,7 +374,7 @@ class OptionsMenu(object):
         for index, opt in enumerate(["trackerserver_url"]):
             self.labels[opt] = Label(tournament_settings_frame, text=self.pretty_name(opt))
             self.labels[opt].grid(row=next_row, pady=2)
-            self.entries[opt] = Entry(tournament_settings_frame)
+            self.entries[opt] = Entry(tournament_settings_frame, width=43)
             self.entries[opt].grid(row=next_row, column=1, pady=2)
             self.entries[opt].insert(0, getattr(self.options, opt, ""))
             next_row += 1
@@ -383,7 +383,7 @@ class OptionsMenu(object):
         callbacks = {"read_from_server":self.read_callback, "write_to_server":self.write_callback}
         for index, opt in enumerate(["read_from_server", "write_to_server"]):
             self.checks[opt] = IntVar()
-            c = Checkbutton(tournament_settings_frame, text=self.pretty_name(opt), variable=self.checks[opt], indicatoron=False)
+            c = Checkbutton(tournament_settings_frame, text=self.pretty_name(opt), variable=self.checks[opt], indicatoron=False, width=16)
             c.grid(row=next_row, column=index, pady=2, padx=paddings[opt])
             c.configure(command=callbacks[opt])
             if getattr(self.options, opt, False):
@@ -392,7 +392,7 @@ class OptionsMenu(object):
 
         for index, opt in enumerate(["server_connect_label"]):
             self.labels[opt] = Label(self.root, text="", width=len(self.connection_labels["fail"]))
-            self.labels[opt].grid(row=next_row, pady=2, columnspan=2, in_=tournament_settings_frame)
+            self.labels[opt].grid(row=next_row, column=1, pady=2, columnspan=2, in_=tournament_settings_frame)
             next_row += 1
 
         for index, opt in enumerate(["twitch_name"]):
@@ -409,7 +409,7 @@ class OptionsMenu(object):
         for index, opt in enumerate(["read_delay", "trackerserver_authkey"]):
             self.labels[opt] = Label(tournament_settings_frame, text=self.pretty_name(opt))
             self.labels[opt].grid(row=next_row, pady=2)
-            self.entries[opt] = Entry(tournament_settings_frame)
+            self.entries[opt] = Entry(tournament_settings_frame, width=43)
             self.entries[opt].grid(row=next_row, column=1, pady=2)
             self.entries[opt].insert(0, getattr(self.options, opt, ""))
             next_row += 1
@@ -423,12 +423,7 @@ class OptionsMenu(object):
                 # TODO: show an error
                 pass
 
-        self.buttons["authkey_button"] = Button(
-            tournament_settings_frame,
-            text="Get an authkey",
-            command=authkey_fn
-        )
-
+        self.buttons["authkey_button"] = Button(tournament_settings_frame, text="Get an authkey", command=authkey_fn, width=16)
         self.buttons["authkey_button"].grid(row=next_row, column=1, pady=5)
 
 

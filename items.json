@@ -5711,7 +5711,7 @@
    },
    "2119": {
       "name": "Stem Cell",
-      "text": "Heals for 1/2 heart when travelling to the next floor",
+      "text": "Heals for 1/2 heart when traveling to the next floor",
       "shown": true,
       "introduced_in": "Afterbirth+"
    },
@@ -6871,7 +6871,7 @@
    },
    "32887": {
       "name": "(G) Stem Cell",
-      "text": "Heals for 1/2 heart when travelling to the next floor",
+      "text": "Heals for 1/2 heart when traveling to the next floor",
       "shown": true,
       "introduced_in": "Repentance"
    },
