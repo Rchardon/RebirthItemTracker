@@ -75,6 +75,7 @@ class IsaacTracker(object):
         event_result = None
         state = None
         custom_title_enabled = opt.custom_title_enabled
+        log_file_custom_path_enabled = opt.log_file_custom_path_enabled
         read_from_server = opt.read_from_server
         write_to_server = opt.write_to_server
         game_version = opt.game_version
@@ -93,6 +94,21 @@ class IsaacTracker(object):
             if opt.custom_title_enabled != custom_title_enabled:
                 custom_title_enabled = opt.custom_title_enabled
                 drawing_tool.update_window_title()
+
+            # The user checked or unchecked the "Custom Log File Path" checkbox
+            if opt.log_file_custom_path_enabled != log_file_custom_path_enabled:
+                log_file_custom_path_enabled = opt.log_file_custom_path_enabled
+                parser.reset()
+
+            parser_log_file_path = str(parser.log_file_path).replace("log.txt", "")
+            if not (parser_log_file_path.endswith("/") or parser_log_file_path.endswith("\\")):
+                    parser_log_file_path += "/"
+            opt_log_file_custom_path = str(opt.log_file_custom_path).replace("log.txt", "")
+            if not (opt_log_file_custom_path.endswith("/") or opt_log_file_custom_path.endswith("\\")):
+                    opt_log_file_custom_path += "/"
+
+            if opt.log_file_custom_path_enabled and parser_log_file_path != opt_log_file_custom_path:
+                parser.reset()
 
             # The user started or stopped watching someone from the server (or they started watching a new person from the server)
             if opt.read_from_server != read_from_server or opt.twitch_name != twitch_username:

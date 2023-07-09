@@ -17,8 +17,10 @@ class LogFinder(object):
         if version_path_fragment == "Antibirth":
             version_path_fragment = "Rebirth"
 
-        if Options().log_file_custom_path:
-             logfile_location = Options().log_file_custom_path
+        if Options().log_file_custom_path_enabled:
+            logfile_location = str(Options().log_file_custom_path).replace("log.txt", "")
+            if not (logfile_location.endswith("/") or logfile_location.endswith("\\")) :
+                logfile_location = logfile_location + "/"
         elif platform.system() == "Windows":
             logfile_location = os.environ['USERPROFILE'] + '/Documents/My Games/Binding of Isaac {}/'
         elif platform.system() == "Linux":

@@ -55,6 +55,7 @@ class OptionsMenu(object):
                        "blck_cndl_mode": "BLCK CNDL Mode",
                        "custom_title_enabled": "Change Window Title",
                        "log_file_check_seconds": "Check log file every",
+                       "log_file_custom_path_enabled": "Custom Log File Path",
                        "show_jacob_esau_items": "Show Multi-Char Icons"}
     label_after_text = {"message_duration":"second(s)",
                         "framerate_limit":"fps",
@@ -95,6 +96,12 @@ class OptionsMenu(object):
             self.entries["custom_title"].configure(state=DISABLED)
         else:
             self.entries["custom_title"].configure(state=NORMAL)
+
+        # Just for the "Custom Log File Path" checkbox -- to disable the "Custom Title" entry
+        if not self.checks.get("log_file_custom_path_enabled").get():
+            self.entries["log_file_custom_path"].configure(state=DISABLED)
+        else:
+            self.entries["log_file_custom_path"].configure(state=NORMAL)
 
         # Writing to server occurs when state changes, so enable read delay if we are reading
         if self.checks.get("read_from_server").get():
@@ -360,6 +367,21 @@ class OptionsMenu(object):
         self.entries["custom_title"] = Entry(display_options_frame)
         self.entries["custom_title"].grid(row=next_row, column=1)
         self.entries["custom_title"].insert(0, getattr(self.options, "custom_title"))
+        next_row += 1
+
+        # Generate checkbox for custom log file path
+        for index, opt in enumerate(["log_file_custom_path_enabled"]):
+            self.checks[opt] = IntVar()
+            c = Checkbutton(display_options_frame, text=self.pretty_name(opt), variable=self.checks[opt])
+            c.grid(row=next_row, column=index)
+            if getattr(self.options, opt):
+                c.select()
+            c.configure(command=self.checkbox_callback)
+
+        # Generate textarea for custom log file path
+        self.entries["log_file_custom_path"] = Entry(display_options_frame)
+        self.entries["log_file_custom_path"].grid(row=next_row, column=1)
+        self.entries["log_file_custom_path"].insert(0, getattr(self.options, "log_file_custom_path"))
         next_row += 1
 
         # Draw the "Tournament Settings" box
