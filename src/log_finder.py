@@ -17,7 +17,9 @@ class LogFinder(object):
         if version_path_fragment == "Antibirth":
             version_path_fragment = "Rebirth"
 
-        if platform.system() == "Windows":
+        if Options().log_file_custom_path:
+             logfile_location = Options().log_file_custom_path
+        elif platform.system() == "Windows":
             logfile_location = os.environ['USERPROFILE'] + '/Documents/My Games/Binding of Isaac {}/'
         elif platform.system() == "Linux":
             logfile_location = os.getenv('XDG_DATA_HOME',
@@ -27,8 +29,9 @@ class LogFinder(object):
             logfile_location = os.path.expanduser('~') + '/Library/Application Support/Binding of Isaac {}/'
 
         logfile_location = logfile_location.format(version_path_fragment)
-
+        
         for check in (wdir_prefix + '../log.txt', logfile_location + 'log.txt'):
+            print("Looking for log.txt in " + check)
             if os.path.isfile(check):
                 return check
 

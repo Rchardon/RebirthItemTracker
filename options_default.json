@@ -13,6 +13,7 @@
   "height": 100,
   "item_details_link": "",
   "log_file_check_seconds": 0.0,
+   "log_file_custom_path": false,
   "make_items_glow": true,
   "message_duration": 7,
   "min_spacing": 24,
