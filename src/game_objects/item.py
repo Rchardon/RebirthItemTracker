@@ -110,6 +110,12 @@ class Item(Serializable):
         bone_hearts = self.info.bone_hearts
         soul_hearts = self.info.soul_hearts
         sin_hearts = self.info.sin_hearts
+        graphics_id = self.info.graphics_id
+        if graphics_id and text is None:
+            original_item = Item.get_item_info(graphics_id)
+            text = original_item.text
+        else:
+            text = self.info.text             
         if dmg:
             desc += dmg + " dmg, "
         if dmg_x:

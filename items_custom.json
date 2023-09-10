@@ -1,19 +1,17 @@
-{
-  "Magic 8 Ball (Seeded)": {
-    "shown": true,
-    "text": "Passive laser ring",
-    "introduced_in": "Racing+",
-    "graphics_id": "194"
-  },
+{ 
   "3 Dollar Bill (Seeded)": {
     "shown": true,
-    "text": "Rainbow tears",
     "introduced_in": "Racing+",
     "graphics_id": "191",
     "comment": "Replacing 191"
   },
+  "Magic 8 Ball (Seeded)": {
+    "shown": true,
+    "introduced_in": "Racing+",
+    "graphics_id": "194",
+    "comment": "Replacing 194"
+  },
   "Dad's Lost Coin": {
-    "text": "",
     "range": "1.5",
     "luck": "1",
     "shown": true,
@@ -24,7 +22,6 @@
   "Schoolbag": {
     "shown": true,
     "name":"Schoolbag",
-    "text": "Can carry 2 active items instead of 1",
     "introduced_in": "Racing+",
     "graphics_id": "534",
     "comment": "Replacing 534"
@@ -60,7 +57,6 @@
   "Sol (Custom)": {
     "shown": true,
     "space": false,
-    "text": "Reveals location of the boss, Sun card effect + active item recharge + 2x dmg + +1 luck + removes curses upon killing the boss",
     "introduced_in": "Racing+",
     "graphics_id": "588",
     "comment": "Replacing 588"
@@ -68,7 +64,6 @@
   "Flip (Custom)": {
     "shown": false,
     "space": true,
-    "text": "Each pedestal that is part of the room layout will have 2 items. Use Flip to have the second item",
     "introduced_in": "Racing+",
     "graphics_id": "711",
     "comment": "Replacing 711"
@@ -202,28 +197,24 @@
 
   "Samael Dr. Fetus": {
     "shown": true,
-    "text": "Bomb tears",
     "introduced_in": "Samael",
     "graphics_id": "52",
     "comment": "Replacing 52"
   },
   "Samael Chocolate Milk": {
     "shown": true,
-    "text": "Charge tears (max is 4x dmg and 2.5x delay)",
     "introduced_in": "Samael",
     "graphics_id": "69",
     "comment": "Replacing 69"
   },
   "Samael Dead Eye": {
     "shown": true,
-    "text": "Dmg increases when you hit enemies (up to 2x), every miss has a chance to reset",
     "introduced_in": "Samael",
     "graphics_id": "373",
     "comment": "Replacing 373"
   },
   "Samael Marked": {
     "shown": true,
-    "text": "Directed tears",
     "introduced_in": "Samael",
     "graphics_id": "394",
     "comment": "Replacing 394"
