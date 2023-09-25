@@ -345,7 +345,7 @@ class OptionsMenu(object):
         # Generate checkboxes, with special exception for show_description for message duration
         for index, opt in enumerate(
                 ["show_jacob_esau_items", "show_item_ids", "enable_mouseover", "show_floors", "show_rerolled_items",
-                 "show_space_items", "show_blind_icon", "make_items_glow", "blck_cndl_mode",
+                 "show_active_items", "show_blind_icon", "make_items_glow", "blck_cndl_mode",
                  "check_for_updates"]):
             self.checks[opt] = IntVar()
             c = Checkbutton(display_options_frame, text=self.pretty_name(opt), variable=self.checks[opt])

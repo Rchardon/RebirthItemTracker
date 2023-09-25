@@ -684,16 +684,16 @@ class DrawingTool(object):
             showing it if none of those are met.
         """
         opt = Options()
-        if item.item_id == "656" and not opt.show_space_items: # Show the passive version of Damocles only
+        if item.item_id == "656" and not opt.show_active_items: # Show the passive version of Damocles only
             return True
-        elif item.item_id == "656" and opt.show_space_items: # Show the active version of Damocles only
+        elif item.item_id == "656" and opt.show_active_items: # Show the active version of Damocles only
             return False
         elif not item.info.shown:
             return False
         elif item.info.guppy:
             return True
         elif item.info.space and \
-                not opt.show_space_items:
+                not opt.show_active_items:
             return False
         elif item.was_rerolled and \
                 not opt.show_rerolled_items:
