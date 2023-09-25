@@ -677,9 +677,6 @@ class DrawingTool(object):
             The highest priority is item.shown, because that way a user can override our logic and stop from seeing an
             item they don't want to see.
 
-            Next is: we always show guppy items. Even if it's a space guppy item and space items are turned off. Because
-            guppy is that important. TODO: look into applying this treatment to a few other space items? like nail?
-
             Finally, check any configurable conditions that might make us not want to show the item, and default to
             showing it if none of those are met.
         """
@@ -690,8 +687,6 @@ class DrawingTool(object):
             return False
         elif not item.info.shown:
             return False
-        elif item.info.guppy:
-            return True
         elif item.info.space and \
                 not opt.show_active_items:
             return False
