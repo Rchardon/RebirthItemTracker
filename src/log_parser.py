@@ -88,12 +88,19 @@ class LogParser(object):
         luadebug_prefix ='Lua Debug: '
         if line.startswith(luadebug_prefix):
             line = line[len(luadebug_prefix):]
+        
+        regexp_str_r = r"[|] Racing[+] (\d+).(\d+).(\d+) initialized."
+        regexp_str_b = r"[|] The Babies Mod (\d+).(\d+).(\d+) initialized."
+        search_result_r = re.search(regexp_str_r, line)
+        search_result_b = re.search(regexp_str_b, line)
 
         # AB and AB+ version messages both start with this text (AB+ has a + at the end)
         if line.startswith('Binding of Isaac: Repentance') or line.startswith('Binding of Isaac: Afterbirth') or line.startswith('Binding of Isaac: Rebirth'):
             self.__parse_version_number(line)
-        if line.startswith('welcomeBanner:'):
-            self.__parse_version_number(line, True)
+        if search_result_r is not None:
+            self.state.racing_plus_version = "/ R+: "+ str(int(search_result_r.group(1))) + "." + str(int(search_result_r.group(2))) + "." + str(int(search_result_r.group(3)))
+        if search_result_b is not None:
+            self.state.babies_mod_version = "/ Babies mod: "+ str(int(search_result_b.group(1))) + "." + str(int(search_result_b.group(2))) + "." + str(int(search_result_b.group(3)))
         if line.startswith('Loading PersistentData'):
             self.__parse_save(line)
         if line.startswith('RNG Start Seed:'):
@@ -140,24 +147,9 @@ class LogParser(object):
         self.run_start_line = line_number + self.seek
         self.state.reset(self.current_seed, Options().game_version, self.state.racing_plus_version, self.state.babies_mod_version)
 
-    def __parse_version_number(self, line, welcomeBanner=False):
+    def __parse_version_number(self, line):
         words = line.split()
-        if welcomeBanner:
-            print("bite")
-            regexp_str_r = r"welcomeBanner:(\d+) - [|] Racing[+] (\d+).(\d+).(\d+) initialized."
-            regexp_str_b = r"welcomeBanner:(\d+) - [|] The Babies Mod (\d+).(\d+).(\d+) initialized."
-            search_result_r = re.search(regexp_str_r, line)
-            search_result_b = re.search(regexp_str_b, line)
-            if search_result_r is None and search_result_b is None:
-                return False
-            if search_result_r is not None:
-                print("r bite")
-                self.state.racing_plus_version = "/ R+: "+ str(int(search_result_r.group(2))) + "." + str(int(search_result_r.group(3))) + "." + str(int(search_result_r.group(4)))
-            if search_result_b is not None:
-                print("b bite")
-                self.state.babies_mod_version = "/ Babies mod: "+ str(int(search_result_b.group(2))) + "." + str(int(search_result_b.group(3))) + "." + str(int(search_result_b.group(4)))
-        else:
-            self.state.version_number = words[-1]
+        self.state.version_number = words[-1]
 
     def __parse_save(self,line):
         regexp_str = r"Loading PersistentData (\d+)"
