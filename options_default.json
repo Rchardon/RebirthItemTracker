@@ -29,7 +29,7 @@
   "show_active_items": true,
   "show_status_message": true,
   "size_multiplier": 1.0,
-  "status_message": "Seed: {seed} / Guppy: {guppy} / Leviathan: {leviathan} / Spun: {spun} / Bookworm: {bookworm} / {version_number} / Room: {room_id} {racing_plus_version}",
+  "status_message": "Seed: {seed} / Guppy: {guppy} / Leviathan: {leviathan} / Spun: {spun} / Bookworm: {bookworm} / {version_number} / Room: {room_id} {racing_plus_version} {babies_mod_version}",
   "text_color": "#FFFFFF",
   "transparent_mode": false,
   "trackerserver_authkey": "",
