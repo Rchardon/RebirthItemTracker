@@ -140,6 +140,8 @@ class LogParser(object):
             self.__backup_log()
         if line.startswith('REBIRTH_ITEM_TRACKER_WRITE_TO_FILE'):
             self.__parse_mod_text(line)
+        if line.startswith('REBIRTH_ITEM_TRACKER_REMOVE_COLLECTIBLE'):
+            self.__parse_item_remove(line, forceRemoveActive=True)
 
 
     def __trigger_new_run(self, line_number):
@@ -399,9 +401,11 @@ class LogParser(object):
         self.state.export_state()
         return True
 
-    def __parse_item_remove(self, line):
+    def __parse_item_remove(self, line, forceRemoveActive=False):
         """ Parse an item and remove it from the state """
         space_split = line.split(" ") # Hacky string manipulation
+        if forceRemoveActive:
+            line = line.replace("REBIRTH_ITEM_TRACKER_REMOVE_COLLECTIBLE ","")
         double_word_char = line.endswith("(The Lost)") or line.endswith("(The Forgotten)") or line.endswith("(The Soul)") or line.endswith("(Black Judas)") or line.endswith("(Random Baby)")
         # When you lose an item, this has the form: "Removing collectible 105 (The D6)"
         if self.opt.game_version == "Repentance" and space_split[2] == "trinket" and int(space_split[3]) < 30000:
@@ -428,7 +432,7 @@ class LogParser(object):
 
         # A check will be made inside the remove_item function
         # to see if this item is actually in our inventory or not.
-        return self.state.remove_item(removal_id)
+        return self.state.remove_item(removal_id, forceRemoveActive)
 
     def __parse_remove_multi_items(self, item_id):
         """Remove custom sprites for multi-segmented items like Super Bum, key pieces or knife pieces"""
