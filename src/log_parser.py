@@ -14,7 +14,7 @@ class LogParser(object):
     This class loads Isaac's log file, and incrementally modify a state representing this log
     """
     def __init__(self, prefix, tracker_version, log_finder):
-        self.state = TrackerState("", tracker_version, Options().game_version, "", "", "", -1)
+        self.state = TrackerState("", tracker_version, Options().game_version, "", "", "", "", -1)
         self.log = logging.getLogger("tracker")
         self.wdir_prefix = prefix
         self.log_finder = log_finder
@@ -91,8 +91,10 @@ class LogParser(object):
         
         regexp_str_r = r"[|] Racing[+] (\d+).(\d+).(\d+) initialized."
         regexp_str_b = r"[|] The Babies Mod (\d+).(\d+).(\d+) initialized."
+        regexp_str_i = r"[|] Isaac Achievement Randomizer (\d+).(\d+).(\d+) initialized."
         search_result_r = re.search(regexp_str_r, line)
         search_result_b = re.search(regexp_str_b, line)
+        search_result_i = re.search(regexp_str_i, line)
 
         # AB and AB+ version messages both start with this text (AB+ has a + at the end)
         if line.startswith('Binding of Isaac: Repentance') or line.startswith('Binding of Isaac: Afterbirth') or line.startswith('Binding of Isaac: Rebirth'):
@@ -101,6 +103,8 @@ class LogParser(object):
             self.state.racing_plus_version = "/ R+: "+ str(int(search_result_r.group(1))) + "." + str(int(search_result_r.group(2))) + "." + str(int(search_result_r.group(3)))
         if search_result_b is not None:
             self.state.babies_mod_version = "/ Babies Mod: "+ str(int(search_result_b.group(1))) + "." + str(int(search_result_b.group(2))) + "." + str(int(search_result_b.group(3)))
+        if search_result_i is not None:
+            self.state.IAR_version = "/ Isaac Achievement Randomizer: "+ str(int(search_result_b.group(1))) + "." + str(int(search_result_b.group(2))) + "." + str(int(search_result_b.group(3)))
         if line.startswith('Loading PersistentData'):
             self.__parse_save(line)
         if line.startswith('RNG Start Seed:'):
@@ -147,7 +151,7 @@ class LogParser(object):
     def __trigger_new_run(self, line_number):
         self.log.debug("Starting new run, seed: %s", self.current_seed)
         self.run_start_line = line_number + self.seek
-        self.state.reset(self.current_seed, Options().game_version, self.state.racing_plus_version, self.state.babies_mod_version)
+        self.state.reset(self.current_seed, Options().game_version, self.state.racing_plus_version, self.state.babies_mod_version, self.state.IAR_version)
 
     def __parse_version_number(self, line):
         words = line.split()
@@ -403,9 +407,9 @@ class LogParser(object):
 
     def __parse_item_remove(self, line, forceRemoveActive=False):
         """ Parse an item and remove it from the state """
-        space_split = line.split(" ") # Hacky string manipulation
         if forceRemoveActive:
             line = line.replace("REBIRTH_ITEM_TRACKER_REMOVE_COLLECTIBLE ","")
+        space_split = line.split(" ") # Hacky string manipulation
         double_word_char = line.endswith("(The Lost)") or line.endswith("(The Forgotten)") or line.endswith("(The Soul)") or line.endswith("(Black Judas)") or line.endswith("(Random Baby)")
         # When you lose an item, this has the form: "Removing collectible 105 (The D6)"
         if self.opt.game_version == "Repentance" and space_split[2] == "trinket" and int(space_split[3]) < 30000:
@@ -414,7 +418,6 @@ class LogParser(object):
         else:
             item_id = space_split[2]
             item_name = " ".join(space_split[3:-5])[1:-1] if double_word_char else " ".join(space_split[3:-4])[1:-1]
-
         # Check if the item ID exists
         if Item.contains_info(item_id):
             removal_id = item_id
