@@ -91,7 +91,7 @@ class LogParser(object):
         
         regexp_str_r = r"[|] Racing[+] (\d+).(\d+).(\d+) initialized."
         regexp_str_b = r"[|] The Babies Mod (\d+).(\d+).(\d+) initialized."
-        regexp_str_i = r"[|] Isaac Achievement Randomizer (\d+).(\d+).(\d+) initialized."
+        regexp_str_i = r"[|] Achievement Randomizer (\d+).(\d+).(\d+) initialized."
         search_result_r = re.search(regexp_str_r, line)
         search_result_b = re.search(regexp_str_b, line)
         search_result_i = re.search(regexp_str_i, line)
@@ -104,7 +104,7 @@ class LogParser(object):
         if search_result_b is not None:
             self.state.babies_mod_version = "/ Babies Mod: "+ str(int(search_result_b.group(1))) + "." + str(int(search_result_b.group(2))) + "." + str(int(search_result_b.group(3)))
         if search_result_i is not None:
-            self.state.IAR_version = "/ Isaac Achievement Randomizer: "+ str(int(search_result_b.group(1))) + "." + str(int(search_result_b.group(2))) + "." + str(int(search_result_b.group(3)))
+            self.state.IAR_version = "/ Achievement Randomizer: "+ str(int(search_result_i.group(1))) + "." + str(int(search_result_i.group(2))) + "." + str(int(search_result_i.group(3)))
         if line.startswith('Loading PersistentData'):
             self.__parse_save(line)
         if line.startswith('RNG Start Seed:'):
