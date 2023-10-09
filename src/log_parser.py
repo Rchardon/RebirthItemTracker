@@ -100,11 +100,11 @@ class LogParser(object):
         if line.startswith('Binding of Isaac: Repentance') or line.startswith('Binding of Isaac: Afterbirth') or line.startswith('Binding of Isaac: Rebirth'):
             self.__parse_version_number(line)
         if search_result_r is not None:
-            self.state.racing_plus_version = "/ R+: "+ str(int(search_result_r.group(1))) + "." + str(int(search_result_r.group(2))) + "." + str(int(search_result_r.group(3)))
+            self.state.racing_plus_version = "/ R+: "+ str(int(search_result_r.group(1))) + "." + str(int(search_result_r.group(2))) + "." + str(int(search_result_r.group(3))) + " "
         if search_result_b is not None:
-            self.state.babies_mod_version = "/ Babies Mod: "+ str(int(search_result_b.group(1))) + "." + str(int(search_result_b.group(2))) + "." + str(int(search_result_b.group(3)))
+            self.state.babies_mod_version = "/ Babies Mod: "+ str(int(search_result_b.group(1))) + "." + str(int(search_result_b.group(2))) + "." + str(int(search_result_b.group(3))) + " "
         if search_result_i is not None:
-            self.state.IAR_version = "/ Achievement Randomizer: "+ str(int(search_result_i.group(1))) + "." + str(int(search_result_i.group(2))) + "." + str(int(search_result_i.group(3)))
+            self.state.IAR_version = "/ Achievement Randomizer: "+ str(int(search_result_i.group(1))) + "." + str(int(search_result_i.group(2))) + "." + str(int(search_result_i.group(3))) + " "
         if line.startswith('Loading PersistentData'):
             self.__parse_save(line)
         if line.startswith('RNG Start Seed:'):
