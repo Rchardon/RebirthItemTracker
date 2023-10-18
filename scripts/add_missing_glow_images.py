@@ -1,9 +1,8 @@
 # This script add glow versions of any item images that don't currently have glow versions.
 
-# This script uses the "convert" command, which is part of ImageMagick:
+# This script uses the "magick" command, which is part of ImageMagick:
 # https://www.imagemagick.org/script/download.php
-# You must use an old version of ImageMagick for the convert command to work properly.
-# Version 6.9.3-7 Q16 x64 is confirmed to work
+# You must use the version 7 or above of ImageMagick for the magick command to work properly.
 
 import os
 
@@ -20,11 +19,9 @@ def add_glow_to_dir(dirname):
             if file.endswith('.png'):
                 file_path = os.path.join(dirname, file)
                 file_glow_path = os.path.join(dirname, 'glow', file)
-                # 'convert' is also a windows command so indicate the full path to convert.exe
-                cmd = 'C:\\ImageMagick\\bin\\convert.exe "' + file_path + '" ' +\
-                      '( +clone -channel A -blur 0x2.5 -level 0,80% +channel +level-colors white ) ' +\
-                      '-compose DstOver ' +\
-                      '-composite png32:"' + file_glow_path + '"' # png32 is to set the sprite to 32-bit depth
+                cmd = 'magick "' + file_path + '" ' +\
+                      '( +clone -channel A -blur 0x2.5 -level "0,80%" +channel -fill White -colorize 100 ) -compose DstOver -composite ' +\
+                      'png32:"' + file_glow_path + '"' # png32 is to set the sprite to 32-bit depth
                 print(cmd)
                 os.system(cmd)
 
