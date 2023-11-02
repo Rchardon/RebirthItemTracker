@@ -244,6 +244,12 @@
     "space": true,
     "introduced_in": "Babies Mod"
   },
+  "The Holy Poop": {
+    "shown": true,
+    "text": "Makes a holy poop",
+    "space": true,
+    "introduced_in": "Babies Mod"
+  },
   "Shop Teleport": {
     "shown": false,
     "text": "Special room teleport item",
