@@ -170,7 +170,7 @@ class LogParser(object):
 
         # Antibirth doesn't have a proper way to detect run resets
         # it will wipe the tracker when doing a "continue"
-        if (self.opt.game_version == "Repentance" and space_split[6] in ('[New,', '[Daily,')) or self.opt.game_version == "Antibirth":
+        if (self.opt.game_version == "Repentance" and space_split[6] in ('[New,', '[Daily,', '[Net,')) or self.opt.game_version == "Antibirth":
             self.__trigger_new_run(line_number)
         elif (self.opt.game_version == "Repentance" and space_split[6] == '[Continue,'):
             self.state.load_from_export_state()
