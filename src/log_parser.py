@@ -42,6 +42,7 @@ class LogParser(object):
         self.first_floor = None
         self.first_line = ""
         self.curse_first_floor = ""
+        self.is_online_run = False
         
         self.jacob_names = ("(Jacob)", "(Иаков)", "(雅各)", "(ヤコブ)", "(Jakob)", "(야곱)")
         self.esau_names = ("(Esau)", "(Ésaü)", "(Исав)", "(以扫)", "(エサウ)", "(Esaú)", "(에사우)")
@@ -107,6 +108,8 @@ class LogParser(object):
             self.state.IAR_version = "/ Achievement Randomizer: "+ str(int(search_result_i.group(1))) + "." + str(int(search_result_i.group(2))) + "." + str(int(search_result_i.group(3))) + " "
         if line.startswith('Loading PersistentData'):
             self.__parse_save(line)
+        if line.startswith('Menu_OnlineLobby::notify_game_start()'):
+            self.is_online_run = True
         if line.startswith('RNG Start Seed:'):
             self.__parse_seed(line, line_number)
         if line.startswith('Initialized player with Variant') and self.state.player == -1:
@@ -170,8 +173,9 @@ class LogParser(object):
 
         # Antibirth doesn't have a proper way to detect run resets
         # it will wipe the tracker when doing a "continue"
-        if (self.opt.game_version == "Repentance" and space_split[6] in ('[New,', '[Daily,', '[Net,')) or self.opt.game_version == "Antibirth":
+        if (self.opt.game_version == "Repentance" and (space_split[6] in ('[New,', '[Daily,', '[Net,') or (space_split[6] == '[Continue,' and self.is_online_run == True))) or self.opt.game_version == "Antibirth":
             self.__trigger_new_run(line_number)
+            self.is_online_run = False
         elif (self.opt.game_version == "Repentance" and space_split[6] == '[Continue,'):
             self.state.load_from_export_state()
 
