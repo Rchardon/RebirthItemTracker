@@ -3,9 +3,9 @@ import time
 
 
 # this logging stuff has to be outside of the IsaacTracker class so we can use it when it fails to instantiate
-log_dir = "../"
+log_dir = r"../tracker_log.txt"
 error_log = logging.getLogger("tracker")
-error_log.addHandler(logging.FileHandler(log_dir + "tracker_log.txt", mode='a'))
+error_log.addHandler(logging.FileHandler(log_dir, mode='a'))
 error_log.setLevel(logging.INFO)
 
 def log_error(msg):

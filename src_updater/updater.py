@@ -35,7 +35,7 @@ wdir_prefix = "../"
 update_option_name = "check_for_updates"
 
 error_log = logging.getLogger("tracker")
-error_log.addHandler(logging.FileHandler(wdir_prefix + "tracker_log.txt", mode='a'))
+error_log.addHandler(logging.FileHandler(r"../tracker_log.txt", mode='a'))
 error_log.setLevel(logging.INFO)
 
 def log_error(msg):

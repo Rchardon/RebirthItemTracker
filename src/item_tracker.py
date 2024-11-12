@@ -13,9 +13,9 @@ from game_objects.state  import TrackerState, TrackerStateEncoder
 from log_parser import LogParser
 from log_finder import LogFinder
 from options import Options
-from error_stuff import log_error, log_dir
+from error_stuff import log_error
 
-wdir_prefix = log_dir # this is "../". doing it this way to avoid import cycle
+wdir_prefix = "../"
 
 class IsaacTracker(object):
     """ The main class of the program """
