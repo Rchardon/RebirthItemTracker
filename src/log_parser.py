@@ -89,7 +89,7 @@ class LogParser(object):
         luadebug_prefix ='Lua Debug: '
         if line.startswith(luadebug_prefix):
             line = line[len(luadebug_prefix):]
-        
+
         regexp_str_r = r"[|] Racing[+] (\d+).(\d+).(\d+) initialized."
         regexp_str_b = r"[|] The Babies Mod (\d+).(\d+).(\d+) initialized."
         regexp_str_i = r"[|] Achievement Randomizer (\d+).(\d+).(\d+) initialized."
@@ -169,7 +169,6 @@ class LogParser(object):
         """ Parse a seed line """
         # This assumes a fixed width, but from what I see it seems safe
         self.current_seed = line[16:25]
-        print(self.current_seed)
         space_split = line.split(" ")
 
         # Antibirth doesn't have a proper way to detect run resets
@@ -200,13 +199,10 @@ class LogParser(object):
         match = re.search(r"Room (.+?)\(", line)
         if match:
             room_id = match.group(1)
-            print(room_id)
-            print(self.state.greedmode)
             if room_id == '18.1000': # Genesis room
                 self.state.item_list = []
                 self.state.set_transformations()
             elif self.state.greedmode is None:
-                print(room_id in self.greed_mode_starting_rooms)
                 self.state.greedmode = room_id in self.greed_mode_starting_rooms
                 self.__parse_floor(self.first_line, line_number)
                 self.__parse_curse(self.curse_first_floor)
@@ -287,6 +283,11 @@ class LogParser(object):
             self.state.add_curse(Curse.Blind)
 
     def __parse_item_add(self, line_number, line):
+        # In Repentance+ they added 'from pool x' at the end of an item taken so we remove it to be able to show the multi char icons
+        regexp_str = r" from pool .*"
+        search_result = re.search(regexp_str, line)
+        line = line.replace(search_result.group(), "")
+
         """ Parse an item and push it to the state """
         if len(self.splitfile) > 1 and self.splitfile[line_number + self.seek - 1] == line:
             self.log.debug("Skipped duplicate item line from baby presence")
