@@ -238,6 +238,10 @@ class IsaacTracker(object):
                 else:
                     screen_error_message = "log.txt for " + opt.game_version + " not found. Make sure you have the right game selected in the options."
 
+            #Online runs in Repentance+ are a huge mess in the log, don't want to deal with that
+            if parser.is_online_run:
+                screen_error_message = "The tracker doesn't support online runs, please use the tracker in-game."
+
             if screen_error_message is not None:
                 drawing_tool.write_error_message(screen_error_message)
             else:

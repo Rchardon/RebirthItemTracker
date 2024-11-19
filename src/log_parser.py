@@ -8,6 +8,8 @@ from game_objects.item import Item
 from game_objects.floor import Floor, Curse
 from game_objects.state import TrackerState
 from options import Options
+from view_controls.view import DrawingTool
+from error_stuff import log_error
 
 class LogParser(object):
     """
@@ -108,7 +110,7 @@ class LogParser(object):
             self.state.IAR_version = "/ Achievement Randomizer: "+ str(int(search_result_i.group(1))) + "." + str(int(search_result_i.group(2))) + "." + str(int(search_result_i.group(3))) + " "
         if line.startswith('Loading PersistentData'):
             self.__parse_save(line)
-        if line.startswith('Menu_OnlineLobby::notify_game_start()'):
+        if line.startswith('Menu_OnlineLobby::notify_game_start()') or line.startswith('Saving screenshot...'):
             self.is_online_run = True
         if line.startswith('RNG Start Seed:'):
             self.__parse_seed(line, line_number)
@@ -170,12 +172,14 @@ class LogParser(object):
         # This assumes a fixed width, but from what I see it seems safe
         self.current_seed = line[16:25]
         space_split = line.split(" ")
-
         # Antibirth doesn't have a proper way to detect run resets
         # it will wipe the tracker when doing a "continue"
-        if (self.opt.game_version in ["Repentance", "Repentance+"] and (space_split[6] in ('[New,', '[Daily,', '[Net,') or (space_split[6] == '[Continue,' and self.is_online_run == True))) or self.opt.game_version == "Antibirth":
+        if (self.opt.game_version in ["Repentance", "Repentance+"] and (space_split[6] in ('[New,', '[Daily,') or (space_split[6] == '[Continue,' and self.is_online_run == True))) or self.opt.game_version == "Antibirth":
             self.__trigger_new_run(line_number)
             self.is_online_run = False
+        #Online runs in Repentance+ are a huge mess in the log, don't want to deal with that
+        elif self.opt.game_version == "Repentance+" and space_split[6] == '[Net,':
+            self.is_online_run = True
         elif (self.opt.game_version in ["Repentance", "Repentance+"] and space_split[6] == '[Continue,'):
             self.state.load_from_export_state()
 
