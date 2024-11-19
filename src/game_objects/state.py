@@ -56,7 +56,7 @@ class TrackerState(Serializable):
         for stat in ItemInfo.stat_list:
             self.player_stats[stat] = 0.0
 
-        if Options().game_version == "Repentance":  # Repentance allows multiple occurrence of the same item to count in transformations so transformation counts must be arrays instead of objects
+        if Options().game_version in ["Repentance", "Repentance+"]:  # Repentance allows multiple occurrence of the same item to count in transformations so transformation counts must be arrays instead of objects
             self.set_transformations()
         else:
             for transform in ItemInfo.transform_list:
@@ -240,7 +240,7 @@ class TrackerState(Serializable):
         for transform in ItemInfo.transform_list:
             if not item_info[transform]:
                 continue
-            if Options().game_version == "Repentance": # Repentance allows multiple occurrence of the same item to count in transformations
+            if Options().game_version in ["Repentance", "Repentance+"]: # Repentance allows multiple occurrence of the same item to count in transformations
                 if item.is_Esau_item:
                     self.player2_transforms[transform].append(item)
                     if item.item_id == "32937": # Golden Kid's Drawing
@@ -266,9 +266,9 @@ class TrackerState(Serializable):
         for transform in ItemInfo.transform_list:
             if not item_info[transform]:
                 continue
-            if not item.info.space and Options().game_version == "Repentance" and item.is_Esau_item and item in self.player2_transforms[transform]:
+            if not item.info.space and Options().game_version in ["Repentance", "Repentance+"] and item.is_Esau_item and item in self.player2_transforms[transform]:
                 self.player2_transforms[transform].remove(item)
-            elif not item.info.space and Options().game_version == "Repentance" and self.player != 21 and item in self.player_transforms[transform] and not item.is_Esau_item:
+            elif not item.info.space and Options().game_version in ["Repentance", "Repentance+"] and self.player != 21 and item in self.player_transforms[transform] and not item.is_Esau_item:
                 self.player_transforms[transform].remove(item)
 
     def export_state(self):
@@ -276,12 +276,12 @@ class TrackerState(Serializable):
         data = self.get_export_state()
         if data == {}:
             with open("../export_state.json", "w") as state_file:
-                if self.game_version == "Repentance" or self.game_version == "Afterbirth+":
+                if self.game_version in ["Repentance", "Repentance+"] or self.game_version == "Afterbirth+":
                     state_file.write(json.dumps({self.game_version:{self.save : self}}, cls=TrackerStateEncoder, sort_keys=True))
                 else:
                     state_file.write(json.dumps({self.game_version:self}, cls=TrackerStateEncoder, sort_keys=True))
         else:
-            if self.game_version == "Repentance" or self.game_version == "Afterbirth+":
+            if self.game_version in ["Repentance", "Repentance+"] or self.game_version == "Afterbirth+":
                 if self.game_version in data:
                     data[self.game_version][str(self.save)] = self
                 else:
@@ -296,7 +296,7 @@ class TrackerState(Serializable):
             new_item_list = []
             data = self.get_export_state()
             try:
-                if self.game_version == "Repentance" or self.game_version == "Afterbirth+":
+                if self.game_version in ["Repentance", "Repentance+"] or self.game_version == "Afterbirth+":
                     data = data[self.game_version][str(self.save)]
                 else:
                     data = data[self.game_version]

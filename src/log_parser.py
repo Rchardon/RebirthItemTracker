@@ -97,7 +97,7 @@ class LogParser(object):
         search_result_b = re.search(regexp_str_b, line)
         search_result_i = re.search(regexp_str_i, line)
 
-        # AB and AB+ version messages both start with this text (AB+ has a + at the end)
+        # Repentance and Repentance+ as well as AB and AB+ version messages both start with this text (Rep+ and AB+ have a + at the end)
         if line.startswith('Binding of Isaac: Repentance') or line.startswith('Binding of Isaac: Afterbirth') or line.startswith('Binding of Isaac: Rebirth'):
             self.__parse_version_number(line)
         if search_result_r is not None:
@@ -114,14 +114,14 @@ class LogParser(object):
             self.__parse_seed(line, line_number)
         if line.startswith('Initialized player with Variant') and self.state.player == -1:
             self.__parse_player(line)
-        if self.opt.game_version == "Repentance" and line.startswith('Level::Init') and self.state.greedmode is None: # Store the line of the first floor in Repentance because we can detect if we are in greed mode only after this line in the log
+        if self.opt.game_version in ["Repentance", "Repentance+"] and line.startswith('Level::Init') and self.state.greedmode is None: # Store the line of the first floor in Repentance because we can detect if we are in greed mode only after this line in the log
             self.first_line = line
             self.curse_first_floor = ""
         elif line.startswith('Level::Init'):
             self.__parse_floor(line, line_number)   
         if line.startswith('Room'):
             self.__parse_room(line)
-            if self.opt.game_version == "Repentance":
+            if self.opt.game_version in ["Repentance", "Repentance+"]:
                 self.detect_greed_mode(line, line_number)
                 self.state.remove_additional_char_items()
         if line.startswith("Curse"):
@@ -169,14 +169,15 @@ class LogParser(object):
         """ Parse a seed line """
         # This assumes a fixed width, but from what I see it seems safe
         self.current_seed = line[16:25]
+        print(self.current_seed)
         space_split = line.split(" ")
 
         # Antibirth doesn't have a proper way to detect run resets
         # it will wipe the tracker when doing a "continue"
-        if (self.opt.game_version == "Repentance" and (space_split[6] in ('[New,', '[Daily,', '[Net,') or (space_split[6] == '[Continue,' and self.is_online_run == True))) or self.opt.game_version == "Antibirth":
+        if (self.opt.game_version in ["Repentance", "Repentance+"] and (space_split[6] in ('[New,', '[Daily,', '[Net,') or (space_split[6] == '[Continue,' and self.is_online_run == True))) or self.opt.game_version == "Antibirth":
             self.__trigger_new_run(line_number)
             self.is_online_run = False
-        elif (self.opt.game_version == "Repentance" and space_split[6] == '[Continue,'):
+        elif (self.opt.game_version in ["Repentance", "Repentance+"] and space_split[6] == '[Continue,'):
             self.state.load_from_export_state()
 
     def __parse_player(self, line):
@@ -199,10 +200,13 @@ class LogParser(object):
         match = re.search(r"Room (.+?)\(", line)
         if match:
             room_id = match.group(1)
+            print(room_id)
+            print(self.state.greedmode)
             if room_id == '18.1000': # Genesis room
                 self.state.item_list = []
                 self.state.set_transformations()
             elif self.state.greedmode is None:
+                print(room_id in self.greed_mode_starting_rooms)
                 self.state.greedmode = room_id in self.greed_mode_starting_rooms
                 self.__parse_floor(self.first_line, line_number)
                 self.__parse_curse(self.curse_first_floor)
@@ -210,7 +214,7 @@ class LogParser(object):
     def __parse_floor(self, line, line_number):
         """ Parse the floor in line and push it to the state """
         # Create a floor tuple with the floor id and the alternate id
-        if self.opt.game_version == "Afterbirth" or self.opt.game_version == "Afterbirth+" or self.opt.game_version == "Repentance":
+        if self.opt.game_version == "Afterbirth" or self.opt.game_version == "Afterbirth+" or self.opt.game_version in ["Repentance", "Repentance+"]:
             regexp_str = r"Level::Init m_Stage (\d+), m_StageType (\d+)"
         elif self.opt.game_version == "Rebirth" or self.opt.game_version == "Antibirth":
             regexp_str = r"Level::Init m_Stage (\d+), m_AltStage (\d+)"
@@ -234,11 +238,11 @@ class LogParser(object):
         # In Repentance, don't trigger a new run on floor 1 because of the R Key item
         if self.reseeding_floor:
             self.reseeding_floor = False
-        elif floor == 1 and self.opt.game_version != "Antibirth" and self.opt.game_version != "Repentance":
+        elif floor == 1 and self.opt.game_version != "Antibirth" and self.opt.game_version not in ["Repentance", "Repentance+"]:
             self.__trigger_new_run(line_number)
 
         # Special handling for the Cathedral and The Chest and Afterbirth
-        if self.opt.game_version == "Afterbirth" or self.opt.game_version == "Afterbirth+" or self.opt.game_version == "Repentance":
+        if self.opt.game_version == "Afterbirth" or self.opt.game_version == "Afterbirth+" or self.opt.game_version in ["Repentance", "Repentance+"]:
             self.log.debug("floor")
             # In Afterbirth, Cath is an alternate of Sheol (which is 10)
             # and Chest is an alternate of Dark Room (which is 11)
@@ -262,7 +266,7 @@ class LogParser(object):
         floor_id = 'f' + str(floor)
 
         # Greed mode
-        if (alt == '3' and self.opt.game_version != "Repentance") or (self.opt.game_version == "Repentance" and self.state.greedmode):
+        if (alt == '3' and self.opt.game_version not in ["Repentance", "Repentance+"]) or (self.opt.game_version in ["Repentance", "Repentance+"] and self.state.greedmode):
             floor_id += 'g'
 
         self.state.add_floor(Floor(floor_id))
@@ -277,9 +281,9 @@ class LogParser(object):
             self.curse_first_floor = line
         elif self.state.greedmode is not None:
             self.curse_first_floor = ""
-        if line.startswith("Curse of the Labyrinth!") or (self.curse_first_floor == "Curse of the Labyrinth!" and self.opt.game_version == "Repentance"):
+        if line.startswith("Curse of the Labyrinth!") or (self.curse_first_floor == "Curse of the Labyrinth!" and self.opt.game_version in ["Repentance", "Repentance+"]):
             self.state.add_curse(Curse.Labyrinth)
-        if line.startswith("Curse of Blind") or (self.curse_first_floor == "Curse of Blind" and self.opt.game_version == "Repentance"):
+        if line.startswith("Curse of Blind") or (self.curse_first_floor == "Curse of Blind" and self.opt.game_version in ["Repentance", "Repentance+"]):
             self.state.add_curse(Curse.Blind)
 
     def __parse_item_add(self, line_number, line):
@@ -287,8 +291,8 @@ class LogParser(object):
         if len(self.splitfile) > 1 and self.splitfile[line_number + self.seek - 1] == line:
             self.log.debug("Skipped duplicate item line from baby presence")
             return False
-        is_Jacob_item = line.endswith(self.jacob_names) and self.opt.game_version == "Repentance" and self.state.player == 19
-        is_Esau_item = line.endswith(self.esau1_names) and self.opt.game_version == "Repentance" and self.state.player == 19
+        is_Jacob_item = line.endswith(self.jacob_names) and self.opt.game_version in ["Repentance", "Repentance+"] and self.state.player == 19
+        is_Esau_item = line.endswith(self.esau1_names) and self.opt.game_version in ["Repentance", "Repentance+"] and self.state.player == 19
         if self.state.player in (14, 33): # Don't show keeper head on keeper and tainted keeper 
             is_Strawman_item = "player 0" not in line and line.endswith(self.keeper_names) and self.state.contains_item('667')
             is_EsauSoul_item = "player 0" not in line and line.endswith(self.esau_names)
@@ -308,11 +312,11 @@ class LogParser(object):
         numeric_id = space_split[2] # When you pick up an item, this has the form: "Adding collectible 105 (The D6)" or "Adding collectible 105 (The D6) to Player 0 (Isaac)" in Repentance
         double_word_char = line.endswith(self.double_words_chars)
         triple_word_char = line.endswith(self.triple_words_chars)
-        if self.opt.game_version == "Repentance" and triple_word_char:
+        if self.opt.game_version in ["Repentance", "Repentance+"] and triple_word_char:
             item_name = " ".join(space_split[3:-4])[1:-11]
-        elif self.opt.game_version == "Repentance" and double_word_char:
+        elif self.opt.game_version in ["Repentance", "Repentance+"] and double_word_char:
             item_name = " ".join(space_split[3:-4])[1:-4]
-        elif self.opt.game_version == "Repentance":
+        elif self.opt.game_version in ["Repentance", "Repentance+"]:
             item_name = " ".join(space_split[3:-4])[1:-1]
         else:
             item_name = " ".join(space_split[3:])[1:-1]
@@ -384,14 +388,14 @@ class LogParser(object):
         space_split = line.split(" ")
         # When using a mod like racing+ on AB+, a trinket gulp has the form: "Gulping trinket 10"
         # In Repentance, a gulped trinket has the form : "Adding smelted trinket 10"
-        if self.opt.game_version == "Repentance" and int(space_split[3]) > 30000:
+        if self.opt.game_version in ["Repentance", "Repentance+"] and int(space_split[3]) > 30000:
             numeric_id = str(int(space_split[3]))
-        elif self.opt.game_version == "Repentance":
+        elif self.opt.game_version in ["Repentance", "Repentance+"]:
             numeric_id = str(int(space_split[3]) + 2000) # the tracker hackily maps trinkets to items 2000 and up.
         else:
             numeric_id = str(int(space_split[2]) + 2000) # the tracker hackily maps trinkets to items 2000 and up.
-        is_Jacob_item = line.endswith(self.jacob_names) and self.opt.game_version == "Repentance" and self.state.player == 19
-        is_Esau_item = line.endswith(self.esau1_names) and self.opt.game_version == "Repentance" and self.state.player == 19
+        is_Jacob_item = line.endswith(self.jacob_names) and self.opt.game_version in ["Repentance", "Repentance+"] and self.state.player == 19
+        is_Esau_item = line.endswith(self.esau1_names) and self.opt.game_version in ["Repentance", "Repentance+"] and self.state.player == 19
 
         # Check if we recognize the numeric id
         if Item.contains_info(numeric_id):
@@ -416,7 +420,7 @@ class LogParser(object):
         space_split = line.split(" ") # Hacky string manipulation
         double_word_char = line.endswith("(The Lost)") or line.endswith("(The Forgotten)") or line.endswith("(The Soul)") or line.endswith("(Black Judas)") or line.endswith("(Random Baby)")
         # When you lose an item, this has the form: "Removing collectible 105 (The D6)"
-        if self.opt.game_version == "Repentance" and space_split[2] == "trinket" and int(space_split[3]) < 30000:
+        if self.opt.game_version in ["Repentance", "Repentance+"] and space_split[2] == "trinket" and int(space_split[3]) < 30000:
             item_id = str(int(space_split[3]) + 2000)
             item_name = " ".join(space_split[3:-5])[3:-1] if double_word_char else " ".join(space_split[3:-4])[3:-1]
         else:

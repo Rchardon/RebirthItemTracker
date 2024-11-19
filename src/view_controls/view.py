@@ -462,7 +462,7 @@ class DrawingTool(object):
                 path = self.make_path(imagename, True)
                 if os.path.isfile(path):
                     need_path = False
-            elif self.state and self.state.game_version != "Repentance":
+            elif self.state and self.state.game_version not in ["Repentance", "Repentance+"]:
                 path = self.make_path(imagename, False, True)
                 if os.path.isfile(path):
                     need_path = False

@@ -69,7 +69,7 @@ class Item(Serializable):
         """Mark the item as rerolled"""
 
         # Passive items that can't be rerolled such as Key pieces or Knife pieces
-        if Options().game_version != "Repentance":
+        if Options().game_version not in ["Repentance", "Repentance+"]:
             exceptions = ("10", "81", "238", "239", "258", "327", "328", "474", "3000")
         else:
             exceptions = ("238", "239", "258", "327", "328", "626", "627", "668", "3000", "3002")
@@ -170,7 +170,7 @@ class Item(Serializable):
         """look for its informations in the loaded dictionary"""
         if item_id[0] == Item.modded_item_id_prefix:
             return ItemInfo(Item.custom_items_info[item_id[1:]])
-        elif Options().game_version == "Repentance":
+        elif Options().game_version in ["Repentance", "Repentance+"]:
             return ItemInfo(Item.items_info[item_id])
         else:
             return ItemInfo(Item.abplus_items_info[item_id])
@@ -180,7 +180,7 @@ class Item(Serializable):
         """ Return true if we know an item with this id """
         if item_id[0] == Item.modded_item_id_prefix:
             return item_id[1:] in Item.custom_items_info
-        elif Options().game_version == "Repentance":
+        elif Options().game_version in ["Repentance", "Repentance+"]:
             return item_id in Item.items_info
         else:
             return item_id in Item.abplus_items_info
