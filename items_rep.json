@@ -422,7 +422,7 @@
    "56": {
       "name": "Lemon Mishap",
       "shown": true,
-      "text": "Makes a pool of pee that persists in the room",
+      "text": "Makes a pool of pee that disappear shortly after 3 seconds",
       "space": true,
       "introduced_in": "Rebirth"
    },
@@ -848,7 +848,7 @@
    "117": {
       "name": "Dead Bird",
       "shown": true,
-      "text": "Spawns a bird familiar when at half heart (1 for Eve) (2 dmg / tick)",
+      "text": "Spawns a bird familiar when hit (2 dmg / tick)",
       "introduced_in": "Rebirth"
    },
    "118": {
@@ -2496,7 +2496,7 @@
    },
    "351": {
       "name": "Mega Bean",
-      "text": "Big damaging fart that sweeps the entire room",
+      "text": "Big damaging fart with spike wave",
       "shown": true,
       "space": true,
       "introduced_in": "Afterbirth"
@@ -3061,7 +3061,7 @@
    },
    "436": {
       "name": "Milk!",
-      "text": "Familiar, +1 tear rate for the floor after blocking 10 shots",
+      "text": "Familiar, +1 tear rate when hit",
       "shown": true,
       "introduced_in": "Afterbirth"
    },
@@ -3138,7 +3138,7 @@
    },
    "447": {
       "name": "Linger Bean",
-      "text": "Spawns a poop cloud every 4 seconds (scales with dmg, 5 ticks / second and dmg decrease with time)",
+      "text": "Spawns a poop cloud every 7.5 seconds (scales with dmg, 5 ticks / second)",
       "shown": true,
       "introduced_in": "Afterbirth+"
    },
@@ -3284,7 +3284,7 @@
    },
    "470": {
       "name": "Hushy",
-      "text": "Familiar, moves when not shooting, deals contact dmg (2 dmg / tick) and shoot radial burst of tears when not moving",
+      "text": "Familiar, moves when not shooting, deals contact dmg (2 dmg / tick)",
       "shown": true,
       "introduced_in": "Afterbirth+"
    },
@@ -3551,7 +3551,7 @@
    },
    "510": {
       "name": "Delirious",
-      "text": "Spawns a random charmed boss, only one boss at a time can exist",
+      "text": "Spawns random charmed boss for current room",
       "space": true,
       "shown": true,
       "introduced_in": "Afterbirth+"
@@ -3885,7 +3885,7 @@
    },
    "560": {
       "name": "It Hurts",
-      "text": "Ring of bloody tears that leave small pool of blood + temporary tears up on hit",
+      "text": "Ring of bloody tears + temporary tears up on hit",
       "shown": true,
       "introduced_in": "Antibirth"
    },
@@ -4104,7 +4104,7 @@
    },
    "593": {
       "name": "Mars",
-      "text": "Double tap to dash, invincible when dashing on enemies + shield for 1 second after charging",
+      "text": "Double tap to dash, invincible when dashing on enemies",
       "shown": true,
       "introduced_in": "Antibirth"
    },
@@ -4338,7 +4338,7 @@
    },
    "632": {
       "name": "Evil Charm",
-      "text": "Fear, burn, confusion, toxic gas cloud, spider webs, poison mushroom, fireplaces and Dogma's Godhead tears immunity",
+      "text": "Fear, burn, confusion, toxic gas cloud and Dogma's Godhead tears immunity",
       "luck": "2",
       "shown": true,
       "introduced_in": "Antibirth"
@@ -4646,7 +4646,7 @@
    "681": {
       "name": "Lil Portal",
       "shown": true,
-      "text": "A familiar that spawns a portal to a purple room with pickups if it absorbed enough pickups",
+      "text": "A familiar that spawns a portal to an unexplored room if it absorbed enough pickups",
       "introduced_in": "Repentance"
    },
    "682": {

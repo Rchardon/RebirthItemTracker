@@ -36,6 +36,7 @@ shutil.copytree('overlay text reference/', installDir + 'overlay text/')
 # if options.json goes into a release, it will completely overwrite users' options when they autoupdate
 shutil.copy('options_default.json', installDir + "tracker-lib/")
 shutil.copy('items_abplus.json', installDir)
+shutil.copy('items_rep.json', installDir)
 shutil.copy('items.json', installDir)
 shutil.copy('items_custom.json', installDir)
 shutil.copy('LICENSE.txt', installDir)

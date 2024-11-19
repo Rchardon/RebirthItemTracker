@@ -9,6 +9,7 @@ class Item(Serializable):
     # These will be needed by both the log reader and the serializer. They're set in ItemTracker.__init__
     # they shouldn't change after that.
     items_info = {}
+    rep_items_info = {}
     abplus_items_info = {}
     custom_items_info = {}
 
@@ -170,8 +171,10 @@ class Item(Serializable):
         """look for its informations in the loaded dictionary"""
         if item_id[0] == Item.modded_item_id_prefix:
             return ItemInfo(Item.custom_items_info[item_id[1:]])
-        elif Options().game_version in ["Repentance", "Repentance+"]:
+        elif Options().game_version == "Repentance+":
             return ItemInfo(Item.items_info[item_id])
+        elif Options().game_version == "Repentance":
+            return ItemInfo(Item.rep_items_info[item_id])
         else:
             return ItemInfo(Item.abplus_items_info[item_id])
 
@@ -180,8 +183,10 @@ class Item(Serializable):
         """ Return true if we know an item with this id """
         if item_id[0] == Item.modded_item_id_prefix:
             return item_id[1:] in Item.custom_items_info
-        elif Options().game_version in ["Repentance", "Repentance+"]:
+        elif Options().game_version == "Repentance+":
             return item_id in Item.items_info
+        elif Options().game_version == "Repentance":
+            return item_id in Item.rep_items_info
         else:
             return item_id in Item.abplus_items_info
 
