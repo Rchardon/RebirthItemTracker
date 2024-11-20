@@ -290,7 +290,8 @@ class LogParser(object):
         # In Repentance+ they added 'from pool x' at the end of an item taken so we remove it to be able to show the multi char icons
         regexp_str = r" from pool .*"
         search_result = re.search(regexp_str, line)
-        line = line.replace(search_result.group(), "")
+        if search_result is not None:
+            line = line.replace(search_result.group(), "")
 
         """ Parse an item and push it to the state """
         if len(self.splitfile) > 1 and self.splitfile[line_number + self.seek - 1] == line:
