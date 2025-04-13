@@ -116,7 +116,7 @@ class LogParser(object):
             self.__parse_seed(line, line_number)
         if line.startswith('Initialized player with Variant') and self.state.player == -1:
             self.__parse_player(line)
-        if self.opt.game_version in ["Repentance", "Repentance+"] and line.startswith('Level::Init') and self.state.greedmode is None: # Store the line of the first floor in Repentance because we can detect if we are in greed mode only after this line in the log
+        if self.opt.game_version in ["Repentance", "Repentance+"] and line.startswith('Level::Init') and self.state.greedmode is False: # Store the line of the first floor in Repentance because we can detect if we are in greed mode only after this line in the log
             self.first_line = line
             self.curse_first_floor = ""
         elif line.startswith('Level::Init'):
@@ -206,7 +206,7 @@ class LogParser(object):
             if room_id == '18.1000': # Genesis room
                 self.state.item_list = []
                 self.state.set_transformations()
-            elif self.state.greedmode is None:
+            elif self.state.greedmode is False:
                 self.state.greedmode = room_id in self.greed_mode_starting_rooms
                 self.__parse_floor(self.first_line, line_number)
                 self.__parse_curse(self.curse_first_floor)
@@ -279,7 +279,7 @@ class LogParser(object):
             return
         if self.curse_first_floor == "":
             self.curse_first_floor = line
-        elif self.state.greedmode is not None:
+        elif self.state.greedmode:
             self.curse_first_floor = ""
         if line.startswith("Curse of the Labyrinth!") or (self.curse_first_floor == "Curse of the Labyrinth!" and self.opt.game_version in ["Repentance", "Repentance+"]):
             self.state.add_curse(Curse.Labyrinth)

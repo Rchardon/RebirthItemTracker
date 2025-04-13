@@ -170,7 +170,7 @@ class IsaacTracker(object):
                     retry_in -= 1
                 # Let the parser do his thing and give us a state
                 if opt.read_from_server:
-                    base_url = opt.trackerserver_url + "/tracker/api/user/" + opt.twitch_name
+                    base_url = opt.trackerserver_url + "/tracker/api/user/" + opt.twitch_name.partition(" (")[0]
                     json_dict = None
                     try:
                         json_version = urllib.request.urlopen(base_url + "/version").read()

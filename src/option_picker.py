@@ -222,10 +222,8 @@ class OptionsMenu(object):
         self.root.after(100, self.process_network_results)
 
 
-    def trim_name(self):
-        name = self.entries['twitch_name'].get()
-        name = name.partition(" (")[0]
-        self.entries['twitch_name'].set(name)
+    def trim_name(self, name):
+        return name.partition(" (")[0]
 
     # From: http://code.activestate.com/recipes/527747-invert-css-hex-colors/
     def opposite_color(self, color):
@@ -427,8 +425,7 @@ class OptionsMenu(object):
             self.labels[opt] = Label(tournament_settings_frame, text=self.pretty_name(opt))
             self.labels[opt].grid(row=next_row, pady=2)
             self.entries[opt] = tkinter.ttk.Combobox(tournament_settings_frame, width=40)
-            self.entries[opt].set(getattr(self.options, opt, ""))
-            self.entries[opt].bind("<<ComboboxSelected>>", self.trim_name)
+            self.entries[opt].set(self.trim_name(getattr(self.options, opt, "")))
             self.entries[opt].grid(row=next_row, column=1)
             next_row += 1
 

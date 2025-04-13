@@ -45,7 +45,7 @@ class TrackerState(Serializable):
         self.racing_plus_version = racing_plus_version
         self.babies_mod_version = babies_mod_version
         self.IAR_version = IAR_version
-        self.greedmode = None
+        self.greedmode = False
         self.floor_list = []
         self.room_id = "none"
         self.item_list = []
