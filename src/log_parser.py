@@ -92,6 +92,12 @@ class LogParser(object):
         if line.startswith(luadebug_prefix):
             line = line[len(luadebug_prefix):]
 
+        # In Repentance+, they add the frame number in the player initialization line.
+        regexp_str_f = r"\[Frame: (\d+)\] "
+        search_result_f = re.search(regexp_str_f, line)
+        if search_result_f is not None and line.startswith(search_result_f.group(0)):
+            line = line[len(search_result_f.group(0)):]
+
         regexp_str_r = r"[|] Racing[+] (\d+).(\d+).(\d+) initialized."
         regexp_str_b = r"[|] The Babies Mod (\d+).(\d+).(\d+) initialized."
         regexp_str_i = r"[|] Achievement Randomizer (\d+).(\d+).(\d+) initialized."
