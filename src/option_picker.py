@@ -237,7 +237,7 @@ class OptionsMenu(object):
     # From: http://stackoverflow.com/questions/4140437/interactively-validating-entry-widget-content-in-tkinter
     def ValidateNumeric(self, d, i, P, s, S, v, V, W):
         # This validation is a bit janky, just some crazy regex that checks P (value of entry after modification)
-        return P == "" or re.search("^\d+(\.\d*)?$", P) is not None
+        return P == "" or re.search(r"^\d+(\.\d*)?$", P) is not None
 
     def run(self):
         # Create root
