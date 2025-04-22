@@ -31,8 +31,7 @@ To use it, first extract that zip file and then run the exe inside. Don't put it
 
 You can right click anywhere in the window to get an options screen.
 
-You can mouse over items you've picked up to see their stats again, and click on them to open
-[platinumgod.co.uk](http://platinumgod.co.uk/) in your browser for more information about that item.
+You can mouse over items you've picked up to see their stats again.
 
 It tries to read `log.txt` from inside the appropriate game folder, based on which game you select in the tracker options.
 If something is unexpectedly weird about your game folder and it can't find it, you can put the tracker folder into the
@@ -45,7 +44,7 @@ The tracker can remember your runs if you save&quit but it works differently for
 - For Rebirth, Antibirth and Afterbirth : It remembers the last paused run you did and you have to reload run informations
   by pressing CTRL + N when you reload your run.
 - For Afterbirth+ : It remembers the paused runs on the 3 saves and you have to press CTRL + N to reload run informations.
-- For Repentance : It remembers the paused runs on the 3 saves and it reloads automatically run informations when you continue
+- For Repentance and Repentance+ : It remembers the paused runs on the 3 saves and it reloads automatically run informations when you continue
   your run.
 
 The tracker checks for updates each time you launch it, and will update itself if you allow it. This only works on Windows.
@@ -109,8 +108,8 @@ Ctrl-up and ctrl-down are shortcuts to change the delay, which is also shown in 
 
 - Transparent mode only works on Windows.
 
-- You can't see rerolled items with D4 in Repentance.
+- You can't see rerolled items with D4 in Repentance and Repentance+.
 
 - Tracker doesn't work with co-op mode.
 
-- Duplicated active items that should count in transformations will not be counted properly in Repentance.
+- Duplicated active items that should count in transformations will not be counted properly in Repentance and Repentance+.
