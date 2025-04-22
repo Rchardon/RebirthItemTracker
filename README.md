@@ -26,8 +26,7 @@ Additionally, the tracker...
 Download it [here](https://github.com/rchardon/RebirthItemTracker/releases) or [here](https://github.com/Hyphen-ated/RebirthItemTracker/releases) for version 2.1.0
 (get the latest file that doesn't have "source code" in the name).
 
-To use it, first extract that zip file and then run the exe inside. Don't put it inside the same folder as any file
-\named log.txt.
+To use it, first extract that zip file and then run the exe inside. Don't put it inside the same folder as any file named log.txt.
 
 You can right click anywhere in the window to get an options screen.
 
