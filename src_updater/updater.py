@@ -116,16 +116,16 @@ class Updater(object):
         self.root.resizable(False, False)
         self.root.minsize(500, 300)
         self.label = Label(self.root, text="Your current version is " + self.current_version + "\nThe latest version is " + self.latest_version)
-        self.label.grid()
+        self.label.pack()
 
         self.update = Button(self.root, text="Update Now", command=self.trigger_update_thread)
-        self.update.grid()
+        self.update.pack()
 
         self.justlaunchit = Button(self.root, text="Ignore Update This Time", command=self.just_launch_it)
-        self.justlaunchit.grid()
+        self.justlaunchit.pack()
 
         self.ignore = Button(self.root, text="Ignore Updates Forever", command=self.ignore_updates)
-        self.ignore.grid()
+        self.ignore.pack()
         mainloop()
 
     def trigger_update_thread(self):
@@ -158,17 +158,17 @@ class Updater(object):
         if self.update_error == UpdateError.TRACKER_RUNNING:
             self.label['text']="Another copy of the tracker seems to be running already, close it and retry.\n"+ \
                                "If that doesn't work, please report this bug and include your tracker_log.txt"
-            reportbtn.grid()
-            closebtn.grid()
+            reportbtn.pack()
+            closebtn.pack()
         else:
             # generic problem we don't have special handling for
             self.label['text'] = "Sorry, there was an error during the update.\n"+ \
                                  "You might need to just manually download the new version\n"+ \
                                  "and copy in your old options.json (if you care about your settings.)\n"+ \
                                  "Please report this bug and include your tracker_log.txt, as well as what version you had."
-            reportbtn.grid()
-            ignorebtn.grid()
-            closebtn.grid()
+            reportbtn.pack()
+            ignorebtn.pack()
+            closebtn.pack()
 
 
     def open_report_page(self):
