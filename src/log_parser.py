@@ -183,7 +183,7 @@ class LogParser(object):
         if (self.opt.game_version in ["Repentance", "Repentance+"] and (space_split[6] in ('[New,', '[Daily,') or (space_split[6] == '[Continue,' and self.is_online_run == True))) or self.opt.game_version == "Antibirth":
             self.__trigger_new_run(line_number)
             self.is_online_run = False
-        #Online runs in Repentance+ are a huge mess in the log, don't want to deal with that
+        # Online runs in Repentance+ are a huge mess in the log, don't want to deal with that
         elif self.opt.game_version == "Repentance+" and space_split[6] == '[Net,':
             self.is_online_run = True
         elif (self.opt.game_version in ["Repentance", "Repentance+"] and space_split[6] == '[Continue,'):
@@ -211,7 +211,8 @@ class LogParser(object):
             room_id = match.group(1)
             if room_id == '18.1000': # Genesis room
                 self.state.item_list = []
-                self.state.set_transformations()
+                self.state.reset_transformations()
+                self.state.modified = True
             elif self.state.greedmode is False:
                 self.state.greedmode = room_id in self.greed_mode_starting_rooms
                 self.__parse_floor(self.first_line, line_number)

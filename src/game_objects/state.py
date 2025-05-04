@@ -57,12 +57,12 @@ class TrackerState(Serializable):
             self.player_stats[stat] = 0.0
 
         if Options().game_version in ["Repentance", "Repentance+"]:  # Repentance allows multiple occurrence of the same item to count in transformations so transformation counts must be arrays instead of objects
-            self.set_transformations()
+            self.reset_transformations()
         else:
             for transform in ItemInfo.transform_list:
                 self.player_transforms[transform] = set()
 
-    def set_transformations(self):
+    def reset_transformations(self):
         """ Reset transformation dicts, also used when Genesis is used """
         for transform in ItemInfo.transform_list:
             self.player_transforms[transform] = []
