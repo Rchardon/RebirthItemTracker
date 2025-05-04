@@ -459,17 +459,17 @@ class OptionsMenu(object):
 
         if platform.system() == "Windows":
             text = Label(transparent_mode_frame, text="The tracker will always be on top of other windows, except when the game is in fullscreen.\n\nYou can't resize/move/minimize/close the window, you have to be in non-transparent\nmode. Middle-click on the tracker to switch modes.\n\nThe background color will always be #2C2C00 (RGB(44, 44, 0)) because of performance\nand readability reasons. You can use this color to setup a chromakey in streaming\nsoftwares, setting the similarity and smoothness at minimum.\n\nThe \"Make Items Glow\" option is also disabled for readability reasons.")
-            text.pack()
+            text.grid()
 
             for index, opt in enumerate(["transparent_mode"]):
                 self.checks[opt] = IntVar()
                 c = Checkbutton(transparent_mode_frame, text=self.pretty_name(opt), variable=self.checks[opt])
-                c.pack()
+                c.grid()
                 if getattr(self.options, opt):
                     c.select()
         else:
             text = Label(transparent_mode_frame, text="This only works on Windows for the moment.\nIf you have a solution for it, fork the repository on GitHub,\nmake a feature and do a Pull Request")
-            text.pack()
+            text.grid()
 
         # Check for coherency in options with priority to read
         self.read_callback()
