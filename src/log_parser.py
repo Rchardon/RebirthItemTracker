@@ -122,7 +122,7 @@ class LogParser(object):
             self.__parse_seed(line, line_number)
         if line.startswith('Initialized player with Variant') and self.state.player == -1:
             self.__parse_player(line)
-        if self.opt.game_version in ["Repentance", "Repentance+"] and line.startswith('Level::Init') and self.state.greedmode is False: # Store the line of the first floor in Repentance because we can detect if we are in greed mode only after this line in the log
+        if self.opt.game_version in ["Repentance", "Repentance+"] and line.startswith('Level::Init') and self.state.greedmode == 1: # Store the line of the first floor in Repentance because we can detect if we are in greed mode only after this line in the log
             self.first_line = line
             self.curse_first_floor = ""
         elif line.startswith('Level::Init'):
@@ -213,8 +213,9 @@ class LogParser(object):
                 self.state.item_list = []
                 self.state.reset_transformations()
                 self.state.modified = True
-            elif self.state.greedmode is False:
-                self.state.greedmode = room_id in self.greed_mode_starting_rooms
+            elif self.state.greedmode == 1:
+                if room_id in self.greed_mode_starting_rooms:
+                    self.state.greedmode = 2
                 self.__parse_floor(self.first_line, line_number)
                 self.__parse_curse(self.curse_first_floor)
 
@@ -273,9 +274,8 @@ class LogParser(object):
         floor_id = 'f' + str(floor)
 
         # Greed mode
-        if (alt == '3' and self.opt.game_version not in ["Repentance", "Repentance+"]) or (self.opt.game_version in ["Repentance", "Repentance+"] and self.state.greedmode):
+        if (alt == '3' and self.opt.game_version not in ["Repentance", "Repentance+"]) or (self.opt.game_version in ["Repentance", "Repentance+"] and self.state.greedmode == 2):
             floor_id += 'g'
-
         self.state.add_floor(Floor(floor_id))
         self.state.export_state()
         return True
@@ -286,7 +286,7 @@ class LogParser(object):
             return
         if self.curse_first_floor == "":
             self.curse_first_floor = line
-        elif self.state.greedmode:
+        elif self.state.greedmode == 2:
             self.curse_first_floor = ""
         if line.startswith("Curse of the Labyrinth!") or (self.curse_first_floor == "Curse of the Labyrinth!" and self.opt.game_version in ["Repentance", "Repentance+"]):
             self.state.add_curse(Curse.Labyrinth)

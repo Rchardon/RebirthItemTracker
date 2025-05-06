@@ -21,7 +21,7 @@ class TrackerState(Serializable):
                  ('player', int),
                  ('player_transforms', dict),
                  ('player2_transforms', dict),
-                 ('greedmode', bool)]
+                 ('greedmode', int)]
     def __init__(self, seed, tracker_version, game_version, racing_plus_version, babies_mod_version, IAR_version, version_number, player):
         self.reset(seed, game_version, racing_plus_version, babies_mod_version, IAR_version)
         self.tracker_version = tracker_version
@@ -45,7 +45,7 @@ class TrackerState(Serializable):
         self.racing_plus_version = racing_plus_version
         self.babies_mod_version = babies_mod_version
         self.IAR_version = IAR_version
-        self.greedmode = False
+        self.greedmode = 0 # Can't be a boolean as we need 3 states
         self.floor_list = []
         self.room_id = "none"
         self.item_list = []
