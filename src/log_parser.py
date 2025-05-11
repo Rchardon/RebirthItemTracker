@@ -83,8 +83,14 @@ class LogParser(object):
         # In Afterbirth+, nearly all lines start with this.
         # We want to slice it off.
         info_prefix = '[INFO] - '
+        #TODO Okay, this is a jank hack. When you start the tracker in a middle of a run 
+        #then take an item, this item will not be registered because the tracker thinks that
+        #the line start with "INFO] - ". I don't know what causes this so this is a bandaid.
+        info_prefix2 = 'INFO] - '
         if line.startswith(info_prefix):
             line = line[len(info_prefix):]
+        if line.startswith(info_prefix2):
+            line = line[len(info_prefix2):]
 
         # Messages printed by mods have this prefix.
         # strip it, so mods can spoof actual game log messages to us if they want to
