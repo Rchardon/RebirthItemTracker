@@ -279,6 +279,10 @@ class LogParser(object):
                 floor += 1
         floor_id = 'f' + str(floor)
 
+        #Reset this variable to avoid applying wrong curses to some floors
+        if floor != 1:
+            self.curse_first_floor = ""
+
         # Greed mode
         if (alt == '3' and self.opt.game_version not in ["Repentance", "Repentance+"]) or (self.opt.game_version in ["Repentance", "Repentance+"] and self.state.greedmode == 2):
             floor_id += 'g'
