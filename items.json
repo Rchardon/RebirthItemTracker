@@ -1079,6 +1079,7 @@
    "148": {
       "name": "Infestation",
       "shown": true,
+      "beelzebub": true,
       "text": "Spawns 2-6 blue flies when hit",
       "introduced_in": "Rebirth"
    },
@@ -3614,6 +3615,7 @@
    "519": {
       "name": "Lil Delirium",
       "text": "Familiar, transforms into a random familiar every 10 seconds",
+      "conjoined": true,
       "shown": true,
       "introduced_in": "Booster Pack #1"
    },
@@ -4931,6 +4933,7 @@
    "725": {
       "name": "IBS",
       "shown": true,
+      "ohcrap": true,
       "text": "Causes you to throw a random type of poop at random intervals + chance to have Explosive Diarrhea when standing still",
       "introduced_in": "Repentance"
    },
