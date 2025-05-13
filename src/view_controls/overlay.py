@@ -35,17 +35,10 @@ class Overlay(object):
         else:
             return str(len(transform_set))
 
-    def update_stats(self, stat_list=None, transform_list=None):
+    def update_stats(self, transform_list=None):
         """
         Update file content for a subset (or all) the player's stats.
-        stat_list provide the subset of stats to update, if None it will update everything
         """
-        if stat_list is None:
-            stat_list = ItemInfo.stat_list
-        for stat in stat_list:
-            display = Overlay.format_value(self.state.player_stats[stat])
-            with open(self.prefix + "overlay text/" + stat + ".txt", "w+") as sfile:
-                sfile.write(display)
         if transform_list is None:
             transform_list = ItemInfo.transform_list
         for transform in transform_list:
