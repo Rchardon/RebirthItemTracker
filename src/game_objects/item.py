@@ -1,6 +1,7 @@
 """This module handles anything related to items and their characteristics"""
 from game_objects.serializable import Serializable
 from options import Options
+from error_stuff import log_error
 
 
 class Item(Serializable):
