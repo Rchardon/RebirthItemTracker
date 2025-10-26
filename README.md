@@ -75,7 +75,7 @@ Variables that you can use here include:
   {racing_plus_version} will show nothing if you don't play on R+ and if you are, it will show "/ R+: 0.XX.XX" so no need to put a slash
   before that variable, same for {babies_mod_version} and {IAR_version} (IAR stands for Isaac Achievement Randomizer)
 
-- Transformations: {guppy}, {bob}, {conjoined}, {funguy}, {leviathan}, {ohcrap}, {seraphim}, {spun}, {yesmother}, {superbum}, {beelzebub}, {bookworm}, {spiderbaby}
+- Transformations: {guppy}, {bob}, {conjoined}, {funguy}, {leviathan}, {ohcrap}, {seraphim}, {spun}, {yesmother}, {superbum}, {beelzebub}, {bookworm}, {spiderbaby}, {necromancer}
 
 - Stats: {dmg}, {delay}, {speed}, {shot_speed}, {range}, {height}, {tears}
 
@@ -112,3 +112,5 @@ Ctrl-up and ctrl-down are shortcuts to change the delay, which is also shown in 
 - Tracker doesn't work with co-op mode.
 
 - Duplicated active items that should count in transformations will not be counted properly in Repentance and Repentance+.
+
+- Necromancer duplicate passive items and trinkets will be counted while they shouldn't be.

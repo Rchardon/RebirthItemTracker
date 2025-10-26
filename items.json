@@ -279,6 +279,7 @@
       "name": "The Necronomicon",
       "shown": true,
       "bookworm": true,
+      "necromancer": true,
       "text": "Deals 40 dmg to the room",
       "space": true,
       "introduced_in": "Rebirth"
@@ -1028,7 +1029,7 @@
    "141": {
       "name": "Pageant Boy",
       "shown": true,
-      "text": "Spawns 7 coins",
+      "text": "Spawns 7 coins and a penny trinket",
       "introduced_in": "Rebirth"
    },
    "142": {
@@ -1351,7 +1352,7 @@
    "186": {
       "name": "Blood Rights",
       "shown": true,
-      "text": "Deals 1 heart dmg (on first hit/room) and then 0.5 dmg to yourself, deals 40 dmg to all enemies",
+      "text": "Deals 1 heart dmg (on first hit/room) and then 0.5 dmg to yourself, deals 40 dmg to all enemies, tears up on use",
       "space": true,
       "introduced_in": "Rebirth"
    },
@@ -1869,6 +1870,7 @@
       "shown": true,
       "sin_hearts": "1",
       "text": "Deals 80 dmg to enemies when hit if at 1 heart or lower and increase all kind of black heart dmg from 40 to 80",
+      "necromancer": true,
       "introduced_in": "Rebirth"
    },
    "263": {
@@ -2761,6 +2763,7 @@
       "name": "Seraphim",
       "text": "Familiar (10 dmg, homing tears)",
       "conjoined": true,
+      "seraphim": true,
       "shown": true,
       "introduced_in": "Afterbirth"
    },
@@ -3317,7 +3320,7 @@
    },
    "475": {
       "name": "Plan C",
-      "text": "Kills everything in the room, kills you after 3 seconds, single use",
+      "text": "Kills everything in the room, kills you after 3 seconds (10 or 11.5 seconds in Delirium or Mother's room), single use",
       "space": true,
       "shown": true,
       "introduced_in": "Afterbirth+"
@@ -3848,6 +3851,8 @@
    "554": {
       "name": "2Spooky",
       "text": "Aura that fears enemies",
+      "tears": "0.5",
+      "shot_speed": "0.2",
       "shown": true,
       "introduced_in": "Antibirth"
    },
@@ -4416,7 +4421,6 @@
    "643": {
       "name": "Revelation",
       "text": "Grants flight and an additional angelic beam attack",
-      "soul_hearts": "2",
       "seraphim": true,
       "shown": true,
       "introduced_in": "Antibirth"
@@ -5010,7 +5014,7 @@
    },
    "2005": {
       "name": "Purple Heart",
-      "text": "Higher chance for champions",
+      "text": "Higher chance for champions, double champion drops",
       "shown": true,
       "introduced_in": "Rebirth"
    },
@@ -5022,7 +5026,7 @@
    },
    "2007": {
       "name": "Rosary Bead",
-      "text": "Increases Angel Room chance to 75%/25% (from 50%/50%)",
+      "text": "Forces the next deal to be an Angel Room",
       "shown": true,
       "introduced_in": "Rebirth"
    },
@@ -5121,7 +5125,7 @@
    },
    "2023": {
       "name": "Missing Poster",
-      "text": "+1 life (will respawn as The Lost)",
+      "text": "+1 life (will respawn as The Lost), 33% chance to reveal the super secret room on floor enter",
       "shown": true,
       "introduced_in": "Rebirth"
    },
@@ -5272,6 +5276,7 @@
    "2048": {
       "name": "A Missing Page",
       "text": "Chance to do Necronomicon effect (80 dmg) on hit",
+      "necromancer": true,
       "shown": true,
       "introduced_in": "Rebirth"
    },
@@ -5382,6 +5387,7 @@
       "name": "Lazy Worm",
       "text": "",
       "shot_speed": "-0.5",
+      "damage": "0.5",
       "height": "2",
       "shown": true,
       "introduced_in": "Afterbirth"
@@ -5406,13 +5412,14 @@
    },
    "2070": {
       "name": "Louse",
-      "text": "Chance to spawn a blue spider when in a room with enemies",
+      "text": "Spawns a blue spider when completing a combat room",
       "shown": true,
       "introduced_in": "Afterbirth"
    },
    "2071": {
       "name": "Bob's Bladder",
       "text": "Bombs make green creep",
+      "bob": true,
       "shown": true,
       "introduced_in": "Afterbirth"
    },
@@ -5496,7 +5503,7 @@
    },
    "2085": {
       "name": "Karma",
-      "text": "Chance to heal a red heart or spawn a Beggar when using a Donation Machine",
+      "text": "Reduce chances of Donation Machine jamming. Chance to heal, refund a coin or increase luck when donating to a machine or a beggar",
       "shown": true,
       "introduced_in": "Afterbirth"
    },
@@ -5520,7 +5527,7 @@
    },
    "2089": {
       "name": "Child Leash",
-      "text": "Familiars stay closer to you",
+      "text": "Familiars stay closer to you and they gain a small dmg multiplier",
       "shown": true,
       "introduced_in": "Afterbirth"
    },
@@ -5544,7 +5551,7 @@
    },
    "2093": {
       "name": "Used Diaper",
-      "text": "Gives Skatole effect in certain rooms",
+      "text": "Gives Skatole effect in certain rooms, spawns a blue fly when entering a new combat room",
       "shown": true,
       "introduced_in": "Afterbirth+"
    },
@@ -5606,7 +5613,7 @@
    },
    "2103": {
       "name": "Equality!",
-      "text": "Half pickups turn into doubled pickups when same number of coins + bombs + keys",
+      "text": "+2 tear rate when same number of coins + bombs + keys",
       "shown": true,
       "introduced_in": "Afterbirth+"
    },
@@ -6021,7 +6028,7 @@
    },
    "2172": {
       "name": "Cursed Penny",
-      "text": "Teleports you every time you pick up a coin",
+      "text": "Teleports you every time you pick up a coin. Has a chance to teleport to a specific room depending of the coin",
       "shown": true,
       "introduced_in": "Repentance"
    },

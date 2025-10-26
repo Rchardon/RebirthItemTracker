@@ -245,7 +245,8 @@ class ItemInfo(dict):
         "superbum",
         "beelzebub",
         "bookworm",
-        "spiderbaby"
+        "spiderbaby",
+        "necromancer"
     ]
     stat_list = [
         "dmg",
