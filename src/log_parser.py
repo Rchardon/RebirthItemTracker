@@ -228,9 +228,9 @@ class LogParser(object):
     def __parse_floor(self, line, line_number):
         """ Parse the floor in line and push it to the state """
         # Create a floor tuple with the floor id and the alternate id
-        if self.opt.game_version == "Afterbirth" or self.opt.game_version == "Afterbirth+" or self.opt.game_version in ["Repentance", "Repentance+"]:
+        if self.opt.game_version in ["Afterbirth", "Afterbirth+", "Repentance", "Repentance+"]:
             regexp_str = r"Level::Init m_Stage (\d+), m_StageType (\d+)"
-        elif self.opt.game_version == "Rebirth" or self.opt.game_version == "Antibirth":
+        elif self.opt.game_version in ["Rebirth", "Antibirth"]:
             regexp_str = r"Level::Init m_Stage (\d+), m_AltStage (\d+)"
         else:
             return
@@ -252,11 +252,11 @@ class LogParser(object):
         # In Repentance, don't trigger a new run on floor 1 because of the R Key item
         if self.reseeding_floor:
             self.reseeding_floor = False
-        elif floor == 1 and self.opt.game_version != "Antibirth" and self.opt.game_version not in ["Repentance", "Repentance+"]:
+        elif floor == 1 and self.opt.game_version not in ["Antibirth", "Repentance", "Repentance+"]:
             self.__trigger_new_run(line_number)
 
         # Special handling for the Cathedral and The Chest and Afterbirth
-        if self.opt.game_version == "Afterbirth" or self.opt.game_version == "Afterbirth+" or self.opt.game_version in ["Repentance", "Repentance+"]:
+        if self.opt.game_version in ["Afterbirth", "Afterbirth+", "Repentance", "Repentance+"]:
             self.log.debug("floor")
             # In Afterbirth, Cath is an alternate of Sheol (which is 10)
             # and Chest is an alternate of Dark Room (which is 11)
@@ -393,7 +393,7 @@ class LogParser(object):
                 if item.item_id == "550":
                     item.info.shown = False
                     item.shown = False
-        elif self.state.contains_item('144') and self.state.contains_item('278') and self.state.contains_item('388') and not self.state.contains_item('3001') and self.opt.game_version != "Rebirth" and self.opt.game_version != "Antibirth":
+        elif self.state.contains_item('144') and self.state.contains_item('278') and self.state.contains_item('388') and not self.state.contains_item('3001') and self.opt.game_version not in ["Rebirth", "Antibirth"]:
             for item in reversed(self.state.item_list):
                 if item.item_id in ("144", "278", "388"):
                     item.info.shown = False
