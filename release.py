@@ -1,7 +1,7 @@
 import os, sys, shutil, subprocess, time
 
 # Here is where you can set the name for the release zip file and for the install dir inside it.
-# version.txt is the sole source of truth about what version this is. the version string shouldnt be hardcoded anywhere
+# version.txt is the sole source of truth about what version this is. The version string shouldn't be hardcoded anywhere.
 with open('version.txt', 'r') as f:
     version = f.read()
 installName = 'Rebirth Item Tracker'
