@@ -112,5 +112,3 @@ Ctrl-up and ctrl-down are shortcuts to change the delay, which is also shown in 
 - Tracker doesn't work with co-op mode.
 
 - Duplicated active items that should count in transformations will not be counted properly in Repentance and Repentance+.
-
-- Necromancer duplicate passive items and trinkets will be counted while they shouldn't be.
