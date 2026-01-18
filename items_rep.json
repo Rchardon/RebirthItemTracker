@@ -271,7 +271,7 @@
       "name": "The Book of Belial",
       "shown": true,
       "bookworm": true,
-      "text": "Temporary +2 dmg, +12.5% deal chance, x1.5 dmg with Blood of the Martyr",
+      "text": "Temporary +2 dmg, +12.5% deal chance, 1.5x dmg with Blood of the Martyr",
       "space": true,
       "introduced_in": "Rebirth"
    },
@@ -2337,7 +2337,7 @@
       "tears_x": "5.5",
       "dmg_x": "0.2",
       "shown": true,
-      "text": "x0.5 tear size",
+      "text": "0.5x tear size",
       "introduced_in": "Rebirth"
    },
    "331": {
@@ -3525,7 +3525,7 @@
    },
    "506": {
       "name": "BackStabber",
-      "text": "Shooting a non-bleeding enemy in the back does x2 dmg and adds bleed effect (kills after 50 seconds of slow damage)",
+      "text": "Shooting a non-bleeding enemy in the back does 2x dmg and adds bleed effect (kills after 50 seconds of slow damage)",
       "shown": true,
       "introduced_in": "Afterbirth+"
    },
@@ -4937,7 +4937,7 @@
    "726": {
       "name": "Hemoptysis",
       "shown": true,
-      "text": "Double tap to sneeze on enemies, dealing x1.5 dmg",
+      "text": "Double tap to sneeze on enemies, dealing 1.5x dmg",
       "introduced_in": "Repentance"
    },
    "727": {
@@ -4950,7 +4950,7 @@
       "name": "Gello",
       "shown": true,
       "space": true,
-      "text": "A baby that come from your belly and deals x3 dmg when it hit enemies, can also shoot tears",
+      "text": "A baby that come from your belly and deals 3x dmg when it hit enemies, can also shoot tears",
       "introduced_in": "Repentance"
    },
    "729": {
@@ -4989,7 +4989,7 @@
    },
    "2002": {
       "name": "Petrified Poop",
-      "text": "Higher chance for rewards from poops",
+      "text": "50% chance for poops to drop rewards",
       "shown": true,
       "introduced_in": "Rebirth"
    },
@@ -5025,7 +5025,7 @@
    },
    "2008": {
       "name": "Cartridge",
-      "text": "Chance to get The Gamekid effect on hit",
+      "text": "5% chance to get The Gamekid effect on hit",
       "shown": true,
       "introduced_in": "Rebirth"
    },
@@ -5082,13 +5082,13 @@
    },
    "2017": {
       "name": "Black Lipstick",
-      "text": "Higher chance for black hearts",
+      "text": "+10% chance for black hearts to appear",
       "shown": true,
       "introduced_in": "Rebirth"
    },
    "2018": {
       "name": "Bible Tract",
-      "text": "Higher chance for eternal hearts",
+      "text": "+3% chance chance for eternal hearts to appear",
       "shown": true,
       "introduced_in": "Rebirth"
    },
@@ -5138,6 +5138,7 @@
       "name": "Hook Worm",
       "text": "Hook + spectral tears",
       "range": "1.5",
+      "tears": "0.4",
       "shown": true,
       "introduced_in": "Rebirth"
    },
@@ -5150,7 +5151,7 @@
    },
    "2028": {
       "name": "Broken Ankh",
-      "text": "20% chance to respawn as Blue Baby on death",
+      "text": "22.22% chance to respawn as Blue Baby on death",
       "shown": true,
       "introduced_in": "Rebirth"
    },
@@ -5174,13 +5175,13 @@
    },
    "2032": {
       "name": "Liberty Cap",
-      "text": "Gives a random mushroom effect each room",
+      "text": "25% to give a random mushroom effect upon entering a room",
       "shown": true,
       "introduced_in": "Rebirth"
    },
    "2033": {
       "name": "Umbilical Cord",
-      "text": "High chance to proc a Gemini for the room when hit",
+      "text": "Gives Little Steven if damaged to 1/2 heart, high chance to proc a Gemini for the room when hit",
       "shown": true,
       "introduced_in": "Rebirth"
    },
@@ -5199,7 +5200,7 @@
    },
    "2036": {
       "name": "Rusted Key",
-      "text": "Higher chance to find keys and chests",
+      "text": "Higher chance to find keys",
       "shown": true,
       "introduced_in": "Rebirth"
    },
@@ -5212,7 +5213,7 @@
    },
    "2038": {
       "name": "Mom's Pearl",
-      "text": "Higher chance to find soul hearts",
+      "text": "10% chance to turn heart drop into soul hearts",
       "shown": true,
       "introduced_in": "Rebirth"
    },
@@ -5237,7 +5238,7 @@
    },
    "2042": {
       "name": "Lucky Toe",
-      "text": "",
+      "text": "Increases chances to get a room clear drop",
       "luck": "1",
       "shown": true,
       "introduced_in": "Rebirth"
@@ -5328,7 +5329,7 @@
    },
    "2058": {
       "name": "Samson's Lock",
-      "text": "Chance to temporarily gain 0.5 dmg when killing an enemy",
+      "text": "6.66% chance to temporarily gain 0.5 dmg when killing an enemy",
       "shown": true,
       "introduced_in": "Rebirth"
    },
@@ -5364,13 +5365,13 @@
    },
    "2064": {
       "name": "Rainbow Worm",
-      "text": "Rainbow worm tears (a random worm effect every 5 seconds)",
+      "text": "Rainbow worm tears (a random worm effect every 3 seconds)",
       "shown": true,
       "introduced_in": "Afterbirth"
    },
    "2065": {
       "name": "Tape Worm",
-      "text": "Halves tear height",
+      "text": "",
       "range": "3",
       "shown": true,
       "introduced_in": "Afterbirth"
@@ -5379,13 +5380,12 @@
       "name": "Lazy Worm",
       "text": "",
       "shot_speed": "-0.5",
-      "height": "2",
       "shown": true,
       "introduced_in": "Afterbirth"
    },
    "2067": {
       "name": "Cracked Dice",
-      "text": "Randomly D6, D10, D20, D8, or D12 on hit",
+      "text": "50% chance to randomly activate D6, D10, D20, D8, or D12 on hit",
       "shown": true,
       "introduced_in": "Afterbirth"
    },
@@ -5421,7 +5421,7 @@
    },
    "2073": {
       "name": "Blasting Cap",
-      "text": "Exploding bombs have a chance to drop another bomb pickup",
+      "text": "Exploding bombs have a 10% chance to drop another bomb pickup",
       "shown": true,
       "introduced_in": "Afterbirth"
    },
@@ -5457,7 +5457,7 @@
    },
    "2079": {
       "name": "Endless Nameless",
-      "text": "Chance to drop an extra copy of a card/pill upon use",
+      "text": "25% chance to drop an extra copy of a card/pill upon use",
       "shown": true,
       "introduced_in": "Afterbirth"
    },
@@ -5609,13 +5609,13 @@
    },
    "2104": {
       "name": "Wish Bone",
-      "text": "Chance to spawn pedestal item on hit",
+      "text": "2% chance to spawn pedestal item on hit",
       "shown": true,
       "introduced_in": "Afterbirth+"
    },
    "2105": {
       "name": "Bag Lunch",
-      "text": "Chance to spawn Lunch on hit",
+      "text": "2% chance to spawn Lunch on hit",
       "shown": true,
       "introduced_in": "Afterbirth+"
    },
@@ -5633,7 +5633,7 @@
    },
    "2108": {
       "name": "Walnut",
-      "text": "Chance to break and drop random coin/heart/key/trinket on hit from explosion",
+      "text": "33% chance to break and drop random coin/heart/key/trinket on hit from explosion",
       "shown": true,
       "introduced_in": "Afterbirth+"
    },
@@ -5699,7 +5699,7 @@
    },
    "2119": {
       "name": "Stem Cell",
-      "text": "Heals for 1/2 heart when traveling to the next floor",
+      "text": "Heals 50% of empty red hearts when traveling to the next floor",
       "shown": true,
       "introduced_in": "Afterbirth+"
    },
@@ -5717,7 +5717,7 @@
    },
    "2122": {
       "name": "Butter!",
-      "text": "Using active items drops them on the ground, chance to drop passive items on hit",
+      "text": "Using active items drops them on the ground, 2% chance to drop passive items on hit",
       "shown": true,
       "introduced_in": "Booster Pack #1"
    },
@@ -5753,7 +5753,7 @@
    },
    "2128": {
       "name": "Finger Bone",
-      "text": "5% chance to gain a bone heart on hit",
+      "text": "4% chance to gain a bone heart on hit",
       "shown": true,
       "introduced_in": "Booster Pack #5"
    },
@@ -5777,7 +5777,7 @@
    },
    "2132": {
       "name": "Broken Syringe",
-      "text": "Gives you a random syringe effect every room",
+      "text": "25% chance to give you a random syringe effect on room enter",
       "shown": true,
       "introduced_in": "Antibirth"
    },
@@ -5819,7 +5819,7 @@
    },
    "2139": {
       "name": "Teardrop Charm",
-      "text": "Tear-based effects have an extra chance of occurring",
+      "text": "Tear-based effects have an extra +4 chance of occurring",
       "shown": true,
       "introduced_in": "Antibirth"
    },
@@ -5831,13 +5831,13 @@
    },
    "2141": {
       "name": "Forgotten Lullaby",
-      "text": "Increase tear rate of familiars",
+      "text": "Double the fire rate of familiars",
       "shown": true,
       "introduced_in": "Antibirth"
    },
    "2142": {
       "name": "Beth's Faith",
-      "text": "Spawn four wisps at the start of each floor",
+      "text": "Spawn 4 wisps at the start of each floor",
       "shown": true,
       "introduced_in": "Antibirth"
    },
@@ -5927,7 +5927,7 @@
    },
    "2157": {
       "name": "Torn Card",
-      "text": "Chance to shoot Ipecac + My Reflection shots",
+      "text": "Shoot an Ipecac + My Reflection tear every 15 shots",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -5969,7 +5969,7 @@
    },
    "2164": {
       "name": "Ring Cap",
-      "text": "2 bombs spawn each time you drop 1 bomb",
+      "text": "2 bombs spawn each time you place 1 bomb",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -5981,13 +5981,13 @@
    },
    "2166": {
       "name": "Modeling Clay",
-      "text": "Chance of giving you a random passive item each room until room clear",
+      "text": "Gives you a random passive item each room until room clear",
       "shown": true,
       "introduced_in": "Repentance"
    },
    "2167": {
       "name": "Polished Bone",
-      "text": "Chance of spawning a charmed bony on room clear",
+      "text": "25% chance of spawning a charmed bony on room clear",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6006,7 +6006,7 @@
    },
    "2170": {
       "name": "Crystal Key",
-      "text": "33% chance of Red Key effect on room clear",
+      "text": "Chance of Red Key effect on room clear (33% in normal room, 12.5% in red room)",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6024,7 +6024,7 @@
    },
    "2173": {
       "name": "Your Soul",
-      "text": "First devil deal item you will take while holding the trinket will be free",
+      "text": "One free devil deal in exchange for the trinket",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6036,19 +6036,19 @@
    },
    "2175": {
       "name": "Strange Key",
-      "text": "Removes the time limit for Blue Womb. If Pandora's box is used, this trinket is consumed and spawns 6 random items",
+      "text": "Removes the time limit for Blue Womb. Spawns 6 random items with Pandora's Box",
       "shown": true,
       "introduced_in": "Repentance"
    },
    "2176": {
       "name": "Lil Clot",
-      "text": "Spawns one of Alt Eve's babies which respawns in the next room if killed",
+      "text": "Spawns one Lil Clot which respawns in the next room if killed",
       "shown": true,
       "introduced_in": "Repentance"
    },
    "2177": {
       "name": "Temporary Tattoo",
-      "text": "Challenge rooms drop 2 extra chests on clear, boss challenge rooms require 2 full hearts or less to enter",
+      "text": "Challenge rooms drop a chest on clear, Boss Challenge rooms drop an extra boss item on clear",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6096,13 +6096,13 @@
    },
    "2185": {
       "name": "Cricket Leg",
-      "text": "10% chance of spawning a random locust per enemy killed",
+      "text": "16.6% chance of spawning a random locust per enemy killed",
       "shown": true,
       "introduced_in": "Repentance"
    },
    "2186": {
       "name": "Apollyon's Best Friend",
-      "text": "Spawns one of Alt Apollyon's red locusts",
+      "text": "Spawns one of Tainted Apollyon's red locusts",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6114,13 +6114,13 @@
    },
    "2188": {
       "name": "Ice Cube",
-      "text": "Chance of enemies being frozen when you enter the room",
+      "text": "20% chance of enemies being frozen when you enter the room",
       "shown": true,
       "introduced_in": "Repentance"
    },
    "2189": {
       "name": "Sigil of Baphomet",
-      "text": "Grants a 2 seconds shield every time you kill an enemy",
+      "text": "Grants a 1 second shield every time you kill an enemy",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6150,7 +6150,7 @@
    },
    "32770": {
       "name": "(G) Petrified Poop",
-      "text": "Higher chance for rewards from poops",
+      "text": "60% chance for poops to drop rewards",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6186,7 +6186,7 @@
    },
    "32776": {
       "name": "(G) Cartridge",
-      "text": "Chance to get The Gamekid effect on hit",
+      "text": "10% chance to get The Gamekid effect on hit",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6218,7 +6218,7 @@
    },
    "32781": {
       "name": "(G) Store Credit",
-      "text": "First two shop items you will take while holding the trinket will be free",
+      "text": "Purchasing an item has a 25% chance to turn into a regular Store Credit and 75% to remain golden",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6230,7 +6230,7 @@
    },
    "32783": {
       "name": "(G) Lucky Rock",
-      "text": "33% for rocks to drop coins when broken",
+      "text": "Chance for rocks to drop pennies is multiplied",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6242,13 +6242,13 @@
    },
    "32785": {
       "name": "(G) Black Lipstick",
-      "text": "Higher chance for black hearts",
+      "text": "+20% chance for black hearts to appear",
       "shown": true,
       "introduced_in": "Repentance"
    },
    "32786": {
       "name": "(G) Bible Tract",
-      "text": "Higher chance for eternal hearts",
+      "text": "+6% chance chance for eternal hearts to appear",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6290,7 +6290,7 @@
    },
    "32793": {
       "name": "(G) Mysterious Candy",
-      "text": "Chance to randomly poop",
+      "text": "Chance to randomly poop golden poop",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6298,6 +6298,7 @@
       "name": "(G) Hook Worm",
       "text": "Hook + spectral tears",
       "range": "3",
+      "tears": "0.83",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6310,7 +6311,7 @@
    },
    "32796": {
       "name": "(G) Broken Ankh",
-      "text": "20% chance to respawn as Blue Baby on death",
+      "text": "22.22% chance to respawn as Blue Baby on death",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6334,13 +6335,13 @@
    },
    "32800": {
       "name": "(G) Liberty Cap",
-      "text": "Gives a random mushroom effect each room",
+      "text": "50% to give a random mushroom effect upon entering a room",
       "shown": true,
       "introduced_in": "Repentance"
    },
    "32801": {
       "name": "(G) Umbilical Cord",
-      "text": "High chance to proc a Gemini for the room when hit",
+      "text": "Gives Little Steven if damaged to 1/2 heart, high chance to proc a Gemini for the room when hit",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6359,7 +6360,7 @@
    },
    "32804": {
       "name": "(G) Rusted Key",
-      "text": "Higher chance to find keys and chests",
+      "text": "Higher chance to find keys",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6372,7 +6373,7 @@
    },
    "32806": {
       "name": "(G) Mom's Pearl",
-      "text": "Higher chance to find soul hearts",
+      "text": "20% chance to turn heart drop into soul hearts",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6385,7 +6386,7 @@
    },
    "32808": {
       "name": "(G) Red Patch",
-      "text": "Chance to temporarily gain 2.72 dmg on hit",
+      "text": "Chance to temporarily gain 1.8 dmg on hit",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6397,7 +6398,7 @@
    },
    "32810": {
       "name": "(G) Lucky Toe",
-      "text": "",
+      "text": "Increases chances to get a room clear drop",
       "luck": "2",
       "shown": true,
       "introduced_in": "Repentance"
@@ -6458,7 +6459,7 @@
    },
    "32821": {
       "name": "(G) Tick",
-      "text": "Automatically deals 30% damage to each boss, heals 1 red heart, cannot drop",
+      "text": "Automatically deals 30% damage to each boss, heals 1 red heart",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6488,7 +6489,7 @@
    },
    "32826": {
       "name": "(G) Samson's Lock",
-      "text": "Chance to temporarily gain 0.5 dmg when killing an enemy",
+      "text": "6.66% chance to temporarily gain 0.5 dmg when killing an enemy",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6524,13 +6525,13 @@
    },
    "32832": {
       "name": "(G) Rainbow Worm",
-      "text": "Rainbow worm tears (a random worm effect every 2.5 seconds)",
+      "text": "Rainbow worm tears (a random worm effect doubled every 3 seconds)",
       "shown": true,
       "introduced_in": "Repentance"
    },
    "32833": {
       "name": "(G) Tape Worm",
-      "text": "Halves tear height",
+      "text": "",
       "range": "6",
       "shown": true,
       "introduced_in": "Repentance"
@@ -6539,13 +6540,12 @@
       "name": "(G) Lazy Worm",
       "text": "",
       "shot_speed": "-1",
-      "height": "2",
       "shown": true,
       "introduced_in": "Repentance"
    },
    "32835": {
       "name": "(G) Cracked Dice",
-      "text": "Randomly D6, D10, D20, D8, or D12 on hit",
+      "text": "50% chance to randomly activate D6, D10, D20, D8, or D12 on hit",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6575,13 +6575,13 @@
    },
    "32840": {
       "name": "(G) Watch Battery",
-      "text": "Increased chance to find batteries, chance to add an extra charge after clearing a room",
+      "text": "Increased chance to find batteries, chance to add two extra charges after clearing a room",
       "shown": true,
       "introduced_in": "Repentance"
    },
    "32841": {
       "name": "(G) Blasting Cap",
-      "text": "Exploding bombs have a chance to drop another bomb pickup",
+      "text": "Exploding bombs have a 20% chance to drop another bomb pickup",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6617,7 +6617,7 @@
    },
    "32847": {
       "name": "(G) Endless Nameless",
-      "text": "Chance to drop an extra copy of a card/pill upon use",
+      "text": "25% chance to drop an extra copy of a card/pill upon use",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6769,13 +6769,13 @@
    },
    "32872": {
       "name": "(G) Wish Bone",
-      "text": "Chance to spawn pedestal item on hit",
+      "text": "2% chance to spawn pedestal item on hit",
       "shown": true,
       "introduced_in": "Repentance"
    },
    "32873": {
       "name": "(G) Bag Lunch",
-      "text": "Chance to spawn Lunch on hit",
+      "text": "2% chance to spawn Lunch on hit",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6793,7 +6793,7 @@
    },
    "32876": {
       "name": "(G) Walnut",
-      "text": "Chance to break and drop random coin/heart/key/trinket on hit from explosion",
+      "text": "33% chance to break and drop random coin/heart/key/trinket on hit from explosion",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6859,7 +6859,7 @@
    },
    "32887": {
       "name": "(G) Stem Cell",
-      "text": "Heals for 1/2 heart when traveling to the next floor",
+      "text": "Heals 50% of empty red hearts when traveling to the next floor",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6877,7 +6877,7 @@
    },
    "32890": {
       "name": "(G) Butter!",
-      "text": "Using active items drops them on the ground, chance to drop passive items on hit",
+      "text": "Using active items drops them on the ground, 2% chance to drop passive items on hit",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6913,7 +6913,7 @@
    },
    "32896": {
       "name": "(G) Finger Bone",
-      "text": "5% chance to gain a bone heart on hit",
+      "text": "4% chance to gain a bone heart on hit",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6937,7 +6937,7 @@
    },
    "32900": {
       "name": "(G) Broken Syringe",
-      "text": "Gives you a random syringe effect every room",
+      "text": "50% chance to give you a random syringe effect on room enter",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6979,7 +6979,7 @@
    },
    "32907": {
       "name": "(G) Teardrop Charm",
-      "text": "Tear-based effects have an extra chance of occurring",
+      "text": "Tear-based effects have an extra +4 chance of occurring",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -6991,7 +6991,7 @@
    },
    "32909": {
       "name": "(G) Forgotten Lullaby",
-      "text": "Increase tear rate of familiars",
+      "text": "Double the fire rate of familiars",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -7087,7 +7087,7 @@
    },
    "32925": {
       "name": "(G) Torn Card",
-      "text": "Chance to shoot Ipecac + My Reflection shots",
+      "text": "Shoot an Ipecac + My Reflection tear every 15 shots",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -7117,19 +7117,19 @@
    },
    "32930": {
       "name": "(G) Azazel's Stump",
-      "text": "Chance to become Azazel on room clear until the next room clear",
+      "text": "Guarantee to become Azazel on room clear until the next room clear",
       "shown": true,
       "introduced_in": "Repentance"
    },
    "32931": {
       "name": "(G) Dingle Berry",
-      "text": "Spawns two charmed Dips on room clear",
+      "text": "Spawns two charmed Dips on room clear and Dip enemies become friendly",
       "shown": true,
       "introduced_in": "Repentance"
    },
    "32932": {
       "name": "(G) Ring Cap",
-      "text": "2 bombs spawn each time you drop 1 bomb",
+      "text": "2 bombs spawn each time you place 1 bomb",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -7147,7 +7147,7 @@
    },
    "32935": {
       "name": "(G) Polished Bone",
-      "text": "Chance of spawning a charmed bony on room clear",
+      "text": "33% chance of spawning a charmed bony on room clear",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -7166,7 +7166,7 @@
    },
    "32938": {
       "name": "(G) Crystal Key",
-      "text": "33% chance of Red Key effect on room clear",
+      "text": "Chance of Red Key effect on room clear (50% in normal room, 16.6% in red room)",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -7184,7 +7184,7 @@
    },
    "32941": {
       "name": "(G) Your Soul",
-      "text": "First devil deal item you will take while holding the trinket will be free",
+      "text": "One free devil deal in exchange for the trinket",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -7196,25 +7196,25 @@
    },
    "32943": {
       "name": "(G) Strange Key",
-      "text": "Removes the time limit for Blue Womb. If Pandora's box is used, this trinket is consumed and spawns 6 random items",
+      "text": "Removes the time limit for Blue Womb. Spawns 6 random items with Pandora's Box",
       "shown": true,
       "introduced_in": "Repentance"
    },
    "32944": {
       "name": "(G) Lil Clot",
-      "text": "Spawns two of Alt Eve's babies which respawns in the next room if killed",
+      "text": "Spawns two Lil Clots which respawns in the next room if killed",
       "shown": true,
       "introduced_in": "Repentance"
    },
    "32945": {
       "name": "(G) Temporary Tattoo",
-      "text": "Challenge rooms drop 2 extra chests on clear, boss challenge rooms require 2 full hearts or less to enter",
+      "text": "Challenge rooms drop 2 extra chests on clear",
       "shown": true,
       "introduced_in": "Repentance"
    },
    "32946": {
       "name": "(G) Swallowed M80",
-      "text": "50% chance to trigger Kamikaze effect on hit",
+      "text": "100% chance to trigger Kamikaze effect on hit",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -7244,7 +7244,7 @@
    },
    "32951": {
       "name": "(G) The Twins",
-      "text": "Chance of tripling one of your familiars each room, get Brother Bobby and/or Sister Maggy if no familiars",
+      "text": "Chance of doubling or tripling one of your familiars each room, get Brother Bobby and/or Sister Maggy if no familiars",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -7256,13 +7256,13 @@
    },
    "32953": {
       "name": "(G) Cricket Leg",
-      "text": "10% chance of spawning a random locust per enemy killed",
+      "text": "33.3% chance of spawning a random locust per enemy killed",
       "shown": true,
       "introduced_in": "Repentance"
    },
    "32954": {
       "name": "(G) Apollyon's Best Friend",
-      "text": "Spawns two of Alt Apollyon's red locusts",
+      "text": "Spawns two of Tainted Apollyon's red locusts",
       "shown": true,
       "introduced_in": "Repentance"
    },
@@ -7274,13 +7274,13 @@
    },
    "32956": {
       "name": "(G) Ice Cube",
-      "text": "Chance of enemies being frozen when you enter the room",
+      "text": "20% chance of enemies being frozen when you enter the room",
       "shown": true,
       "introduced_in": "Repentance"
    },
    "32957": {
       "name": "(G) Sigil of Baphomet",
-      "text": "Grants a 2 seconds shield every time you kill an enemy",
+      "text": "Grants a 1 second shield every time you kill an enemy",
       "shown": true,
       "introduced_in": "Repentance"
    }

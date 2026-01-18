@@ -257,7 +257,7 @@
        "name": "The Book of Belial",
        "shown": true,
        "bookworm": true,
-       "text": "Temporary +2 dmg, +12.5% deal chance, x1.5 dmg with Blood of the Martyr",
+       "text": "Temporary +2 dmg, +12.5% deal chance, 1.5x dmg with Blood of the Martyr",
        "space": true,
        "introduced_in": "Rebirth"
     },
@@ -3459,7 +3459,7 @@
     },
     "506": {
        "name": "BackStabber",
-       "text": "Shooting a non-bleeding enemy in the back does x2 dmg and adds bleed effect (kills after 50 seconds of slow damage)",
+       "text": "Shooting a non-bleeding enemy in the back does 2x dmg and adds bleed effect (kills after 50 seconds of slow damage)",
        "shown": true,
        "introduced_in": "Afterbirth+"
     },
@@ -4338,7 +4338,7 @@
     },
     "2002": {
        "name": "Petrified Poop",
-       "text": "Higher chance for rewards from poops",
+       "text": "50% chance for poops to drop rewards",
        "shown": true,
        "introduced_in": "Rebirth"
     },
@@ -4374,7 +4374,7 @@
     },
     "2008": {
        "name": "Cartridge",
-       "text": "Chance to get The Gamekid effect on hit",
+       "text": "5% chance to get The Gamekid effect on hit",
        "shown": true,
        "introduced_in": "Rebirth"
     },
@@ -4429,13 +4429,13 @@
     },
     "2017": {
        "name": "Black Lipstick",
-       "text": "Higher chance for black hearts",
+       "text": "+10% chance for black hearts to appear",
        "shown": true,
        "introduced_in": "Rebirth"
     },
     "2018": {
        "name": "Bible Tract",
-       "text": "Higher chance for eternal hearts",
+       "text": "+3% chance chance for eternal hearts to appear",
        "shown": true,
        "introduced_in": "Rebirth"
     },
@@ -4497,13 +4497,13 @@
     },
     "2028": {
        "name": "Broken Ankh",
-       "text": "20% chance to respawn as Blue Baby on death",
+       "text": "22.22% chance to respawn as Blue Baby on death",
        "shown": true,
        "introduced_in": "Rebirth"
     },
     "2029": {
        "name": "Fish Head",
-       "text": "Spawns a blue fly on hit",
+       "text": "Spawns 1-2 blue flies on hit",
        "shown": true,
        "introduced_in": "Rebirth"
     },
@@ -4521,13 +4521,13 @@
     },
     "2032": {
        "name": "Liberty Cap",
-       "text": "Gives a random mushroom effect each room",
+       "text": "25% to give a random mushroom effect upon entering a room",
        "shown": true,
        "introduced_in": "Rebirth"
     },
     "2033": {
        "name": "Umbilical Cord",
-       "text": "Gives Little Steven if damaged to 1/2 hearts",
+       "text": "Gives Little Steven if damaged to 1/2 heart",
        "shown": true,
        "introduced_in": "Rebirth"
     },
@@ -4546,7 +4546,7 @@
     },
     "2036": {
        "name": "Rusted Key",
-       "text": "Higher chance to find keys and chests",
+       "text": "Higher chance to find keys",
        "shown": true,
        "introduced_in": "Rebirth"
     },
@@ -4559,7 +4559,7 @@
     },
     "2038": {
        "name": "Mom's Pearl",
-       "text": "Higher chance to find soul hearts",
+       "text": "10% chance to turn heart drop into soul hearts",
        "shown": true,
        "introduced_in": "Rebirth"
     },
@@ -4584,7 +4584,7 @@
     },
     "2042": {
        "name": "Lucky Toe",
-       "text": "",
+       "text": "Increases chances to get a room clear drop",
        "luck": "1",
        "shown": true,
        "introduced_in": "Rebirth"
@@ -4675,7 +4675,7 @@
     },
     "2058": {
        "name": "Samson's Lock",
-       "text": "Chance to temporarily gain 0.5 dmg when killing an enemy",
+       "text": "6.66% chance to temporarily gain 0.5 dmg when killing an enemy",
        "shown": true,
        "introduced_in": "Rebirth"
     },
@@ -4711,13 +4711,13 @@
     },
     "2064": {
        "name": "Rainbow Worm",
-       "text": "Rainbow worm tears (a random worm effect every 5 seconds)",
+       "text": "Rainbow worm tears (a random worm effect every 3 seconds)",
        "shown": true,
        "introduced_in": "Afterbirth"
     },
     "2065": {
        "name": "Tape Worm",
-       "text": "Doubles range, halves tear height",
+       "text": "Doubles range, halves tear falling speed",
        "shown": true,
        "introduced_in": "Afterbirth"
     },
@@ -4804,7 +4804,7 @@
     },
     "2079": {
        "name": "Endless Nameless",
-       "text": "Chance to drop an extra copy of a card/pill upon use",
+       "text": "25% chance to drop an extra copy of a card/pill upon use",
        "shown": true,
        "introduced_in": "Afterbirth"
     },
@@ -4939,7 +4939,7 @@
     },
     "2101": {
        "name": "Dim Bulb",
-       "text": "+0.5 speed, +1.5 range, +0.3 shot speed, +0.4 tears, +1.5 damage when active item is completely uncharged",
+       "text": "+0.5 speed, +1.5 range, +0.3 shot speed, +0.4 tears, +1.5 damage, +2 luck when active item is completely uncharged",
        "shown": true,
        "introduced_in": "Afterbirth+"
     },
@@ -4957,13 +4957,13 @@
     },
     "2104": {
        "name": "Wish Bone",
-       "text": "Chance to spawn pedestal item on hit",
+       "text": "2% chance to spawn pedestal item on hit",
        "shown": true,
        "introduced_in": "Afterbirth+"
     },
     "2105": {
        "name": "Bag Lunch",
-       "text": "Chance to spawn Lunch on hit",
+       "text": "2% chance to spawn Lunch on hit",
        "shown": true,
        "introduced_in": "Afterbirth+"
     },
@@ -4981,7 +4981,7 @@
     },
     "2108": {
        "name": "Walnut",
-       "text": "Chance to break and drop random coin/heart/key/trinket on hit from explosion",
+       "text": "33% chance to break and drop random coin/heart/key/trinket on hit from explosion",
        "shown": true,
        "introduced_in": "Afterbirth+"
     },
@@ -5065,7 +5065,7 @@
     },
     "2122": {
        "name": "Butter!",
-       "text": "Using active items drops them on the ground, chance to drop passive items on hit",
+       "text": "Using active items drops them on the ground, 2% chance to drop passive items on hit",
        "shown": true,
        "introduced_in": "Booster Pack #1"
     },
