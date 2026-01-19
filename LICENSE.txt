@@ -1,4 +1,4 @@
-Copyright (c) 2015, Brett824 and Hyphen-ated
+Copyright (c) 2015-2026, Brett824, Hyphen-ated and Gamonymous
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
