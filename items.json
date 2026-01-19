@@ -5389,7 +5389,7 @@
       "name": "Lazy Worm",
       "text": "",
       "shot_speed": "-0.5",
-      "damage": "0.5",
+      "dmg": "0.5",
       "shown": true,
       "introduced_in": "Afterbirth"
    },
@@ -6551,7 +6551,7 @@
       "name": "(G) Lazy Worm",
       "text": "",
       "shot_speed": "-1",
-      "damage": "1",
+      "dmg": "1",
       "shown": true,
       "introduced_in": "Repentance"
    },
