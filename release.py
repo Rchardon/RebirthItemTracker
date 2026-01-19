@@ -15,17 +15,15 @@ if os.path.isdir('target/'):
 installDir = 'target/' + installName + '/'
 os.mkdir('target/')
 
-localpy = sys.executable
-
-subprocess.run(localpy + " src_bootstrapper/cxfreeze.py", shell=False, stdout=sys.stdout, stderr=sys.stderr)
+subprocess.run("python src_bootstrapper/cxfreeze.py", shell=False, stdout=sys.stdout, stderr=sys.stderr)
 shutil.move('src_bootstrapper/dist/bootstrapper.exe', 'src_bootstrapper/dist/Rebirth Item Tracker.exe') # Move the dist files to our target directory
 shutil.move('src_bootstrapper/dist/', installDir)
 
 # Run the tracker build script. The results are placed in ./dist/
-subprocess.run(localpy + " src_updater/cxfreeze.py", shell=False, stdout=sys.stdout, stderr=sys.stderr)
+subprocess.run("python src_updater/cxfreeze.py", shell=False, stdout=sys.stdout, stderr=sys.stderr)
 shutil.move('src_updater/dist/', installDir + "updater-lib/")
 
-subprocess.run(localpy + " src/cxfreeze.py", shell=False, stdout=sys.stdout, stderr=sys.stderr)
+subprocess.run("python src/cxfreeze.py", shell=False, stdout=sys.stdout, stderr=sys.stderr)
 shutil.copy('src/options.ico', 'src/dist/options.ico')
 shutil.move('src/dist/', installDir + 'tracker-lib/')
 
